@@ -5,20 +5,20 @@
 
 html, body{
 	max-width: 1024px;
-	margin: auto;				/*ridefinice il bordo in automatico*/
+	margin: auto;				/*ridefinisce il bordo in automatico*/
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 100%;
 	
 }
 
 body{
-	border: 1px solid #DDD;		/*inserisce il borbo*/
+	border: 1px solid #DDD;		/*inserisce il bordo*/
 
 }
 
 #header{
 	min-height: 6em;
-	padding: 1.0em;  /*padding del header non dei singoli elementi*/
+	padding: 1.0em;  
 	border-left:4px solid #000;
 	border-right: 4px solid #000;
 	border-top:4px solid #000;
