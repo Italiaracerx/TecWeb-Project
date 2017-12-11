@@ -63,7 +63,8 @@ body{
 	/* I link hanno display inline*/
 	float:left;/*adesso il box si comporta come un box di blocco e il resto gli sta attorno */
     text-align: center;
-    padding: 0.4em 4.08em 0.4em;
+    /*padding: 0.4em 4.08em 0.4em;*/
+    width: 25%;
     text-decoration: none;
     border-bottom: 4px solid #000;
 
