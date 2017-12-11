@@ -136,8 +136,8 @@ body{
 
 #FotoHome2{
 	float:right;
-	width: 40%;
-
+	width: 50%;
+	padding-top: 1em;
 }
 
 /*-----NEGOZI----*/
