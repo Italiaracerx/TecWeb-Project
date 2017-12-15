@@ -1,12 +1,55 @@
-#logo{
-    display: none;
+#header h1{ 
+	font-size:218%;
 }
+
+#header{
+
+	min-height:4em;
+}
+
+
+#logo{
+	width:3.9em;
+	height:3.9em;}
+
 
 #breadcrumb{
-    text-align: center;
+	text-align:center;	
 }
 
-#menu li{
-    float:none;
+#content h2{ 
+	font-size: 1.35em;}
+
+p{
+	font-size:0.95em;}
+	
+#menu li a{
+	padding-left:40%;
+	white-space:nowrap;
+	padding-right:43%;
+	border:none;
 }
+
+#HTML{
+	margin-bottom:1em;}
+#CSS{
+		margin-bottom:1em;}
+
+#footer{
+	border:none;}
+
+body{
+	border:none;}
+	
+#breadcrumb{
+	border:none;}
+
+
+/*NEGOZI*/
+
+
+
+
+
+
 
