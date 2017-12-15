@@ -223,11 +223,10 @@ a:visited{
 
 #formLogin {
 	border:1px solid #000;
-	margin-top: 10%;
+	margin-top: 5%;
 	margin-left: 20%;
 	width: 60%;
 	font-size: 1em;
-
 }
 
 #formLogin form{
@@ -236,15 +235,36 @@ a:visited{
 	text-align: center;
 }
 #formLogin input{
-	width: 90%;
 	height: 2em;
+	width: 85%;
 	font-size: 1em;
-	border:1px solid #000;
 	margin-top: 1em;
 	margin-bottom: 1em;
-	background:#FAF0E6;
-	padding-left:0.5em;
+	
+}
+input[type=text]{
+    border-radius: 4px;
+    background-color:#FAF0E6;
+    padding-left: 0.5em;
 	padding-right: 0.5em;
 }
+input[type=text]:focus {
+    background-color: 	#FFFACD;
+}
 
+input[type=password]{
+	border-radius: 4px;
+    background-color:#FAF0E6;
+    padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+input[type=password]:focus {
+    background-color: 	#FFFACD;
+}
+
+input[type=submit]{
+	background-color: 	#FFDEAD;
+    cursor: pointer;
+    border-radius: 4px;
+}
 
