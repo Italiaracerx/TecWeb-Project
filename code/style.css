@@ -103,6 +103,7 @@ a:visited{
 	text-align: justify;
 }
 
+
 #footer{
 	border-top: 3px solid #000;
 	font-style: italic;
@@ -195,7 +196,6 @@ a:visited{
 	float: right;
 }
 
-
 /*-----NEGOZI----*/
 #content{
 	margin-top:3em;
@@ -219,52 +219,99 @@ a:visited{
 	width: 85%;
 }
 
-/*-----LOGIN----------*/
-
-#formLogin {
-	border:1px solid #000;
-	margin-top: 5%;
-	margin-left: 20%;
-	width: 60%;
-	font-size: 1em;
-}
-
-#formLogin form{
-	border: 3px solid #000; 
-    padding: 1em;
-	text-align: center;
-}
-#formLogin input{
-	height: 2em;
-	width: 85%;
-	font-size: 1em;
-	margin-top: 1em;
-	margin-bottom: 1em;
+/*NEGOZIO LEGO */
+#imgNegLego{
+	width:50%;
+	float:left;}
 	
-}
-input[type=text]{
-    border-radius: 4px;
-    background-color:#FAF0E6;
-    padding-left: 0.5em;
-	padding-right: 0.5em;
-}
-input[type=text]:focus {
-    background-color: 	#FFFACD;
+#oral{
+	margin-left:52%;}
+	
+#testoNegl{
+	margin-left:65%;}
+
+#testoNeg2l{
+	margin-left:68%;}
+
+#testoNegultl{
+	margin-left:58%;
+	padding-bottom:3em;}
+
+#Contattil{
+	margin-left:65%;}
+	
+#Novita{
+	margin-top:5em;
+	margin-bottom:5em;}
+
+#offerte{
+	margin-left:3em;}
+#cubo{
+	width:5%;
+	float:left;}
+	
+#jet{width:30%;
+	margin-right:3%;}
+
+#caravan{width:30%;
+	margin-right:3%;}
+
+#trattore{width:30%;
+	}
+
+#descrizione{
+	font-weight:bold;
+	font-variant:small-caps;
+	color:#FF8C00;
+	float:left;
+	padding-left:4%;
+	padding-right:16%;
 }
 
-input[type=password]{
-	border-radius: 4px;
-    background-color:#FAF0E6;
-    padding-left: 0.5em;
-	padding-right: 0.5em;
-}
-input[type=password]:focus {
-    background-color: 	#FFFACD;
+/*NEGOZIO ARMANI*/
+#armaniNeg{
+	width:30%;
+	float:left;}
+
+#ora{
+	margin-left:32%;}
+
+#testoNeg{
+	margin-left:56%;}
+
+#testoNeg2{
+	margin-left:59.5%;}
+
+#testoNegult{
+	margin-left:50%;
+	padding-bottom:3em;}
+	
+#Contatti{
+	margin-left:56%;
 }
 
-input[type=submit]{
-	background-color: 	#FFDEAD;
-    cursor: pointer;
-    border-radius: 4px;
+#sconti{
+	margin-top:3em;
+	font-size:400%;
+	font-style:italic;
+	font-weight:bold;
+	font-variant:small-caps;
+	color:#FF8C00;
 }
+
+/*NEGOZIO TRONY*/
+
+#TronyNeg{
+	width:50%;
+	float:left;}
+
+#PROMO{
+	margin-top:2em;
+	margin-bottom:2em;
+	text-align:center;
+	font-size:2em;}
+	
+#sottocosto{
+	width:100%;}
+	
 
