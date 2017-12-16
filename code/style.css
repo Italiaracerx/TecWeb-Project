@@ -57,20 +57,35 @@ a:visited{
 	list-style-type: none;
 	
 }
-
+/*per rendere non cliccabili le pagine aperte*/
+#menu ul li{
+    font-size: 1.4em;
+    float:left;
+    width: 25%;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: 	#FF8C00;
+    border-bottom: 3px solid #000;
+    overflow: hidden;
+    font-variant: small-caps;
+}
+/*per tornare indietro cancellare i commenti e la modifica qui sopra*/
 #menu ul a{
-	font-size: 1.4em;
-	float: left;
+	/*font-size: 1.4em;*/
+	/*float: left;
 	width: 25%;
 	text-align: center;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	background-color: 	#FF8C00;
-    border-bottom: 3px solid #000;
+    border-bottom: 3px solid #000;*/
+    padding-left: 20%;
+    padding-right: 20%;
 	text-decoration: none;
-	color: white;
+	color: white;/*
 	overflow: hidden;
-	font-variant: small-caps;
+	font-variant: small-caps;*/
 }
 
 #menu a:hover {
