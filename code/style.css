@@ -216,23 +216,14 @@ a:visited{
 }
 
 /*-----NEGOZI----*/
+#negozi_space{margin-bottom:30em;}
 
-#lego_space{
-margin-top:7em;
-margin-left:5%;
-margin-bottom:8em;
-}
+#imgLego{width:20%;float:left;margin-left:8%; margin-top:5%;}
 
-#imgLego{
-	width:25%;float:left; margin-right:4%;}
-
-#imgArmani{
-	width:35%;float:center;}
+#imgArmani{width:25%;float:left;margin-left:8%;margin-top:5%;}
 
 
-#imgTrony{
-float:right;width:45%;margin-top:-20.5%;margin-right:-4%;
-}
+#imgTrony{width:40%;float:right;margin-top:-17.1%;}
 
 
 /*NEGOZIO LEGO */
