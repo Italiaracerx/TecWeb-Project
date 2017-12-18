@@ -7,6 +7,10 @@ html, body{
 	max-width: 1024px;
 	margin: auto;
 }
+
+#titolo{
+	display:inline;}
+	
 body{
 border: 4px solid #000;
 }
@@ -212,87 +216,81 @@ a:visited{
 }
 
 /*-----NEGOZI----*/
-#content{
-	margin-top:3em;
-}
-#negozidiv h2{
-	padding-left:27.5%;
-	padding-top: 1em;
-}
 
-#negozidiv p{
-	padding-left:27.5%;
-	padding-top: 0.5em;
-	padding-bottom: 1em;
-}
-
-#negozidiv img
-{
-	width:25%;
-	float: left;
+#lego_space{
+margin-top:7em;
+margin-left:5%;
+margin-bottom:8em;
 }
 
 #imgLego{
-	padding-top: 2%;
-}
+	width:25%;float:left; margin-right:4%;}
 
 #imgArmani{
-	padding-top: 4%;
-}
+	width:35%;float:center;}
 
-#trony_space{
-	padding-bottom: 6em;
+
+#imgTrony{
+float:right;width:45%;margin-top:-20.5%;margin-right:-4%;
 }
 
 
 /*NEGOZIO LEGO */
+
+#negozio_lego{margin-top:4em;}
+
 #imgNegLego{
 	width:50%;
 	float:left;}
 	
-#oral{
-	margin-left:52%;}
+#ora_lego{margin-left:52%;}
 	
-#testoNegl{
-	margin-left:65%;}
+#orario_testo{/*per tuttti i negozi forse*/
+	margin-left:67%;}
 
-#testoNeg2l{
-	margin-left:68%;}
+#Contatti{font-style:italic;/*per tuttti i negozi forse*/
+font-weight:bold;
+margin-top:5%;
+margin-left:65%;
+font-size:16px;
+font-family: Tahoma;}
 
-#testoNegultl{
-	margin-left:58%;
-	padding-bottom:3em;}
+#Novita_Lego{margin-top:4em;margin-bottom:18em;}
 
-#Contattil{
-	margin-left:65%;}
-	
-#Novita{
-	margin-top:5em;
-	margin-bottom:5em;}
+#cubo{width:5%;float:left;}
 
-#offerte{
-	margin-left:3em;}
-#cubo{
-	width:5%;
-	float:left;}
-	
-#jet{width:30%;
-	margin-right:3%;}
+#Gioco1{margin-top:5%;}
 
-#caravan{width:30%;
-	margin-right:3%;}
+#jet{width:30%;float:left;}
 
-#trattore{width:30%;
-	}
+#caravan{width:30%;float:left;margin-top:-3%;margin-left:4%;}
 
-#descrizione{
+#trattore{width:30%;float:right;}
+
+#descrizione_Jet{
 	font-weight:bold;
 	font-variant:small-caps;
 	color:#FF8C00;
 	float:left;
-	padding-left:4%;
-	padding-right:16%;
+	margin-left:-25%;
+	margin-top:20%;
 }
+
+#descrizione_Pickup{
+	font-weight:bold;
+	font-variant:small-caps;
+	color:#FF8C00;
+	float:left;
+	margin-left:-26%;
+	margin-top:20%;}
+
+#descrizione_trattore{
+	font-weight:bold;
+	font-variant:small-caps;
+	color:#FF8C00;
+	float:left;
+	margin-left:10%;
+	margin-top:1.3%;}
 
 /*NEGOZIO ARMANI*/
 #armaniNeg{
@@ -302,19 +300,6 @@ a:visited{
 #ora{
 	margin-left:32%;}
 
-#testoNeg{
-	margin-left:56%;}
-
-#testoNeg2{
-	margin-left:59.5%;}
-
-#testoNegult{
-	margin-left:50%;
-	padding-bottom:3em;}
-	
-#Contatti{
-	margin-left:56%;
-}
 
 #Novitarmani{
 	margin-top:11em;

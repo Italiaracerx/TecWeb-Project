@@ -14,6 +14,8 @@
 	only screen and (max-device-width:480px)"/><!--per dispositivi mobili-->
 
 	<link rel="stylesheet" type="text/css" href="print.css" media="print"/><!--STAMPA-->
+     <link rel="stylesheet" type="text/css" href="tablet.css" media="handheld, screen and (max-width:710px) and (min-width:481px),
+    only screen and (max-width:705px) and (min-width:481px)"/><!--TABLET-->
 
 </head>
  
@@ -22,11 +24,11 @@
 	<div id="header">
         <a href="home.html"><img id="logo" src="images/cs.jpg" alt="Logo Centro Archimede"/></a>
         <h1 id="titolo">Centro Archimede</h1>
-    </div>
+    </div><!--div header-->
 
 	<div id="breadcrumb">
 		<h2>Ti trovi in: Negozi : Lego</h2>
-	</div>
+	</div><!--div breadcrumb-->
 
     <div id="menu">
     	<p><a href="#content" class="accesaid">Skip navigation</a></p>
@@ -36,37 +38,61 @@
             <li><a href="dovesiamo.html">Dove siamo</a></li>
             <li><a href="contatti.html">Contatti</a></li>
         </ul>
-    </div>
+    </div><!--div menu-->
+    
 		<div id="content">
-			
+        
+			<div id="negozio_lego">
 			<img id="imgNegLego" src="images/negozio_lego.png" alt="negozio lego"/>
-          <h2 id="oral">ORARIO</h2>
-            <p id="testoNegl"><strong>Luned&igrave; Venerd&igrave; :</strong> 9:00 - 21:00</p>
-            <p id="testoNeg2l"><strong>Sabato :</strong>  9:00 - 21:00</p>
-            <p id="testoNegultl"><strong>Domenica e festivi di apertura :</strong>  9:00 - 21:00</p>
+            </div><!--div negozio_lego-->
             
-		<p id="Contattil"> Centro Archimede</p>
-        <p id="Contattil">Via Trieste, 63</p> 
-        <p id="Contattil">35121 Padova (Italy)</p>
-        <p id="Contattil">Telefono: +39 0425 5802394</p>
-        <p id="Contattil">Email: lego@math.unipd.it</p>
-        <div id="Novita">
-
+            
+            <div id="ORARIO">
+          <h2 id="ora_lego">ORARIO</h2>
+            <p id="orario_testo"><strong>Luned&igrave; :</strong> 9:00 - 21:00<br/>
+            <strong>Marted&iacute; :</strong>  9:00 - 21:00<br/>
+            <strong>Mercoled&iacute; :</strong>  9:00 - 21:00<br/>
+            <strong>Gioved&iacute; :</strong>  9:00 - 21:00<br/>
+            <strong>Venerd&iacute; :</strong>  9:00 - 21:00<br/>
+            <strong>Sabato :</strong>  9:00 - 21:00</p>
+            
+            
+            
+		<p id="Contatti"> Centro Archimede<br/>
+        Via Trieste, 63<br/>
+        35121 Padova (Italy)<br/>
+        Telefono: +39 0425 5802394<br/>
+        Email: lego@math.unipd.it</p>
+        </div><!--div ORARIO-->
+        
+        <div id="Novita_Lego">
+      
       <img id="cubo" src="images/cubo.png" alt="Immagine cubo" /> 
     <h3 id="offerte">Novit&agrave; Prodotti</h3>
 			
+            <div id="Gioco1">
             <img id="jet" src="images/jet.png" alt="Immagine Jet acrobatico giocattolo"/>
+            <p id="descrizione_Jet" >Jet acrobatico</p>
+            </div>
+            
+            <div id="Gioco2">
             <img id="caravan" src="images/caravan.png" alt="Immagine Pickup e Caravan giocattolo"/>
+            <p id="descrizione_Pickup">Pickup e Caravan</p>
+            </div>
+            
+            <div id="Gioco3">
             <img id="trattore" src="images/trattore.png" alt="Immagine trattore agricolo giocattolo"/>
-             <p id="descrizione" >Jet acrobatico</p> <p id="descrizione">Pickup e Caravan</p> <p id="descrizione">Trattore agricolo </p>
-       </div>
-		</div>
+            <p id="descrizione_trattore">Trattore agricolo </p>
+            </div>
+ </div><!--div Novita_Lego-->
+       
+		</div><!--div content-->
 
     <div id="footer"> 
     	<img id="HTML" src="images/valid-xhtml10.png" alt = "XHTML valido"/>
         <img id="CSS" src="images/vcss-blue.gif" alt = "CSS valido"/> 
                 <div id="down"><p>Il sito &egrave; stato creato per un Progetto nell&rsquo;ambito del corso di <a href="http://informatica.math.unipd.it/laurea/tecnologieweb.html">Tecnologie Web</a> e non rappresenta quindi il sito di un reale centro commerciale.</p></div>
-    </div>
+    </div><!--div footer-->
 
 </body>
 </html>
