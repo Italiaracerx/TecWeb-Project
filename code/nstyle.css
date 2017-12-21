@@ -10,10 +10,8 @@ a:link{
 	color: #cf0808;
 }
 a:visited{
-	color: white;
+	color:blue;
 }
-
-
 
 .accesaid{
 	position: absolute;
@@ -23,22 +21,20 @@ a:visited{
 }
 #header{
 	background-color:#B22222;
-}
-#contenutoHeader{
-	margin-left: 3em;
-	min-height: 5em;
-	padding: 1em; 
-	margin-right: 3em;
+    height: 8em;
 }
 
 #logo{
-	float:left;
+    padding-top: 1em;
+    padding-left: 7%;
+    float:left;
 	width: 6em;
-	padding-right:2em;
+	padding-right:1em;
 }
 #titolo{
+    padding: 1em;
 	float: left;
-	width: 30%;
+	width: 18%;
 }
 
 #titolo h1{ 
@@ -47,10 +43,15 @@ a:visited{
 	display: inline;
 	float: left;
 }
+#titolo h2{
+    float: left;
+}
+
 #menu{
-	float: right;
+	float: left;
 	width: 50%;
 	margin-top: 2%;
+    margin-bottom: 1%;
 }
 
 #menu ul{
@@ -61,27 +62,28 @@ a:visited{
 #menu ul a{
     font-size: 1.4em;
     float:left;
-    width: 5em;
-    height: 2.35em;
+    width: 5.2em;
     text-align: center;
     overflow: hidden;
-    font-variant: small-caps;
-    padding-top: 0.4em;
-    padding-bottom: 0.4em;
-    margin-left:1px;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    padding-left: 0.2em;
     text-decoration: none;
+    height: 1.5em;
 }
 /*per tornare indietro cancellare i commenti e la modifica qui sopra*/
-#menu ul a{
-	display: block;
-}
 #corrente{
 	background-color: 	#8B0000	;
 }
 #menu a:hover{
   background-color: 	#8B0000;
 }
-
+#menu a:link{
+    color:white;
+}
+#menu a:visited{
+    color:white;
+}
 
 #header h2{
 	font-size: 1.5em;
@@ -109,12 +111,13 @@ a:visited{
 
 
 #content{
-	width: 80%;
-	margin: 0 auto;
 	padding: 1em;
-	min-height: 30em;
 }
 
+#contenutoContent{
+    width: 80%;
+    margin:0 auto;
+}
 #content h2{ 
 	font-size: 2em;
 	margin-top: 0.5em;
@@ -185,18 +188,22 @@ a:visited{
 	float: left;
 }
 #fotoHome1{
-	width: 100%;
+	display: block;
+    width: 100%;
 	height: 80%;
 	margin-bottom: 1em;
 }
 #fotoHome2{
+    display: block;
 	width: 100%;
 	height: 80%;
 }
 
 #promozioni{
-	margin-top: 12%;
 	min-height: 8em;	
+    float:left;
+    width: 100%; 
+    display: block;
 }
 
 #promozioni h2{
