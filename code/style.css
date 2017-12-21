@@ -7,10 +7,6 @@ html, body{
 	max-width: 1024px;
 	margin: auto;
 }
-
-#titolo{
-	display:inline;}
-	
 body{
 border: 4px solid #000;
 }
@@ -61,35 +57,20 @@ a:visited{
 	list-style-type: none;
 	
 }
-/*per rendere non cliccabili le pagine aperte*/
-#menu ul li{
-    font-size: 1.4em;
-    float:left;
-    width: 25%;
-    text-align: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background-color: 	#FF8C00;
-    border-bottom: 3px solid #000;
-    overflow: hidden;
-    font-variant: small-caps;
-}
-/*per tornare indietro cancellare i commenti e la modifica qui sopra*/
+
 #menu ul a{
-	/*font-size: 1.4em;*/
-	/*float: left;
+	font-size: 1.4em;
+	float: left;
 	width: 25%;
 	text-align: center;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	background-color: 	#FF8C00;
-    border-bottom: 3px solid #000;*/
-    padding-left: 20%;
-    padding-right: 20%;
+    border-bottom: 3px solid #000;
 	text-decoration: none;
-	color: white;/*
+	color: white;
 	overflow: hidden;
-	font-variant: small-caps;*/
+	font-variant: small-caps;	
 }
 
 #menu a:hover {
@@ -98,12 +79,11 @@ a:visited{
 #content{
 	padding: 1em;
 	min-height: 30em;
-    padding-bottom: 1em;
 }
 
 #content h2{ 
 	font-size: 2em;
-	margin-top: 0.5em;
+	margin-top: 1em;
 	margin-bottom: 0.5em;
 	text-align: center;
 	background-color: #FAEBD7;
@@ -123,12 +103,10 @@ a:visited{
 	text-align: justify;
 }
 
-
 #footer{
 	border-top: 3px solid #000;
 	font-style: italic;
 	padding: 1em;
-    text-align: center;
 }
 
 #HTML{
@@ -140,7 +118,7 @@ a:visited{
 }
 
 #footer img{
-	
+	margin-left: 1.0em;
 	margin-left: 1.0em;
 	margin-right: 0.8em;
 }
@@ -216,202 +194,37 @@ a:visited{
 	padding: 1em;
 	float: right;
 }
+/*-----LOGIN----------*/
 
-/*-----NEGOZI----*/
-#negozi_space_first {
-    width: 100%;
-    padding: 2%;
+#formLogin 
+{
+	border:1px solid #000;
+	margin-top: 15%;
+	margin-left: 20%;
+	width: 60%;
+	font-size: 1em;
+
 }
 
-#negozi_space_first img{
-    padding: 3.5%;
-    /*padding-left: 2%;*/
-    width: 25%;
-    float: left; 
+#formLogin form
+{
+	border: 3px solid #000; 
+    padding: 1em;
+	text-align: center;
 }
-
-
-/*NEGOZIO LEGO */
-
-#negozio_lego{margin-top:4em;}
-
-#imgNegLego{
-	width:50%;
-	float:left;}
-	
-#ora_lego{margin-left:52%;}
-	
-#orario_testo{/*per tuttti i negozi forse*/
-	margin-left:67%;}
-
-#Contatti{font-style:italic;/*per tuttti i negozi forse*/
-font-weight:bold;
-margin-top:5%;
-margin-left:65%;
-font-size:16px;
-font-family: Tahoma;}
-
-#Novita_Lego{margin-top:4em;margin-bottom:18em;}
-
-#cubo{width:5%;float:left;}
-
-#Gioco1{margin-top:5%;}
-
-#jet{width:30%;float:left;}
-
-#caravan{width:30%;float:left;margin-top:-3%;margin-left:4%;}
-
-#trattore{width:30%;float:right;}
-
-#descrizione_Jet{
-	font-weight:bold;
-	font-variant:small-caps;
-	color:#FF8C00;
-	float:left;
-	margin-left:-25%;
-	margin-top:20%;
-}
-
-#descrizione_Pickup{
-	font-weight:bold;
-	font-variant:small-caps;
-	color:#FF8C00;
-	float:left;
-	margin-left:-26%;
-	margin-top:20%;}
-
-#descrizione_trattore{
-	font-weight:bold;
-	font-variant:small-caps;
-	color:#FF8C00;
-	float:left;
-	margin-left:10%;
-	margin-top:1.3%;}
-
-/*NEGOZIO ARMANI*/
-#armaniNeg{
-	width:30%;
-	float:left;}
-
-#ora{
-	margin-left:32%;}
-
-
-#Novitarmani{
-	margin-top:11em;
-	margin-bottom:5em;
-	}
-
-
-#cravatta{
-	width:6%;
-	float:left;}
-	
-#uomoarmani{
-	width:30%;
-	padding-top:2em;
-	-webkit-margin-left:-5%;
-	margin-left:-5%;
-	}
-
-#donnarmani{
-width:30%;
-}
-#bambinoarmani{
- 
-	width:34.6%;
-}
-
-#descrizioneA{
-	font-weight:bold;
-	font-variant:small-caps;
-	color:#FF8C00;
-	float:left;
-	padding-left:2%;
-	padding-right:14%;
+#formLogin input{
+	width: 90%;
+	height: 2em;
+	font-size: 1em;
+	border:1px solid #000;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	background:#FAF0E6;
+	padding-left:0.5em;
+	padding-right: 0.5em;
 }
 
 
-/*NEGOZIO TRONY*/
 
-#TronyNeg{
-	width:50%;
-	float:left;}
 
-#PROMO{
-	margin-top:6em;
-	margin-bottom:5em;
-	}
 
-#lavatrice{
-	width:5%;
-	float:left;}
-
-#indesit{
-	width:30%;
-	margin-top:3em;
-	-webkit-margin-left:-2em;
-	margin-left:-2em;
-	margin-right:1em}
-
-#tv{
-width:30%;
-margin-right:2em;}
-
-#play{
-	width:30%;}
-
-#descrizioneT{
-	font-weight:bold;
-	font-variant:small-caps;
-	color:#FF8C00;
-	float:left;
-	padding-left:6%;
-	padding-right:10%;
-}
-
-/*-----LOGIN----------*/ 
-
-#formLogin { 
-  border:1px solid #000; 
-  margin-top: 5%; 
-  margin-left: 20%; 
-  width: 60%; 
-  font-size: 1em; 
-} 
-
-#formLogin form{ 
-  border: 3px solid #000;  
-    padding: 1em; 
-  text-align: center; 
-} 
-#formLogin input{ 
-  height: 2em; 
-  width: 85%; 
-  font-size: 1em; 
-  margin-top: 1em; 
-  margin-bottom: 1em; 
-} 
-input[type=text]{ 
-    border-radius: 4px; 
-    background-color:#FAF0E6; 
-    padding-left: 0.5em; 
-  padding-right: 0.5em; 
-} 
-input[type=text]:focus { 
-    background-color:   #FFFACD; 
-} 
-input[type=password]{ 
-  border-radius: 4px; 
-    background-color:#FAF0E6; 
-    padding-left: 0.5em; 
-  padding-right: 0.5em; 
-}
-input[type=password]:focus { 
-    background-color:   #FFFACD; 
-}
-input[type=submit]{ 
-  background-color:   #FFDEAD; 
-    cursor: pointer; 
-    border-radius: 4px; 
-}
