@@ -22,35 +22,34 @@ a:visited{
 
 }
 #header{
-	background-color:#DC143C;
-
+	background-color:#B22222;
 }
 #contenutoHeader{
-	max-width: 1024px;
-	margin: 0 10% 0 10%;
+	margin-left: 3em;
 	min-height: 5em;
 	padding: 1em; 
+	margin-right: 3em;
 }
 
 #logo{
 	float:left;
-	width: 10%;
+	width: 6em;
+	padding-right:2em;
 }
 #titolo{
-	
-	display: inline;
+	float: left;
+	width: 30%;
 }
+
 #titolo h1{ 
-	font-size: 2em;
+	font-size:300%;
 	font-variant: small-caps;
 	display: inline;
 	float: left;
-	
 }
 #menu{
 	float: right;
 	width: 50%;
-	margin-right: 5%;
 	margin-top: 2%;
 }
 
@@ -59,35 +58,28 @@ a:visited{
 }
 
 /*per rendere non cliccabili le pagine aperte*/
-#menu ul li{
+#menu ul a{
     font-size: 1.4em;
     float:left;
-    width: 25%;
+    width: 5em;
+    height: 2.35em;
     text-align: center;
     overflow: hidden;
     font-variant: small-caps;
     padding-top: 0.4em;
-    padding-bottom: 1em;
-    border-radius: 4px;
+    padding-bottom: 0.4em;
+    margin-left:1px;
+    text-decoration: none;
 }
 /*per tornare indietro cancellare i commenti e la modifica qui sopra*/
 #menu ul a{
-	/*font-size: 1.4em;*/
-	/*float: left;
-	width: 25%;
-	text-align: center;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	background-color: 	#FF8C00;
-    border-bottom: 3px solid #000;*/
-	text-decoration: none;
-  
-	/*
-	overflow: hidden;
-	font-variant: small-caps;*/
+	display: block;
 }
-#menu li:hover{
-   background: 	#800000;
+#corrente{
+	background-color: 	#8B0000	;
+}
+#menu a:hover{
+  background-color: 	#8B0000;
 }
 
 
@@ -100,14 +92,18 @@ a:visited{
 }
 
 #breadcrumb{
-	font-size: 0.6em;
-	background-color:	#B22222;	
+    background-color: #ececec;
+    font-size: 0.5em;
+    text-transform: uppercase;
+
+
 }
 
 #breadcrumb h2{
-	width: 1024px;
-	padding: 0.3em 0em 0.3em 2em;
+	max-width: 1024px;
+	padding: 0.5em 0em 0.5em 2em;
 	margin-left: 10%;
+	font-weight: normal;
 
 }
 
