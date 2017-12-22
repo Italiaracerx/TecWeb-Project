@@ -105,7 +105,7 @@ html, body{
 	width: 100%;
 }
 
-#benvenuti
+#intestazione
 {
 	padding: 0.5em;
 	text-align: center;
@@ -123,8 +123,35 @@ html, body{
 	text-align: center;
 	padding-top:5em;
 	padding-bottom: 5em;
-	background-color:#CD5C5C;
-	color: white;
+	color: black;
 	text-transform: uppercase;
+	background-color: brown;
+	
 }
+
+#negozio
+{
+	float: left;
+	width: 23%;
+	margin: 1%;
+	text-align: center;
+	padding-top:8em;
+	padding-bottom: 2em;
+	color: brown;
+	text-transform: uppercase;
+	background-image: url("images/gruccia.jpg");
+	background-size: 100%;
+}
+
+/*---------------footer-------------*/
+
+
+
+
+
+
+
+
+
+
 
