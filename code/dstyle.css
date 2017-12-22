@@ -3,7 +3,7 @@
 	margin: 0em;
 }
 html, body{ 
-	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-family: Montserrat,Verdana, Arial, Helvetica, sans-serif;
 	margin: auto;
 }
 
@@ -37,6 +37,7 @@ html, body{
 }
 
 #menu ul {
+
 	list-style-type: none;
 	margin: 0;
 	overflow: hidden;
@@ -101,89 +102,29 @@ html, body{
 }
 
 #torre{
-	max-width: 100%;
+	width: 100%;
 }
 
-
-
-/*-----FOOTER-----*/
-
-#footer{
-
-	background-color: #B22222;
-	padding-top: 2em;
-	padding-bottom:3em;
-	
-	
-}
-
-#contenutoFooter a{
-	color: white;
-}
-
-#menu_footer{
-	float: center;
-	margin-left:16.6%;
-	margin-top: 1%;
-	}
-
-#menu_footer ul{
-	list-style-type: none;
-}
-
-#menu_footer ul a{
-    font-size: 1.4em;
-    float:left;
-    width:16%;
-    text-align: center;
-    overflow: hidden;
-    font-variant: small-caps;
-	text-decoration:none;
-	white-space:nowrap;
-}
-
-#menu_footer ul a{
-	display: block;
-}
-
-#menu_footer a:link{
-
-}
-
-#menu_footer a:hover{
-  background-color:none;
-}
-
-#corrente_footer{
-	background-color:none;
-	color:white;
-}
-
-#linea{
-	height:2px ; 
-	 background-color:white;
-	 margin-top:4.5em;
-	 margin-left:8%;
-	  margin-right:6%;}
-	 
-#ultimo_testo{
-	margin-top:2em;}
-
-#HTML{
-	float: left;
-	margin-left:10%;
-}
-
-#CSS{
-	float: right;
-	margin-right:10%;	
-}
-
-#testo_footer {
-	color:white;
+#benvenuti
+{
+	padding: 0.5em;
 	text-align: center;
-	font-size:0.7em;
-
+	border-bottom: 1px solid #000;
+	font-weight: 500;
+	text-transform: uppercase;
+	font-size: 2em;
 }
 
-#testo_footer a:link{text-decoration:none;}
+#casella
+{
+	float: left;
+	width: 23%;
+	margin: 1%;
+	text-align: center;
+	padding-top:5em;
+	padding-bottom: 5em;
+	background-color:#CD5C5C;
+	color: white;
+	text-transform: uppercase;
+}
+
