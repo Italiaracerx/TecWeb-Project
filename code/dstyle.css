@@ -9,7 +9,7 @@ html, body{
 
 #contenutoHeader{
 	margin: auto;
-	width:50%;
+	max-width:1024px;
 	padding-top:2em;
 	padding-bottom:2em;	
 	
@@ -17,13 +17,17 @@ html, body{
 
 #logo{
 	float:left;
-	width:20%;
-	height: auto;
+	width:7em;
+
 }
 #titolo{
 	display: inline-block;
 	text-align: center;
 	color:white;
+}
+
+#form{
+	float: right;
 }
 
 .accesaid{
@@ -93,3 +97,13 @@ html, body{
 	background-color: #a02222;
 	height: 100%;
 }
+#content{
+	max-width:1024px; 
+	margin: 0 auto;
+}
+
+#torre{
+	width: 100%;
+}
+
+
