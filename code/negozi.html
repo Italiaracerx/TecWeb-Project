@@ -9,7 +9,7 @@
 	<meta http-equiv="Content-Type" content="txt/html charset= UTF-8" />
 
 	<title>Centro Archimede</title>
-	<link rel="stylesheet" type="text/css" href="style.css" media="handheld, screen"/>
+	<link rel="stylesheet" type="text/css" href="il_footer.css" media="handheld, screen"/>
 	<link rel="stylesheet" type="text/css" href="mobile.css" media="handheld, screen and (max-width:480px),
 	only screen and (max-device-width:480px)"/><!--per dispositivi mobili-->
     <link rel="stylesheet" type="text/css" href="tablet.css" media="handheld, screen and (max-width:710px) and (min-width:481px),
@@ -20,56 +20,101 @@
 </head>
  
 <body>
-	
-	<div id="header">
-		<a href="home.html"><img id="logo" src="images/cs.jpg" alt="Logo Centro Archimede"/></a>
-		<h1 id="titolo">Centro Archimede</h1>
-	</div>
+	<div id="header">	    
+		<div id="contenutoHeader">
+			<img id="logo" alt="Logo Centro Commerciale" src="images/logo.png"/>						
+		    <div id="titolo">
+				<h1>Archimede</h1>
+		        <h3>Centro Commerciale</h3>
+			</div>
+			<form id="form" action="" method="post">
+               <input type="text" name="cerca"/>
+               <input type="submit" value="cerca"/>
+              </form>
+			</div>
+			
+		</div>
+
+		    <div id="menu">
+    	     <p><a href="#content" class="accesaid">Skip navigation</a></p>
+             <ul>
+                <li><a class="active"><span xml:lang="en">Home</span></a></li>
+                <li><a href="negozi.html">Negozi</a></li>
+                <li><a href="dovesiamo.html">Dove siamo</a></li>
+                <li><a href="contatti.html">Contatti</a></li>
+				<li><a href="">Promozioni</a></li>
+				<li><a href="">Eventi</a></li>
+             </ul> 
+        </div>
 
 	<div id="breadcrumb">
-		<h2>Ti trovi in: Negozi</h2>
+		<h2><span xml:lang="en">Home</span> &gt;&gt; Negozi</h2>
 	</div>
+    
+    
+<div id="negozi"><!--NEGOZI-->
+    
 
-    <div id="menu">
-    	<p><a href="#content" class="accesaid">Skip navigation</a></p>
-        <ul>
-            <li ><a href="home.html"><span xml:lang="en">Home</span></a></li>
-            <li>Negozi</li>
-            <li><a href="dovesiamo.html">Dove siamo</a></li>
-            <li><a href="contatti.html">Contatti</a></li>
-        </ul>
-    </div>
-    
-<div id="negozi_space_first">
-    
-    <div id="lego_space">
+    <div class="vetrina">
     	<a href="lego.html">
     	<img src="images/imglego.jpg" alt="Logo negozio Lego"/>
     	</a>
     </div>
 
         
-        <div id="armani_space">
+        <div class="vetrina">
     	<a href="armani.html">
     		<img src="images/imgarmani.jpg" alt="Logo negozio armani" />
     	</a>
         </div>
 
         
-        <div id="trony_space">
+        <div class="vetrina">
         <a href="trony.html">
             <img src="images/imgtrony.jpg" alt="Logo negozio Trony"/>        
         </a>
         </div>
-
-</div>
-
-
-	<div id="footer"> 
-    	<img id="HTML" src="images/valid-xhtml10.png" alt = "XHTML valido"/>
-    	<img id="CSS" src="images/vcss-blue.gif" alt = "CSS valido"/> 
-        <div id="down"><p>Il sito &egrave; stato creato per un Progetto nell&rsquo;ambito del corso di <a href="http://informatica.math.unipd.it/laurea/tecnologieweb.html">Tecnologie Web</a> e non rappresenta quindi il sito di un reale centro commerciale.</p></div>
+        
+        
+        <div class="vetrina">
+    	<a href="lego.html">
+    	<img src="images/imglego.jpg" alt="Logo negozio Lego"/>
+    	</a>
     </div>
+        
+        
+       <div class="vetrina">
+    	<a href="lego.html">
+    	<img src="images/imglego.jpg" alt="Logo negozio Lego"/>
+    	</a>
+    </div>
+             
+        
+</div><!--fine NEGOZI-->
+
+
+ <!--FOOTER-->
+
+      
+      <div class="footer">
+      
+     <div id="menu_footer">
+    	     
+             <ul>
+                <li><a href="dhome.html"><span xml:lang="en">Home</span></a></li>
+                <li><a href="negozi.html">Negozi</a></li>
+                <li><a href="dovesiamo.html">Dove siamo</a></li>
+                <li><a href="contatti.html">Contatti</a></li>
+				<li><a href="">Promozioni</a></li>
+				<li><a  href="">Eventi</a></li>
+             </ul>
+             
+        </div> <!--fine menu_footer-->
+       
+   <img id="logo_footer" alt="Logo Centro Commerciale" src="images/logo.png"/> 
+
+    </div> <!-- fine footer-->
 
 </body>
+
 </html>
