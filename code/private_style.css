@@ -13,9 +13,7 @@ html, body{
 	color:white;
 }
 
-#form{
-	float: right;
-}
+
 
 .accesaid{
 	position: absolute;
@@ -87,6 +85,11 @@ html, body{
     padding-left:2em;
 }
 
+#footer{
+	background-color: #585753;
+	padding-bottom: 5em;
+}
+/*GENERALE PRIVATO*/
 #content{
     max-width: 1024px;
     margin: 0 auto;
@@ -215,11 +218,47 @@ label{
 
 }
 
-#footer{
-	background-color: #585753;
-	padding-bottom: 5em;
-}
 
 #sopra{
 	margin-left:5%;
+}
+
+
+/*PROMOZIONI PRIVATO*/
+
+#ColonnaSinistra{
+	width: 30%;	
+	float:left;
+}
+.NuovaPromozione{
+	float:left;
+	display:block;
+	text-align: center;
+	margin-left:5%;
+}
+.SottoTitolo{
+	text-align: center;
+	margin-top:1em;
+	margin-bottom:0.5em;
+}
+
+.invia{
+	margin-top:0.5em;
+}
+#PromozioniCorrenti{
+	margin-left: 32%;
+	display:block;
+	margin-top: 2em;
+}
+
+.promozione{
+	width: 100%;
+}
+.imgPromozione{
+	margin-top:1em;
+	float:left;
+	display:block;
+	width: 25%;
+	margin-left:4.1%;
+	margin-right:4.1%;
 }
