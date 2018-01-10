@@ -104,6 +104,18 @@ html, body{
 	padding-bottom:1em;
 }
 
+#content h2{
+    text-align: center;
+}
+
+#testoinformazioni{
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+/*HOME*/
 #torre{
 	width: 100%;
 }
@@ -149,6 +161,23 @@ html, body{
 #sottoPiano a:hover{
 	background: linear-gradient(to bottom right,brown,	#DB7093);
 }
+
+/*Dove Siamo*/
+
+#mappa{
+    width: 65%;
+    display: block;
+    margin:auto;
+}
+
+/*CONTATTI*/
+#fotoContatti{
+    width: 65%;
+    display: block;
+    margin:auto;
+}
+
+/*FOOTER*/
 
 #footer{
 	background-color: #a02222;

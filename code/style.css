@@ -147,7 +147,11 @@ html, body{
 	background-image: url("images/gruccia.jpg");
 	background-size: 100%;
 }
+<!--DOVE SIAMO-->
 
+#mappa{
+    width:10%;
+}
 
 
 <!--FOOTER-->
