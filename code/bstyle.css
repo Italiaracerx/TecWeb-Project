@@ -177,6 +177,28 @@ html, body{
     margin:auto;
 }
 
+/*PROMOZIONI_PUBLIC*/
+
+#PromozioniAttive imgPromozione{
+    margin-left: 32%;
+	display:block;
+	margin-top: 2em;
+}
+
+#PromozioniAttive img{
+    margin-top:1em;
+	float:left;
+	display:block;
+	width: 25%;
+	margin-left:4.1%;
+	margin-right:4.1%;
+}
+
+#PromozioniAttive p{
+padding: 1em;
+text-align: center;
+}
+
 /*FOOTER*/
 
 #footer{
