@@ -24,47 +24,112 @@
 			</div>
 	</div>
 
-		    <div id="menu">
-    	     <p><a href="#content" class="accesaid">Skip navigation</a></p>
-             <ul>
-                <li><a class="active" href="">Generale</a></li>
-                <li><a href="">Promozioni</a></li>
-                <li><a href="">Prodotti</a></li>
-                <li><a href="">Pagina Negozio</a></li>
-                <li><a href="">Logout</a></li>
-             </ul> 
-        </div>
+	<div id="menu">
+        <p><a href="#content" class="accesaid">Skip navigation</a></p>
+        <ul>
+            <li><a class="active" href="">Generale</a></li>
+            <li><a href="">Promozioni</a></li>
+            <li><a href="">Prodotti</a></li>
+            <li><a href="">Pagina Negozio</a></li>
+            <li><a href="">Logout</a></li>
+        </ul> 
+    </div>
 
 	<div id="breadcrumb">
         <h2><strong>LEGO</strong> > GENERALE</h2>        
     </div>
     <div id="content">
-    <div id="content_generale">
-        <h3 id="titolo_negozio">GENERALE</h3>
-            
-        <p id="benvenuto">Benvenuto <strong>Ciccio78</strong></p>
-    
-    <div id="sinistra">
-        <div id="CambioPassword">
-            <p id="intestazione">MODIFICA PASSWORD</p>
-    		<form action="" method="post">
-    			<label for="Password">Password:</label>
-    			<input id="campo" name="Password" placeholder="Password" type="text">
-    			<label for="Password">Conferma Password:</label>
-    			<input id="campo" name="confermaPassword" placeholder="Password" type="text">
-                <input id="pulsante" type="submit" value="Modifica">
-    		</form>
-    </div>
-    </div>
-    <div id="destra">
-        <div id="descrizione">
-            <p id="intestazione">MODIFICA DESCRIZIONE</p>
-            <form>
-                <textarea>Descrizione</textarea>
-            </form>                
+        <div id="content_generale">
+            <h3 id="titolo_negozio">GENERALE</h3>
+            <p id="benvenuto">Benvenuto <strong>Ciccio78</strong></p>
+
+            <div id="sopra">
+                <div class="boxSopra">
+                    <p class="intestazione">CONTATTI</p>
+                    <form action="" method="post">
+                        <label>Telefono / Fax:</label>
+                        <input class="ciauzzone"type="text" value="041610265"/>
+                        <label>Email:</label>
+                        <input value="blablabla@lego.com" type="text"/>
+                        <label>Sito web:</label>
+                        <input value="www.lego.com/it-it" type="text"/>
+                        <input type="reset" value="Reset"/>  
+                        <input type="submit" value="Salva"/>                                                        
+                    </form>
+                </div>
+                <div class="boxSopra">
+                    <p class="intestazione">MODIFICA PASSWORD</p>
+                    <form action="" method="post">
+                        <label>Password:</label>
+                        <input type="password" class="campo"/>
+                        <label>Conferma Password:</label>
+                        <input name="campo" type="text"/>               
+                        <input type="reset" value="Reset"/>  
+                        <input type="submit" value="Salva"/>                                
+                    </form>
+                </div>
+                <div id="secondo">               
+                <div class="boxSotto">
+                    <p class="intestazione">CAMBIA LOGO</p>
+                    <form action="" method="post">
+                        Select a file: <input type="file" name="img">
+                        <input type="submit" value="Salva"/>                                
+                    </form>
+                </div>
+                <div class="boxSotto">
+                        <p class="intestazione">NOME NEGOZIO</p>
+                        <form action="" method="post">
+                            <label> Nome:</label>
+                            <input name="campo" value="LEGO STORE" type="text"/>
+                            <input type="submit" value="Salva"/>                                
+                            <input type="reset" value="Reset"/>  
+                        </form>
+                    </div>
+                </div>
+            </div>            
+            <div id="sotto">
+                <div id="sinistra">
+                    <p class="intestazione">ORARIO</p>
+                    <form action="" method="post">
+                        <label> Lunedì :</label>
+                        <input class="orario" value="10-23" type="text"/>
+                        <label> Martedì :</label>
+                        <input class="orario" value="10-23" type="text"/>
+                        <label> Mercoledì :</label>
+                        <input class="orario" value="10-23" type="text"/>
+                        <label> Giovedì :</label>
+                        <input class="orario" value="10-23" type="text"/>
+                        <label> Venerdì :</label>
+                        <input class="orario" value="10-23" type="text"/>
+                        <label> Sabato :</label>
+                        <input class="orario" value="10-23" type="text"/>
+                        <label> Domenica :</label>
+                        <input class="orario" value="10-23" type="text"/>
+                        <input class="pulsante" type="submit" value="Salva"/>                                
+                        <input class="pulsante" type="reset" value="Reset"/>  
+                    </form>
+                </div>
+                <div id="destra">
+                    <div id="descrizione">
+                        <p class="intestazione">MODIFICA DESCRIZIONE</p>
+                        <form action="" method="post">
+                            <label>Motto:</label>                    
+                            <div class="box">                        
+                                <textarea rows="2" cols="50">Our mission: To inspire and develop the builders of tomorrow</textarea>  
+                            </div> 
+                            <label>Descrizione:</label>
+                            <div class="box">                        
+                                <textarea rows="5" cols="50">Il nostro scopo è ispirare ed educare i bambini a pensare creativamente, ragionare in modo sistematico e realizzare il loro potenziale, plasmando il loro futuro e sperimentando le infinite possibilità umane. </textarea>  
+                            </div>
+                            <input class="pulsante" type="submit" value="Salva"/>                                
+                            <input class="pulsante" type="reset" value="Reset"/>                
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-</div>
-</div>
-</div>
+    </div>
+    <div id="footer">
+    </div>
 </body>
 </html> 

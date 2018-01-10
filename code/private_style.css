@@ -4,7 +4,7 @@
 }
 
 html, body{ 
-	font-family: Montserrat,Verdana, Arial, Helvetica, sans-serif;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
 	margin: auto;display:block;
 }
 
@@ -93,14 +93,15 @@ html, body{
     overflow: auto;
     padding-bottom: 1em;
 }
+#content_generale{
+	overflow:auto;
+}
 
 #benvenuto{
 	padding-top:1em;
 	font-size: 1.5em;
 	
 }
-
-
 
 #titolo_negozio{
     display: block;	
@@ -109,13 +110,14 @@ html, body{
 	font-size:2em;
 	letter-spacing: 10px;
 	line-height: 1em;
-	border-bottom: 2px solid #A21E1E;
+	border-bottom: 2px solid #585753;
 	text-align: center;
 	font-weight: 400;
 	text-transform: uppercase;
 }
-#intestazione{
-	border-bottom: 2px #A21E1E	 solid;
+.intestazione{
+	padding-bottom:0.5em;
+	border-bottom: 2px #585753	 solid;
 	text-align: center;
 	margin-bottom:1em;
 	letter-spacing: 2px;
@@ -126,31 +128,34 @@ html, body{
 
 #sinistra{
 	float:left;
-	margin-top:2em;
+	margin-bottom:2em;
 	display: block;
 	width:25%;
 	
-	
 }
 
-#pulsante{
-	margin-right:1em;
-	margin-top:1em;
+.pulsante{
 	float:right;
+	margin-left:1em;	
+	margin-top:1em;
 }
 
-#campo{
+.campo{
 	margin-top:0.5em;
 	margin-bottom:0.5em;
 	
 }
 
 #destra{
-	margin-top:2em;	
 	margin-left: 30%;
 	display: block;
 }
-
+#secondo{
+	float:left;
+	display:block;
+	margin-left:5%;
+	
+}
 textarea{
 	width: 100%;
     height: 150px;
@@ -161,4 +166,60 @@ textarea{
     background-color: #f8f8f8;
     font-size: 16px;
     resize: none;
+}
+
+#box{
+	padding-top: 1em;
+	padding-bottom: 1em;	
+}
+
+
+.boxSopra{
+	float:left;
+	display: block;
+	padding-top:2em;
+	padding-left: 0.5em;
+	padding-right:0.5em;
+	width:45%;	
+	
+}
+
+.boxSotto{
+	float:left;
+	display: block;
+	padding-top:2em;
+	padding-left: 0.5em;
+	padding-right:0.5em;
+}
+
+
+#sotto{
+	width:100%;
+	float:left;
+	margin-top:1.5em;
+	overflow: auto;
+}
+
+.orario{
+	width: 100%;
+}
+
+.giorno{
+	float: left;
+}
+
+label{
+	display:block;
+	margin-top:0.3em;
+	margin-bottom:0.3em;
+
+}
+
+#footer{
+	background-color: #585753;
+	padding-bottom: 5em;
+}
+
+#sopra{
+	margin-left:5%;
 }
