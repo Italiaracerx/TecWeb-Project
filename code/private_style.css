@@ -155,9 +155,10 @@ html, body{
 }
 #secondo{
 	float:left;
-	display:block;
-	margin-left:5%;
-	
+	margin-top:2%;
+	margin-left:7%;
+	margin-bottom:2%;
+
 }
 textarea{
 	width: 100%;
@@ -190,9 +191,10 @@ textarea{
 .boxSotto{
 	float:left;
 	display: block;
+	width: 45%;
 	padding-top:2em;
-	padding-left: 0.5em;
-	padding-right:0.5em;
+	margin-left: 2.5%;
+	margin-right:2.5%;
 }
 
 
@@ -220,7 +222,9 @@ label{
 
 
 #sopra{
+	margin-top:2%;
 	margin-left:5%;
+
 }
 
 
