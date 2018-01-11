@@ -48,7 +48,7 @@ html, body{
 #menu li {
 	float: left;
 	width: 16.66%;
-	
+	white-space:nowrap;
 }
 
 #menu a:hover{
@@ -148,6 +148,12 @@ html, body{
 	background-size: 100%;
 }
 
+#content{
+	max-width:1024px; 
+	margin: 0 auto ;
+	overflow: auto;
+	padding-bottom:1em;
+}
 
 /*     NEGOZI      */
 
@@ -162,48 +168,52 @@ html, body{
 	float:left;
 	overflow:auto;
 	display:block; 
+	
 }
-
 
 /*   FOOTER    */
 
 
-.contentMenu{background-color:none;}
-
-#menu_footer ul {
-	padding-left:10%;
-	padding-right:10%;
-	margin: 0;
-	overflow: hidden;
-	background-color:#a02222;}
-	
-
-#menu_footer li {
-	float: left;
-	width: 16.665%;
-	list-style-type: none;
-	color:white;background-color:#a02222;}
-
-#menu_footer li a {
-	display: block;
+#footer{
+	background-color: #a02222;
+	height: 100%;
 	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-	color:white;
-	background-color:#a02222;
-	margin-bottom:1.5em;background-color:#a02222;}
-	
-.footer {
-  clear:both;
-    position:static;
-  width: 100%;
-  background-color: brown;
+	color: white;
+	padding-bottom: 1em;
+}
+#contentMenuFooter{
+	background-color:#8B0000;
+}
+#footerMenu ul{
+	max-width: 80%;
+	margin:auto;
+	list-style-type: none;
+	overflow:auto;
 }
 
+#footerMenu li {
+	float: left;
+	width: 16.6%;
 
-#logo_footer {
-	width:10em;
-	margin-left:47%;
-	margin-top:3%;}
+}
+#footerMenu li  a{
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	padding: 13px 13px;
+}
+#footerMenu a:hover{
+	background-color:rgb(184, 11, 11);
+}
 
-#titolo_footer{text-align:center;}
+#footer h3{
+	margin-top: 1em;
+}
+#logoFooter{
+	width: 10%;
+	padding:1em;
+}
+#infoFooter{
+	font-size:0.8em;
+}
