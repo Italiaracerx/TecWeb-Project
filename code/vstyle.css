@@ -7,10 +7,7 @@ html, body{
 	font-family: Montserrat,Verdana, Arial, Helvetica, sans-serif;
 	margin: auto;display:block;
 }
-#header{
-	background-color: #a02222;
-	height: 100%;
-}
+
 #contenutoHeader{
 	margin: auto;
 	max-width:1024px;
@@ -41,9 +38,10 @@ html, body{
 }
 
 #menu ul {
+
 	list-style-type: none;
 	margin: 0;
-	overflow: auto;
+	overflow: hidden;
 	background-color: #8B0000;
 }
 
@@ -53,7 +51,9 @@ html, body{
 	
 }
 
-
+#menu a:hover{
+	background-color:rgb(184, 11, 11);
+}
 .active{
 	color:white;
 	background-color:rgb(184, 11, 11);
@@ -65,9 +65,6 @@ html, body{
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
-}
-#menu a:hover{
-	background-color:rgb(184, 11, 11);
 }
 
 #menu a:link{
@@ -96,7 +93,10 @@ html, body{
 
 }
 
-
+#header{
+	background-color: #a02222;
+	height: 100%;
+}
 #content{
 	max-width:1024px; 
 	margin: 0 auto ;
@@ -104,146 +104,101 @@ html, body{
 	padding-bottom:1em;
 }
 
-#content h2{
-    text-align: center;
-}
-
-#testoinformazioni{
-    text-align: center;
-    width: 50%;
-    margin: auto;
-    padding-top: 1em;
-    padding-bottom: 1em;
-}
-/*HOME*/
 #torre{
 	width: 100%;
 }
 
-.intestazione{
+#intestazione
+{
 	padding: 0.5em;
 	text-align: center;
 	border-bottom: 1px solid #000;
 	font-weight: 500;
 	text-transform: uppercase;
 	font-size: 2em;
-	display: block;
-	overflow: auto;
+	background-color:none;
 }
 
-
-.casella{
+#casella
+{
 	float: left;
 	width: 23%;
 	margin: 1%;
+	text-align: center;
+	padding-top:5em;
+	padding-bottom: 5em;
+	color: black;
 	text-transform: uppercase;
 	background-color: brown;
+	display:block;
 }
-#orario{
-	font-size: 0.9em;
-	padding: 1em 0  2em 0;
-	color: black;
+
+
+#negozio
+{
 	float: left;
 	width: 23%;
 	margin: 1%;
 	text-align: center;
+	padding-top:8em;
+	padding-bottom: 2em;
+	color: brown;
 	text-transform: uppercase;
+	background-image: url("images/gruccia.jpg");
+	background-size: 100%;
 }
-#sottoPiano  a {
-	
-	display: block;
-	text-align: center;
-	padding: 4.5em 4.5em;
-	text-decoration: none;
-	color: white;
-}
-
-#sottoPiano a:hover{
-	background: linear-gradient(to bottom right,brown,	#DB7093);
-}
-
-/*Dove Siamo*/
+<!--DOVE SIAMO-->
 
 #mappa{
-    width: 65%;
-    display: block;
-    margin:auto;
+    width:10%;
 }
 
-/*CONTATTI*/
-#fotoContatti{
-    width: 65%;
-    display: block;
-    margin:auto;
-}
 
-/*PROMOZIONI_PUBLIC*/
+<!--FOOTER-->
 
-#PromozioniAttive imgPromozione{
-    margin-left: 32%;
-	display:block;
-	margin-top: 2em;
-}
+#contentMenu{background-color:none;}
 
-#PromozioniAttive img{
-    margin-top:1em;
-	float:left;
-	display:block;
-	width: 25%;
-	margin-left:4.1%;
-	margin-right:4.1%;
-}
+#menu_footer ul {
+	padding-left:10%;
+	padding-right:10%;
+	margin: 0;
+	overflow: hidden;
+	background-color:#a02222;}
+	
 
-#PromozioniAttive p{
-padding: 1em;
-text-align: center;
-}
-
-/*FOOTER*/
-
-#footer{
-	background-color: #a02222;
-	height: 100%;
-	text-align: center;
-	color: white;
-	padding-bottom: 1em;
-}
-#contentMenuFooter{
-	background-color:#8B0000;
-}
-#footerMenu ul{
-	max-width: 80%;
-	margin:auto;
-	list-style-type: none;
-	overflow:auto;
-}
-
-#footerMenu li {
+#menu_footer li {
 	float: left;
-	width: 16.6%;
+	width: 16.665%;
+	list-style-type: none;
+	color:white;background-color:#a02222;}
 
-}
-#footerMenu li  a{
+#menu_footer li a {
 	display: block;
 	text-align: center;
+	padding: 14px 16px;
 	text-decoration: none;
-	color: white;
-	padding: 13px 13px;
-}
-#footerMenu a:hover{
-	background-color:rgb(184, 11, 11);
-}
+	color:white;
+	background-color:#a02222;
+	margin-bottom:1.5em;background-color:#a02222;}
+	
+.footer{background-color:#a02222;}
 
-#footer h3{
-	margin-top: 1em;
-}
-#logoFooter{
-	width: 10%;
-	padding:1em;
-}
-#infoFooter{
-	font-size:0.8em;
-}
+#logo_footer {
+	width:10em;
+	margin-left:47%;
+	margin-top:-6%;}
+
+#contatti_footer{
+		float:right;
+		margin-top:-5em;
+		margin-right:5%;
+		padding-bottom:0em;
+		color:white;}
+
+#orario_footer{margin-left:2em; color:white;}
+
+#titolo_footer{text-align:center;}
+
 /*NEGOZIO LEGO*/
 
 #titolo_negozio{
