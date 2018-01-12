@@ -172,6 +172,29 @@ html, body{
  .casella a:hover{
 	background: linear-gradient(to bottom right,brown,	#DB7093);
 }
+
+
+
+/*--------NEGOZI---------*/
+
+
+.vetrina img{
+     margin-right:4.7%;
+	margin-top: 4.5%;
+	 margin-left: 4.8%;
+	 margin-bottom:5%;
+    /*padding-left: 2%;*/
+    width: 15%;
+	float:left;
+	overflow:auto;
+	display:block;
+
+
+	
+}
+
+
+
 /*-------FOOTER-----*/
 #footer{
 	background-color: #a02222;
@@ -343,3 +366,5 @@ text-align: center;
 #promozioni{
 	padding-bottom:2em;
 }
+
+
