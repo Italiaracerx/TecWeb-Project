@@ -257,24 +257,29 @@ html, body{
 
 /*--------PROMOZIONI_PUBLIC--------*/
 
-#PromozioniAttive imgPromozione{
-    margin-left: 32%;
-	display:block;
-	margin-top: 2em;
+.promodiv{
+    float: center;
+}
+
+.imgPromozione{
+    width: 21.75%;
+    float: left;
+    margin: auto;
+    padding: 1em;
 }
 
 #PromozioniAttive img{
     margin-top:1em;
-	float:left;
 	display:block;
-	width: 25%;
-	margin-left:4.1%;
-	margin-right:4.1%;
+	width: 100%;
 }
 
 #PromozioniAttive p{
-padding: 1em;
-text-align: center;
+    padding-top: 1em;
+    width: 100%;
+    margin: auto;
+    float: center;
+    
 }
 
 /*-----------NEGOZIO LEGO---------*/
