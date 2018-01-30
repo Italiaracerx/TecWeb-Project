@@ -1,7 +1,3 @@
-<?php
-include("check_session.php");
-?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -31,9 +27,6 @@ include("check_session.php");
 	<div id="menu">
         <p><a href="#content" class="accesaid">Skip navigation</a></p>
         <ul>
-            <li><a class="active" href="">Generale</a></li>
-            <li><a href="ListaUtenti_admin.html">Lista Utenti</a></li>
-            <li><a href="ListaNegozio_admin.html">Lista Negozi</a></li>
             <li><a href="">Logout</a></li>
         </ul> 
     </div>
@@ -47,7 +40,7 @@ include("check_session.php");
         <div class="BarraOperazione">
         <div class="BoxSuperiore">
             <p class="intestazione">CREAZIONE NEGOZIO</p>
-            <form id="NuovoNegozio"action="" method="post">
+            <form class="NuovoNegozio" action="" method="post">
                 <label for="nome">Nome Negozio:</label>
                 <input type="text"/>
                 <label for="nome">Nome Utente:</label>
@@ -61,19 +54,12 @@ include("check_session.php");
             </form>
         </div>
         <div class="BoxSuperiore">
-                <p class="intestazione">NUOVO EVENTO</p>
-                <form action="" method="post">
-                    <label for="nome">Descrizione:</label>
-                    <textarea></textarea>
-                    <input type="reset" value="Reset"/>  
-                    <input type="submit" value="Salva"/>
-                </form>
-        </div>
-        <div class="BoxSuperiore">
-            <p class="intestazione">SBLOCCA NEGOZIO</p>
-            <form action="" method="post">
+            <p class="intestazione">ELIMINA NEGOZIO</p>
+            <form  class="NuovoNegozio" action="" method="post">
                 <label for="nome">Nome Negozio:</label>
-                <input type="text"/>              
+                <input type="text"/>     
+                <label for="nome">Conferma Nome Negozio:</label>
+                <input type="text"/>             
                 <input type="reset" value="Reset"/>  
                 <input type="submit" value="Salva"/>
             </form>
@@ -82,7 +68,7 @@ include("check_session.php");
         <div class="BarraOperazione">
         <div class="BoxSuperiore">
             <p class="intestazione">MODIFICA PASSWORD</p>
-            <form id="NuovoNegozio"action="" method="post">
+            <form class="NuovoNegozio"action="" method="post">
                 <label for="nome">Password:</label>
                 <input type="password"/>
                 <label for="nome">Conferma Password:</label>
@@ -92,23 +78,40 @@ include("check_session.php");
             </form>
         </div>
         <div class="BoxSuperiore">
-            <p class="intestazione">BLOCCA NEGOZIO</p>
-            <form action="" method="post">
-                <label for="nome">Nome Negozio:</label>
-                <input type="text"/>              
+            <p class="intestazione">NUOVO EVENTO</p>
+            <form class="NuovoNegozio" action="" method="post">
+                <label for="nome">Descrizione:</label>
+                <textarea></textarea>
                 <input type="reset" value="Reset"/>  
                 <input type="submit" value="Salva"/>
             </form>
+    </div>
+
         </div>
-        <div class="BoxSuperiore">
-            <p class="intestazione">SBLOCCA NEGOZIO</p>
-            <form action="" method="post">
-                <label for="nome">Nome Negozio:</label>
-                <input type="text"/>              
-                <input type="reset" value="Reset"/>  
-                <input type="submit" value="Salva"/>
-            </form>
-        </div>
+        <div class="ListaUtenti">
+            <p class="intestazione">LISTA UTENTI</p>
+            <table>
+                <tr><th>Negozio</th><th>Nome Utente</th></tr>
+                <tr><td>lego</td><td>lego</td></tr>
+                <tr><td>lego</td><td>lego</td></tr>
+                <tr><td>lego</td><td>lego</td></tr>
+                <tr><td>lego</td><td>lego</td></tr>
+                <tr><td>lego</td><td>lego</td></tr>
+                <tr><td>lego</td><td>lego</td></tr>
+                <tr><td>lego</td><td>lego</td></tr>
+                <tr><td>lego</td><td>lego</td></tr>
+                <tr><td>lego</td><td>lego</td></tr>
+                <tr><td>lego</td><td>lego</td></tr>
+                <tr><td>lego</td><td>lego</td></tr>
+                <tr><td>lego</td><td>lego</td></tr>
+                <tr><td>lego</td><td>lego</td></tr>
+                <tr><td>lego</td><td>lego</td></tr>
+                <tr><td>lego</td><td>lego</td></tr>
+                <tr><td>lego</td><td>lego</td></tr>
+                <tr><td>lego</td><td>lego</td></tr>
+                <tr><td>lego</td><td>lego</td></tr>
+
+            </table>
         </div>
     </div>
     <div id="footer">

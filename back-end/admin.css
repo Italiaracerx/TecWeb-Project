@@ -30,7 +30,7 @@ html, body{
 }
 
 #menu li {
-	float: left;
+	float: right;
 	width: 25%;
 	
 }
@@ -128,9 +128,10 @@ html, body{
 
 .BoxSuperiore{
 	float:left;
-	width: 30%;
+	width: 45%;
 	margin-top:2em;
-	margin-left:2em;
+	margin-left:2.5%;
+	margin-right:2.5%;
 	text-align:center;
 }
 
@@ -144,12 +145,13 @@ html, body{
 	margin:0 auto;
 }
 
-#NuovoNegozio{
-	width:60%;
+.NuovoNegozio{
+	width:55%;
 	margin: 0 auto;
 }
 
 .BarraOperazione{
+	width: 70%;
 	float:left;
 }
 
@@ -166,9 +168,10 @@ textarea{
 }
 
 .ListaUtenti{
-	text-align: center;
+	margin-top:2em;
+	margin-left: 70%;
 	width: 30%;
-	margin: 0 auto;
+	text-align: center;
 }
 
 table{
