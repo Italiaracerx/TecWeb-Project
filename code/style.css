@@ -111,13 +111,17 @@ html, body{
 #torre{ 
   width: 100%; 
 } 
-
+#doveandare{
+    float: left;
+}
 #testoinformazioni{ 
     text-align: center; 
-    width: 50%; 
-    margin: auto; 
-    padding-top: 1em; 
-    padding-bottom: 1em; 
+    width: 30%; 
+    float: left;
+}
+
+#testoinformazioni h3{
+    padding-top: 3em;
 }
 
 .intestazione{
@@ -245,11 +249,15 @@ html, body{
 #mappa{
     width: 65%;
     display: block;
-    margin:auto;
+    float: left;
+    margin-left: 5%;
+    margin-top: 2%;
+    /*margin:auto;*/
 }
 
 /*------------CONTATTI-----------*/
 #fotoContatti{
+    padding-top: 1em;
     width: 65%;
     display: block;
     margin:auto;
