@@ -336,24 +336,24 @@ html, body{
 	text-align: center;	
 }
 
-#informazione{
+.informazione{
 	font-weight: 400;
 	padding-top:1em;
 }
 
-#dato{
+.dato{
 	padding-top: 1%;
 	color: gray;
 }
 
-#gioco{
+.gioco{
 	width: 32%;
 	height: auto;
 	display:inline-block;
 	padding-top:1em;
 }
 
-#titolo_prodotti{
+.titolo_prodotti{
 	display: block;	
 	padding-top:1em;	
 	margin-left: 5%;
