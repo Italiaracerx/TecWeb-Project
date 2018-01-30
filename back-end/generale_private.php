@@ -45,11 +45,11 @@
             <div id="sopra">
                 <div class="boxSopra">
                     <p class="intestazione">MODIFICA CONTATTI</p>
-                    <form class="form" action="" method="post">
+                    <form class="form" action="input_contatti.php" method="post">
                         <label>Telefono / Fax:</label>
-                        <input type="text" value="041610265"/>
+                        <input type="text" name="Telefono" value="041610265"/>
                         <label>Email:</label>
-                        <input value="blablabla@lego.com" type="text"/>
+                        <input value="blablabla@lego.com" name="Email" type="text"/>
                         <label>Sito web:</label>
                         <input value="www.lego.com/it-it" type="text"/>
                         <div class="invia">               
@@ -60,7 +60,7 @@
                 </div>
                 <div class="boxSopra">
                     <p class="intestazione">MODIFICA PASSWORD</p>
-                    <form class="form" action="" method="post">
+                    <form class="form" action="input_password.php" method="post">
                         <label>Password:</label>
                         <input type="password" class="campo"/>
                         <label>Conferma Password:</label>
@@ -83,7 +83,7 @@
                 </div>
                 <div class="boxSotto">
                         <p class="intestazione">MODIFICA NOME NEGOZIO</p>
-                        <form action="" method="post">
+                        <form action="input_nomeNegozio.php" method="post">
                             Nome:
                             <input name="campo" value="LEGO STORE" type="text"/>
                             <input type="reset" value="Reset"/>
@@ -94,21 +94,21 @@
             <div id="sotto">
                 <div id="sinistra">
                     <p class="intestazione">MODIFICA ORARIO</p>
-                    <form action="" method="post">
+                    <form action="input_orario.php" method="post">
                         <label> Lunedì :</label>
-                        <input class="orario" value="10-23" type="text"/>
+                        <input name="lunedi" class="orario" value="10-23" type="text"/>
                         <label> Martedì :</label>
-                        <input class="orario" value="10-23" type="text"/>
+                        <input name="martedi" class="orario" value="10-23" type="text"/>
                         <label> Mercoledì :</label>
-                        <input class="orario" value="10-23" type="text"/>
+                        <input name="mercoledi" class="orario" value="10-23" type="text"/>
                         <label> Giovedì :</label>
-                        <input class="orario" value="10-23" type="text"/>
+                        <input name="giovedi" class="orario" value="10-23" type="text"/>
                         <label> Venerdì :</label>
-                        <input class="orario" value="10-23" type="text"/>
+                        <input name="venerdi" class="orario" value="10-23" type="text"/>
                         <label> Sabato :</label>
-                        <input class="orario" value="10-23" type="text"/>
+                        <input name="sabato" class="orario" value="10-23" type="text"/>
                         <label> Domenica :</label>
-                        <input class="orario" value="10-23" type="text"/>
+                        <input name="domenica" class="orario" value="10-23" type="text"/>
                         <input class="pulsante" type="submit" value="Salva"/>                                
                         <input class="pulsante" type="reset" value="Reset"/>  
                     </form>
@@ -116,14 +116,14 @@
                 <div id="destra">
                     <div id="descrizione">
                         <p class="intestazione">MODIFICA DESCRIZIONE</p>
-                        <form action="" method="post">
+                        <form action="input_descrizioni.php" method="post">
                             <label>Motto:</label>                    
                             <div class="box">                        
-                                <textarea rows="2" cols="50">Our mission: To inspire and develop the builders of tomorrow</textarea>  
+                                <textarea name="testo_motto" rows="2" cols="50">Our mission: To inspire and develop the builders of tomorrow</textarea>  
                             </div> 
                             <label>Descrizione:</label>
                             <div class="box">                        
-                                <textarea rows="5" cols="50">Il nostro scopo è ispirare ed educare i bambini a pensare creativamente, ragionare in modo sistematico e realizzare il loro potenziale, plasmando il loro futuro e sperimentando le infinite possibilità umane. </textarea>  
+                                <textarea name="testo_descrizione" rows="5" cols="50">Il nostro scopo è ispirare ed educare i bambini a pensare creativamente, ragionare in modo sistematico e realizzare il loro potenziale, plasmando il loro futuro e sperimentando le infinite possibilità umane. </textarea>  
                             </div>
                             <input class="pulsante" type="submit" value="Salva"/>                                
                             <input class="pulsante" type="reset" value="Reset"/>                
