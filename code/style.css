@@ -265,9 +265,6 @@ html, body{
 
 /*--------PROMOZIONI_PUBLIC--------*/
 
-.promodiv{
-    float: center;
-}
 
 .imgPromozione{
     width: 21.75%;
@@ -276,6 +273,9 @@ html, body{
     padding: 1em;
 }
 
+#PromozioniAttive{
+    margin: auto;
+}
 #PromozioniAttive img{
     margin-top:1em;
 	display:block;
@@ -286,7 +286,6 @@ html, body{
     padding-top: 1em;
     width: 100%;
     margin: auto;
-    float: center;
     
 }
 
