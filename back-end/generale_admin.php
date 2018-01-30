@@ -40,13 +40,11 @@
         <div class="BarraOperazione">
         <div class="BoxSuperiore">
             <p class="intestazione">CREAZIONE NEGOZIO</p>
-            <form class="NuovoNegozio" action="" method="post">
+            <form class="NuovoNegozio" action="NuovoNegozio.php" method="post">
                 <label for="nome">Nome Negozio:</label>
-                <input type="text"/>
-                <label for="nome">Nome Utente:</label>
-                <input type="text"/>    
+                <input name="username" type="text"/>
                 <label for="nome">Password:</label>
-                <input type="password"/>
+                <input name="password"type="password"/>
                 <label for="nome">Conferma Password:</label>
                 <input type="password"/>                      
                 <input type="reset" value="Reset"/>  
@@ -55,9 +53,9 @@
         </div>
         <div class="BoxSuperiore">
             <p class="intestazione">ELIMINA NEGOZIO</p>
-            <form  class="NuovoNegozio" action="" method="post">
+            <form  class="NuovoNegozio"  action="EliminaNegozio.php" method="post">
                 <label for="nome">Nome Negozio:</label>
-                <input type="text"/>     
+                <input name="negozio" type="text"/>     
                 <label for="nome">Conferma Nome Negozio:</label>
                 <input type="text"/>             
                 <input type="reset" value="Reset"/>  
@@ -68,9 +66,9 @@
         <div class="BarraOperazione">
         <div class="BoxSuperiore">
             <p class="intestazione">MODIFICA PASSWORD</p>
-            <form class="NuovoNegozio"action="" method="post">
+            <form class="NuovoNegozio" action="input_password.php" method="post">
                 <label for="nome">Password:</label>
-                <input type="password"/>
+                <input name="password" type="password"/>
                 <label for="nome">Conferma Password:</label>
                 <input type="password"/>                      
                 <input type="reset" value="Reset"/>  
@@ -79,8 +77,8 @@
         </div>
         <div class="BoxSuperiore">
             <p class="intestazione">NUOVO EVENTO</p>
-            <form class="NuovoNegozio" action="" method="post">
-                <label for="nome">Descrizione:</label>
+            <form class="NuovoNegozio" action="eventi.php" method="post">
+                <label name="descrizione" for="nome">Descrizione:</label>
                 <textarea></textarea>
                 <input type="reset" value="Reset"/>  
                 <input type="submit" value="Salva"/>
