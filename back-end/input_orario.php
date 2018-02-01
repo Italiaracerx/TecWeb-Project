@@ -12,7 +12,7 @@ $venerdi=$_POST['venerdi'];
 $sabato=$_POST['sabato'];
 $domenica=$_POST['domenica'];
 
-$query="UPDATE 'Orario' SET 'lunedi'='$lunedi', 'martedi'='$martedi', 'mercoledi'='$mercoledi', 'giovedi'='$giovedi', 'venerdi'='$venerdi', 'sabato'='$sabato', 'domenica'='$domenica' WHERE'username'='user';";
+$query="UPDATE orario SET lunedi='$lunedi', martedi='$martedi', mercoledi='$mercoledi', giovedi='$giovedi', venerdi='$venerdi', sabato='$sabato', domenica='$domenica' WHERE username='$user';";
 mysqli_query($connessione, $query);
 mysqli_close($connessione);
 

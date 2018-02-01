@@ -1,13 +1,12 @@
 <?php
 session_start(); //inizio la sessione
 //includo i file necessari a collegarmi al db con relativo script di accesso
-$user=$_SESSION["cod"];
-
+//$user=$_SESSION["cod"];
+$user="Ciccio78"; //$_SESSION['cod'];
 include("connessione_db.php");
-$motto=$_POST['testo_motto'];
-$descrizione=$_POST['testo_descrizione'];
+$nuova_password=$_POST['password'];
 
-$query="UPDATE 'accountNegozi' SET 'password'='$nuova_password' WHERE'username'='user';";
+$query="UPDATE accountNegozi SET password='$nuova_password' WHERE username='$user';";
 mysqli_query($connessione, $query);
 mysqli_close($connessione);
 

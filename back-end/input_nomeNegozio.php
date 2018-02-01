@@ -6,7 +6,7 @@ $user=$_SESSION["cod"];
 include("connessione_db.php");
 $mod=$_POST['campo'];
 
-$query="UPDATE 'Info' SET 'negozio'='$mod' WHERE 'username'='$user';";
+$query="UPDATE info SET negozio='$mod' WHERE username='$user';";
 mysqli_query($connessione, $query);
 mysqli_close($connessione);
 

@@ -47,11 +47,11 @@
                     <p class="intestazione">MODIFICA CONTATTI</p>
                     <form class="form" action="input_contatti.php" method="post">
                         <label>Telefono / Fax:</label>
-                        <input type="text" name="Telefono" value="041610265"/>
+                        <input name="Telefono" type="text" value="041610265"/>
                         <label>Email:</label>
-                        <input value="blablabla@lego.com" name="Email" type="text"/>
+                        <input name="Email" value="blablabla@lego.com" type="text"/>
                         <label>Sito web:</label>
-                        <input value="www.lego.com/it-it" type="text"/>
+                        <input name="Sito_web" value="www.lego.com/it-it" type="text"/>
                         <div class="invia">               
                             <input type="reset" value="Reset"/>  
                             <input type="submit" value="Salva"/>
@@ -64,7 +64,7 @@
                         <label>Password:</label>
                         <input type="password" class="campo"/>
                         <label>Conferma Password:</label>
-                        <input name="campo" type="text"/>
+                        <input name="password" type="text"/>
                         <div class="invia">               
                             <input type="reset" value="Reset"/>  
                             <input type="submit" value="Salva"/>
