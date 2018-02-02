@@ -1,0 +1,155 @@
+* {
+	padding: 0em;
+	margin: 0em;
+}
+
+html, body{ 
+	font-family: Montserrat,Verdana, Arial, Helvetica, sans-serif;
+	margin: auto;display:block;
+}
+
+
+#contenutoHeader{
+	width: 90%;
+}
+
+#form{
+	display: none;
+}
+
+
+#menu li {
+	width: 100%;	
+	font-size: 1em;
+}
+#menu li a{
+	padding: 7px 0em 7px 0em;
+}
+
+#breadcrumb{
+    font-size: 0.5em;   
+}
+
+#content{
+	width: 100%;
+}
+
+#intestazione{
+	font-size: 1em;
+	padding: 1em;
+}
+
+#tabellaLaterale{
+	width: 100%;
+}
+#tabellaOrari {
+	font-size: 1em;
+	display: inline;
+	text-align: center;
+}
+
+#sottoPiano h2{
+	text-align: center;
+	font-size: 2em;
+}
+
+
+#sottoPiano{
+	width: 100%;
+}
+
+.casella{
+	width: 31.2%;
+}
+
+#footerMenu ul{
+	max-width: 100%;
+}
+
+#footerMenu li {
+	width: 100%;	
+	font-size: 1em;
+}
+
+#footerMenu li  a{
+	padding: 7px 0px 7px 0px;
+}
+
+.promozioneHome{
+	width: 80%;
+	margin-left: 2em;
+	margin-right: 2em;
+	text-align: center;
+}
+
+/*--------NEGOZIO-------*/
+
+.vetrina img{
+	margin-left:5em;
+	width: 60%;
+}
+
+/*--------NEGOZIO-LEGO---------*/
+#content_negozio{
+	text-align: center;
+}
+#logo_negozio{
+	width: 60%;
+	margin: auto;
+}
+#informazioni{
+	width: 100%;
+	margin: auto;
+}
+#descrizione
+{
+	display: inline-block;
+	width: 100%;
+	margin: 0em;
+}
+
+
+
+/*--------DOVE-SIAMO-----*/
+
+#mappa{
+	width: 100%;
+	padding: 0em;
+}
+#testoInformazioni{
+	width: 100%;
+	margin-top: 1em;
+}
+/*--------CONTATTI--------*/
+
+#content h2{
+    text-align: center;
+    margin-bottom: 0em;
+}
+#testoInformazioni h3{
+    padding-top: 0em;
+  }
+
+#fotoContatti{
+    width: 100%;
+}
+/*-----PROMOZIONI-PUBLIC-----*/
+
+
+.imgPromozione{
+	width: 80%;
+	padding: 0em;
+	margin-left: 2.5em;
+	margin-right: 2em;
+	margin-bottom: 0.5em;
+}
+
+
+
+
+
+
+
+
+
+

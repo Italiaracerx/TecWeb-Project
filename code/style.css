@@ -23,7 +23,6 @@ html, body{
 	display: inline;
 }
 
-
 #logo{
 	float:left;
 	width:7em;
@@ -81,7 +80,6 @@ html, body{
     color:white;
 }
 
-
 #breadcrumb{
     background-color: #ececec;
     font-size: 0.5em;
@@ -94,7 +92,6 @@ html, body{
 	padding-top:0.5em;
 	padding-bottom:0.5em;
 	font-weight: normal;
-
 }
 
 
@@ -107,56 +104,54 @@ html, body{
 
 #content h2{
     text-align: center;
+    margin-bottom: 1em;
 }
 #torre{ 
   width: 100%; 
 } 
 #doveandare{
-    float: left;
+    float:left;
 }
-#testoinformazioni{ 
-    text-align: center; 
-    width: 30%; 
-    float: left;
+#testoInformazioni{ 
+   text-align: center; 
+   width: 30%; 
+   display: inline-block;
 }
 
-#testoinformazioni h3{
+#testoInformazioni h3{
     padding-top: 3em;
-}
+  }
 
-.intestazione{
+#intestazione{
 	padding:0.8em 0.5em 0.5em 0.5em;
 	text-align: center;
 	border-bottom: 1px solid #000;
 	font-weight: 500;
 	text-transform: uppercase;
 	font-size: 2em;
-	display: block;
-	overflow: auto;
 }
 
 #tabellaLaterale{
 	width: 30%;
 	float: right;
 	padding-top: 1em;
-}
-.orario{
-	font-size: 1em;
 	text-align: center;
-	text-transform: uppercase;
-	padding: 2px;
+	font-size: 1.1em;
 }
-.eventi{
-	margin-top: 1em;
-	font-size: 1em;
-	text-align: center;
-	text-transform: uppercase;
 
+#tabellaLaterale caption{
+	font-weight: bold;
+}
+#tabellaOrari{
+	margin: 2em;
+}
+#tabellaEventi{
+	margin: 1em;
 }
 #sottoPiano{
 	width: 70%;
-	
 }
+
 .casella {
 	float: left;
 	width: 30%;
@@ -173,11 +168,34 @@ html, body{
 	color: white;
 }
 
- .casella a:hover{
+.casella a:hover{
 	background: linear-gradient(to bottom right,brown,	#DB7093);
 }
+#sottoPiano h2{
+	width: 100%;
+	text-align: center;
+	padding:0.8em 0em 0.5em 0em;
+	border-bottom: 1px solid #000;
+	font-weight: 500;
+	text-transform: uppercase;
+	font-size: 2em;
+	display: inline-block;
+}
+.promozioneHome{
+	float: left;
+	width: 26%;
+	margin: 3%;
+	text-align: center;
+	overflow: auto;
 
+}
+.promozione{
+	width: 100%;
+}
+#elencoPromozioni p{
+	padding: 1%;
 
+}
 
 /*--------NEGOZI---------*/
 
@@ -190,9 +208,6 @@ html, body{
     width: 15%;
 	float:left;
 	overflow:auto;
-	display:block;
-
-
 	
 }
 
@@ -243,22 +258,20 @@ html, body{
 	font-size:0.8em;
 }
 
-/*----------Dove Siamo--------*/
+/*----------DOVE SIAMO--------*/
 
 #mappa{
     width: 65%;
-    display: block;
-    float: left;
-    margin-left: 5%;
+    float: right;
     margin-top: 3.5%;
+    padding: 1em;
 }
 
 /*------------CONTATTI-----------*/
 #fotoContatti{
     padding-top: 1em;
-    width: 65%;
-    display: block;
-    margin:auto;
+    width: 60%;
+    float: right;
 }
 
 /*--------PROMOZIONI_PUBLIC--------*/
@@ -267,13 +280,11 @@ html, body{
 .imgPromozione{
     width: 21.75%;
     float: left;
-    margin: auto;
+    text-align: center;
     padding: 1em;
+    margin: 1%;
 }
 
-#PromozioniAttive{
-    margin: auto;
-}
 #PromozioniAttive img{
     margin-top:1em;
 	display:block;
@@ -283,8 +294,6 @@ html, body{
 #PromozioniAttive p{
     padding-top: 1em;
     width: 100%;
-    margin: auto;
-    
 }
 
 /*-----------NEGOZIO LEGO---------*/
@@ -348,7 +357,7 @@ html, body{
 
 .dato{
 	padding-top: 1%;
-	color: gray;
+	color: black;
 }
 
 .gioco{
