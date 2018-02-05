@@ -54,21 +54,25 @@ CREATE TABLE eventi(
 );
 
 DELIMITER $$
-CREATE TRIGGER `EliminaUtente` AFTER DELETE ON `accountNegozi` FOR EACH ROW BEGIN
-DELETE FROM info WHERE user =old.username;
-DELETE FROM orario WHERE user =old.username;
-DELETE FROM logo WHERE user =old.username;
-DELETE FROM promozioni WHERE user =old.username;
-DELETE FROM prodotti WHERE user =old.username;
+CREATE TRIGGER `EliminaUtente` BEFORE DELETE ON `accountNegozi` FOR EACH ROW BEGIN
+if OLD.username <> 'admin'
+then
+	DELETE FROM info WHERE user =OLD.username;
+	DELETE FROM orario WHERE user =OLD.username;
+	DELETE FROM logo WHERE user =OLD.username;
+	DELETE FROM promozioni WHERE user =OLD.username;
+	DELETE FROM prodotti WHERE user =OLD.username;
+end if;
 END
-$$
-DELIMITER ;
+$$ DELIMITER ;
+
 DELIMITER $$
 CREATE TRIGGER `NuovoUtente` AFTER INSERT ON `accountNegozi` FOR EACH ROW BEGIN
-INSERT INTO info values (new.username,'WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS');
-INSERT INTO orario values (new.username,'08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00');
-INSERT INTO logo values (new.username,'images/cose','ciauzzone');
-
+if NEW.username <> 'admin'
+then
+	INSERT INTO info values (NEW.username,'WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS');
+	INSERT INTO orario values (NEW.username,'08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00');
+	INSERT INTO logo values (NEW.username,'images/working_progress.png','ciauzzone');
+end if;
 END
-$$
-DELIMITER ;
+$$ DELIMITER ;

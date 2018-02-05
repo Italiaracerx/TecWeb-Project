@@ -1,4 +1,3 @@
-<?php  include("ListaNegozi.php");?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -14,7 +13,6 @@
 	only screen and (max-device-width:480px)"/><!--per dispositivi mobili-->
     <link rel="stylesheet" type="text/css" href="tablet.css" media="handheld, screen and (max-width:710px) and (min-width:481px),
 	only screen and (max-width:705px) and (min-width:481px)"/><!--TABLET-->
-
 	<link rel="stylesheet" type="text/css" href="print.css" media="print"/><!--STAMPA-->
 
 </head>
@@ -45,82 +43,116 @@
              </ul> 
         </div>
 
-        <?php if (!$_GET):?>
-        echo('<div id="breadcrumb">
-    <h2>Negozi</h2>
-    </div>
-    
-    
-    <div id="content"><!--NEGOZI-->";
-    <?php
-    foreach($riga as $riga){
-        echo('<div class="vetrina">');     
-        echo('<a href="negozio.php?negozio='.$riga["username"]);
-        echo('<img src="images/'.$riga["logo"].'" alt="'.$riga["descrizione"].'"/></a>');
-        echo('</div>');
-    }?>
-    </div><!--fine NEGOZI-->
-    <?php else: ?>
-	<div id="breadcrumb">
-        <h2><strong>NEGOZIO</strong> > <?php echo $info["negozio"];?></h2>        
-    </div>
-    
-	<div id="content">
-        <div id="content_negozio">
-            <h3 id="titolo_negozio"><?php echo $info["negozio"];?></h3>
+        <?php
+        include("connessione_db.php");
+        if (!$_GET){
+            $query = " SELECT L.username, L.logo, L.descrizione, I.negozio FROM logo L INNER JOIN info I ON L.username = I.username";
+            $ris =mysqli_query($connessione,$query);
 
-            <div id="informazioni">
-                    <img id="logo_negozio" src="images/<?php echo $logo["logo"];?>" alt="<?php echo $info["descrizione"];?>"/>
-
-                <div id="contatti">
-                    <h4 class="informazione">TELEFONO / FAX</h4>
-                    <p class="dato"><?php echo $info["telefono"];?></p>
-                    <h4 class="informazione">EMAIL</h4>
-                    <p class="dato"><?php echo $info["mail"];?></p>
-                    <h4 class="informazione">SITO WEB</h4>
-                    <a class="dato" href="<?php echo $info["sito"];?>"><?php echo $info["negozio"];?></a>
-                    <div id="orari">
-                        <h4 class="informazione">ORARI</h4>
-                        <p class="dato"><strong>Luned&igrave; :</strong><?php echo $orari["lunedi"];?></p>
-                        <p class="dato"><strong>Marted&iacute; :</strong><?php echo $orari["martedi"];?></p>
-                        <p class="dato"><strong>Mercoled&iacute; :</strong><?php echo $orari["mercoledi"];?></p>
-                        <p class="dato"><strong>Gioved&iacute; :</strong><?php echo $orari["giovedi"];?></p>
-                        <p class="dato"><strong>Venerd&iacute; :</strong><?php echo $orari["venerdi"];?></p>
-                        <p class="dato"><strong>Sabato :</strong><?php echo $orari["sabato"];?></p>
-                        <p class="dato"><strong>Domenica :</strong><?php echo $orari["domenica"];?></p>
-                            
+            echo('  <div id="breadcrumb">
+                        <h2>Negozi</h2>
                     </div>
+                    <div id="content"><!--NEGOZI-->');
+            while ($risultato=mysqli_fetch_array($ris) or die (mysqli_error($connessione))) {
+                $username=$risultato['username'];
+                $logo=$risultato['logo'];
+                $alt=$risultato['descrizione'];
+                $negozio=$risultato['negozio'];
+                echo '<div class="vetrina">   
+                 <a href="negozio.php?negozio='.$username.'">
+                 <img src="'.$logo.'" alt="'.$alt.'"/></a>
+                 <h5 class="NomeItem">'.$negozio.'</h5>
+                 </div>';
+            } 
+            echo '</div><!--fine NEGOZI-->';
+        }
+        else{
+            $negozio = $_GET['negozio'];
+            $query1= " SELECT * FROM orario WHERE username = '$negozio'";
+            $query2= " SELECT * FROM logo WHERE username = '$negozio'";
+            $query3= " SELECT * FROM info WHERE username = '$negozio'";
+            $query4= " SELECT * FROM prodotti WHERE username = '$negozio'";
+            $query5= " SELECT * FROM promozioni WHERE username = '$negozio'";
+        
+            $ris1 = mysqli_query($connessione,$query1);
+            $ris2 = mysqli_query($connessione,$query2);
+            $ris3 = mysqli_query($connessione,$query3);
+            $ris4 = mysqli_query($connessione,$query4);
+            $ris5 = mysqli_query($connessione,$query5);
 
+            $orario=mysqli_fetch_array($ris1) or die (mysqli_error($connessione));
+            $logo=mysqli_fetch_array($ris2) or die (mysqli_error($connessione));
+            $info=mysqli_fetch_array($ris3) or die (mysqli_error($connessione));
+
+            echo '<div id="breadcrumb">
+            <h2><strong>NEGOZIO</strong> > '.$info['negozio'].'</h2>        
+        </div>';
+        
+        echo '<div id="content">
+            <div id="content_negozio">
+                <h3 id="titolo_negozio">'.$info["negozio"].'</h3>';
+    
+            echo '<div id="informazioni">
+                        <img id="logo_negozio" src="'.$logo['logo'].'" alt="'.$logo['descrizione'].'"/>
+    
+                    <div id="contatti">
+                        <h4 class="informazione">TELEFONO / FAX</h4>
+                        <p class="dato">'.$info["telefono"].'></p>
+                        <h4 class="informazione">EMAIL</h4>
+                        <p class="dato">'.$info['mail'].'</p>
+                        <h4 class="informazione">SITO WEB</h4>
+                        <a class="dato" href="'.$info['sito'].'"></a>
+                        <div id="orari">
+                            <h4 class="informazione">ORARI</h4>
+                            <p class="dato"><strong>Luned&igrave; :</strong>'.$orario['lunedi'].'</p>
+                            <p class="dato"><strong>Marted&iacute; :</strong>'.$orario['martedi'].'</p>
+                            <p class="dato"><strong>Mercoled&iacute; :</strong>'.$orario['mercoledi'].'</p>
+                            <p class="dato"><strong>Gioved&iacute; :</strong>'.$orario['giovedi'].'</p>
+                            <p class="dato"><strong>Venerd&iacute; :</strong>'.$orario['venerdi'].'</p>
+                            <p class="dato"><strong>Sabato :</strong>'.$orario['sabato'].'</p>
+                            <p class="dato"><strong>Domenica :</strong>'.$orario['domenica'].'</p>
+                                
+                        </div>
+    
+                    </div>
+                </div>';
+    
+            echo '<div id="descrizione">
+                        <p id="testo">               
+                            <strong>'.$info["titolo"].'</strong><br/>'.$info["descrizione"].'  
+                        </p>
+                        <div id="prodotti">
+                            <h4 class="titolo_prodotti">PRODOTTI</h4>';
+                            if(!$ris4){
+                                echo '<p class="comingsoon">Coming Soon</p>';
+                            }
+                            else{
+                                while ($prodotto=mysqli_fetch_array($ris4)){
+                                    echo '<div class="prodotto">
+                                    <img class="gioco" src="'.$prodotto['prodotto'].'" alt="'.$prodotto['alt'].'"/>
+                                    <h5 class="NomeItem">'.$prodotto['descrizione'].'</h5>
+                                </div> ';
+                                }                                
+                            }
+                        echo '</div>
+                        <div id="promozioni">
+                                <h4 class="titolo_prodotti">PROMOZIONI</h4>';
+                            $f=mysqli_fetch_array($ris5);
+                            if(!$f){
+                                echo '<p class="comingsoon">Coming Soon</p>';
+                            }
+                            else{
+                                while ($promozione=mysqli_fetch_array($ris5)) {
+                                    echo '<img class="promo" src="'.$promozione['promozione'].'" alt="'.$promozione['alt'].'"/>';
+                                }
+                            }
+                        echo '</div>
                 </div>
             </div>
-
-            <div id="descrizione">
-                    <p id="testo">               
-                        <strong><?php echo $info["titolo"];?></strong><br/>
-                        <?php echo $info["descrizione"];?>  
-                    </p>
-                    <div id="prodotti">
-                        <h4 class="titolo_prodotti">PRODOTTI</h4>
-                        <?php 
-                            for ($j=0; $j<3 && $j <count($prodotto); $j++) {
-                                echo('<img class="gioco" src="images/'.$prodotto[$j]['prodotto'].'" alt="'.$prodotto[$j]['alt'].'"/>');
-                            }
-                        ?>
-                    </div>
-                    <div id="promozioni">
-                            <h4 class="titolo_prodotti">PROMOZIONI</h4>
-                            <?php 
-                            for ($j=0; $j<3 && $j <count($promozione); $j++) {
-                                echo('<img class="gioco" src="images/'.$promozione[$j]['prodotto'].'" alt="'.$prodotto[$j]['alt'].'"/>');
-                            }
-                        ?>
-                    </div>
-            </div>
-        </div>
-    </div>            
-    <?php endif ?>
-
-
+        </div>';            
+        }
+    
+         ?>
 
     <div id="footer">
         <div id="footerMenu">
