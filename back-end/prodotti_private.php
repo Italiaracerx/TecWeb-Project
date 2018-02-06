@@ -1,3 +1,7 @@
+<?php
+include('check_session.php');
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -53,16 +57,19 @@
                 </div>
             </div>
             <div id="PromozioniCorrenti">
-                <p class="intestazione">PRODOTTI CORRENTI</p>
-                <div class="imgPromozione">
-                    <img class="promozione" src="images/lego1.jpg" alt="promozione"/> 
-                </div>
-                <div class="imgPromozione">
-                    <img class="promozione" src="images/lego2.jpg" alt="promozione"/> 
-                </div>
-                <div class="imgPromozione">
-                    <img class="promozione" src="images/lego3.jpg" alt="promozione"/> 
-                </div>
+            <p class="intestazione">PRODOTTI CORRENTI</p>
+              <?php
+              include("connessione_db.php");
+              $query="SELECT P.promozione,P.alt FROM prodotti P WHERE username=$user LIMIT 3 ORDER BY P.ID DESC";
+              $ris=mysqli_query($connessione,$query);
+              while($risultato=mysqli_fetch_array($ris)) {
+                $promozione=$risultato['promozione'];
+                $alt=$risultato['alt'];
+                echo '<div class="imgPromozione">
+                    <img class="promozione" src="'.$promozione'" alt="'.$alt'"/> 
+                   </div>';
+                 }
+                ?>
             </div>            
         </div>
     </div>

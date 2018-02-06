@@ -1,17 +1,20 @@
+<?php
+include('check_session.php');
+include('general_private_dat.php');
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<!-- Specifico il charset -->
+    <title>Centro Archimede</title>
 	<meta http-equiv="Content-Type" content="txt/html charset= UTF-8" />
-
-	<title>Centro Archimede</title>
 	<link rel="stylesheet" type="text/css" href="private_style.css" media="handheld, screen"/>
 	<link rel="stylesheet" type="text/css" href="private_tablet.css" media="handheld, screen and (max-width:768px), 
     only screen and (max-device-width:768px)"/> 
     <link rel="stylesheet" type="text/css" href="private_mobile.css" media="handheld, screen and (max-width:480px), 
     only screen and (max-device-width:480px)"/> 
-
 </head>
  
 <body>
@@ -47,11 +50,22 @@
                     <p class="intestazione">MODIFICA CONTATTI</p>
                     <form class="form" action="input_contatti.php" method="post">
                         <label>Telefono / Fax:</label>
-                        <input name="Telefono" type="text" value="041610265"/>
+                        <input name="Telefono" type="text" 
+                        value="
+                        <?php
+                            echo $info['telefono'];
+                        ?>"
+                        />
                         <label>Email:</label>
-                        <input name="Email" value="blablabla@lego.com" type="text"/>
+                        <input name="Email" 
+                        value="
+                        <?php
+                            echo $info['mail'];
+                        ?>" type="text"/>
                         <label>Sito web:</label>
-                        <input name="Sito_web" value="www.lego.com/it-it" type="text"/>
+                        <input name="Sito_web" value="<?php
+                            echo $info['sito'];
+                        ?>" type="text"/>
                         <div class="invia">               
                             <input type="reset" value="Reset"/>  
                             <input type="submit" value="Salva"/>
@@ -96,19 +110,43 @@
                     <p class="intestazione">MODIFICA ORARIO</p>
                     <form action="input_orario.php" method="post">
                         <label> Lunedì :</label>
-                        <input name="lunedi" class="orario" value="10-23" type="text"/>
+                        <input name="lunedi" class="orario" 
+                        value="<?php
+                            echo $orario['lunedi'];
+                        ?>"
+                        type="text"/>
                         <label> Martedì :</label>
-                        <input name="martedi" class="orario" value="10-23" type="text"/>
+                        <input name="martedi" class="orario" 
+                        value="<?php
+                            echo $orario['martedi'];
+                        ?> 
+                        type="text"/>
                         <label> Mercoledì :</label>
-                        <input name="mercoledi" class="orario" value="10-23" type="text"/>
+                        <input name="mercoledi" class="orario" 
+                        value="<?php
+                            echo $orario['mercoledi'];
+                        ?>" type="text"/>
                         <label> Giovedì :</label>
-                        <input name="giovedi" class="orario" value="10-23" type="text"/>
+                        <input name="giovedi" class="orario" 
+                        value="<?php
+                            echo $orario['giovedi'];
+                        ?>" type="text"/>
                         <label> Venerdì :</label>
-                        <input name="venerdi" class="orario" value="10-23" type="text"/>
+                        <input name="venerdi" class="orario"
+                         value="<?php
+                            echo $orario['venerdi'];
+                        ?>" type="text"/>
                         <label> Sabato :</label>
-                        <input name="sabato" class="orario" value="10-23" type="text"/>
+                        <input name="sabato" class="orario" 
+                        value="<?php
+                            echo $orario['sabato'];
+                        ?>" type="text"/>
                         <label> Domenica :</label>
-                        <input name="domenica" class="orario" value="10-23" type="text"/>
+                        <input name="domenica" class="orario"
+                         value="<?php
+                            echo $orario['domenica'];
+                        ?>" type="text"/>
+
                         <input class="pulsante" type="submit" value="Salva"/>                                
                         <input class="pulsante" type="reset" value="Reset"/>  
                     </form>
@@ -119,11 +157,19 @@
                         <form action="input_descrizioni.php" method="post">
                             <label>Motto:</label>                    
                             <div class="box">                        
-                                <textarea name="testo_motto" rows="2" cols="50">Our mission: To inspire and develop the builders of tomorrow</textarea>  
+                                <textarea name="testo_motto" rows="2" cols="50">
+                                    <?php
+                                          echo $info['titolo'];
+                                     ?>
+                                </textarea>  
                             </div> 
                             <label>Descrizione:</label>
                             <div class="box">                        
-                                <textarea name="testo_descrizione" rows="5" cols="50">Il nostro scopo è ispirare ed educare i bambini a pensare creativamente, ragionare in modo sistematico e realizzare il loro potenziale, plasmando il loro futuro e sperimentando le infinite possibilità umane. </textarea>  
+                                <textarea name="testo_descrizione" rows="5" cols="50">
+                                    <?php
+                                        echo $info['descrizione'];
+                                        ?> 
+                                        </textarea>  
                             </div>
                             <input class="pulsante" type="submit" value="Salva"/>                                
                             <input class="pulsante" type="reset" value="Reset"/>                

@@ -92,7 +92,7 @@
                 <tr><th>Nome Utente</th><th>password</th></tr>
                 <?php
                 include("connessione_db.php");
-                if(!$_GET){
+                
                     $query= " SELECT * FROM accountNegozi";
                     $ris=mysqli_query($connessione,$query);
 
@@ -102,7 +102,7 @@
                         echo '<tr><td>'.$username.'</td><td>'.$password.'</td></tr>
                         ';
                     }
-                }
+                
                 ?>
             </table>
         </div>
