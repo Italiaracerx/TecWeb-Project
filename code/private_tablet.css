@@ -1,0 +1,16 @@
+#content{
+	padding:1em;
+}
+/*-----PROMOZIONI/PRODOTTI------*/
+
+#ColonnaSinistra{
+
+	float: none;
+	display: inline-block;
+	text-align: center;
+	margin-left: 30%;
+}
+
+#PromozioniCorrenti{
+	margin-left: 0em;
+}

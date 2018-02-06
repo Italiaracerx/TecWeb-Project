@@ -60,10 +60,11 @@
 
 /*--------NEGOZIO-------*/
 .vetrina{
-	width: 60%;
-	margin-left: 20%;
+	margin-left: 25%;
 }
-
+.vetrina img{
+	width: 60%;
+}
 
 /*--------NEGOZIO-LEGO---------*/
 #content_negozio{
@@ -82,6 +83,7 @@
 	width: 100%;
 	margin: 0em;
 }
+
 
 /*--------DOVE SIAMO--------*/
 
