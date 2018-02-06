@@ -32,7 +32,7 @@ if($cod == "admin"){
  	echo '<script language=javascript>document.location.href="generale_admin.php"</script>';
 }
 else{	
- 	echo '<script language=javascript>document.location.href="generale_privato.html"</script>';
+ 	echo '<script language=javascript>document.location.href="generale_private.php"</script>';
 } 
 } else {
  

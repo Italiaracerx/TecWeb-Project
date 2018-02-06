@@ -24,17 +24,6 @@
 			</div>
 	</div>
 
-	<div id="menu">
-        <p><a href="#content" class="accesaid">Skip navigation</a></p>
-        <ul>
-            <li><a class="active" href="">Generale</a></li>
-            <li><a href="promozioni_private.html">Promozioni</a></li>
-            <li><a href="prodotti_private.html">Prodotti</a></li>
-            <li><a href="lego.html">Pagina Negozio</a></li>
-            <li><a href="">Logout</a></li>
-        </ul> 
-    </div>
-
 	<div id="breadcrumb">
         <h2><strong>LEGO</strong> > GENERALE</h2>        
     </div>

@@ -27,7 +27,7 @@
 	<div id="menu">
         <p><a href="#content" class="accesaid">Skip navigation</a></p>
         <ul>
-            <li><a href="">Logout</a></li>
+            <li><a href="logout.php">Logout</a></li>
         </ul> 
     </div>
 
@@ -89,26 +89,21 @@
         <div class="ListaUtenti">
             <p class="intestazione">LISTA UTENTI</p>
             <table>
-                <tr><th>Negozio</th><th>Nome Utente</th></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
+                <tr><th>Nome Utente</th><th>password</th></tr>
+                <?php
+                include("connessione_db.php");
+                if(!$_GET){
+                    $query= " SELECT * FROM accountNegozi";
+                    $ris=mysqli_query($connessione,$query);
 
+                    while($risultato=mysqli_fetch_array($ris) or die(mysqli_error($connessione))) {
+                        $username=$risultato['username'];
+                        $password=$risultato['password'];
+                        echo '<tr><td>'.$username.'</td><td>'.$password.'</td></tr>
+                        ';
+                    }
+                }
+                ?>
             </table>
         </div>
     </div>

@@ -14,6 +14,6 @@ $query="INSERT INTO `accountNegozi` VALUES('$username','$password')";
 mysqli_query($connessione,$query);
 mysqli_close($connessione);
 
-echo '<script language=javascript>document.location.href="admin.php"</script>';
+echo '<script language=javascript>document.location.href="generale_admin.php"</script>';
 
 ?>

@@ -7,11 +7,12 @@
 
 	<title>Centro Archimede</title>
 	<link rel="stylesheet" type="text/css" href="private_style.css" media="handheld, screen"/>
-	<!--<link rel="stylesheet" type="text/css" href="mobile.css" media="handheld, screen and (max-width:480px),
-	only screen and (max-device-width:480px)"/>per dispositivi mobili
+	
+    <link rel="stylesheet" type="text/css" href="private_tablet.css" media="handheld, screen and (max-width:768px), 
+    only screen and (max-device-width:768px)"/> 
+    <link rel="stylesheet" type="text/css" href="private_mobile.css" media="handheld, screen and (max-width:480px), 
+    only screen and (max-device-width:480px)"/> 
 
-	<link rel="stylesheet" type="text/css" href="print" media="print"/>STAMPA
-    -->
 </head>
  
 <body>
@@ -27,11 +28,11 @@
 	<div id="menu">
         <p><a href="#content" class="accesaid">Skip navigation</a></p>
         <ul>
-            <li><a  href="generale_private.html">Generale</a></li>
+            <li><a  href="generale_private.php">Generale</a></li>
             <li><a class="active" href="">Promozioni</a></li>
-            <li><a href="prodotti_private.html">Prodotti</a></li>
-            <li><a href="lego.html">Pagina Negozio</a></li>
-            <li><a href="">Logout</a></li>
+            <li><a href="prodotti_private.php">Prodotti</a></li>
+            <li><a href="negozio.php">Pagina Negozio</a></li>
+            <li><a href="logout.php">Logout</a></li>
         </ul> 
     </div>
 
