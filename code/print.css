@@ -276,6 +276,7 @@ display: none;
 
 /*-----------NEGOZIO LEGO---------*/
 
+
 #titolo_negozio{
 	display: block;	
 	padding-top:1em;	
@@ -292,18 +293,20 @@ display: none;
 }
 
 #informazioni{
-	width:20%;
-	margin-left:5%;
+	width:30%;
+	margin-left:4%;
 	padding-top:1em;
 	float:left;
-	
+
 }
+#informazioni img{
+	width:70%; }
 
 #descrizione{
-	padding-top:1em;	
+	
 	margin-right:5%;
 	margin-left:31%;
-	margin-top:1em;	
+	
 }
 
 #logo_negozio{
@@ -323,13 +326,13 @@ display: none;
 }
 
 #contatti{
-	margin-top:1em;
-	padding-top:1em;
+	
+	padding-top:0.1em;
 	text-align: center;	
 }
 
 .informazione{
-	font-weight: 400;
+	font-weight: 100;
 	padding-top:1em;
 }
 
@@ -339,17 +342,17 @@ display: none;
 }
 
 .gioco{
-	width: 32%;
+	width: 30%;
 	height: auto;
 	display:inline-block;
-	padding-top:1em;
+
 }
 
 .titolo_prodotti{
 	display: block;	
 	padding-top:1em;	
 	margin-left: 5%;
-	margin-right: 5%;
+	margin-right: 3%;
 	padding-bottom: 1em;
 	font-size:1.5em;
 	letter-spacing: 10px;
@@ -361,7 +364,7 @@ display: none;
 }
 
 #promozioni{
-	padding-bottom:2em;
+	display:none;
 }
 
 
