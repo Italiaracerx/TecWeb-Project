@@ -1,0 +1,103 @@
+
+#contenutoHeader{
+	width: 90%;
+}
+#menu li {
+	width: 100%;	
+	font-size: 1em;
+}
+#menu li a{
+	padding: 7px 0em 7px 0em;
+}
+
+#breadcrumb{
+    font-size: 0.5em;   
+}
+
+#intestazione{
+	font-size: 1em;
+	padding: 1em;
+}
+
+#tabellaLaterale{
+	width: 100%;
+}
+#tabellaOrari {
+	font-size: 1em;
+	display: inline;
+}
+#sottoPiano h2{
+	font-size: 1em;
+}
+
+#sottoPiano{
+	width: 100%;
+}
+.casella{
+	width: 31.2%;
+}
+
+#footerMenu ul{
+	max-width: 100%;
+}
+
+#footerMenu li {
+	width: 100%;	
+	font-size: 1em;
+}
+
+#footerMenu li  a{
+	padding: 7px 0px 7px 0px;
+}
+.promozioneHome{
+	padding-left: 20%;
+}
+
+
+/*--------NEGOZIO-------*/
+.vetrina{
+	width: 60%;
+	margin-left: 20%;
+}
+
+
+/*--------NEGOZIO-LEGO---------*/
+#content_negozio{
+	text-align: center;
+}
+#logo_negozio{
+	width: 40%;
+	margin: auto;
+}
+#informazioni{
+	width: 100%;
+	margin: auto;
+}
+#descrizione{
+	display: inline-block;
+	width: 100%;
+	margin: 0em;
+}
+
+/*--------DOVE SIAMO--------*/
+
+
+#testoInformazioni{
+	width: 90%;
+	padding-left: 1em;
+}
+
+#mappa{
+	margin-left: 2%;
+	width: 90%;
+}
+
+
+
+
+
+
+
+
+
+

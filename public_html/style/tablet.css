@@ -1,0 +1,90 @@
+
+
+/*---HOME---*/
+.promozioneHome{
+	width: 50%;
+	padding-left: 25%;
+}
+
+#tabellaLaterale{
+	font-size: 0.9em;
+	padding: 0em;
+	margin: 0em;
+}
+#tabellaOrari{
+	margin: 0.5em;
+}
+/*-------NEGOZI-------*/
+
+
+/*--------NEGOZIO-LEGO---------*/
+
+#informazioni{
+	width:30%;
+	margin-left:2%;
+	padding-top:1em;
+	float:left;
+}
+
+#descrizione{
+	width: 55%;
+	margin-left:40%;
+}
+.prodotto{
+	width: 40%;
+}
+#promozioni{
+	display: inline-block;
+}
+
+.promo{
+	width: 40%;
+}
+
+/*----DOVE-SIAMO----*/
+
+#testoInformazioni{  
+	width:95%;
+	margin-left: 2%;
+
+}
+#testoInformazioni h3{
+    padding-top: 2em;
+}
+#mappa{
+ 	float: none;
+ 	margin-left: 20%;
+}
+
+/*----CONTATTI----*/
+
+#fotoContatti{
+	float: none;
+	margin-left: 20%;
+}
+
+
+/*---PROMOZIONI-PUBLIC----*/
+
+#PromozioniAttive{
+font-size: 0.8em;
+}
+
+.imgPromozione{
+	width: 40%;
+	margin-left: 20%;
+	margin-right: 20%;
+	text-align: center;
+	
+}
+
+.promozione{
+	width: 100%;
+}
+
+
+
+
+
+
+
