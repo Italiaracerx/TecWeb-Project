@@ -1,3 +1,4 @@
+
 * {
 	padding: 0em;
 	margin: 0em;
@@ -177,3 +178,19 @@ textarea{
 table{
 	margin: 0 auto;	
 }
+
+
+#demo {background-color: #bcbcbc;
+	text-align:center;}
+
+#demos {background-color: #bcbcbc;
+	text-align:center;}
+
+#demou_e {background-color: #bcbcbc;
+	text-align:center;}
+
+#demou_c {background-color: #bcbcbc;
+	text-align:center;}
+
+#demo_descrizione {background-color: #bcbcbc;
+	text-align:center;}

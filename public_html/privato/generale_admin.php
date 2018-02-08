@@ -6,12 +6,89 @@
 	<meta http-equiv="Content-Type" content="txt/html charset= UTF-8" />
 
 	<title>Centro Archimede</title>
-	<link rel="stylesheet" type="text/css" href="../style/admin.css" media="handheld, screen"/>
+	<link rel="stylesheet" type="text/css" href="admin.css" media="handheld, screen"/>
 	<!--<link rel="stylesheet" type="text/css" href="mobile.css" media="handheld, screen and (max-width:480px),
 	only screen and (max-device-width:480px)"/>per dispositivi mobili
 
 	<link rel="stylesheet" type="text/css" href="print" media="print"/>STAMPA
     -->
+
+    <script>
+
+
+function validateForm(form) {
+    if(form.Nome_negozio.value!="" && form.Nome_negozio.value!=" ")
+    {
+        if(form.Nome_utente.value!="" && form.Nome_utente.value!=" " && form.Nome_utente.value!="admin")
+        {
+   if (form.Password.value != form.Password_1.value || form.Password.value=="" || form.Password.value==" ") {
+    form.Password.focus()
+    form.Password.select()
+    var o="Password non corretta !!!";
+    document.getElementById("demo").innerHTML = o ;
+
+    return false
+  }
+  alert("CORRETTO");
+  return true
+}else{
+    var o="Nome utente non corretto!!!";
+    document.getElementById("demo").innerHTML = o ;
+return false;
+}
+
+}else{
+    var o="Nome negozio non corretto!!!";
+    document.getElementById("demo").innerHTML = o ;
+return false;
+}
+}
+
+function validateForm_1(form) {
+    
+   if (form.Password.value != form.Password_1.value || form.Password.value=="" || form.Password.value==" ") {
+    form.Password.focus()
+    form.Password.select()
+    var o="Password non corretta !!!";
+ document.getElementById("demos").innerHTML = o ;
+
+    return false
+  }
+  alert("CORRETTO");
+  return true
+}
+
+
+function validateUser(form) {
+   if (form.Username.value != form.Username_1.value || form.Username.value=="" || form.Username.value==" ") {
+    form.Username.focus()
+    form.Username.select()
+    var o="Nome negozio non corretto !!!";
+    document.getElementById("demou_e").innerHTML = o ;
+    return false
+  }
+  else{
+alert("CORRETTO");
+   return true}
+}
+
+function descrizione(form){
+    var uno=form.testo.value;
+
+    if(uno!="" && uno!=" ")
+    {
+        return true;
+    }
+    else{
+        var o="Descrizione non valida !!!";
+    document.getElementById("demo_descrizione").innerHTML = o ;
+    return false;
+
+    }
+}
+
+</script>
+
 </head>
  
 <body>
@@ -39,49 +116,70 @@
         <p id="benvenuto">Benvenuto <strong>AMMINISTRATORE</strong></p>
         <div class="BarraOperazione">
         <div class="BoxSuperiore">
-            <p class="intestazione">CREAZIONE NEGOZIO</p>
-            <form class="NuovoNegozio" action="NuovoNegozio.php" method="post">
+
+             <p class="intestazione">CREAZIONE NEGOZIO</p>
+            <div id="demo"></div>
+            <form class="NuovoNegozio" action="NuovoNegozio.php" method="post" onsubmit="return validateForm(this)">
+    
                 <label for="nome">Nome Negozio:</label>
-                <input name="username" type="text"/>
+                <input name="Nome_negozio" type="text"/>
+                
+                <label for="nome">Nome Utente:</label>
+                <input name="Nome_utente" type="text"/>    
+                
                 <label for="nome">Password:</label>
-                <input name="password"type="password"/>
+                <input name="Password" type="password"/>
+                
                 <label for="nome">Conferma Password:</label>
-                <input type="password"/>                      
+                <input name="Password_1" type="password"/> 
+                                     
                 <input type="reset" value="Reset"/>  
                 <input type="submit" value="Salva"/>
             </form>
         </div>
+
         <div class="BoxSuperiore">
             <p class="intestazione">ELIMINA NEGOZIO</p>
-            <form  class="NuovoNegozio"  action="EliminaNegozio.php" method="post">
+            <div id="demou_e"></div><div id="demou_c"></div>
+            <form  class="NuovoNegozio" action="EliminaNegozio.php" method="post"  onsubmit="return validateUser(this)">
+            
                 <label for="nome">Nome Negozio:</label>
-                <input name="negozio" type="text"/>     
+                <input name="Username" type="text"/>   
+                  
                 <label for="nome">Conferma Nome Negozio:</label>
-                <input type="text"/>             
+                <input name="Username_1" type="text"/>           
+                  
                 <input type="reset" value="Reset"/>  
                 <input type="submit" value="Salva"/>
+                
             </form>
         </div>
         </div>
         <div class="BarraOperazione">
         <div class="BoxSuperiore">
-            <p class="intestazione">MODIFICA PASSWORD</p>
-            <form class="NuovoNegozio" action="input_password.php" method="post">
+           <p class="intestazione">MODIFICA PASSWORD</p>
+            <div id="demos"></div>
+            <form class="NuovoNegozio" action="input_password.php" method="post" onsubmit="return validateForm_1(this)">
+            
                 <label for="nome">Password:</label>
-                <input name="password" type="password"/>
+                <input name="Password" type="password"/>
+                
                 <label for="nome">Conferma Password:</label>
-                <input type="password"/>                      
+                <input name="Password_1" type="password"/>                   
+                   
                 <input type="reset" value="Reset"/>  
                 <input type="submit" value="Salva"/>
             </form>
-        </div>
+        </div>        
         <div class="BoxSuperiore">
             <p class="intestazione">NUOVO EVENTO</p>
-            <form class="NuovoNegozio" action="input_evento.php" method="post">
+           <form class="NuovoNegozio" action="input_evento.php" method="post" onsubmit="return descrizione(this)">
+                <div id="demo_descrizione"></div>
                 <label for="nome">Descrizione:</label>
-                <textarea type="text" name="descrizione"></textarea>
+                <textarea name="testo"></textarea>
+
                 <input type="reset" value="Reset"/>  
-                <input type="submit" value="Salva"/>
+                <input type="submit" value="Salva" />
             </form>
     </div>
 

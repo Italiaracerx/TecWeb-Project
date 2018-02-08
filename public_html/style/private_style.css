@@ -293,3 +293,38 @@ label{
 	background-color: #A9A9A9;
 	 cursor: pointer;
 }
+
+
+#demo_passw {background-color: #bcbcbc;
+	text-align:center;}
+
+#demo_corario {background-color: #bcbcbc;
+	text-align:center;}
+
+#demo_oktel {background-color: #bcbcbc;
+	text-align:center;}
+
+#demo_okmail {background-color: #bcbcbc;
+	text-align:center;
+}
+
+#demo_sito {background-color: #bcbcbc;
+	text-align:center;
+}
+
+#demo_descrizione {background-color: #bcbcbc;
+	text-align:center;
+}
+
+#demo_nomenegozio {background-color: #bcbcbc;
+	text-align:center;
+}
+
+#demo_orario {background-color: #bcbcbc;
+	text-align:center;
+}
+
+#esempio{
+	font-size: 0.85em;
+	margin-bottom: 1em;
+}
