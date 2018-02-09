@@ -2,7 +2,8 @@
 include('check_session.php');
 include('general_private_dat.php');
 ?>
- <script src="general_private_fun.js"></script> 
+
+<script src="general_private_fun.js"></script>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -11,7 +12,7 @@ include('general_private_dat.php');
 	<!-- Specifico il charset -->
     <title>Centro Archimede</title>
 	<meta http-equiv="Content-Type" content="txt/html charset= UTF-8" />
-	<link rel="stylesheet" type="text/css" href="private_style.css" media="handheld, screen"/>
+	<link rel="stylesheet" type="text/css" href="../style/private_style.css" media="handheld, screen"/>
 	<!--
     <link rel="stylesheet" type="text/css" href="private_tablet.css" media="handheld, screen and (max-width:768px), 
     only screen and (max-device-width:768px)"/> 
