@@ -6,7 +6,7 @@
 	<meta http-equiv="Content-Type" content="txt/html charset= UTF-8" />
 
 	<title>Centro Archimede</title>
-	<link rel="stylesheet" type="text/css" href="admin.css" media="handheld, screen"/>
+	<link rel="stylesheet" type="text/css" href="../style/admin.css" media="handheld, screen"/>
 	<!--<link rel="stylesheet" type="text/css" href="mobile.css" media="handheld, screen and (max-width:480px),
 	only screen and (max-device-width:480px)"/>per dispositivi mobili
 
@@ -17,14 +17,14 @@
 
 
 function validateForm(form) {
-    if(form.Nome_negozio.value!="" && form.Nome_negozio.value!=" ")
+    if(form.nome_negozio.value!="" && form.nome_negozio.value!=" ")
     {
-        if(form.Nome_utente.value!="" && form.Nome_utente.value!=" " && form.Nome_utente.value!="admin")
+        if(form.nome_utente.value!="" && form.nome_utente.value!=" " && form.nome_utente.value!="admin")
         {
-   if (form.Password.value != form.Password_1.value || form.Password.value=="" || form.Password.value==" ") {
-    form.Password.focus()
-    form.Password.select()
-    var o="Password non corretta !!!";
+   if (form.password.value != form.password_1.value || form.password.value=="" || form.password.value==" ") {
+    form.password.focus()
+    form.password.select()
+    var o="password non corretta !!!";
     document.getElementById("demo").innerHTML = o ;
 
     return false
@@ -46,10 +46,10 @@ return false;
 
 function validateForm_1(form) {
     
-   if (form.Password.value != form.Password_1.value || form.Password.value=="" || form.Password.value==" ") {
-    form.Password.focus()
-    form.Password.select()
-    var o="Password non corretta !!!";
+   if (form.password.value != form.password_1.value || form.password.value=="" || form.password.value==" ") {
+    form.password.focus()
+    form.password.select()
+    var o="password non corretta !!!";
  document.getElementById("demos").innerHTML = o ;
 
     return false
@@ -122,16 +122,16 @@ function descrizione(form){
             <form class="NuovoNegozio" action="NuovoNegozio.php" method="post" onsubmit="return validateForm(this)">
     
                 <label for="nome">Nome Negozio:</label>
-                <input name="Nome_negozio" type="text"/>
+                <input name="nome_negozio" type="text"/>
                 
                 <label for="nome">Nome Utente:</label>
-                <input name="Nome_utente" type="text"/>    
+                <input name="nome_utente" type="text"/>    
                 
-                <label for="nome">Password:</label>
-                <input name="Password" type="password"/>
+                <label for="nome">password:</label>
+                <input name="password" type="password"/>
                 
-                <label for="nome">Conferma Password:</label>
-                <input name="Password_1" type="password"/> 
+                <label for="nome">Conferma password:</label>
+                <input name="password_1" type="password"/> 
                                      
                 <input type="reset" value="Reset"/>  
                 <input type="submit" value="Salva"/>
@@ -157,15 +157,15 @@ function descrizione(form){
         </div>
         <div class="BarraOperazione">
         <div class="BoxSuperiore">
-           <p class="intestazione">MODIFICA PASSWORD</p>
+           <p class="intestazione">MODIFICA password</p>
             <div id="demos"></div>
             <form class="NuovoNegozio" action="input_password.php" method="post" onsubmit="return validateForm_1(this)">
             
-                <label for="nome">Password:</label>
-                <input name="Password" type="password"/>
+                <label for="nome">password:</label>
+                <input name="password" type="password"/>
                 
-                <label for="nome">Conferma Password:</label>
-                <input name="Password_1" type="password"/>                   
+                <label for="nome">Conferma password:</label>
+                <input name="password_1" type="password"/>                   
                    
                 <input type="reset" value="Reset"/>  
                 <input type="submit" value="Salva"/>
