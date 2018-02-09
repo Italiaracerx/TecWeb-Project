@@ -21,7 +21,7 @@ include('general_private_dat.php');
 
 function validateForm(form) {
     
-   if (form.Password.value != form.Password_1.value || form.Password.value=="" || form.Password.value==" ") {
+   if (form.Password.value != form.password.value || form.Password.value=="" || form.Password.value==" ") {
     form.Password.focus()
     form.Password.select()
     var o="ERRORE !!!";
@@ -30,7 +30,6 @@ function validateForm(form) {
     return false
   }
   else{
-      alert("INSERIMENTO RIUSCITO !");
   return true}
 }
 
@@ -57,7 +56,6 @@ function checkEmail(){
   if (validaEmail(email) && email!="" && email!=" ") {
       if(sito!="" && sito!=" ")
     {
-        alert("INSERIMENTO COMPLETATO");
         return true;}
     else{
         var a="EMAIL OK !!!";
@@ -83,80 +81,233 @@ return false;
 return true;
 }
 
- 
+
 function checkorario(form){
     
-    var Lunedi=form.orario.value;
-    var Martedi =form.orario_1.value;
-    var Mercoledi=form.orario_2.value;
-    var Giovedi=form.orario_3.value;
-    var Venerdi=form.orario_4.value;
-    var Sabato=form.orario_5.value;
-    var Domenica=form.orario_6.value;
+    var Lunedi=form.lunedi.value;
+    var Martedi =form.martedi.value;
+    var Mercoledi=form.mercoledi.value;
+    var Giovedi=form.giovedi.value;
+    var Venerdi=form.venerdi.value;
+    var Sabato=form.sabato.value;
+    var Domenica=form.domenica.value;
 
-    
-    var controlla=Lunedi.slice(2, -2);
-    var controlla_1=Martedi.slice(2, -2);
-    var controlla_2=Mercoledi.slice(2, -2);
-    var controlla_3=Giovedi.slice(2, -2);
-    var controlla_4=Venerdi.slice(2, -2);
-    var controlla_5=Sabato.slice(2, -2);
-    var controlla_6=Domenica.slice(2, -2);
-    
-    if(controlla!="-" || controlla_1!="-" || controlla_2!="-" || controlla_3!="-" || controlla_4!="-" || controlla_5!="-" 
-        || controlla_6!="-")
-    {var o="Formato orario errato !!!";
-    document.getElementById("demo_orario").innerHTML = o ;
-    return false;}
-    
-    var uno=Lunedi.split("-");
-    var due=Martedi.split("-");
-    var tre=Mercoledi.split("-");
-    var quattro=Giovedi.split("-");
-    var cinque=Venerdi.split("-");
-    var sei=Sabato.split("-");
-    var sette=Domenica.split("-");
-
-    var verifico=parseInt(uno[0])
-    var verifico_0=parseInt(uno[1])
-
-    var verifico_1=parseInt(due[0])
-    var verifico_2=parseInt(due[1])
-
-    var verifico_3=parseInt(tre[0])
-    var verifico_4=parseInt(tre[1])
-
-    var verifico_5=parseInt(quattro[0])
-    var verifico_6=parseInt(quattro[1])
-
-    var verifico_7=parseInt(cinque[0])
-    var verifico_8=parseInt(cinque[1])
-
-    var verifico_9=parseInt(sei[0])
-    var verifico_10=parseInt(sei[1])
-
-    var verifico_11=parseInt(sette[0])
-    var verifico_12=parseInt(sette[1])
-
-    if(verifico<8 || verifico>=21 || verifico_0<=8 || verifico_0>21 ||
-        verifico_1<8 || verifico_1>=21 || verifico_2<=8 || verifico_2>21 ||
-        verifico_3<8 || verifico_3>=21 || verifico_4<=8 || verifico_4>21 ||
-        verifico_5<8 || verifico_5>=21 || verifico_6<=8 || verifico_6>21 ||
-        verifico_7<8 || verifico_7>=21 || verifico_8<=8 || verifico_8>21 ||
-        verifico_9<8 || verifico_9>=21 || verifico_10<=8 || verifico_10>21 ||
-        verifico_11<8 || verifico_11>=21 || verifico_12<=8 || verifico_12>21 )
-        { var o="Orario non valido !!!";
+    if(Lunedi=="" || Martedi=="" || Mercoledi=="" || Giovedi=="" || Venerdi=="" || Sabato=="" || Domenica=="")
+    {
+        var o="Tabella orario non completa !!!";
     document.getElementById("demo_orario").innerHTML = o ;
     return false;
-        }
-else{    
-    return true;}
+    }
+
+    var controlla=Lunedi.slice(5, -5);
+    var controlla_1=Martedi.slice(5, -5);
+    var controlla_2=Mercoledi.slice(5, -5);
+    var controlla_3=Giovedi.slice(5, -5);
+    var controlla_4=Venerdi.slice(5, -5);
+    var controlla_5=Sabato.slice(5, -5);
+    var controlla_6=Domenica.slice(5, -5);
+
+    if(controlla!="-" )  
+    {var o="Lunedì: ATTENZIONE carattere , '-' , ':' mancante !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+    if(controlla_1!="-")
+        {var o="Martedì: ATTENZIONE carattere , '-' , ':' mancante !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+    if(controlla_2!="-")
+        {var o="Mercoledì: ATTENZIONE carattere , '-' , ':' mancante !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+    if(controlla_3!="-")
+        {var o="Giovedì: ATTENZIONE carattere , '-' , ':' mancante !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+    if(controlla_4!="-")
+        {var o="Venerdì: ATTENZIONE carattere , '-' , ':' mancante !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+    if(controlla_5!="-")
+        {var o="Sabato: ATTENZIONE carattere , '-' , ':' mancante !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+    if(controlla_6!="-")
+         {var o="Domenica: ATTENZIONE carattere , '-' , ':' mancante !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+    
+    var primi_punti=Lunedi.slice(2, -8);
+    var primi_punti_1=Martedi.slice(2, -8);
+    var primi_punti_2=Mercoledi.slice(2, -8);
+    var primi_punti_3=Giovedi.slice(2, -8);
+    var primi_punti_4=Venerdi.slice(2, -8);
+    var primi_punti_5=Sabato.slice(2, -8);
+    var primi_punti_6=Domenica.slice(2, -8);
+
+    if(primi_punti!=":")  
+    {var o="Lunedì: Mettere ':' tra hh:mm nell'orario apertura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+    if(primi_punti_1!=":")
+        {var o="Martedì: Mettere ':' tra hh:mm nell'orario apertura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+    if(primi_punti_2!=":")
+        {var o="Mercoledì: Mettere ':' tra hh:mm nell'orario apertura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+    if(primi_punti_3!=":")
+        {var o="Giovedì: Mettere ':' tra hh:mm nell'orario apertura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+    if(primi_punti_4!=":")
+        {var o="Venerdì: Mettere ':' tra hh:mm nell'orario apertura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+    if(primi_punti_5!=":")
+        {var o="Sabato: Mettere ':' tra hh:mm nell'orario apertura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+    if(primi_punti_6!=":")
+        {var o="Domenica: Mettere ':' tra hh:mm nell'orario apertura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+
+    var finali_punti=Lunedi.slice(8, -2);
+    var finali_punti_1=Martedi.slice(8, -2);
+    var finali_punti_2=Mercoledi.slice(8, -2);
+    var finali_punti_3=Giovedi.slice(8, -2);
+    var finali_punti_4=Venerdi.slice(8, -2);
+    var finali_punti_5=Sabato.slice(8, -2);
+    var finali_punti_6=Domenica.slice(8, -2);
+
+    if(finali_punti!=":")
+    {var o="Lunedì: Mettere ':' tra hh:mm nell'orario chiusura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+    if(finali_punti_1!=":")
+        {var o="Martedì: Mettere ':' tra hh:mm nell'orario chiusura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+    if(finali_punti_2!=":")
+        {var o="Mercoledì: Mettere ':' tra hh:mm nell'orario chiusura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+    if(finali_punti_3!=":")
+        {var o="Giovedì: Mettere ':' tra hh:mm nell'orario chiusura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+    if(finali_punti_4!=":")
+        {var o="Venerdì: Mettere ':' tra hh:mm nell'orario chiusura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+    if(finali_punti_5!=":")
+        {var o="Sabato: Mettere ':' tra hh:mm nell'orario chiusura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+    if(finali_punti_6!=":")
+         {var o="Domenica: Mettere ':' tra hh:mm nell'orario chiusura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+    
+    var uno=Lunedi.split("-");
+    var lun_a=uno[0].split(":");
+    var lun_c=uno[1].split(":");
+
+    var due=Martedi.split("-");
+    var mar_a=due[0].split(":");
+    var mar_c=due[1].split(":");
+
+    var tre=Mercoledi.split("-");
+    var mec_a=tre[0].split(":");
+    var mec_c=tre[1].split(":");
+
+    var quattro=Giovedi.split("-");
+    var gio_a=quattro[0].split(":");
+    var gio_c=quattro[1].split(":");
+
+    var cinque=Venerdi.split("-");
+    var ven_a=cinque[0].split(":");
+    var ven_c=cinque[1].split(":");
+
+    var sei=Sabato.split("-");
+    var sab_a=sei[0].split(":");
+    var sab_c=sei[1].split(":");
+
+    var sette=Domenica.split("-");
+    var dom_a=sette[0].split(":");
+    var dom_c=sette[1].split(":");
+
+
+    var lunedi_open_0=parseInt(lun_a[0]);
+    var lunedi_open_1=parseInt(lun_a[1]);
+    var lunedi_close_0=parseInt(lun_c[0]);
+    var lunedi_close_1=parseInt(lun_c[1]);
+
+    var martedi_open_0=parseInt(mar_a[0]);
+    var martedi_open_1=parseInt(mar_a[1]);
+    var martedi_close_0=parseInt(mar_c[0]);
+    var martedi_close_1=parseInt(mar_c[1]);
+
+    var mercoledi_open_0=parseInt(mec_a[0]);
+    var mercoledi_open_1=parseInt(mec_a[1]);
+    var mercoledi_close_0=parseInt(mec_c[0]);
+    var mercoledi_close_1=parseInt(mec_c[1]);
+
+    var giovedi_open_0=parseInt(gio_a[0]);
+    var giovedi_open_1=parseInt(gio_a[1]);
+    var giovedi_close_0=parseInt(gio_c[0]);
+    var giovedi_close_1=parseInt(gio_c[1]);
+
+    var venerdi_open_0=parseInt(ven_a[0]);
+    var venerdi_open_1=parseInt(ven_a[1]);
+    var venerdi_close_0=parseInt(ven_c[0]);
+    var venerdi_close_1=parseInt(ven_c[1]);
+
+    var sabato_open_0=parseInt(sab_a[0]);
+    var sabato_open_1=parseInt(sab_a[1]);
+    var sabato_close_0=parseInt(sab_c[0]);
+    var sabato_close_1=parseInt(sab_c[1]);
+
+    var domenica_open_0=parseInt(dom_a[0]);
+    var domenica_open_1=parseInt(dom_a[1]);
+    var domenica_close_0=parseInt(dom_c[0]);
+    var domenica_close_1=parseInt(dom_c[1]);
+
+
+
+
+    if(lunedi_open_0<8 || lunedi_open_0>=21 || (lunedi_open_0==21 && lunedi_open_1>0 )|| (lunedi_open_0==8 && lunedi_open_1<30 )|| lunedi_open_1>59)
+        { var o="Orario apertura Lunedì non valido !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+    
+    if(martedi_open_0<8 || martedi_open_0>=21 || martedi_open_0==21 && martedi_open_1>0 || martedi_open_0==8 && martedi_open_1<30 || martedi_open_1>59)
+            { var o="Orario apertura Martedì non valido !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+    if(mercoledi_open_0<8 || mercoledi_open_0>=21 || mercoledi_open_0==21 && mercoledi_open_1>0 || mercoledi_open_0==8 && mercoledi_open_1<30 || mercoledi_open_1>59)
+            { var o="Orario apertura Mercoledì non valido !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+    if(giovedi_open_0<8 || giovedi_open_0>=21 || giovedi_open_0==21 && giovedi_open_1>0 || giovedi_open_0==8 && giovedi_open_1<30 || giovedi_open_1>59)
+        { var o="Orario apertura Giovedì non valido !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+    if( venerdi_open_0<8 || venerdi_open_0>=21 || venerdi_open_0==21 && venerdi_open_1>0 || venerdi_open_0==8 && venerdi_open_1<30 || venerdi_open_1>59)
+        { var o="Orario apertura Venerdì non valido !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+    if( sabato_open_0<8 || sabato_open_0>=21 || sabato_open_0==21 && sabato_open_1>0 || sabato_open_0==8 && sabato_open_1<30 || sabato_open_1>59)
+        { var o="Orario apertura Sabato non valido !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+    if(domenica_open_0<8 || domenica_open_0>=21 || domenica_open_0==21 && domenica_open_1>0 || domenica_open_0==8 && domenica_open_1<30 || domenica_open_1>59)
+        { var o="Orario apertura Domenica non valido !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+      
+
+
+           if(lunedi_close_0<=9 || lunedi_close_0>21 || lunedi_close_0==21 && lunedi_close_1>0 || lunedi_close_1>59) 
+            { var o="Orario chiusura Lunedì non valido !!!";document.getElementById("demo_orario").innerHTML = o ; return false;}
+        
+           if( martedi_close_0<=9 || martedi_close_0>21 || martedi_close_0==21 && martedi_close_1>0 || martedi_close_1>59)
+             { var o="Orario chiusura Martedì non valido !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+           if( mercoledi_close_0<=9 || mercoledi_close_0>21 || mercoledi_close_0==21 && mercoledi_close_1>0 || mercoledi_close_1>59)
+             { var o="Orario chiusura Mercoledì non valido !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+           if(giovedi_close_0<=9 || giovedi_close_0>21 || giovedi_close_0==21 && giovedi_close_1>0 || giovedi_close_1>59)
+                 { var o="Orario chiusura Giovedì non valido !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+            if(venerdi_close_0<=9 || venerdi_close_0>21 || venerdi_close_0==21 && venerdi_close_1>0 || venerdi_close_1>59)
+                 { var o="Orario chiusura Venerdì non valido !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+           if(sabato_close_0<=9 || sabato_close_0>21 || sabato_close_0==21 && sabato_close_1>0 || sabato_close_1>59)
+                 { var o="Orario chiusura Sabato non valido !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+         if( domenica_close_0<=9 || domenica_close_0>21 || domenica_close_0==21 && domenica_close_1>0 || domenica_close_1>59)
+            { var o="Orario chiusura Domenica non valido !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}
+
+        else{return true;}
 }
 
 
 function descrizione(form){
-    var uno=form.testo.value;
-    var due=form.testo_1.value;
+    var uno=form.testo_motto.value;
+    var due=form.testo_descrizione.value;
 
     if(uno!="" && uno!=" " && due!="" && due!=" ")
     {
@@ -171,7 +322,7 @@ function descrizione(form){
 }
 
 function negozio(form){
-    var nome=form.Negozio.value;
+    var nome=form.campo.value;
     if(nome!="" && nome!=" ")
         {return true;}
     else{
@@ -185,10 +336,13 @@ function negozio(form){
 function onlyNumeric(evt){
    
    var charCode=(evt.which)?evt.which:event.keyCode;
-   if(charCode!=45 && (charCode<48 || charCode>57))
+   if(charCode!=8)
+   {
+    if(charCode==118 || charCode==99 || charCode==97){return true;}
+    if(charCode!=45  && (charCode<48 || charCode>58))
       {return false;}
-   return true;
-}
+return true;
+}}
 
 </script>
 
@@ -235,21 +389,21 @@ function onlyNumeric(evt){
                     <form class="form" action="input_contatti.php" method="post" onsubmit="return checkEmail()" >
                         
                         <label>Telefono / Fax:</label>
-                        <input type="text" id="telefono"
+                        <input type="text" id="telefono" name="Telefono"
                         value="
                         <?php 
                             echo $info['telefono'];
                         ?>" />
 
                         <label>Email:</label>
-                        <input id="email"  type="text"
+                        <input id="email"  type="text" name="Email"
                          value="
                         <?php
                             echo $info['mail'];
                         ?>" />
 
                         <label>Sito web:</label>
-                        <input id="Sito" type="text" 
+                        <input id="Sito" type="text" name="Sito_web"
                         value="<?php
                             echo $info['sito'];
                         ?>" />
@@ -270,7 +424,7 @@ function onlyNumeric(evt){
                         <input name="Password" type="password"/>
                         
                         <label>Conferma Password:</label>
-                        <input name="Password_1" type="password"/>
+                        <input name="password" type="password"/>
                         
                         <div class="invia">               
                             <input type="reset" value="Reset"/>  
@@ -294,7 +448,7 @@ function onlyNumeric(evt){
 
                        <form action="input_nomeNegozio.php" method="post" onsubmit="return negozio(this)">
                             Nome:
-                            <input name="Negozio" type="text" value="<?php
+                            <input name="campo" type="text" value="<?php
                             echo $info["negozio"];
                             ?>" />
 
@@ -306,52 +460,52 @@ function onlyNumeric(evt){
             <div id="sotto">
                 <div id="sinistra">
                     <p class="intestazione">MODIFICA ORARIO</p>
-                    <p id="esempio">Scrivere l'orario nel formato hh-hh, ad es. 04-12 o 12-20<br/>
+                    <p id="esempio">Scrivere l'orario nel formato hh:mm-hh:mm, <br/>ad es. 08:30-12:30 <br/>
                     ATTENZIONE l'orario non può sforare l'ora di apertura e chiusura del centro.<br/>
-                Non è possibile inserire caratteri alfabetici tranne "-" (trattino).</p>
+                Non è possibile inserire caratteri alfabetici eccetto "-", ":".</p>
                     <div id="demo_orario"></div>
                     <form action="input_orario.php" method="post" onsubmit="return checkorario(this)" >
 
                         <label> Lunedì :</label>
-                        <input name="orario" class="orario" type="text" maxlength="5" onkeypress="return onlyNumeric(event);"
+                        <input name="lunedi" class="orario" type="text" maxlength="11" onkeypress="return onlyNumeric(event);"
                         value="<?php
                             echo $orario['lunedi'];
                         ?>"
                         />
 
                         <label> Martedì :</label>
-                        <input name="orario_1" class="orario" type="text" maxlength="5" onkeypress="return onlyNumeric(event);"
+                        <input name="martedi" class="orario" type="text" maxlength="11" onkeypress="return onlyNumeric(event);"
                         value="<?php
                             echo $orario['martedi'];
                         ?>"
                         />
 
                         <label> Mercoledì :</label>
-                        <input name="orario_2" class="orario" type="text" maxlength="5" onkeypress="return onlyNumeric(event);"
+                        <input name="mercoledi" class="orario" type="text" maxlength="11" onkeypress="return onlyNumeric(event);"
                         value="<?php
                             echo $orario['mercoledi'];
                         ?>"/>
 
                         <label> Giovedì :</label>
-                        <input name="orario_3" class="orario" type="text" maxlength="5" onkeypress="return onlyNumeric(event);" 
+                        <input name="giovedi" class="orario" type="text" maxlength="11" onkeypress="return onlyNumeric(event);" 
                         value="<?php
                             echo $orario['giovedi'];
                         ?>" />
 
                         <label> Venerdì :</label>
-                        <input name="orario_4" class="orario" type="text" maxlength="5" onkeypress="return onlyNumeric(event);"
+                        <input name="venerdi" class="orario" type="text" maxlength="11" onkeypress="return onlyNumeric(event);"
                          value="<?php
                             echo $orario['venerdi'];
                         ?>" />
 
                         <label> Sabato :</label>
-                        <input name="orario_5" class="orario" type="text" maxlength="5" onkeypress="return onlyNumeric(event);"
+                        <input name="sabato" class="orario" type="text" maxlength="11" onkeypress="return onlyNumeric(event);"
                         value="<?php
                             echo $orario['sabato'];
                         ?>" />
 
                         <label> Domenica :</label>
-                        <input name="orario_6" class="orario" type="text" maxlength="5" onkeypress="return onlyNumeric(event);"
+                        <input name="domenica" class="orario" type="text" maxlength="11" onkeypress="return onlyNumeric(event);"
                          value="<?php
                             echo $orario['domenica'];
                         ?>" />
@@ -368,7 +522,7 @@ function onlyNumeric(evt){
 
                             <label>Motto:</label>                    
                             <div class="box">                        
-                                <textarea rows="2" name="testo" cols="50">
+                                <textarea rows="2" name="testo_motto" cols="50">
                                     <?php
                                           echo $info['titolo'];
                                      ?>
@@ -376,7 +530,7 @@ function onlyNumeric(evt){
                             </div> 
                             <label>Descrizione:</label>
                             <div class="box">                        
-                                <textarea rows="5" name="testo_1" cols="50">
+                                <textarea rows="5" name="testo_descrizione" cols="50">
                                     <?php
                                         echo $info['descrizione'];
                                         ?>
