@@ -68,14 +68,14 @@ include('general_private_dat.php');
                     <form class="form" action="input_contatti.php" method="post" onsubmit="return checkEmail()" >
                         
                         <label>Telefono / Fax:</label>
-                        <input type="text" id="telefono" name="Telefono"
+                        <input type="text" id="Telefono" name="Telefono"
                         value="
                         <?php 
                             echo $info['telefono'];
                         ?>" />
 
                         <label>Email:</label>
-                        <input id="email"  type="text" name="Email"
+                        <input id="Email"  type="text" name="Email"
                          value="
                         <?php
                             echo $info['mail'];
@@ -100,7 +100,7 @@ include('general_private_dat.php');
                      <form class="form" action="input_password.php" method="post" onsubmit="return validateForm(this)">
                     
                         <label>Password:</label>
-                        <input name="Password" type="password"/>
+                        <input id="password" name="password" type="password"/>
                         
                         <label>Conferma Password:</label>
                         <input name="password" type="password"/>
@@ -199,7 +199,7 @@ include('general_private_dat.php');
                         <div id="demo_descrizione"></div>
                         <form action="input_descrizioni.php" method="post" onsubmit="return descrizione(this)">
 
-                            <label>Motto:</label>                    
+                            <label>Titolo:</label>                    
                             <div class="box">                        
                                 <textarea rows="2" name="testo_motto" cols="50">
                                     <?php

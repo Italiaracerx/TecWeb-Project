@@ -7,7 +7,7 @@ include("connessione_db.php");
 $descrizione=$_POST['testo_descrizione'];
 $motto=$_POST['testo_motto'];
 
-$query="UPDATE info SET descrizione='$descrizione'/*, motto='$motto'*/ WHERE username='$user';";
+$query="UPDATE info SET descrizione='$descrizione', titolo='$motto' WHERE username='$user';";
 mysqli_query($connessione, $query);
 mysqli_close($connessione);
 
