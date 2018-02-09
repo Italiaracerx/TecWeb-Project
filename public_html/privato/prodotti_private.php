@@ -43,16 +43,20 @@ include('check_session.php');
         <h2><strong>LEGO</strong> > PRODOTTI</h2>
     </div>
     <div id="content">
+            <?php 
+                unset($_SESSION['flag_text']);
+                $_SESSION['flag_text']='prodotti';
+            ?>
         <div id="ContentPromozioni">
             <div id="ColonnaSinistra">
                 <div class="NuovaPromozione">
                     <p class="intestazione">NUOVO PRODOTTO</p>
-                    <form action="" method="post">
+                    <form action="input_logo.php" method="post">
                         <p class="SottoTitolo">Descrizione prodotto:</p>
-                        <textarea cols="30" rows="10"></textarea>
+                        <textarea id="text" name="text" cols="30" rows="10"></textarea>
                         <p class="SottoTitolo">Seleziona il prodotto da inserire:</p>
-                        <input type="file" name="img"/>
-                        <input class="invia" type="submit" value="Salva"/>                                                        
+                        <input type="file" name="fileToUpload"/>
+                        <input class="submit" type="submit" value="Salva"/>                                                        
                     </form>
                 </div>
             </div>

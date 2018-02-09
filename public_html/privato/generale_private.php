@@ -55,6 +55,11 @@ include('general_private_dat.php');
              echo $user;
              ?></strong></p>
 
+             <?php 
+                unset($_SESSION['flag_text']);
+                $_SESSION['flag_text']='PaginaGenerale';
+            ?>
+
             <div id="sopra">
                 <div class="boxSopra">
                     <p class="intestazione">MODIFICA CONTATTI</p>
@@ -110,11 +115,11 @@ include('general_private_dat.php');
                 <div id="secondo">               
                 <div class="boxSotto">
                     <p class="intestazione">MODIFICA LOGO</p>
-                    <form action="" method="post">
-                        Select a file: <input id="file" type="file" name="img"/>
-                        <input type="reset" value="Reset"/>
-                        <input type="submit" value="Salva"/>
-                        </form>
+                    <form action="input_logo.php" method="post" enctype="multipart/form-data">
+                    Seleziona un immagine:
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                    <input type="submit" value="Salva" name="submit">
+                    </form>
                 </div>
                 <div class="boxSotto">
                         <p class="intestazione">MODIFICA NOME NEGOZIO</p>

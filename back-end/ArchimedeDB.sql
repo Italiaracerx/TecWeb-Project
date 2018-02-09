@@ -35,16 +35,21 @@ CREATE TABLE info(
 );
 
 CREATE TABLE prodotti(
-	username varchar(64) PRIMARY KEY,
+	username varchar(64) NOT NULL,
 	prodotto varchar(64) NOT NULL,
 	alt varchar(64) NOT NULL,
-	descrizione varchar(64) NOT NULL
+	descrizione varchar(64) NOT NULL,
+	/*ATTENZIONE CHE ALT E DESCRIZIONE POTREBBERO ESSERE LA STESSA COSA*/
+	data datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (username, prodotto)
 );
 
 CREATE TABLE promozioni(
-	username varchar(64) PRIMARY KEY,
+	username varchar(64) NOT NULL,
 	promozione varchar(64) NOT NULL,
-	alt varchar(64) NOT NULL
+	alt varchar(64) NOT NULL,
+	data datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (username, promozione)
 );
 
 CREATE TABLE eventi(
