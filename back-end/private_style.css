@@ -293,3 +293,23 @@ label{
 	background-color: #A9A9A9;
 	 cursor: pointer;
 }
+
+#correct{
+	font-size: 1em;
+    text-transform: uppercase;
+	padding-top:0.5em;
+	padding-bottom:0.5em;
+	font-weight: normal;
+	text-align: center;
+	background-color: green;
+}
+
+#error{
+	font-size: 1em;
+    text-transform: uppercase;
+	padding-top:0.5em;
+	padding-bottom:0.5em;
+	font-weight: normal;
+	text-align: center;
+	background-color: red;
+}

@@ -6,8 +6,10 @@ session_start();
 session_unset();
 // Infine , distrugge la sessione.
 session_destroy(); 
-
-echo '<script language=javascript>document.location.href="login.php"</script>';
-//echo '<script language=javascript>document.location.href="../privato/login.php"</script>';
+session_start();
+include('config_session.php');
+$_SESSION['flag']=1;
+$_SESSION['flag_text']="Logout effettuato con successo.";
+header("Location: login.php");
 
 ?>

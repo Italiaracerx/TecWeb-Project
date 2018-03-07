@@ -1,45 +1,46 @@
 <?php
-session_start(); //inizio la sessione
-//includo i file necessari a collegarmi al db con relativo script di accesso
-//include("config.php");
-include("connessione_db.php");
-  
-//variabili POST con anti sql Injection
-$username=mysqli_real_escape_string($connessione,$_POST['username']); //faccio l'escape dei caratteri dannosi
-$password=mysqli_real_escape_string($connessione,$_POST['password']); //sha1 cifra la password anche qui in questo modo corrisponde con quella del db
- 
- $query = " SELECT * FROM accountNegozi WHERE username = '$username' AND password = '$password' ";
- $ris = mysqli_query($connessione,$query) or die (mysqli_error($connessione));
- $riga=mysqli_fetch_array($ris);  
- 
-/*Prelevo l'identificativo dell'utente */
-$cod=$riga['username'];
- 
-/* Effettuo il controllo */
-if ($cod == NULL) $trovato = 0 ;
-else $trovato = 1;
- 
-/* Username e password corrette */
-if($trovato == 1) {
- /*Registro la sessione*/ 
-  $_SESSION["autorizzato"] = 1;
- 
-  /*Registro il codice dell'utente*/
-  $_SESSION['cod'] = $cod;
- 
-/*Redirect alla pagina riservata*/
-if($cod == "admin"){
- 	echo '<script language=javascript>document.location.href="generale_admin.php"</script>';
+
+session_start();//apro la sessione
+
+include("connessione_db.php");//apro la connessione con il database
+echo $_SESSION['flag'];
+if($_SESSION['flag'] == 0){
+  //variabili POST con anti sql Injection
+  $username=mysqli_real_escape_string($connessione,$_POST['username']);
+  $password=mysqli_real_escape_string($connessione,$_POST['password']);
+  $errore=false;
+  $password= hash('sha1',$password);//eseguo l'hash della password con l'algo sha1
+  $query = " SELECT A.username, T.user_type, T.link FROM account A INNER JOIN type_account T ON A.type = T.user_type WHERE username = '$username' AND password = '$password' ";
+  if($risultato = mysqli_query($connessione,$query)){
+    $utente=mysqli_fetch_array($risultato);
+    if($utente['username'] != NULL){
+      //setto nell'array di sessione le informazioni
+      $_SESSION['user']=$utente['username'];
+      $_SESSION['type']=$utente['user_type'];
+      $_SESSION['link']=$utente['link'];
+      $_SESSION['flag']=1;
+      $_SESSION['flag_text']="Login effettuato con successo. Benvenuto ".$utente['username'];
+      header("Location: ".$_SESSION['link'].".php");
+    }
+    else{
+      $errore=true;
+      $_SESSION['flag_text']="Username o Password non corretti.";
+    }
+  }
+  else{
+    $errore=true;
+    $_SESSION['flag_text']="Login non disponibile riprovare più tardi.";
+  }
 }
-else{	
- 	echo '<script language=javascript>document.location.href="generale_private.php"</script>';
-} 
-} else {
- 
-/*Username e password errati, redirect alla pagina di login*/
-	echo '<script language=javascript>document.location.href="login.php"</script>';
- 
+else{
+  $errore=true;
+  $_SESSION['flag_text']="Login non disponibile riprovare più tardi.";
+}
+if($errore == true){
+  $_SESSION['flag']=2;
+  header("Location: login.php");
 }
 
-$connessione->mysql_close();
+mysqli_close($connessione);
+
 ?>

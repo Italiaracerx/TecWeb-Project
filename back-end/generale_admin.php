@@ -1,3 +1,4 @@
+<?php include('check_session.php');?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -34,9 +35,18 @@
 	<div id="breadcrumb">
         <h2><strong>ADMINISTRATOR</strong> > GENERALE</h2>        
     </div>
+    <?php
+    if($_SESSION['flag'] == 1){
+        echo '<h2 id="correct">'.$_SESSION['flag_text'].'</h2>';
+        include('reset_flag.php');
+    }
+    if($_SESSION['flag'] == 2){
+        echo '<h2 id="error">'.$_SESSION['flag_text'].'</h2>';
+        include('reset_flag.php');
+    }
+    ?>
     <div id="content">
         <h3 id="titolo_negozio">GENERALE</h3>
-        <p id="benvenuto">Benvenuto <strong>AMMINISTRATORE</strong></p>
         <div class="BarraOperazione">
         <div class="BoxSuperiore">
             <p class="intestazione">CREAZIONE NEGOZIO</p>
@@ -89,17 +99,17 @@
         <div class="ListaUtenti">
             <p class="intestazione">LISTA UTENTI</p>
             <table>
-                <tr><th>Nome Utente</th><th>password</th></tr>
+                <tr><th>User</th><th>Type User</th></tr>
                 <?php
                 include("connessione_db.php");
                 
-                    $query= " SELECT * FROM accountNegozi";
+                    $query= " SELECT username, type FROM account";
                     $ris=mysqli_query($connessione,$query);
 
-                    while($risultato=mysqli_fetch_array($ris) or die(mysqli_error($connessione))) {
+                    while($risultato=mysqli_fetch_array($ris)) {
                         $username=$risultato['username'];
-                        $password=$risultato['password'];
-                        echo '<tr><td>'.$username.'</td><td>'.$password.'</td></tr>
+			            $type=$risultato['type'];
+                        echo '<tr><td>'.$username.'</td><td>'.$type.'</td></tr>
                         ';
                     }
                 
@@ -111,3 +121,7 @@
     </div>
 </body>
 </html> 
+
+<<?php 
+	mysqli_close($connessione);
+?>
