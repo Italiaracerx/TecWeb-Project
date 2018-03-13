@@ -12,6 +12,82 @@
 
 	<link rel="stylesheet" type="text/css" href="print" media="print"/>STAMPA
     -->
+        <script>
+
+
+function validateForm(form) {
+    
+        if(form.username.value!="" && form.username.value!=" " && form.username.value!="admin")
+        {
+   if (form.password.value != form.Password_1.value || form.password.value=="" || form.password.value==" ") {
+    form.password.focus()
+    form.password.select()
+    var o="Password non corretta !!!";
+    document.getElementById("demo").innerHTML = o ;
+
+    return false
+  }
+
+  return true
+}else{
+    var o="Nome negozio non corretto !!!";
+    document.getElementById("demo").innerHTML = o ;
+return false;
+}
+
+}
+
+function validateForm_1(form) {
+    
+   if (form.password.value != form.Password_1.value || form.password.value=="" || form.password.value==" ") {
+    form.password.focus()
+    form.password.select()
+    var o="Password non corretta !!!";
+ document.getElementById("demos").innerHTML = o ;
+
+    return false
+  }
+
+  return true
+}
+
+
+function validateUser() {
+	
+	var indice_selezionato = document.getElementById('negozio').selectedIndex;
+	var indice_selezionato_1 = document.getElementById('negozio_1').selectedIndex;
+	if(indice_selezionato>0){
+	var value_selezionato = document.getElementById('negozio').options[indice_selezionato].value;
+	var value_selezionato_1=document.getElementById('negozio_1').options[indice_selezionato_1].value;
+
+			if(value_selezionato_1!=value_selezionato){
+				var o="Nome negozio non corretto !!!";
+    document.getElementById("demo_1").innerHTML = o ;
+    return false
+			}}else{
+		 var o="Indice non valido !!!";
+    document.getElementById("demo_1").innerHTML = o ;
+    return false }
+		
+   return true}
+
+
+function descrizione(){
+    var uno=testo.value;
+	var indice_selezionato = document.getElementById('evento').selectedIndex;
+	if(indice_selezionato>0)
+    {if(uno=="" || uno==" " || uno=="Inserisci nuovo evento")
+    {var o="Descrizione non valida !!!";
+    document.getElementById("demo_descrizione").innerHTML = o ;
+    return false;}
+     return true
+	}else {var a="Tipo di evento non valido !!!";
+    document.getElementById("demo_descrizione").innerHTML = a ;
+    return false;}
+   
+}
+</script>
+    
 </head>
  
 <body>
@@ -36,83 +112,82 @@
     </div>
     <div id="content">
         <h3 id="titolo_negozio">GENERALE</h3>
-        <p id="benvenuto">Benvenuto <strong>AMMINISTRATORE</strong></p>
-        <div class="BarraOperazione">
+        
         <div class="BoxSuperiore">
             <p class="intestazione">CREAZIONE NEGOZIO</p>
-            <form class="NuovoNegozio" action="" method="post">
-                <label for="nome">Nome Negozio:</label>
-                <input type="text"/>
-                <label for="nome">Nome Utente:</label>
-                <input type="text"/>    
-                <label for="nome">Password:</label>
-                <input type="password"/>
-                <label for="nome">Conferma Password:</label>
-                <input type="password"/>                      
-                <input type="reset" value="Reset"/>  
-                <input type="submit" value="Salva"/>
+            <div id="demo"></div>
+            <form class="NuovoNegozio" action="" method="post" onsubmit="return validateForm(this)">
+                <label for="nome_negozio">Nome Negozio:</label>
+                <input class="allarga" type="text" id="nome_negozio" name="username" />    
+                <label for="password">Password:</label>
+                <input class="allarga" type="password" id="password" name="password" />
+                <label for="conferma_password">Conferma Password:</label>
+                <input class="allarga" type="password" id="conferma_password" name="Password_1" />                      
+                <input title="Tasto Reset" type="reset" value="Reset"/>  
+                <input title="Tasto Salva" type="submit" value="Salva"/>
             </form>
         </div>
         <div class="BoxSuperiore">
-            <p class="intestazione">ELIMINA NEGOZIO</p>
-            <form  class="NuovoNegozio" action="" method="post">
+            <p class="intestazione">ELIMINA NEGOZIO</p> 
+            <div id="demo_1"></div>
+            <form  class="NuovoNegozio" action="" method="post" onsubmit="return validateUser()">
                 <label for="nome">Nome Negozio:</label>
-                <input type="text"/>     
+                <select name="negozio" id="negozio" class="allarga">
+                <option value="Cerca nel menu:">Cerca nel menu:</option>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="opel">Opel</option>
+  <option value="audi">Audi</option>
+</select>   
                 <label for="nome">Conferma Nome Negozio:</label>
-                <input type="text"/>             
-                <input type="reset" value="Reset"/>  
-                <input type="submit" value="Salva"/>
+                <select name="negozio_1" id="negozio_1" class="allarga">
+                <option value="Cerca nel menu:">Cerca nel menu:</option>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="opel">Opel</option>
+  <option value="audi">Audi</option>
+  </optgroup>
+</select>               
+                <input title="Tasto Reset" type="reset" value="Reset"/>  
+                <input title="Tasto Salva" type="submit" value="Salva"/>
             </form>
         </div>
-        </div>
-        <div class="BarraOperazione">
-        <div class="BoxSuperiore">
-            <p class="intestazione">MODIFICA PASSWORD</p>
-            <form class="NuovoNegozio"action="" method="post">
-                <label for="nome">Password:</label>
-                <input type="password"/>
-                <label for="nome">Conferma Password:</label>
-                <input type="password"/>                      
-                <input type="reset" value="Reset"/>  
-                <input type="submit" value="Salva"/>
-            </form>
-        </div>
-        <div class="BoxSuperiore">
+     
+        
+        <div class="BoxSuperiore_1">
             <p class="intestazione">NUOVO EVENTO</p>
-            <form class="NuovoNegozio" action="" method="post">
+            <div id="demo_descrizione"></div>
+            <form class="NuovoNegozio" action="" method="post" onsubmit="return descrizione()" >
+            <label for="nome">Tipo di evento:</label>
+                <select name="evento" id="evento" class="allarga">
+                <option value="Cerca nel menu:">Cerca nel menu:</option>
+  <option value="Apertura">Apertura</option>
+  <option value="Chiusura">Chiusura</option>
+  <option value="Novita'">Novita'</option>
+</select> 
                 <label for="nome">Descrizione:</label>
-                <textarea></textarea>
-                <input type="reset" value="Reset"/>  
-                <input type="submit" value="Salva"/>
+                <textarea id="testo" name="testo" >Inserisci nuovo evento</textarea>
+                <input title="Tasto Reset" type="reset" value="Reset"/>  
+                <input title="Tasto Salva" type="submit" value="Salva"/>
             </form>
     </div>
-
+    
+        <div class="BoxSuperiore">
+            <p class="intestazione">MODIFICA PASSWORD</p>
+            <div id="demos"></div>
+            <form class="NuovoNegozio" action="" method="post" onsubmit="return validateForm_1(this)" >
+            
+                <label for="nome">Password:</label>
+                <input name="password" class="allarga" type="password" />
+                <label for="nome">Conferma Password:</label>
+                <input name="Password_1" class="allarga" type="password" />   
+                                   
+                <input title="Tasto Reset" type="reset" value="Reset"/>  
+                <input title="Tasto Salva" type="submit" value="Salva"/>
+            </form>
         </div>
-        <div class="ListaUtenti">
-            <p class="intestazione">LISTA UTENTI</p>
-            <table>
-                <tr><th>Negozio</th><th>Nome Utente</th></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-                <tr><td>lego</td><td>lego</td></tr>
-
-            </table>
-        </div>
+        
+        
     </div>
     <div id="footer">
     </div>

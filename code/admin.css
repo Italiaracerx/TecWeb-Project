@@ -112,7 +112,6 @@ html, body{
 	font-size:2em;
 	letter-spacing: 10px;
 	line-height: 1em;
-	border-bottom: 2px solid #585753;
 	text-align: center;
 	font-weight: 400;
 	text-transform: uppercase;
@@ -128,12 +127,20 @@ html, body{
 
 .BoxSuperiore{
 	float:left;
-	width: 45%;
+	width: 49.2%;
 	margin-top:2em;
-	margin-left:2.5%;
-	margin-right:2.5%;
+	margin-right:0.5em;
 	text-align:center;
 }
+
+.BoxSuperiore_1{
+	float:right;
+	width: 49.2%;
+	margin-top:4.5em;
+	margin-right:0.5em;
+	text-align:center;
+}
+
 
 #dato{
 	margin-top:5em;
@@ -141,19 +148,17 @@ html, body{
 
 #invia{
 	text-align:center;
-	width:50%;
+	width:45%;
 	margin:0 auto;
 }
 
 .NuovoNegozio{
-	width:55%;
+	width:85%;
 	margin: 0 auto;
+	
 }
 
-.BarraOperazione{
-	width: 70%;
-	float:left;
-}
+
 
 textarea{
 	width: 100%;
@@ -167,13 +172,23 @@ textarea{
     resize: none;
 }
 
-.ListaUtenti{
-	margin-top:2em;
-	margin-left: 70%;
-	width: 30%;
-	text-align: center;
-}
 
 table{
 	margin: 0 auto;	
 }
+
+.allarga{width:90%;
+margin-bottom:0.5em;}
+
+
+#demo {background-color: #bcbcbc;
+	text-align:center;}
+
+#demo_1 {background-color: #bcbcbc;
+	text-align:center;}
+
+#demos {background-color: #bcbcbc;
+	text-align:center;}
+
+#demo_descrizione {background-color: #bcbcbc;
+	text-align:center;}
