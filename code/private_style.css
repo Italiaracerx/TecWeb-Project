@@ -180,7 +180,18 @@ textarea{
 	padding-bottom: 1em;	
 }
 
+input
+{
+	margin:0.3em;
+	font-size: 0.9em;
+}
 
+input[type=text]
+{
+	text-align: center;
+	font-size: 0.9em;
+	
+}
 .boxSopra{
 	text-align: center;
 	float:left;

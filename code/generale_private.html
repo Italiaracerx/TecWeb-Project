@@ -43,20 +43,20 @@
     <div id="content">
         <div id="content_generale">
             <h3 id="titolo_negozio">GENERALE</h3>
-            <p id="benvenuto">Benvenuto <strong>Ciccio78</strong></p>
-
             <div id="sopra">
                 <div class="boxSopra">
                     <p class="intestazione">MODIFICA CONTATTI</p>
                     <form class="form" action="" method="post">
-                        <label>Telefono / Fax:</label>
-                        <input type="text" value="041610265"/>
-                        <label>Email:</label>
-                        <input value="blablabla@lego.com" type="text"/>
-                        <label>Sito web:</label>
-                        <input value="www.lego.com/it-it" type="text"/>
+                        <label for="telefono">Telefono / Fax:</label>
+                        <input type="text" name="numero" id="telefono" value="041610265"/>
+                       
+                        <label for="email">Email:</label>
+                        <input type="text" name="email" id="email" value="blablabla@lego.com" />
+
+                        <label for="sito_web">Sito web:</label>
+                        <input type="text" name="sito_web" id="sito_web" value="www.lego.com/it-it" />
                         <div class="invia">               
-                            <input type="reset" value="Reset"/>  
+                            <input type="reset" value="Ripristina valori"/>  
                             <input type="submit" value="Salva"/>
                         </div>                                                        
                     </form>
@@ -64,12 +64,14 @@
                 <div class="boxSopra">
                     <p class="intestazione">MODIFICA PASSWORD</p>
                     <form class="form" action="" method="post">
-                        <label>Password:</label>
-                        <input type="password" class="campo"/>
-                        <label>Conferma Password:</label>
-                        <input name="campo" type="text"/>
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" id="password"/>
+
+                        <label for="conferma_password">Conferma Password:</label>
+                        <input type="text" name="conferma_password" id="conferma_password"/>
+
                         <div class="invia">               
-                            <input type="reset" value="Reset"/>  
+                            <input type="reset"  value="Reset"/>  
                             <input type="submit" value="Salva"/>
                         </div>                                
                     </form>
@@ -78,17 +80,17 @@
                 <div id="secondo">               
                 <div class="boxSotto">
                     <p class="intestazione">MODIFICA LOGO</p>
-                    <form action="" method="post">
-                        Select a file: <input id="file" type="file" name="img"/>
-                        <input type="reset" value="Reset"/>
+                    <form action="" method="post" enctype="multipart/form-data">
+                        <label for="carica_immmagine">Selezionare un file:</label>
+                        <input type="file" name="carica_immmagine" id="carica_immmagine"/>
                         <input type="submit" value="Salva"/>
                         </form>
                 </div>
                 <div class="boxSotto">
                         <p class="intestazione">MODIFICA NOME NEGOZIO</p>
-                        <form action="" method="post">
-                            Nome:
-                            <input name="campo" value="LEGO STORE" type="text"/>
+                        <form action="" method="post" >
+                          <label for="nome_negozio">Nome:</label>
+                            <input type="text" name="nome_negozio" id="nome_negozio" value="LEGO STORE" />
                             <input type="reset" value="Reset"/>
                             <input type="submit" value="Salva"/>
                         </form>
@@ -98,20 +100,20 @@
                 <div id="sinistra">
                     <p class="intestazione">MODIFICA ORARIO</p>
                     <form action="" method="post">
-                        <label> Lunedì :</label>
-                        <input class="orario" value="10-23" type="text"/>
-                        <label> Martedì :</label>
-                        <input class="orario" value="10-23" type="text"/>
-                        <label> Mercoledì :</label>
-                        <input class="orario" value="10-23" type="text"/>
-                        <label> Giovedì :</label>
-                        <input class="orario" value="10-23" type="text"/>
-                        <label> Venerdì :</label>
-                        <input class="orario" value="10-23" type="text"/>
-                        <label> Sabato :</label>
-                        <input class="orario" value="10-23" type="text"/>
-                        <label> Domenica :</label>
-                        <input class="orario" value="10-23" type="text"/>
+                        <label for="lunedì"> Lunedì :</label>
+                        <input class="orario" value="10-23" type="text" name="orario di lunedì" id="lunedì"/>
+                        <label for="martedì"> Martedì :</label>
+                        <input class="orario" value="10-23" type="text" name="orario di martedì" id="martedì"/>
+                        <label for="mercoledì"> Mercoledì :</label>
+                        <input class="orario" value="10-23" type="text" name="orario di mercoledì" id="mercoledì"/>
+                        <label for="giovedì"> Giovedì :</label>
+                        <input class="orario" value="10-23" type="text" name="orario di giovedì" id="giovedì"/>
+                        <label for="venerdì"> Venerdì :</label>
+                        <input class="orario" value="10-23" type="text" name="orario di venerdì" id="venerdì"/>
+                        <label for="sabato"> Sabato :</label>
+                        <input class="orario" value="10-23" type="text" name="orario di sabato" id="sabato"/>
+                        <label for="domenica"> Domenica :</label>
+                        <input class="orario" value="10-23" type="text" name="orario di domenica" id="domenica"/>
                         <input class="pulsante" type="submit" value="Salva"/>                                
                         <input class="pulsante" type="reset" value="Reset"/>  
                     </form>
@@ -120,13 +122,13 @@
                     <div id="descrizione">
                         <p class="intestazione">MODIFICA DESCRIZIONE</p>
                         <form action="" method="post">
-                            <label>Motto:</label>                    
+                            <label for="motto">Motto:</label>                    
                             <div class="box">                        
-                                <textarea rows="2" cols="50">Our mission: To inspire and develop the builders of tomorrow</textarea>  
+                                <textarea name="motto" id="motto" rows="2" cols="50">Our mission: To inspire and develop the builders of tomorrow</textarea>  
                             </div> 
-                            <label>Descrizione:</label>
+                            <label for="descrizione_negozio">Descrizione:</label>
                             <div class="box">                        
-                                <textarea rows="5" cols="50">Il nostro scopo è ispirare ed educare i bambini a pensare creativamente, ragionare in modo sistematico e realizzare il loro potenziale, plasmando il loro futuro e sperimentando le infinite possibilità umane. </textarea>  
+                                <textarea name="descrizione_negozio" id="descrizione_negozio" rows="5" cols="50">Il nostro scopo è ispirare ed educare i bambini a pensare creativamente, ragionare in modo sistematico e realizzare il loro potenziale, plasmando il loro futuro e sperimentando le infinite possibilità umane. </textarea>  
                             </div>
                             <input class="pulsante" type="submit" value="Salva"/>                                
                             <input class="pulsante" type="reset" value="Reset"/>                
