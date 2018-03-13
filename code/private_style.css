@@ -142,7 +142,7 @@ html, body{
 	margin-top:1em;
 }
 .form{
-	width:45%;
+	width:50%;
 	margin: 0 auto;
 }
 .campo{
@@ -257,12 +257,17 @@ label{
 .SottoTitolo{
 	text-align: center;
 	margin-top:1em;
-	margin-bottom:0.5em;
+	margin-bottom:1em;
 }
 
 .invia{
 	margin-top:0.5em;
 }
+input[type=text]{
+	width: 90%;
+	margin-bottom:0.5em;
+}
+
 #PromozioniCorrenti{
 	margin-left: 32%;
 	display: block;

@@ -44,9 +44,14 @@
             <div id="ColonnaSinistra">
                 <div class="NuovaPromozione">
                     <p class="intestazione">NUOVA PROMOZIONE</p>
-                    <form action="" method="post">
+                    <form action="" method="post" enctype="multipart/form-data">
+                       
+                        <label for="campo_alt">Contenuto immagine promozione:</label>
+                        <input type="text" name="campo_alt" id="campo_alt" />
+
                         <p class="SottoTitolo">Descrizione promozione:</p>
-                        <textarea cols="30" rows="10"></textarea>
+                        <textarea rows="10" cols="30" ></textarea>
+                        
                         <p class="SottoTitolo">Seleziona la promozione da inserire:</p>
                         <input type="file" name="img"/>
                         <input class="invia" type="submit" value="Salva"/>                                                        

@@ -44,9 +44,16 @@
             <div id="ColonnaSinistra">
                 <div class="NuovaPromozione">
                     <p class="intestazione">NUOVO PRODOTTO</p>
-                    <form action="" method="post">
+                    <form action="" method="post" enctype="multipart/form-data">
+                    	<label for="nome_prodotto">Nome:</label>
+                        <input type="text" name="nome_prodotto" id="nome_prodotto" value="Star-Wars 75104" />
+
+                        <label for="campo_alt">Contenuto immagine prodotto:</label>
+                        <input type="text" name="campo_alt" id="campo_alt"/>
+
                         <p class="SottoTitolo">Descrizione prodotto:</p>
-                        <textarea cols="30" rows="10"></textarea>
+                        <textarea rows="10" cols="30"></textarea>
+                        
                         <p class="SottoTitolo">Seleziona il prodotto da inserire:</p>
                         <input type="file" name="img"/>
                         <input class="invia" type="submit" value="Salva"/>                                                        
