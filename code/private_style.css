@@ -115,7 +115,6 @@ html, body{
 	font-size:2em;
 	letter-spacing: 10px;
 	line-height: 1em;
-	border-bottom: 2px solid #585753;
 	text-align: center;
 	font-weight: 400;
 	text-transform: uppercase;
@@ -142,7 +141,7 @@ html, body{
 	margin-top:1em;
 }
 .form{
-	width:50%;
+	width:45%;
 	margin: 0 auto;
 }
 .campo{
@@ -181,9 +180,8 @@ textarea{
 }
 
 input
-{
-	margin:0.3em;
-	font-size: 0.9em;
+{font-size: 0.9em;
+margin-bottom:0.5em;
 }
 
 input[type=text]
@@ -192,6 +190,14 @@ input[type=text]
 	font-size: 0.9em;
 	
 }
+
+input[type=password]
+{
+	text-align: center;
+	font-size: 0.9em;
+	
+}
+
 .boxSopra{
 	text-align: center;
 	float:left;
@@ -219,7 +225,8 @@ input[type=text]
 }
 
 .orario{
-	width: 100%;
+	width: 80%;
+	margin-left: 0.5em;
 }
 
 .giorno{
@@ -257,17 +264,12 @@ label{
 .SottoTitolo{
 	text-align: center;
 	margin-top:1em;
-	margin-bottom:1em;
+	margin-bottom:0.5em;
 }
 
 .invia{
 	margin-top:0.5em;
 }
-input[type=text]{
-	width: 90%;
-	margin-bottom:0.5em;
-}
-
 #PromozioniCorrenti{
 	margin-left: 32%;
 	display: block;
@@ -311,4 +313,37 @@ input[type=text]{
 #formLogin input[type=submit]{
 	background-color: #A9A9A9;
 	 cursor: pointer;
+}
+#demo_passw {background-color: #bcbcbc;
+	text-align:center;}
+
+#demo_corario {background-color: #bcbcbc;
+	text-align:center;}
+
+#demo_oktel {background-color: #bcbcbc;
+	text-align:center;}
+
+#demo_okmail {background-color: #bcbcbc;
+	text-align:center;
+}
+
+#demo_sito {background-color: #bcbcbc;
+	text-align:center;
+}
+
+#demo_descrizione {background-color: #bcbcbc;
+	text-align:center;
+}
+
+#demo_nomenegozio {background-color: #bcbcbc;
+	text-align:center;
+}
+
+#demo_orario {background-color: #bcbcbc;
+	text-align:center;
+}
+
+#esempio{
+	font-size: 0.85em;
+	margin-bottom: 1em;
 }
