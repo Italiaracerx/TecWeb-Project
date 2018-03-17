@@ -129,16 +129,14 @@ html, body{
 	float:left;
 	width: 49.2%;
 	margin-top:2em;
-	margin-right:0.5em;
+	margin:0.25em;
 	text-align:center;
 }
 
-.BoxSuperiore_1{
-	float:right;
-	width: 49.2%;
-	margin-top:7.95em;
-	margin-right:0.5em;
-	text-align:center;
+
+#sopra{
+	overflow: auto;
+	margin-top:1em;
 }
 
 
@@ -163,23 +161,19 @@ input{
 
 }
 
-input[type=text]
+input[type=text],input[type=password]
 {
 	text-align: center;
 	font-size: 0.9em;
-	
 }
 
-input[type=password]
-{
-	text-align: center;
+select{
 	font-size: 0.9em;
-	
 }
 
 textarea{
-	
-    height: 100px;
+	height: 120px;
+    width: 100%;
     padding: 9px 10px;
     box-sizing: border-box;
     border: 2px solid #ccc;
