@@ -381,96 +381,116 @@ return true;
     <div id="content">
         <div id="content_generale">
             <h3 id="titolo_negozio">GENERALE</h3>
-            
             <div id="sopra">
                 <div class="boxSopra">
-                    <p class="intestazione">MODIFICA CONTATTI</p>
-                    <div id="demo_sito"></div> <div id="demo_oktel"></div> <div id="demo_okmail"></div>
-                    <form class="form" action="" method="post" onsubmit="return checkEmail(this)" >
+                      <p class="intestazione">MODIFICA CONTATTI</p>
+                      <div id="demo_sito"></div> <div id="demo_oktel"></div> <div id="demo_okmail"></div>
+                       <form class="form" action="" method="post" onsubmit="return checkEmail(this)" >
                         <div>
-                        <label for="telefono">Telefono / Fax:</label>
-                        <input type="text" name="Telefono" id="telefono" value="041610265"/>
+                          <label for="telefono">Telefono / Fax:</label>
+                          <input type="text" name="Telefono" id="telefono" value="041610265"/>
                        
-                        <label for="email">Email:</label>
-                        <input type="text" name="Email" id="email" value="blablabla@lego.com" />
+                          <label for="email">Email:</label>
+                          <input type="text" name="Email" id="email" value="blablabla@lego.com" />
 
-                        <label for="sito_web">Sito web:</label>
-                        <input type="text" name="Sito_web" id="sito_web" value="www.lego.com/it-it" />
-                        <div class="invia">               
-                            <input type="reset" value="Reset"/>  
-                            <input type="submit" value="Salva"/>
-                        </div>                                   
+                          <label for="sito_web">Sito web:</label>
+                          <input type="text" name="Sito_web" id="sito_web" value="www.lego.com/it-it" />
+
+                          <div class="invia">               
+                              <input type="reset" value="Reset"/>  
+                              <input type="submit" value="Salva"/>
+                          </div>                                   
                         </div>                     
-                    </form>
+                       </form>
                 </div>
                 <div class="boxSopra">
-                    <p class="intestazione">MODIFICA PASSWORD</p>
-                    <div id="demo_passw"></div>
-                    <form class="form" action="" method="post" onsubmit="return validateForm(this)">
-                        <div>
-                        <label for="password">Password:</label>
-                        <input type="password" name="Password" id="password"/>
+                       <p class="intestazione">MODIFICA PASSWORD</p>
+                       <div id="demo_passw"></div>
+                          <form class="form" action="" method="post" onsubmit="return validateForm(this)">
+                            <div>
+                             <label for="password">Password:</label>
+                             <input type="password" name="Password" id="password"/>
 
-                        <label for="conferma_password">Conferma Password:</label>
-                        <input type="password" name="password" id="conferma_password"/>
+                             <label for="conferma_password">Conferma Password:</label>
+                             <input type="password" name="password" id="conferma_password"/>
 
-                        <div class="invia">               
-                            <input type="reset"  value="Reset"/>  
-                            <input type="submit" value="Salva"/>
-                        </div>                                
-                        </div>
-                    </form>
+                             <div class="invia">               
+                               <input type="reset"  value="Reset"/>  
+                               <input type="submit" value="Salva"/>
+                             </div>                                
+                            </div>
+                          </form>
                 </div>
             </div>            
-                <div id="secondo">               
+            <div id="parte_centrale">               
                 <div class="boxSotto">
                     <p class="intestazione">MODIFICA LOGO</p>
-                    <form action="" method="post" enctype="multipart/form-data">
-                        <div>
-                        <label for="carica_immmagine">Selezionare un file:</label>
-                        <input type="file" name="img" id="carica_immmagine"/>
-                        <input type="submit" value="Salva"/>
-                        </div>
-                        </form>
+                      <form action="" method="post" enctype="multipart/form-data">
+                          <div id="logo">
+                          <label for="carica_immmagine">Selezionare un file:</label>
+                          <input type="file" name="img" id="carica_immmagine"/>
+                          <input type="submit" value="Salva"/>
+                          </div>
+                     </form>
                 </div>
                 <div class="boxSotto">
-                        <p class="intestazione">MODIFICA NOME NEGOZIO</p>
+                     <p class="intestazione">MODIFICA NOME NEGOZIO</p>
                         <div id="demo_nomenegozio"></div>
                         <form class="form"  action="" method="post" onsubmit="return negozio(this)" > 
-                            <div>
+                            <div id="negozio">
                             <label for="nome_negozio">Nome:</label>
                             <input type="text" name="campo" id="nome_negozio" value="LEGO STORE" />
                             <input type="submit" value="Salva"/>
                             </div>
                         </form>
-                    </div>
                 </div>
+            </div>
             <div id="sotto">
                 <div id="sinistra">
                     <p class="intestazione">MODIFICA ORARIO</p>
                     <p id="esempio">Scrivere l'orario nel formato hh:mm-hh:mm, <br/>ad es. 08:30-12:30 <br/>
                     ATTENZIONE l'orario non può sforare l'ora di apertura e chiusura del centro (08:30-21:00).<br/>
-                Non è possibile inserire caratteri alfabetici eccetto "-", ":", "chiuso".</p>
-                <div id="demo_orario"></div>
+                     Non è possibile inserire caratteri alfabetici eccetto "-", ":", "chiuso".</p>
+                    <div id="demo_orario"></div>
                     <form action="" method="post" onsubmit="return checkorario(this)">
-                        <div>
-                        <label for="lunedì" class="orario"> Lunedì :</label>
-                        <input name="lunedi" class="orario" type="text" maxlength="11" onkeypress="return onlyNumeric(event);"/>
-                        <label for="martedì" class="orario"> Martedì :</label>
-                        <input name="martedi" class="orario" type="text" maxlength="11" onkeypress="return onlyNumeric(event);"/>
-                        <label for="mercoledì" class="orario"> Mercoledì :</label>
-                        <input name="mercoledi" class="orario" type="text" maxlength="11" onkeypress="return onlyNumeric(event);"/>
-                        <label for="giovedì" class="orario"> Giovedì :</label>
-                        <input name="giovedi" class="orario" type="text" maxlength="11" onkeypress="return onlyNumeric(event);" />
-                        <label for="venerdì" class="orario"> Venerdì :</label>
-                        <input name="venerdi" class="orario" type="text" maxlength="11" onkeypress="return onlyNumeric(event);"/>
-                        <label for="sabato" class="orario"> Sabato :</label>
-                        <input name="sabato" class="orario" type="text" maxlength="11" onkeypress="return onlyNumeric(event);"/>
-                        <label for="domenica" class="orario"> Domenica :</label>
-                        <input name="domenica" class="orario" type="text" maxlength="11" onkeypress="return onlyNumeric(event);"/>
-                        <input class="pulsante" type="submit" value="Salva"/>                                
-                        <input class="pulsante" type="reset" value="Reset"/>  
+                        <div class="orario">
+                        <label for="lunedì"> Lunedì :</label>
+                        <input name="lunedi" type="text" maxlength="11" onkeypress="return onlyNumeric(event);"/>
                         </div>
+
+                        <div class="orario">
+                        <label for="martedì"> Martedì :</label>
+                        <input name="martedi"  type="text" maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                        </div>
+
+                        <div class="orario">
+                        <label for="mercoledì" > Mercoledì :</label>
+                        <input name="mercoledi"  type="text" maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                        </div>
+                        
+                        <div class="orario">
+                        <label for="giovedì" > Giovedì :</label>
+                        <input name="giovedi" type="text" maxlength="11" onkeypress="return onlyNumeric(event);" />
+                        </div>
+
+                        <div class="orario">
+                        <label for="venerdì" > Venerdì :</label>
+                        <input name="venerdi"  type="text" maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                        </div>
+
+                        <div class="orario">
+                        <label for="sabato" > Sabato :</label>
+                        <input name="sabato"  type="text" maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                        </div>
+
+                        <div class="orario">
+                        <label for="domenica" > Domenica :</label>
+                        <input name="domenica"  type="text" maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                        </div>                        
+                         <div class="pulsante">
+                        <input  type="submit" value="Salva"/>                                
+                        <input  type="reset" value="Reset"/>  
+                        </div> 
                     </form>
                 </div>
                 <div id="destra">
@@ -478,17 +498,19 @@ return true;
                         <p class="intestazione">MODIFICA DESCRIZIONE</p>
                         <div id="demo_descrizione"></div>
                         <form action="" method="post" onsubmit="return descrizione(this)">
-                            <div>
-                            <label for="motto">Motto:</label>                    
-                            <div class="box">                        
-                                <textarea name="testo_motto" id="motto" rows="2" cols="50">Our mission: To inspire and develop the builders of tomorrow</textarea>  
-                            </div> 
-                            <label for="descrizione_negozio">Descrizione:</label>
-                            <div class="box">                        
-                                <textarea name="testo_descrizione" id="descrizione_negozio" rows="5" cols="50">Il nostro scopo è ispirare ed educare i bambini a pensare creativamente, ragionare in modo sistematico e realizzare il loro potenziale, plasmando il loro futuro e sperimentando le infinite possibilità umane. </textarea>  
-                            </div>
-                            <input class="pulsante" type="submit" value="Salva"/>                                
-                            <input class="pulsante" type="reset" value="Reset"/>     
+                              <div>
+                                 <label for="motto">Motto:</label>                    
+                                 <div class="testo_descrizione">                        
+                                  <textarea name="testo_motto" id="motto" rows="2" cols="50">Our mission: To inspire and develop the builders of tomorrow</textarea>  
+                                 </div> 
+                                 <label for="descrizione_negozio">Descrizione:</label>
+                                 <div class="testo_descrizione">                        
+                                 <textarea name="testo_descrizione" id="descrizione_negozio" rows="5" cols="50">Il nostro scopo è ispirare ed educare i bambini a pensare creativamente, ragionare in modo sistematico e realizzare il loro potenziale, plasmando il loro futuro e sperimentando le infinite possibilità umane. </textarea>  
+                                </div>
+                                <div class="pulsante">
+                                <input  type="submit" value="Salva"/>                                
+                                <input  type="reset" value="Reset"/>   
+                                </div>  
                             </div>           
                         </form>
                     </div>
