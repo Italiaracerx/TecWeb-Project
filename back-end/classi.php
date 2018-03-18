@@ -1,31 +1,51 @@
 <?php 
 
+class exeption{
+    private $flag;
+    private $text_flag;
+
+    public function __construct($fl=NULL,$t_fl=NULL){
+        $this->flag =$fl;
+        $this->text_flag =$t_fl;
+    }
+    public function getFlag(){
+        return $this->flag;
+    }
+    public function getText_flag(){
+        return $this->text_flag;
+    }
+}
+
+
 class controller{
     //metodi
-    public function set_flag($flag,$text=NULL){
-        session();
-        $_SESSION['flag']=$flag;        //la flag serve per errori o altro, 0 niente da segnalare, 1 operazione avvenuta, 2 operazione fallita
-        $_SESSION['flag_text']=$text;   // campo flag_text riporta un messaggio descrivendo la flag
+    public function print_bar(){
+        if($_SESSION['flag'] != NULL){
+            echo '<h2 id="'.$_SESSION['flag'].'">'.$_SESSION['flag_text'].'</h2>';
+            $this->set_flag(new exeption());
+        }
+    }
+    public function set_flag(exeption $ex){
+        $_SESSION['flag']=$ex->getFlag();        //la flag serve per errori o altro, 0 niente da segnalare, 1 operazione avvenuta, 2 operazione fallita
+        $_SESSION['flag_text']=$ex->getText_flag();   // campo flag_text riporta un messaggio descrivendo la flag
     }
     public function session(){
-        if ($_SESSION == NULL){
-            session_start();
-            $_SESSION['user'] = NULL;//inizializzo a NULL l'utente corrente
-            $_SESSION['type'] = NULL;//type rapprensenta il tipo di utente se messo a NULL nessun utente loggato
-            $_SESSION['link'] = NULL;//indica il nome della pagina a cui questo indirizzo fa riferimento
-            set_flag(0);
-        }
+        $_SESSION['user'] = NULL;//inizializzo a NULL l'utente corrente
+        $_SESSION['type'] = NULL;//type rapprensenta il tipo di utente se messo a NULL nessun utente loggato
+        $_SESSION['link'] = NULL;//indica il nome della pagina a cui questo indirizzo fa riferimento
+        $this->set_flag(new exeption());
     }
     public function check_session(){
-        if ($_SESSION == NULL){
-            session();
+        session_start();
+        if (!empty($_SESSION)){
+            $this->session();
         }
         elseif($_SESSION['type'] == NULL){
-            set_flag(2,"Sessione scaduta, esegui un nuovo login.");
+            $this->set_flag(new exeption("error","Sessione scaduta, esegui un nuovo login."));
             header("Location: login.php");
         }
         else{
-            set_flag(1,"Bentornato");
+            $this->set_flag(new exeption("correct","Bentornato"));
             header("Location: ".$_SESSION['link'].".php");
         }
     }
@@ -34,8 +54,7 @@ class controller{
         $_SESSION['user']=$utente['username'];
         $_SESSION['type']=$utente['user_type'];
         $_SESSION['link']=$utente['link'];
-        $_SESSION['flag']=1;
-        $_SESSION['flag_text']="Login effettuato con successo. Benvenuto ".$utente['username'];
+        $this->set_flag(new exeption("correct","Login effettuato con successo. Benvenuto ".$utente['username']));
         header("Location: ".$_SESSION['link'].".php");
     }
     public function logout(){
@@ -48,10 +67,10 @@ class controller{
 
 class connection{
     //campi privati
-    private static $host;
-    private static $db_user;
-    private static $db_psw;
-    private static $db_name;
+    private static $host ="localhost";
+    private static $db_user ="root";
+    private static $db_psw ="";
+    private static $db_name ="archimede";
     protected $controller;
 
     //metodi
@@ -61,16 +80,20 @@ class connection{
     public function connect(){
         $this->controller->session();
         if($sql->mysqli_connect($this->host,$this->db_user,$this->db_psw,$this->db_name)){
-            $controller->set_flag(2,"Login non disponibile riprovare più tardi.");
-            die;
+            throw new exeption("error", "connessione non riuscita");
         }
         return $sql;
     }
     function execute_query($query){
-        $sql=connect();
-        $result =$sql->mysqli_query($query);
-        $sql->mysqli->close();
-        return $result;
+        try{
+            $sql=$this->connect();
+            $result =$sql->mysqli_query($query);
+            $sql->mysqli->close();
+            return $result;
+        }
+        catch(exeption $ex){
+            $this->controller->set_flag($ex);
+        }
     }
 }
 
@@ -91,10 +114,10 @@ class log extends connection{
         $controller->session();
         $query = "INSERT INTO account VALUES ('$this->username','user','$this->password')";
         if(parent::execute_query($query)){
-            $this->controller->set_flag(1, "Scrittura eseguita con successo.")
+            $this->controller->set_flag(new exeption("correct","Scrittura eseguita con successo."));
         }
         else{
-            $this->controller->set_flag(2, "Scrittura non eseguita.")
+            $this->controller->set_flag(new exeption("error","Scrittura non eseguita."));
         }
     }
     public function read(){
@@ -105,15 +128,15 @@ class log extends connection{
             $this->controller->define_session($utente);
         }
         else{
-            $this->controller->set_flag(2,"Login e password errati"); 
+            $this->controller->set_flag(new exeption("error","Login e password errati"));
         }
     }
 }
-
+/*
 connection::$host = "localhost";
 connection::$db_user = "root";
 connection::$db_psw = "";
 connection::$db_name = "archimede";
-
+*/
 
 ?>
