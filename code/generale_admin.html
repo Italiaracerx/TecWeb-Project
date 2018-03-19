@@ -67,6 +67,15 @@ function descrizione(){
     return false;}
    
 }
+
+function validateUser(){
+	var indice_selezionato = document.getElementById('negozio').selectedIndex;
+	if(indice_selezionato==0)
+		{var a="Nome negozio non valido !!!";
+    document.getElementById("demo_1").innerHTML = a ;
+    return false;}
+}
+
 </script>
     
 </head>
@@ -113,7 +122,7 @@ function descrizione(){
         <div class="BoxSuperiore">
             <p class="intestazione">ELIMINA NEGOZIO</p> 
             <div id="demo_1"></div>
-            <form  class="NuovoNegozio" action="" method="post" >
+            <form  class="NuovoNegozio" action="" method="post" onsubmit="return validateUser()">
                 <div>
                 <label for="negozio">Nome Negozio:</label>
                 <select name="negozio" id="negozio" class="allarga">
