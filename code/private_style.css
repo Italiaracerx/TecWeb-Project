@@ -183,7 +183,7 @@ html, body{
 
 .orario input{
 	float: left;
-	width: 30%;
+	width: 44%;
 }
 
 .pulsante{
@@ -324,6 +324,7 @@ textarea{
 
 #demo_orario {background-color: #bcbcbc;
 	text-align:center;
+	margin-bottom: 0.4em;
 }
 
 #esempio{
