@@ -89,13 +89,14 @@ html, body{
 	background-color: #585753;
 	padding-bottom: 5em;
 }
-/*GENERALE PRIVATO*/
+
 #content{
     max-width: 1024px;
     margin: 0 auto;
     overflow: auto;
     padding-bottom: 1em;
 }
+/*---------GENERALE PRIVATO---------*/
 #content_generale{
 	overflow:auto;
 	padding: 1em;
@@ -231,7 +232,7 @@ textarea{
 }
 
 
-/*PROMOZIONI PRIVATO*/
+/*-------------PROMOZIONI PRIVATO---------*/
 
 #ColonnaSinistra{
 	width: 30%;	
@@ -271,12 +272,12 @@ textarea{
 	margin-right:4.1%;
 }
 
-
+/*--------LOGIN---------*/
 #formLogin
 {
 	border:3px solid #DDD;
 	text-align: center;
-	margin:10% 10% 15% 20%;
+	margin:10% 10% 15% 22%;
 	width: 50%;
 	padding: 1em;
 
