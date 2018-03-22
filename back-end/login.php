@@ -1,5 +1,5 @@
 <?php 
-include('check_login.php'); 
+include('classi.php'); 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -30,15 +30,9 @@ include('check_login.php');
         <h2><strong>LOGIN</strong></h2>        
     </div>
     <?php
-    if($_SESSION['flag'] == 1){
-        echo '<h2 id="correct">'.$_SESSION['flag_text'].'</h2>';
-        include('reset_flag.php');
-    }
-
-    if($_SESSION['flag'] == 2){
-        echo '<h2 id="error">'.$_SESSION['flag_text'].'</h2>';
-        include('reset_flag.php');
-    }
+        $controller = new controller();
+        $controller->check_session();
+        $controller->print_bar();
     ?>        
     <div id="content">
         <div id="content">
