@@ -1,0 +1,15 @@
+pagine private:
+sostituire lego generale e le altre con il nome dell'account
+unire admin.css con private.css
+modificare alt in promozione
+javascript gestione dell'orario errori
+divisione form evento -> due form 
+form novità con un campo di input descrizione
+form apertura chiusura select apertura chiusura e un campo di input data
+
+home
+se non ci sono promozioni  il footer si sminchia
+eliminare linea sotto titolo benvenuti e metterla tra orari e promozioni
+sistemare footer senza promozioni il footer si sminchia
+sistemare nella pagina dei negozi i riquadri con le foto dei prodotti
+nella pagina delle promozioni inserire le promozioni in riquadri che riportino il nome del negozio

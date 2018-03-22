@@ -4,10 +4,10 @@ require_once("exeption.php");
 
 class connection{
     //campi privati
-    private static $host ="localhost";
-    private static $db_user ="root";
-    private static $db_psw ="";
-    private static $db_name ="archimede";
+    private static $host = "localhost";
+    private static $db_user = "root";
+    private static $db_psw = "";
+    private static $db_name = "archimede";
     protected $controller;
 
     //metodi
@@ -33,9 +33,5 @@ class connection{
         }
     }
 }
-connection::$host = "localhost";
-connection::$db_user = "root";
-connection::$db_psw = "";
-connection::$db_name = "archimede";
 
 ?>

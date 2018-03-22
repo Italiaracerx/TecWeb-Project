@@ -6,9 +6,9 @@ require_once("connection.php");
 
 class orario extends connection{
     //campi privati
-    private $giorni = ['lunedi', 'martedi', 'mercoledi', 'giovedi', 'venerdi', 'sabato', 'domenica'];
-    private static $apertura;
-    private static $chiusura;
+    private static $giorni = ['lunedi', 'martedi', 'mercoledi', 'giovedi', 'venerdi', 'sabato', 'domenica'];
+    private static $apertura =510;
+    private static $chiusura =1350;
 
     private $orari =[];
 
@@ -53,15 +53,14 @@ class orario extends connection{
             }
         }
         if(!$set){
+            $user =$_SESSION['user'];
             $query = "UPDATE orario SET $this->giorno[0]=$this->orari[0],
             $this->giorno[1]=$this->orari[1],
             $this->giorno[2]=$this->orari[2],
             $this->giorno[3]=$this->orari[3],
             $this->giorno[4]=$this->orari[4],
             $this->giorno[5]=$this->orari[5],
-            $this->giorno[6]=$this->orari[6]
-             WHERE username = $_SESSION['user'] ";
-            UPDATE Decisione SET Risultato = 'Positivo' WHERE NROrdine=4;
+            $this->giorno[6]=$this->orari[6] WHERE username = $user";
             if(parent::execute_query($query)){
                 $this->controller->set_flag(new exeption("correct","Scrittura eseguita con successo."));
             }
@@ -72,18 +71,16 @@ class orario extends connection{
     }
     public function read(){
         $controller->session();
-        $query = "SELECT A.username, T.user_type, T.link FROM account A INNER JOIN type_account T ON A.type = T.user_type WHERE username = $this->user AND password = $this->password";
-        $utente=mysqli_fetch_array(parent::execute_query($query));
-        if($utente['username'] != NULL){
+        $user =$_SESSION['user'];
+        $query = "SELECT * FROM orario WHERE username = $user";
+        $orari=mysqli_fetch_array(parent::execute_query($query));
+        if($orari){
             $this->controller->define_session($utente);
         }
         else{
-            $this->controller->set_flag(new exeption("error","Login e password errati"));
+            $this->controller->set_flag(new exeption("error","orari non disponibili"));
         }
     }
 }
-
-orario::$giorni = ['lunedi', 'martedi', 'mercoledi', 'giovedi', 'venerdi', 'sabato', 'domenica'];
-
 
 ?>
