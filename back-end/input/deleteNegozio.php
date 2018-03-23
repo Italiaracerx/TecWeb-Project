@@ -4,18 +4,13 @@ require_once("exeption.php");
 require_once("connection.php");
 
 
-class log extends connection{
+class deleteNegozio extends connection{
     //campi privati
     private $username;
-    private $password;
-    private $confirm;
-
     //metodi
-    public function __construct($user,$psw1=0, $psw2=0){
+    public function __construct($user){
         parent::__construct();
         $this->username =mysqli::real_escape_string($user);
-        $this->password =hash('sha1',mysqli::real_escape_string($psw1));
-        $this->confirm =hash('sha1',mysqli::real_escape_string($psw2));
     }
     public function write(){
         $controller->session();
@@ -37,11 +32,6 @@ class log extends connection{
         else{
             $this->controller->set_flag(new exeption("error","Login e password errati"));
         }
-    }
-    public function delete(){
-        $controller->session();
-        $query = "DELETE FROM account WHERE username = $this->username";
-
     }
 }
 
