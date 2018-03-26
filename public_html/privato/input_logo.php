@@ -29,7 +29,7 @@ if(isset($_POST["submit"])) {
 }*/
 
 // Check file size
-if ($_FILES["fileToUpload"]["size"] > 500000) {
+if ($_FILES["fileToUpload"]["size"] > 10000000) {
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
 }
@@ -150,6 +150,6 @@ if(checker($imageFileType)=="true"){
     } else {
         echo "Sorry, there was an error uploading your file.";
     }*/
-}
-header("location: /darossi/privato/generale_private.php"); exit();
+
+//header("location: generale_private.php"); exit();
 ?>
