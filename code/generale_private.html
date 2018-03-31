@@ -406,7 +406,6 @@ if(charCode==118 || charCode==99 || charCode==97 || charCode==104 || charCode==1
 		    <div id="titolo">
                 <h3>CENTRO COMMERCIALE ARCHIMEDE</h3>
                 <h1>AMMINISTRAZIONE</h1>
-                
 			</div>
 	</div>
 
@@ -422,115 +421,120 @@ if(charCode==118 || charCode==99 || charCode==97 || charCode==104 || charCode==1
     </div>
 
 	<div id="breadcrumb">
-        <h2><strong>LEGO</strong> > GENERALE</h2>        
+        <h2><strong>NOME ACCOUNT</strong> > GENERALE</h2>        
     </div>
     <div id="content">
-        <div id="content_generale">
-            <h3 id="titolo_negozio">GENERALE</h3>
-            <div id="sopra">
-                <div class="boxSopra">
-                      <p class="intestazione">MODIFICA CONTATTI</p>
-                      <div id="demo_sito"></div> <div id="demo_oktel"></div> <div id="demo_okmail"></div>
-                       <form class="form" action="" method="post" onsubmit="return checkEmail(this)" >
+
+           <div id="content_generale">
+               <h3 id="titolo_generale">GENERALE</h3>
+               <div id="sopra">
+
+                    <div class="form_sopra">
+                        <p class="intestazione">MODIFICA CONTATTI</p>
+                        <div id="demo_sito"></div> <div id="demo_oktel"></div> <div id="demo_okmail"></div>
+                        <form action="" method="post" onsubmit="return checkEmail(this)" >
                         <div>
                           <label for="telefono">Telefono / Fax:</label>
-                          <input type="text" name="Telefono" id="telefono" value="041610265"/>
-                       
+                          <input type="text" name="telefono" id="telefono" value="041610265"/>
                           <label for="email">Email:</label>
-                          <input type="text" name="Email" id="email" value="blablabla@lego.com" />
-
+                          <input type="text" name="email" id="email" value="blablabla@lego.com" />
                           <label for="sito_web">Sito web:</label>
-                          <input type="text" name="Sito_web" id="sito_web" value="www.lego.com/it-it" />
-
-                          <div class="invia">               
-                              <input type="reset" value="Reset"/>  
-                              <input type="submit" value="Salva"/>
-                          </div>                                   
+                          <input type="text" name="sito_web" id="sito_web" value="www.lego.com/it-it" />
+                          <div class="invia">   
+                          <input type="reset" value="Reset"/>  
+                          <input type="submit" value="Salva"/>    
+                          </div>                           
                         </div>                     
-                       </form>
-                </div>
-                <div class="boxSopra">
-                       <p class="intestazione">MODIFICA PASSWORD</p>
-                       <div id="demo_passw"></div>
-                          <form class="form" action="" method="post" onsubmit="return validateForm(this)">
-                            <div>
-                             <label for="password">Password:</label>
-                             <input type="password" name="Password" id="password"/>
+                        </form>
+                    </div>
 
-                             <label for="conferma_password">Conferma Password:</label>
-                             <input type="password" name="password" id="conferma_password"/>
+                    <div class="form_sopra">
+                        <p class="intestazione">MODIFICA PASSWORD</p>
+                        <div id="demo_passw"></div>
+                        <form  action="" method="post" onsubmit="return validateForm(this)">
+                        <div>
+                          <label for="password">Password:</label>
+                          <input type="password" name="password" id="password"/>
+                          <label for="conferma_password">Conferma Password:</label>
+                          <input type="password" name="conferma_password" id="conferma_password"/> 
+                          <div class="invia">              
+                          <input type="reset"  value="Reset"/>  
+                          <input type="submit" value="Salva"/>   
+                          </div>                             
+                        </div>
+                        </form>
+                    </div>
 
-                             <div class="invia">               
-                               <input type="reset"  value="Reset"/>  
-                               <input type="submit" value="Salva"/>
-                             </div>                                
-                            </div>
-                          </form>
-                </div>
             </div>            
-            <div id="parte_centrale">               
-                <div class="boxSotto">
+
+            <div id="parte_centrale">  
+
+                    <div class="form_centrali">
                     <p class="intestazione">MODIFICA LOGO</p>
                       <form action="" method="post" enctype="multipart/form-data">
-                          <div id="logo">
+                          <div>
                           <label for="carica_immmagine">Selezionare un file:</label>
-                          <input type="file" name="img" id="carica_immmagine"/>
+                          <input type="file" name="immagine" id="carica_immmagine"/>
                           <input type="submit" value="Salva"/>
                           </div>
                      </form>
-                </div>
-                <div class="boxSotto">
-                     <p class="intestazione">MODIFICA NOME NEGOZIO</p>
+                    </div>
+
+                    <div class="form_centrali">
+                    <p class="intestazione">MODIFICA NOME NEGOZIO</p>
                         <div id="demo_nomenegozio"></div>
-                        <form class="form"  action="" method="post" onsubmit="return negozio(this)" > 
-                            <div id="negozio">
+                        <form   action="" method="post" onsubmit="return negozio(this)" > 
+                            <div id="modifica_nome">
                             <label for="nome_negozio">Nome:</label>
-                            <input type="text" name="campo" id="nome_negozio" value="LEGO STORE" />
+                            <input type="text" name="nome_negozio" id="nome_negozio" value="LEGO STORE" />
                             <input type="submit" value="Salva"/>
                             </div>
                         </form>
-                </div>
+                    </div>
             </div>
+
             <div id="sotto">
+
                 <div id="sinistra">
                     <p class="intestazione">MODIFICA ORARIO</p>
                     <p id="esempio">Scrivere l'orario nel formato HH:MM-HH:MM o "chiuso"; <br/>es. 08:30-12:30 </p>
 
                     <div id="demo_orario"></div>
                     <form action="" method="post" onsubmit="return checkorario(this)">
+
                         <div class="orario">
                         <label for="lunedì"> Lunedì :</label>
-                        <input name="lunedi" type="text" maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                        <input type="text" name="lunedi" id="lunedì" maxlength="11" onkeypress="return onlyNumeric(event);"/>
                         </div>
 
                         <div class="orario">
                         <label for="martedì"> Martedì :</label>
-                        <input name="martedi"  type="text" maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                        <input type="text" name="martedi" id="martedì"  maxlength="11" onkeypress="return onlyNumeric(event);"/>
                         </div>
 
                         <div class="orario">
                         <label for="mercoledì" > Mercoledì :</label>
-                        <input name="mercoledi"  type="text" maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                        <input type="text" name="mercoledi" id="mercoledì"  maxlength="11" onkeypress="return onlyNumeric(event);"/>
                         </div>
                         
                         <div class="orario">
                         <label for="giovedì" > Giovedì :</label>
-                        <input name="giovedi" type="text" maxlength="11" onkeypress="return onlyNumeric(event);" />
+                        <input type="text" name="giovedi" id="giovedì" maxlength="11" onkeypress="return onlyNumeric(event);" />
                         </div>
 
                         <div class="orario">
                         <label for="venerdì" > Venerdì :</label>
-                        <input name="venerdi"  type="text" maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                        <input type="text" name="venerdi" id="venerdì"  maxlength="11" onkeypress="return onlyNumeric(event);"/>
                         </div>
 
                         <div class="orario">
                         <label for="sabato" > Sabato :</label>
-                        <input name="sabato"  type="text" maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                        <input  type="text" name="sabato" id="sabato"  maxlength="11" onkeypress="return onlyNumeric(event);"/>
                         </div>
 
                         <div class="orario">
                         <label for="domenica" > Domenica :</label>
-                        <input name="domenica"  type="text" maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                        <input type="text" name="domenica"  id="domenica" maxlength="11" onkeypress="return onlyNumeric(event);"/>
                         </div>                        
                          <div class="pulsante">
                         <input  type="submit" value="Salva"/>                                
@@ -538,28 +542,26 @@ if(charCode==118 || charCode==99 || charCode==97 || charCode==104 || charCode==1
                         </div> 
                     </form>
                 </div>
+
                 <div id="destra">
                     <div id="descrizione">
                         <p class="intestazione">MODIFICA DESCRIZIONE</p>
                         <div id="demo_descrizione"></div>
                         <form action="" method="post" onsubmit="return descrizione(this)">
                               <div>
-                                 <label for="motto">Motto:</label>                    
-                                 <div class="testo_descrizione">                        
-                                  <textarea name="testo_motto" id="motto" rows="2" cols="50">Our mission: To inspire and develop the builders of tomorrow</textarea>  
-                                 </div> 
-                                 <label for="descrizione_negozio">Descrizione:</label>
-                                 <div class="testo_descrizione">                        
+                                 <label for="motto">Motto:</label>                                          
+                                 <textarea name="testo_motto" id="motto" rows="2" cols="50">Our mission: To inspire and develop the builders of tomorrow</textarea>  
+                                 <label for="descrizione_negozio">Descrizione:</label>                     
                                  <textarea name="testo_descrizione" id="descrizione_negozio" rows="5" cols="50">Il nostro scopo è ispirare ed educare i bambini a pensare creativamente, ragionare in modo sistematico e realizzare il loro potenziale, plasmando il loro futuro e sperimentando le infinite possibilità umane. </textarea>  
-                                </div>
-                                <div class="pulsante">
-                                <input  type="submit" value="Salva"/>                                
-                                <input  type="reset" value="Reset"/>   
-                                </div>  
+                                 <div class="pulsante">
+                                 <input  type="submit" value="Salva"/>                                
+                                 <input  type="reset" value="Reset"/>   
+                                 </div>  
                             </div>           
                         </form>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
