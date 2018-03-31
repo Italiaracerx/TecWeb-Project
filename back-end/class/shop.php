@@ -4,7 +4,7 @@ require_once("exeption.php");
 require_once("connection.php");
 
 
-class log extends connection{
+class shop extends connection{
     //campi privati
     private $username;
     private $password;
@@ -17,8 +17,15 @@ class log extends connection{
         $this->password =hash('sha1',mysqli::real_escape_string($psw1));
         $this->confirm =hash('sha1',mysqli::real_escape_string($psw2));
     }
+    public function log(){
+        $controller->session();
+        $query = "SELECT A.username,A.typeuser,T.link FROM account A INNER JOIN type_account T ON A.user_type = T.user_type 
+        WHERE A.username = $this->username AND password = $this->password";
+        if(parent::execute_query($query)){}
+    }
     public function write(){
         $controller->session();
+        
         $query = "INSERT INTO account VALUES ('$this->username','user','$this->password')";
         if(parent::execute_query($query)){
             $this->controller->set_flag(new exeption("correct","Scrittura eseguita con successo."));

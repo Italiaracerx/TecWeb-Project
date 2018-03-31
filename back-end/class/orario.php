@@ -20,7 +20,7 @@ class orario extends connection{
             $this->orari[$i]=mysqli::real_escape_string($_POST[$orari[$i]]);
         }
     }
-    public function write(){
+    public function validate(){
         $sent = false;
         for($i=0; $i<7  && !$sent; $i++){
             $arr1 = str_split($this->orari[$i]);
@@ -52,7 +52,10 @@ class orario extends connection{
                 $controller->set_flag(new exeption("error","Orario non valido"));                
             }
         }
-        if(!$set){
+    return $sent;   
+    }
+    public function write(){
+        if($this->validate()){
             $user =$_SESSION['user'];
             $query = "UPDATE orario SET $this->giorno[0]=$this->orari[0],
             $this->giorno[1]=$this->orari[1],
