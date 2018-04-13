@@ -1,15 +1,15 @@
 <?php
 
 require_once("../interfacce/page_template.php");
-require_once("../interfacce/menu_template.php");
+require_once("menu/menu.php");
 
 
 class loginPage implements page_template{
 	private $menu;
 	private $name= "Login";
 	private $php="verifica.php";
-	public function __constructor(menu $currentMenu){
-		$this->menu=$currentMenu;
+	public function __constructor(){
+		$this->menu= (new menu())->login();
 	}
 	public function getNamePage(){
 		return $this->name;
