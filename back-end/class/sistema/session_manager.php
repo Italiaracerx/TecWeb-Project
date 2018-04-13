@@ -1,6 +1,10 @@
 <?php 
 class session_manager{
 	//metodi
+    function __constructor(){
+        $this->session();
+    }
+
 	public function set_flag(exeption $ex){
         $_SESSION['flag']=$ex->getFlag();        //la flag serve per errori o altro, 0 niente da segnalare, 1 operazione avvenuta, 2 operazione fallita
         $_SESSION['flag_text']=$ex->getText_flag();   // campo flag_text riporta un messaggio descrivendo la flag

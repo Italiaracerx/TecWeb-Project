@@ -7,14 +7,14 @@ class staticPath{
     private static $link_general_private="../../../mainPage/general_private.php";
     private static $link_promozioni_private="../../../mainPage/promozioni_private.php";
     private static $link_prodotti_private="../../../mainPage/prodotti_private.php";
-    private static $link_negozio="../../../mainPage/negozio.php";    
+    private static $link_negozio="../../../mainPage/negozio.php";
 
     public function admin(){
         $admin = array();
         $admin[]=new schedaMenu(staticPath::$link_logout,"Logout");
         return $admin;
     }
-    public function private(){
+    public function privat(){
         $private = array();
         $private[]=new schedaMenu(staticPath::$link_general_private,"Generale");
         $private[]=new schedaMenu(staticPath::$link_promozioni_private,"Promozioni");
@@ -24,8 +24,7 @@ class staticPath{
         return $private;
     }
     public function login(){
-        $login = array();
-        return $login;
+        return array();
     }
 
 }

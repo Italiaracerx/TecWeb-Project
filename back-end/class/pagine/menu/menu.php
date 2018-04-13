@@ -2,7 +2,7 @@
 
 class menu{
     private $link = array();
-    public function __construct($mn){
+    function __constructor($mn){
         $this->link =$mn;
     }
     public function print(){

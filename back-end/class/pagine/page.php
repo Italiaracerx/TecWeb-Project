@@ -1,9 +1,9 @@
 <?php 
 class page{
-	private $style="private_style.css";
+	private static $style="private_style.css";
 	private $pag_corrente;
 	
-	public function __construct(page_template $pg=NULL){
+	function __constructor(page_template $pg){
 		$this->pag_corrente=$pg;
 	}
 	public function intestazione(){
@@ -13,7 +13,7 @@ class page{
 			<head>
 				<meta http-equiv="Content-Type" content="txt/html charset= UTF-8" />
 				<title>Centro Archimede: '.$this->pag_corrente->getNamePage().'</title>
-				<link rel="stylesheet" type="text/css" href="'.$this->style.'" media="handheld, screen"/>
+				<link rel="stylesheet" type="text/css" href="'.page::$style.'" media="handheld, screen"/>
 			</head>';
     }
     public function header(){
@@ -25,8 +25,8 @@ class page{
 				</div>';
 	}
 	public function menu(){
-		echo $pg_corrente->menu();
-	}
+		$this->pag_corrente->menu();
+	}		
     public function breadcrumb(){
     	echo '	<div id="breadcrumb">
         			<h2><strong>'.$this->pag_corrente->getNamePage().'</strong></h2>        
