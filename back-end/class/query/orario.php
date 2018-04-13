@@ -1,10 +1,10 @@
 <?php 
-require_once("controller.php");
+
 require_once("exeption.php");
 require_once("connection.php");
+require_once("query.php");
 
-
-class orario extends connection{
+class orario extends connection implements query{
     //campi privati
     private static $giorni = ['lunedi', 'martedi', 'mercoledi', 'giovedi', 'venerdi', 'sabato', 'domenica'];
     private static $apertura =510;
@@ -15,7 +15,6 @@ class orario extends connection{
     //metodi
     public function __construct(){
         parent::__construct();
-        $controller->session();
         for($i=0; $i<7; $i++){
             $this->orari[$i]=mysqli::real_escape_string($_POST[$orari[$i]]);
         }
@@ -32,24 +31,19 @@ class orario extends connection{
             $newchiusura=$orachiusura*60+$minutichiusura;
 
             if(!$sent && ($oraapertura > 23 || $orachiusura > 23)){
-                $sent=true;
-                $controller->set_flag(new exeption("error","Orario non valido"));
+		throw new exeption("error","Orario non valido")
             }
             if(!$sent && ($minutiapertura > 59 || $minutiorachiusura > 59)){
-                $sent=true;
-                $controller->set_flag(new exeption("error","Orario non valido"));
+		throw new exeption("error","Orario non valido")
             }
             if(!$sent && ($newapertura > $newchiusura)){
-                $sent=true;
-                $controller->set_flag(new exeption("error","Orario non valido"));
+		throw new exeption("error","Orario non valido")
             }
             if(!$sent && ($oraapertura < $this->apertura || $orachiusura < $this->chiusura)){
-                $sent=true;
-                $controller->set_flag(new exeption("error","Orario non valido"));
+		throw new exeption("error","Orario non valido")
             }
             if(!$sent && $arr1[3] != ":" && $arr1[6] != "-" && $arr1[9] != ":" ){
-                $sent=true;
-                $controller->set_flag(new exeption("error","Orario non valido"));                
+		throw new exeption("error","Orario non valido")             
             }
         }
         if(!$set){
@@ -62,10 +56,10 @@ class orario extends connection{
             $this->giorno[5]=$this->orari[5],
             $this->giorno[6]=$this->orari[6] WHERE username = $user";
             if(parent::execute_query($query)){
-                $this->controller->set_flag(new exeption("correct","Scrittura eseguita con successo."));
+		throw new exeption("error","Orario non valido")
             }
             else{
-                $this->controller->set_flag(new exeption("error","Scrittura non eseguita."));
+		throw new exeption("error","Orario non valido")
             }
         }
     }
@@ -73,13 +67,7 @@ class orario extends connection{
         $controller->session();
         $user =$_SESSION['user'];
         $query = "SELECT * FROM orario WHERE username = $user";
-        $orari=mysqli_fetch_array(parent::execute_query($query));
-        if($orari){
-            $this->controller->define_session($utente);
-        }
-        else{
-            $this->controller->set_flag(new exeption("error","orari non disponibili"));
-        }
+        return mysqli_fetch_array(parent::execute_query($query));
     }
 }
 

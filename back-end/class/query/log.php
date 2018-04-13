@@ -1,12 +1,8 @@
 <?php 
-require_once("controller.php");
-require_once("exeption.php");
-require_once("connection.php");
 
-interface query{
-    public function read();
-    public function write();
-}
+require_once("../sistema/exeption.php");
+require_once("../sistema/connection.php");
+require_once("../interfacce/query.php");
 
 class log extends connection implements query{
     //campi privati

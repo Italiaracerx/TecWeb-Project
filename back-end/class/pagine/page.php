@@ -32,7 +32,6 @@ class page{
     public function print_bar(){
         if($_SESSION['flag'] != NULL){
             echo '<h2 id="'.$_SESSION['flag'].'">'.$_SESSION['flag_text'].'</h2>';
-            $this->set_flag(new exeption());
         }
     }
     public function footer(){

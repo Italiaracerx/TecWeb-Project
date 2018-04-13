@@ -1,6 +1,6 @@
 <?php
-    require_once('class/controller.php');
-    require_once('class/page_template.php');
+    require_once('../class/sistema/controller.php');
+    require_once('../class/pagine/loginPage.php');
 
     $controller = new controller(new loginPage());
     $controller->check_session();
