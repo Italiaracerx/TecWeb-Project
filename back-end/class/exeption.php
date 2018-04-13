@@ -1,6 +1,6 @@
 <?php
 
-class exeption{
+class exeption extends Exception{
     private $flag;
     private $text_flag;
 

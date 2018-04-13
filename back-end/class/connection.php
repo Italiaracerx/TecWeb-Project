@@ -8,29 +8,22 @@ class connection{
     private static $db_user = "root";
     private static $db_psw = "";
     private static $db_name = "archimede";
-    protected $controller;
 
     //metodi
-    public function __construct(){
-        $this->controller = new controller();
-    }
     public function connect(){
-        $this->controller->session();
-        if($sql->mysqli_connect($this->host,$this->db_user,$this->db_psw,$this->db_name)){
-            throw new exeption("error", "connessione non riuscita");
-        }
-        return $sql;
+        return new mysqli(connection::$host,connection::$db_user,connection::$db_psw,connection::$db_name);
     }
-    function execute_query($query){
-        try{
-            $sql=$this->connect();
-            $result =$sql->mysqli_query($query);
-            $sql->mysqli->close();
-            return $result;
-        }
-        catch(exeption $ex){
-            $this->controller->set_flag($ex);
-        }
+    public function espaced_string($string){
+        $sql=$this->connect();
+        $escaped_string =($this->connect())->real_escape_string($string);
+        $sql->close();
+        return $escaped_string;
+    }
+    public function execute_query($query){
+        $sql=$this->connect();
+        $result =$sql->query($query);
+        $sql->close();
+        return $result; 
     }
 }
 
