@@ -1,21 +1,13 @@
 <?php
 
 require_once("../interfacce/page_template.php");
-require_once("../interfacce/menu_template.php");
-
 
 class loginPage implements page_template{
-	private $menu;
-	private $name= "Login";
-	private $php="verifica.php";
-	public function __constructor(menu $currentMenu){
-		$this->menu=$currentMenu;
-	}
+	private $name= "Administrator";
+    private static $php="verifica.php";
+
 	public function getNamePage(){
 		return $this->name;
-	}
-	public function menu(){
-		echo $this->menu->printMenu();
 	}
 	public function getPage(){
 		echo '   <div id="content">

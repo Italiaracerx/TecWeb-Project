@@ -23,7 +23,10 @@ class page{
 		                <h1>AMMINISTRAZIONE</h1>
 					</div>
 				</div>';
-    }
+	}
+	public function menu(){
+		echo $pg_corrente->menu();
+	}
     public function breadcrumb(){
     	echo '	<div id="breadcrumb">
         			<h2><strong>'.$this->pag_corrente->getNamePage().'</strong></h2>        
@@ -41,7 +44,8 @@ class page{
 				</html>';
     }
     public function body(){
-    	$this->header();
+		$this->header();
+		$this->menu();
     	$this->breadcrumb();
     	$this->print_bar();
 		$this->pag_corrente->getPage();
