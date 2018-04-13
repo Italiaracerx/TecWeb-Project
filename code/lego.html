@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css" media="handheld, screen"/>
 	<link rel="stylesheet" type="text/css" href="tablet.css" media="handheld, screen and (max-width:768px),
     only screen and (max-device-width:768px)"/>
-    <link rel="stylesheet" type="text/css" href="mobile.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)">
+    <link rel="stylesheet" type="text/css" href="mobile.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)"/>
 	 <link rel="stylesheet" type="text/css" href="print.css" media="print"/><!--STAMPA-->
 </head>
  
@@ -43,14 +43,12 @@
 	<div id="content">
         <div id="content_negozio">
             <h3 id="titolo_negozio">LEGO STORE</h3>
-
             <div id="informazioni">
-                    <img id="logo_negozio" src="images/imglego.jpg" alt="logo"/>
-
+                <img id="logo_negozio" src="images/imglego.jpg" alt="logo"/>
                 <div id="contatti">
                     <h4 class="informazione">TELEFONO / FAX</h4>
                     <p class="dato">041610265</p>
-                    <h4 class="informazione">EMAIL</h4>
+                    <h4 class="informazione"><span xml:lang="en">EMAIL</span></h4>
                     <p class="dato">blablabla@lego.com</p>
                     <h4 class="informazione">SITO WEB</h4>
                     <a class="dato" href="https://www.lego.com/it-it">www.lego.com/it-it</a>
@@ -71,33 +69,59 @@
 
             <div id="descrizione">
                     <p id="testo">               
-                        <strong>Our mission: To inspire and develop the builders of tomorrow</strong><br/>Il nostro scopo è ispirare ed educare i bambini a pensare creativamente, ragionare in modo sistematico e realizzare il loro potenziale, plasmando il loro futuro e sperimentando le infinite possibilità umane.  
+                        <strong><span xml:lang="en">Our mission: To inspire and develop the builders of tomorrow</span></strong><br/>Il nostro scopo è ispirare ed educare i bambini a pensare creativamente, ragionare in modo sistematico e realizzare il loro potenziale, plasmando il loro futuro e sperimentando le infinite possibilità umane.  
                     </p>
                     <div id="prodotti">
+
                         <h4 class="titolo_prodotti">PRODOTTI</h4>
+
                         <div class="prodotto">
-                            <img class="gioco" src="images/lego1.jpg" alt="Logo negozio Lego"/>
-                            <h5 class="NomeItem">lego de merda</h5>
-                        </div>                           
+                            <img class="gioco" src="images/lego1.jpg" alt="prodotto in vendita"/>
+                            <h5 class="NomeItem">gioco 1</h5>
+                        </div>  
+
                         <div class="prodotto">
-                            <img class="gioco" src="images/lego2.jpg" alt="Logo negozio Lego"/>
-                            <h5 class="NomeItem">lego de merda</h5>
+                            <img class="gioco" src="images/lego2.jpg" alt="prodotto in vendita"/>
+                            <h5 class="NomeItem">gioco 2</h5>
                         </div>
+
                         <div class="prodotto">
-                            <img class="gioco" src="images/lego3.jpg" alt="Logo negozio Lego"/>
-                            <h5 class="NomeItem">lego de merda</h5>
+                            <img class="gioco" src="images/lego3.jpg" alt="prodotto  in vendita"/>
+                            <h5 class="NomeItem">gioco 3</h5>
                         </div>                       
                     </div>
+                    
                     <div id="promozioni">
-                            <h4 class="titolo_prodotti">PROMOZIONI</h4>
-                            <img class="promo" src="images/promo1.jpg" alt="logo"/>                            
-                            <img class="promo" src="images/promo2.jpg" alt="logo"/> 
-                            <img class="promo" src="images/promo3.png" alt="logo"/>
-                    </div>
 
+                       <h4 class="titolo_prodotti">PROMOZIONI</h4>
+                     <div id="elencoPromozioni">
+                       <div class="promozioneHome">
+                          <img class="promozione" src="images/promo1.jpg" alt="promozione del negozio"/> 
+                          <p>Nome_Negozio_1</p>
+                       </div>
+                       <div class="promozioneHome">
+                          <img class="promozione" src="images/promo2.jpg" alt="promozione del negozio"/> 
+                         <p>Nome_Negozio_2</p>
+                        </div>
+                       <div class="promozioneHome">
+                         <img class="promozione" src="images/promo3.png" alt="promozione del negozio"/> 
+                         <p>Nome_Negozio_3</p>
+                        </div>
+                       <div class="promozioneHome">
+                          <img class="promozione" src="images/promo1.jpg" alt="promozione del negozio"/> 
+                          <p>Nome_Negozio_4</p>
+                       </div>
+                       <div class="promozioneHome">
+                         <img class="promozione" src="images/promo1.jpg" alt="promozione"/> 
+                          <p>Nome_Negozio_4</p>
+                        </div>
+                      </div>
+
+
+                    </div>
             </div>
-        </div>
-    </div>        
+         </div>  
+        </div>      
 
 
        <div id="footer">
@@ -116,7 +140,7 @@
         <img id="logoFooter" alt="logofooter" src="images/logo.jpg"/>
 
         <div id="infoFooter">
-         <p>Via Trieste, 63  | 35121 Padova (Italy)| Telefono: +39 049 827 1200 | E-Mail:info@centro.archimede.it</p>
+         <p>Via Trieste, 63  | 35121 Padova (Italy)| Telefono: +39 049 827 1200 | <span xml:lang="en">e-mail</span>:info@centro.archimede.it</p>
           </div> <!-- fine contatti_footer-->
         </div>
 </div> <!-- fine footer-->

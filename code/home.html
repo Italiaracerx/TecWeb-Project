@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css" media="handheld, screen"/>
 	<link rel="stylesheet" type="text/css" href="tablet.css" media="handheld, screen and (max-width:768px),
 	only screen and (max-device-width:768px)"/>
-	<link rel="stylesheet" type="text/css" href="mobile.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)">
+	<link rel="stylesheet" type="text/css" href="mobile.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)"/>
 	<link rel="stylesheet" type="text/css" href="print.css" media="print"/><!--STAMPA-->
 </head>
  
@@ -42,9 +42,10 @@
 	<div id="content">
 		<img id="torre" alt="immagine torre archimede" src="images/torre 2.jpg"/>
 
-		<p  id="intestazione">Benvenuti nel Centro Commerciale Archimede</p>
+		<h2  id="intestazione">Benvenuti nel Centro Commerciale Archimede</h2>
+		<div id="eventi_promozioni">
 		<div id="tabellaLaterale">
-			<table id="tabellaOrari" summary="In questa tabella vengono elencati gli orari del centro commerciale Archimede di tutti i giorni della settimana">
+			<table id="tabella_orari" summary="In questa tabella vengono elencati gli orari del centro commerciale Archimede di tutti i giorni della settimana">
 				<caption>Orari</caption>
 				<tr>
 					<td>Luned&igrave;: 9:00 - 21:00</td>
@@ -69,7 +70,7 @@
 				</tr>
 			</table>
 
-			<table id="tabellaEventi" summary="In questa tabella vengono elencati i vari eventi che ci sono in un dato periodo  nel centro commerciale Archimede">
+			<table id="tabella_eventi" summary="In questa tabella vengono elencati i vari eventi che ci sono in un dato periodo  nel centro commerciale Archimede">
 				<caption>Eventi</caption>
 				<tr>
 					<td>Sono iniziati i saldi:scopri tutte le nostre occasioni di shopping</td>
@@ -80,11 +81,14 @@
         </div>
 
 		<div id="sottoPiano">
+			<div id="tre_pulsanti">
 		   <p class="casella"><a href="negozi.html">Negozi</a></p>
 		   <p class="casella"><a href="negozi.html">Dove Siamo</a></p>
 		   <p class="casella"><a href="negozi.html">Contatti</a></p>
-
+		    </div>
+		   <div id="titolo_promozione">
 		    <h2>Promozioni</h2>
+		   </div>
 		    <div id="elencoPromozioni">
                 <div class="promozioneHome">
                     <img class="promozione" src="images/promo1.jpg" alt="promozione"/> 
@@ -106,11 +110,12 @@
                     <img class="promozione" src="images/promo1.jpg" alt="promozione"/> 
                     <p>Nome_Negozio_4</p>
                 </div>
-              </div>
+            </div>
 
-	      </div>
+	    </div>
+	   </div>
+
 		
-
 		
 	</div>
 
@@ -131,7 +136,7 @@
              <h3>Centro Commerciale Archimede</h3>
              <img id="logoFooter" alt="logofooter" src="images/logo.jpg"/>
              <div id="infoFooter">
-              <p>Via Trieste, 63  | 35121 Padova (Italy)| Telefono: +39 049 827 1200 | Email:info@centro.archimede.it</p>
+              <p>Via Trieste, 63  | 35121 Padova (<span xml:lang="en">Italy</span>)| Telefono: +39 049 827 1200 | <span xml:lang="en">e-mail</span>:info@centro.archimede.it</p>
                </div> <!-- fine contatti_footer-->
 	</div>
 
