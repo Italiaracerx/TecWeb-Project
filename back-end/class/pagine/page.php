@@ -3,7 +3,7 @@ class page{
 	private static $style="private_style.css";
 	private $pag_corrente;
 	
-	function __constructor(page_template $pg){
+	function __construct(page_template $pg){
 		$this->pag_corrente=$pg;
 	}
 	public function intestazione(){

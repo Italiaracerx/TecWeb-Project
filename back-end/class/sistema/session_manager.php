@@ -1,55 +1,51 @@
-<?php 
+<?php
+
+    require_once __DIR__.'\..\query\permission.php';
+
 class session_manager{
 	//metodi
-    function __constructor(){
+    public function __construct(){
         $this->session();
     }
 
 	public function set_flag(exeption $ex){
-        $_SESSION['flag']=$ex->getFlag();        //la flag serve per errori o altro, 0 niente da segnalare, 1 operazione avvenuta, 2 operazione fallita
+        $_SESSION['flag']=$ex->getFlag();        //la flag serve per errori o altro, NULL niente da segnalare, 1 operazione avvenuta, 2 operazione fallita
         $_SESSION['flag_text']=$ex->getText_flag();   // campo flag_text riporta un messaggio descrivendo la flag
     }
     public function session(){
-        $_SESSION['user'] = NULL;//inizializzo a NULL l'utente corrente
-        $_SESSION['type'] = NULL;//type rapprensenta il tipo di utente se messo a NULL nessun utente loggato
-        $_SESSION['link'] = NULL;//indica il nome della pagina a cui questo indirizzo fa riferimento
-        $this->set_flag(new exeption());
+        session_start();
+        if(empty($_SESSION)){
+            $_SESSION['user'] = NULL;//inizializzo a NULL l'utente corrente
+            $_SESSION['type'] = 'unlogged';//type rapprensenta il tipo di utente se messo a NULL nessun utente loggato
+            $this->set_flag(new exeption());
+        }
     }
     public function check_session(){
-        session_start();
-        if (!empty($_SESSION)){
-            $this->session();
-        }
-        elseif($_SESSION['type'] == NULL){
-            $this->set_flag(new exeption("error","Sessione scaduta, esegui un nuovo login."));
-            header("Location: login.php");
-        }
-        else{
-            $this->set_flag(new exeption("correct","Bentornato"));
-            header("Location: ".$_SESSION['link'].".php");
+        $permission= new permission();
+        if(!$permission->read()){
+            header("Location: login.php");            
         }
     }
     public function define_session($utente){
         //setto nell'array di sessione le informazioni
+
         if($utente == NULL){
-        	$this->set_flag(new exeption("error","Login o password errati."));
-        	header("Location: login.php");
+            $this->set_flag(new exeption("error","Login o password errati."));
+        	header("Location: ..\login.php");
         }
         else{
-            echo $utente['link'];
 	        $_SESSION['user']=$utente['username'];
 	        $_SESSION['type']=$utente['user_type'];
-	        $_SESSION['link']=$utente['link'];
-	        $this->set_flag(new exeption("correct","Login effettuato con successo. Benvenuto ".$utente['username']));
-            echo $_SESSION['link'];
-	        header("Location: ".$_SESSION['link'].".php");
+	        $this->set_flag(new exeption("correct","Login effettuato con successo. Benvenuto ".$utente['username'].'.'));
+            header('Location: '.'..'.DIRECTORY_SEPARATOR.$utente['link'].'.php');
         }
     }
     public function logout(){
-        session_start();
         session_unset();
-        session_destroy(); 
-        header("Location: login.php");
+        session_destroy();
+        $this->session();
+        $this->set_flag(new exeption("correct","Logout avvenuto con successo.")); 
+        header('Location: '.'..'.DIRECTORY_SEPARATOR.'login.php');
     }
 }
 

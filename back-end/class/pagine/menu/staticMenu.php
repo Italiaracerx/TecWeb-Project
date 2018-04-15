@@ -1,26 +1,26 @@
 <?php
-require_once("schedaMenu.php");
-
+require_once __DIR__.'\schedaMenu.php';
+//penso vadano inseriti gl indirizzi assoluti...
 class staticPath{
-    private static $link_logout="../../../mainForm/logout.php";
-    private static $link_admin="../../../mainPage/general_admin.php";
-    private static $link_general_private="../../../mainPage/general_private.php";
-    private static $link_promozioni_private="../../../mainPage/promozioni_private.php";
-    private static $link_prodotti_private="../../../mainPage/prodotti_private.php";
-    private static $link_negozio="../../../mainPage/negozio.php";
+    private static $link_logout='mainForm\logout.php';
+    private static $link_admin='\..\general_admin.php';
+    private static $link_general_private='general_private.php';
+    private static $link_promozioni_private='promozioni_private.php';
+    private static $link_prodotti_private='prodotti_private.php';
+    private static $link_negozio='negozio.php';
 
     public function admin(){
         $admin = array();
-        $admin[]=new schedaMenu(staticPath::$link_logout,"Logout");
+        $admin[]=new schedaMenu("Logout",staticPath::$link_logout);
         return $admin;
     }
     public function privat(){
         $private = array();
-        $private[]=new schedaMenu(staticPath::$link_general_private,"Generale");
-        $private[]=new schedaMenu(staticPath::$link_promozioni_private,"Promozioni");
-        $private[]=new schedaMenu(staticPath::$link_prodotti_private,"Prodotti");
-        $private[]=new schedaMenu(staticPath::$link_negozio,"Link Negozio");
-        $private[]=new schedaMenu(staticPath::$link_logout,"Logout");
+        $private[]=new schedaMenu("Generale",staticPath::$link_general_private);
+        $private[]=new schedaMenu("Promozioni",staticPath::$link_promozioni_private);
+        $private[]=new schedaMenu("Prodotti",staticPath::$link_prodotti_private);
+        $private[]=new schedaMenu("Link Negozio",staticPath::$link_negozio);
+        $private[]=new schedaMenu("Logout",staticPath::$link_logout);
         return $private;
     }
     public function login(){

@@ -1,6 +1,6 @@
 <?php
-require_once("controller.php");
-require_once("exeption.php");
+require_once __DIR__.'\controller.php';
+require_once __DIR__.'\exeption.php';
 
 class connection{
     //campi privati

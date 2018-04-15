@@ -1,9 +1,11 @@
 <?php
 
-require_once("../interfacce/page_template.php");
-require_once("menu/menu.php");
+require_once __DIR__.'\..\interfacce\page_template.php';
+require_once __DIR__.'\menu\menu.php';
+require_once __DIR__.'\menu\staticMenu.php';
 
-class loginPage implements page_template{
+
+class adminPage implements page_template{
 	private $menu;
 	private $name= "Administrator";
 	private static $newUser="newUser.php";
@@ -12,14 +14,14 @@ class loginPage implements page_template{
 	private static $news="news.php";
 	private static $deleteShop="deleteShop.php";
 	
-	public function __constructor(){
+	public function __construct(){
 		$this->menu= new menu((new staticPath())->admin());
 	}
 	public function getNamePage(){
 		return $this->name;
 	}
 	public function menu(){
-		$this->menu->printMenu();
+		$this->menu->print();
 	}	
 	public function getPage(){
 		echo '    <div id="content">

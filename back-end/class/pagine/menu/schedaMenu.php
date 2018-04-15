@@ -3,7 +3,7 @@
 class schedaMenu{
     private $name;
     private $link;
-    public function __constructor($nm,$lk){
+    public function __construct($nm,$lk){
         $this->name =$nm;
         $this->link =$lk;
     }

@@ -1,10 +1,10 @@
 <?php 
 
-require_once("../sistema/exeption.php");
-require_once("../sistema/connection.php");
-require_once("../interfacce/query.php");
+require_once __DIR__.'\..\sistema\exeption.php';
+require_once __DIR__.'\..\sistema\connection.php';
+require_once __DIR__.'\..\interfacce\query.php';
 
-class log extends connection implements query{
+class login extends connection implements query{
     //campi privati
     private $username;
     private $password;
@@ -22,7 +22,8 @@ class log extends connection implements query{
     }
     public function read(){
         $query = "SELECT A.username, T.user_type, T.link FROM account A INNER JOIN type_account T ON A.type = T.user_type WHERE A.username = '$this->username' AND A.password = '$this->password'";
-        return mysqli_fetch_array(parent::execute_query($query));
+        $utente =mysqli_fetch_array(parent::execute_query($query));
+        return $utente;
     }
 }
 

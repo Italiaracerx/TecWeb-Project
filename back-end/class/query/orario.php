@@ -1,8 +1,8 @@
 <?php 
 
-require_once("exeption.php");
-require_once("connection.php");
-require_once("query.php");
+require_once("\exeption.php");
+require_once("\connection.php");
+require_once("\query.php");
 
 class orario extends connection implements query{
     //campi privati
