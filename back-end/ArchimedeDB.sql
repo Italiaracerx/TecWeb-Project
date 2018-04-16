@@ -52,7 +52,7 @@ CREATE TABLE prodotti(
 	alt varchar(64) NOT NULL,	
 	descrizione varchar(64) NOT NULL,
 	data datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (username, ID),
+    PRIMARY KEY (ID),
 	FOREIGN KEY (username) REFERENCES account(username)
 );
 
@@ -62,7 +62,7 @@ CREATE TABLE promozioni(
 	alt varchar(64) NOT NULL,
 	descrizione varchar(64) NOT NULL,
 	data datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	PRIMARY KEY (username, ID),
+	PRIMARY KEY (ID),
 	FOREIGN KEY (username) REFERENCES account(username)
 
 );

@@ -107,35 +107,47 @@ function checkorario(form){
     var controlla_5=Sabato.slice(5, -5);
     var controlla_6=Domenica.slice(5, -5);
 
+    var cane=true;
+
     if(Lunedi!="chiuso"){
     if(controlla!="-" )  
-    {var o="Lunedì: ATTENZIONE carattere o '-' mancante !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+    {document.all.uno.innerHTML = ".";
+cane=false;} else{ document.all.uno.innerHTML = null;}}
     
     if(Martedi!="chiuso"){
     if(controlla_1!="-")
-        {var o="Martedì: ATTENZIONE carattere o '-' mancante !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+        { document.all.due.innerHTML = ".";
+cane=false;} else{ document.all.due.innerHTML = null;}}
 
     if(Mercoledi!="chiuso"){
     if(controlla_2!="-")
-        {var o="Mercoledì: ATTENZIONE carattere o '-' mancante !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+        {document.all.tre.innerHTML = ".";
+cane=false;} else{ document.all.tre.innerHTML = null;}}
 
     if(Giovedi!="chiuso"){
     if(controlla_3!="-")
-        {var o="Giovedì: ATTENZIONE carattere o '-' mancante !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+        {document.all.quattro.innerHTML = ".";
+cane=false;} else{ document.all.quattro.innerHTML = null;}}
 
     if(Venerdi!="chiuso"){
     if(controlla_4!="-")
-        {var o="Venerdì: ATTENZIONE carattere o '-' mancante !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+        {document.all.cinque.innerHTML = ".";
+cane=false;} else{ document.all.cinque.innerHTML = null;}}
 
     if(Sabato!="chiuso"){
     if(controlla_5!="-")
-        {var o="Sabato: ATTENZIONE carattere o '-' mancante !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+        {document.all.sei.innerHTML = ".";
+cane=false;} else{ document.all.sei.innerHTML = null;}}
 
     if(Domenica!="chiuso"){
     if(controlla_6!="-")
-         {var o="Domenica: ATTENZIONE carattere o '-' mancante !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+         {document.all.sette.innerHTML = ".";
+ cane=false;} else{ document.all.sette.innerHTML = null;}}
 
-    
+        if(cane==false){
+            var o="ATTENZIONE carattere o '-' mancante !!!";
+            document.getElementById("demo_orario").innerHTML = o ;return false;}
+
     var primi_punti=Lunedi.slice(2, -8);
     var primi_punti_1=Martedi.slice(2, -8);
     var primi_punti_2=Mercoledi.slice(2, -8);
@@ -144,34 +156,48 @@ function checkorario(form){
     var primi_punti_5=Sabato.slice(2, -8);
     var primi_punti_6=Domenica.slice(2, -8);
 
+
     if(Lunedi!="chiuso"){
     if(primi_punti!=":")  
-    {var o="Lunedì: Mettere ':' tra hh:mm nell'orario apertura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+    {
+document.all.uno.innerHTML = ".";
+cane=false; } else{ document.all.uno.innerHTML = null;}}
 
     if(Martedi!="chiuso"){
     if(primi_punti_1!=":")
-        {var o="Martedì: Mettere ':' tra hh:mm nell'orario apertura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+        {
+    document.all.due.innerHTML = ".";
+    cane=false;} else{ document.all.due.innerHTML = null;}}
 
     if(Mercoledi!="chiuso"){
     if(primi_punti_2!=":")
-        {var o="Mercoledì: Mettere ':' tra hh:mm nell'orario apertura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+        {document.all.tre.innerHTML = ".";
+    cane=false;} else{ document.all.tre.innerHTML = null;}}
 
     if(Giovedi!="chiuso"){
     if(primi_punti_3!=":")
-        {var o="Giovedì: Mettere ':' tra hh:mm nell'orario apertura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+        {document.all.quattro.innerHTML = ".";
+    cane=false;} else{ document.all.quattro.innerHTML = null;}}
 
     if(Venerdi!="chiuso"){
     if(primi_punti_4!=":")
-        {var o="Venerdì: Mettere ':' tra hh:mm nell'orario apertura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+        {document.all.cinque.innerHTML = ".";
+    cane=false;} else{ document.all.cinque.innerHTML = null;}}
 
     if(Sabato!="chiuso"){
     if(primi_punti_5!=":")
-        {var o="Sabato: Mettere ':' tra hh:mm nell'orario apertura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+        {document.all.sei.innerHTML = ".";
+    cane=false;} else{ document.all.sei.innerHTML = null;}}
 
     if(Domenica!="chiuso"){
     if(primi_punti_6!=":")
-        {var o="Domenica: Mettere ':' tra hh:mm nell'orario apertura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+        {document.all.sette.innerHTML = ".";
+    cane=false;} else{ document.all.sette.innerHTML = null;}}
 
+    if(cane==false){
+        var o="Mettere ':' tra hh:mm nell'orario apertura!!!";
+    document.getElementById("demo_orario").innerHTML = o ;
+    return false;}
 
     var finali_punti=Lunedi.slice(8, -2);
     var finali_punti_1=Martedi.slice(8, -2);
@@ -183,31 +209,44 @@ function checkorario(form){
 
     if(Lunedi!="chiuso"){
     if(finali_punti!=":")
-    {var o="Lunedì: Mettere ':' tra hh:mm nell'orario chiusura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+    {document.all.uno.innerHTML = ".";
+    cane=false;} else{ document.all.uno.innerHTML = null;}}
 
     if(Martedi!="chiuso"){
     if(finali_punti_1!=":")
-        {var o="Martedì: Mettere ':' tra hh:mm nell'orario chiusura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+        {document.all.due.innerHTML = ".";
+    cane=false;} else{ document.all.due.innerHTML = null;}}
 
     if(Mercoledi!="chiuso"){
     if(finali_punti_2!=":")
-        {var o="Mercoledì: Mettere ':' tra hh:mm nell'orario chiusura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+        {document.all.tre.innerHTML = ".";
+    cane=false;} else{ document.all.tre.innerHTML = null;}}
 
     if(Giovedi!="chiuso"){
     if(finali_punti_3!=":")
-        {var o="Giovedì: Mettere ':' tra hh:mm nell'orario chiusura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+        {document.all.quattro.innerHTML = ".";
+    cane=false;} else{ document.all.quattro.innerHTML = null;}}
 
     if(Venerdi!="chiuso"){
     if(finali_punti_4!=":")
-        {var o="Venerdì: Mettere ':' tra hh:mm nell'orario chiusura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+        {document.all.cinque.innerHTML = ".";
+    cane=false;} else{ document.all.cinque.innerHTML = null;}}
 
     if(Sabato!="chiuso"){
     if(finali_punti_5!=":")
-        {var o="Sabato: Mettere ':' tra hh:mm nell'orario chiusura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+        {document.all.sei.innerHTML = ".";
+    cane=false;} else{ document.all.sei.innerHTML = null;}}
 
     if(Domenica!="chiuso"){
     if(finali_punti_6!=":")
-         {var o="Domenica: Mettere ':' tra hh:mm nell'orario chiusura!!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+         {document.all.sette.innerHTML = ".";
+     cane=false;} else{ document.all.sette.innerHTML = null;}}
+
+     if(cane==false){
+        var o="Mettere ':' tra hh:mm nell'orario chiusura!!!";
+    document.getElementById("demo_orario").innerHTML = o ;
+    return false;}
+
 
      if(Lunedi!="chiuso"){
     var uno=Lunedi.split("-");
@@ -286,65 +325,86 @@ function checkorario(form){
     var domenica_close_0=parseInt(dom_c[0]);
     var domenica_close_1=parseInt(dom_c[1]);}
 
+var lu , mi,me,gi,ve,sa,dm=true;
 
     if(Lunedi!="chiuso"){
     if(lunedi_open_0<8 || lunedi_open_0>=21 || (lunedi_open_0==21 && lunedi_open_1>0 )|| (lunedi_open_0==8 && lunedi_open_1<30 )|| lunedi_open_1>59)
-        { var o="Orario apertura Lunedì: l'orario non può sforare l'ora di apertura e chiusura del centro (08:30-21:00) !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+        {
+            document.all.uno.innerHTML = ".";  lu=false; }else{ document.all.uno.innerHTML = null;}
+}
     
     if(Martedi!="chiuso"){
     if(martedi_open_0<8 || martedi_open_0>=21 || martedi_open_0==21 && martedi_open_1>0 || martedi_open_0==8 && martedi_open_1<30 || martedi_open_1>59)
-            { var o="Orario apertura Martedì: l'orario non può sforare l'ora di apertura e chiusura del centro (08:30-21:00) !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+            { document.all.due.innerHTML = "."; mi=false; }else{ document.all.due.innerHTML = null;}
+    }
 
     if(Mercoledi!="chiuso"){
     if(mercoledi_open_0<8 || mercoledi_open_0>=21 || mercoledi_open_0==21 && mercoledi_open_1>0 || mercoledi_open_0==8 && mercoledi_open_1<30 || mercoledi_open_1>59)
-            { var o="Orario apertura Mercoledì: l'orario non può sforare l'ora di apertura e chiusura del centro (08:30-21:00) !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+            { document.all.tre.innerHTML = ".";  me=false; }else{ document.all.tre.innerHTML = null;}
+    }
 
     if(Giovedi!="chiuso"){
     if(giovedi_open_0<8 || giovedi_open_0>=21 || giovedi_open_0==21 && giovedi_open_1>0 || giovedi_open_0==8 && giovedi_open_1<30 || giovedi_open_1>59)
-        { var o="Orario apertura Giovedì: l'orario non può sforare l'ora di apertura e chiusura del centro (08:30-21:00) !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+    { document.all.quattro.innerHTML = "."; gi=false; }else{ document.all.quattro.innerHTML = null;}
+}
 
     if(Venerdi!="chiuso"){
     if( venerdi_open_0<8 || venerdi_open_0>=21 || venerdi_open_0==21 && venerdi_open_1>0 || venerdi_open_0==8 && venerdi_open_1<30 || venerdi_open_1>59)
-        { var o="Orario apertura Venerdì: l'orario non può sforare l'ora di apertura e chiusura del centro (08:30-21:00) !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+    { document.all.cinque.innerHTML = "."; ve=false; } else{ document.all.cinque.innerHTML = null;}
+}
 
     if(Sabato!="chiuso"){
     if( sabato_open_0<8 || sabato_open_0>=21 || sabato_open_0==21 && sabato_open_1>0 || sabato_open_0==8 && sabato_open_1<30 || sabato_open_1>59)
-        { var o="Orario apertura Sabato: l'orario non può sforare l'ora di apertura e chiusura del centro (08:30-21:00) !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+        { document.all.sei.innerHTML = "."; sa=false; } else{ document.all.sei.innerHTML = null;}
+}
 
     if(Domenica!="chiuso"){
     if(domenica_open_0<8 || domenica_open_0>=21 || domenica_open_0==21 && domenica_open_1>0 || domenica_open_0==8 && domenica_open_1<30 || domenica_open_1>59)
-        { var o="Orario apertura Domenica: l'orario non può sforare l'ora di apertura e chiusura del centro (08:30-21:00) !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+        { document.all.sette.innerHTML = "."; dm=false; } else{ document.all.sette.innerHTML = null;}
+}
 
 
 
-
-            if(Lunedi!="chiuso"){
+            if(Lunedi!="chiuso" && lu!=false){
            if(lunedi_close_0<=9 || lunedi_close_0>21 || lunedi_close_0==21 && lunedi_close_1>0 || lunedi_close_1>59) 
-            { var o="Orario chiusura Lunedì: l'orario non può sforare l'ora di apertura e chiusura del centro (08:30-21:00) !!!";document.getElementById("demo_orario").innerHTML = o ; return false;}}
+            { document.all.uno.innerHTML = "."; lu=false; } else{ document.all.uno.innerHTML = null;}
+    }
 
-            if(Martedi!="chiuso"){
+            if(Martedi!="chiuso" && mi!=false){
            if( martedi_close_0<=9 || martedi_close_0>21 || martedi_close_0==21 && martedi_close_1>0 || martedi_close_1>59)
-             { var o="Orario chiusura Martedì: l'orario non può sforare l'ora di apertura e chiusura del centro (08:30-21:00) !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+             { document.all.due.innerHTML = "."; mi=false; } else{ document.all.due.innerHTML = null;}
+     }
 
-            if(Mercoledi!="chiuso"){
+            if(Mercoledi!="chiuso" && me!=false){
            if( mercoledi_close_0<=9 || mercoledi_close_0>21 || mercoledi_close_0==21 && mercoledi_close_1>0 || mercoledi_close_1>59)
-             { var o="Orario chiusura Mercoledì: l'orario non può sforare l'ora di apertura e chiusura del centro (08:30-21:00) !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+             { document.all.tre.innerHTML = "."; me=false; } else{ document.all.tre.innerHTML = null;}
+     }
 
-            if(Giovedi!="chiuso"){
+            if(Giovedi!="chiuso" && gi!=false){
            if(giovedi_close_0<=9 || giovedi_close_0>21 || giovedi_close_0==21 && giovedi_close_1>0 || giovedi_close_1>59 )
-                 { var o="Orario chiusura Giovedì: l'orario non può sforare l'ora di apertura e chiusura del centro (08:30-21:00) !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+     { document.all.quattro.innerHTML = "."; gi=false; } else{ document.all.quattro.innerHTML = null;}
+         }
 
-             if(Venerdi!="chiuso"){
+             if(Venerdi!="chiuso" && ve!=false){
             if( venerdi_close_0<=9 || venerdi_close_0>21 || venerdi_close_0==21 && venerdi_close_1>0 || venerdi_close_1>59)
-                 { var o="Orario chiusura Venerdì: l'orario non può sforare l'ora di apertura e chiusura del centro (08:30-21:00) !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+     { document.all.cinque.innerHTML = "."; ve=false; } else{ document.all.cinque.innerHTML = null;}
+         }
 
-             if(Sabato!="chiuso"){
+             if(Sabato!="chiuso" && sa!=false){
            if(sabato_close_0<=9 || sabato_close_0>21 || sabato_close_0==21 && sabato_close_1>0 || sabato_close_1>59)
-                 { var o="Orario chiusura Sabato: l'orario non può sforare l'ora di apertura e chiusura del centro (08:30-21:00) !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+            { document.all.sei.innerHTML = "."; sa=false; } else{ document.all.sei.innerHTML = null;}
+         }
 
-            if(Domenica!="chiuso"){
+            if(Domenica!="chiuso" && dm!=false){
          if( domenica_close_0<=9 || domenica_close_0>21 || domenica_close_0==21 && domenica_close_1>00 || domenica_close_1>59)
-            { var o="Orario chiusura Domenica: l'orario non può sforare l'ora di apertura e chiusura del centro (08:30-21:00) !!!";document.getElementById("demo_orario").innerHTML = o ;return false;}}
+        { document.all.sette.innerHTML = "."; dm=false; } else{ document.all.sette.innerHTML = null;}
+    }
+
+    if(lu==false || mi==false || me==false || gio==false || ve==false || sa==false || dm==false){
+        var o="Orario non valido !";
+    document.getElementById("demo_orario").innerHTML = o ;
+    return false;}
+
 
         return true;
 }
@@ -505,36 +565,43 @@ if(charCode==118 || charCode==99 || charCode==97 || charCode==104 || charCode==1
                         <div class="orario">
                         <label for="lunedì"> Lunedì :</label>
                         <input type="text" name="lunedi" id="lunedì" maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                        <div id="uno"></div>
                         </div>
 
                         <div class="orario">
                         <label for="martedì"> Martedì :</label>
                         <input type="text" name="martedi" id="martedì"  maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                        <div id="due"></div>
                         </div>
 
                         <div class="orario">
                         <label for="mercoledì" > Mercoledì :</label>
                         <input type="text" name="mercoledi" id="mercoledì"  maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                        <div id="tre"></div>
                         </div>
                         
                         <div class="orario">
                         <label for="giovedì" > Giovedì :</label>
                         <input type="text" name="giovedi" id="giovedì" maxlength="11" onkeypress="return onlyNumeric(event);" />
+                        <div id="quattro"></div>
                         </div>
 
                         <div class="orario">
                         <label for="venerdì" > Venerdì :</label>
                         <input type="text" name="venerdi" id="venerdì"  maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                        <div id="cinque"></div>
                         </div>
 
                         <div class="orario">
                         <label for="sabato" > Sabato :</label>
                         <input  type="text" name="sabato" id="sabato"  maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                        <div id="sei"></div>
                         </div>
 
                         <div class="orario">
                         <label for="domenica" > Domenica :</label>
                         <input type="text" name="domenica"  id="domenica" maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                        <div id="sette"></div>
                         </div>                        
                          <div class="pulsante">
                         <input  type="submit" value="Salva"/>                                
