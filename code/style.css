@@ -130,21 +130,34 @@ html, body{
 	float: right;
 	padding-top: 1em;
 	text-align: center;
-	font-size: 1.1em;
-	
+	font-size: 1em;	
 }
+
 
 #tabellaLaterale caption{
 	font-weight: bold;
 }
 #tabella_orari{
-	margin-left: 10%;
+	width: 100%
 }
 
 
 #tabella_eventi{
 	margin: 1em;
 }
+
+#aperture{
+	margin:1em 0em 1em 0em;
+	border:3px solid #a02222;
+
+	 border-style: outset;
+}
+#novità{
+		margin:1em 0em 1em 0em;
+	border:1px solid #000;
+	 border-radius: 5px;
+}
+
 #sottoPiano{
 	width: 65%;
 	display: inline-block;
