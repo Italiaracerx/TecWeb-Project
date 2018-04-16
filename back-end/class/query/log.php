@@ -12,9 +12,9 @@ class login extends connection implements query{
 
     //metodi
     public function __construct($user,$psw1, $psw2=0){
-        $this->username =parent::espaced_string($user);
-        $this->password =hash('sha1',parent::espaced_string($psw1));
-        $this->confirm =hash('sha1',parent::espaced_string($psw2));
+        $this->username =parent::escaced_string($user);
+        $this->password =hash('sha1',parent::escaced_string($psw1));
+        $this->confirm =hash('sha1',parent::escaced_string($psw2));
     }
     public function write(){
         $query = "INSERT INTO account VALUES ('$this->username','user','$this->password')";
@@ -25,6 +25,20 @@ class login extends connection implements query{
         $utente =mysqli_fetch_array(parent::execute_query($query));
         return $utente;
     }
+    public function all(){
+        $query = "SELECT username FROM account WHERE user_type <> 'admin";
+        $utente =mysqli_fetch_array(parent::execute_query($query));
+        return $utente;
+    } 
+    public function delete(){
+        $query = "DELETE FROM account WHERE username = '$this->username'";
+        return parent::execute_query($query);
+    }
+    public function update(){
+        if($this->password != $this->confirm){throw exeption("error", "Password discordanti, riprovare.");}
+        $query = "UPDATE account SET password = '$this->password' WHERE username = '$this->username'";
+        return parent::execute_query($query);
+    }    
 }
 
 ?>

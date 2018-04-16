@@ -13,7 +13,7 @@ class connection{
     public function connect(){
         return new mysqli(connection::$host,connection::$db_user,connection::$db_psw,connection::$db_name);
     }
-    public function espaced_string($string){
+    public function escaced_string($string){
         $sql=$this->connect();
         $escaped_string =($this->connect())->real_escape_string($string);
         $sql->close();
