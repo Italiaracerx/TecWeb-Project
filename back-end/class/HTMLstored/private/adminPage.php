@@ -1,5 +1,11 @@
 <?php 
-require_once 
+require_once __DIR__.'\..\..\interfacce\query.php';
+require_once __DIR__.'\..\..\query\log.php';
+require_once __DIR__.'\..\..\sistema\connection.php';
+
+$log = new login();
+$lista_utenti =$log.all();
+
 ?>
 
 <div id="content">
@@ -29,11 +35,12 @@ require_once
                 <label for="negozio">Nome Negozio:</label>
                 <select name="negozio" id="negozio" class="allarga">
                 <option value="Cerca nel menu:">Cerca nel menu:</option>
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="opel">Opel</option>
-  <option value="audi">Audi</option>
-</select>               
+                    <?php 
+                    foreach ($lista_utenti as $utente ) {
+                        echo '<option value="'.$utente.'">'.$utente.'</option>';
+                    }
+                    ?>
+                </select>               
                 <input title="Tasto Reset" type="reset" value="Reset"/>  
                 <input title="Tasto Salva" type="submit" value="Salva"/>
                 </div>

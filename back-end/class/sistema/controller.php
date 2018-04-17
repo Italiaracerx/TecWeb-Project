@@ -16,8 +16,13 @@ class controller{
     	$this->managerS =new session_manager;
     }
     public function printHTML(){
-    	$this->page->printHTML();
-    	$this->managerS->set_flag(new exeption());
+        try{
+        $this->page->printHTML();
+        $this->managerS->set_flag(new exeption());            
+        }
+        catch(exeption $ex){
+        $this->managerS->set_flag($ex);                        
+        }
     }
     public function check_session(){
     	$this->managerS->check_session();

@@ -11,7 +11,7 @@ class login extends connection implements query{
     private $confirm;
 
     //metodi
-    public function __construct($user,$psw1, $psw2=0){
+    public function __construct($user=NULL,$psw1=NULL, $psw2=NULL){
         $this->username =parent::escaped_string($user);
         $this->password =hash('sha1',parent::escaped_string($psw1));
         $this->confirm =hash('sha1',parent::escaped_string($psw2));
@@ -26,7 +26,7 @@ class login extends connection implements query{
         return $utente;
     }
     public function all(){
-        $query = "SELECT username FROM account WHERE user_type <> 'admin";
+        $query = "SELECT username FROM account WHERE user_type <> 'admin'";
         $utente =mysqli_fetch_array(parent::execute_query($query));
         return $utente;
     } 
