@@ -13,22 +13,18 @@ class controller_query extends controller{
     }
     public function login(){
     	try{
-    		$this->managerS->define_session($this->question->read());
+    		$this->managerS->define_session($this->question->login());
     	}
         catch(exeption $ex){
             $this->managerS->set_flag($ex);
         }    
     }
-    public function read(){
-    	try{
-    		return $this->question->read();
-    	}
+    public function write(){
+        try{
+            $this->question->write();
+        }
         catch(exeption $ex){
             $this->managerS->set_flag($ex);
-        }  
-    }
-    public function write(){
-
-    }
+        }      }
 }
 ?>

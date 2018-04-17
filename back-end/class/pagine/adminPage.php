@@ -24,8 +24,7 @@ class adminPage implements page_template{
 		$this->menu->print();
 	}	
 	public function getPage(){
-		$file = file_get_contents('..\class\HTMLstored\private\adminPage.php', FILE_USE_INCLUDE_PATH);
-		echo $file;   
+		require_once ('..\class\HTMLstored\private\adminPage.php');
 	}
 }
 

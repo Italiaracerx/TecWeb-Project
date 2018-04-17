@@ -10,7 +10,7 @@ CREATE TABLE account(
 	username varchar(64),
 	type char(64) NOT NULL,
 	password varchar(64) NOT NULL,
-	PRIMARY KEY (username,password),	
+	PRIMARY KEY (username),
 	FOREIGN KEY (type) REFERENCES type_account(user_type)
 );
 
@@ -89,15 +89,16 @@ $$ DELIMITER ;
 
 DELIMITER $$
 CREATE TRIGGER `NuovoUtente` AFTER INSERT ON `account` FOR EACH ROW BEGIN
-if NEW.username <> 'admin'
+if NEW.type <> 'admin'
 then
-	INSERT INTO info values (NEW.username,NEW.username,'WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS');
+	/*INSERT INTO info values (NEW.username,NEW.username,'WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS');*/
 	INSERT INTO orario values (NEW.username,'08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00');
-	INSERT INTO logo values (NEW.username,'images/working_progress.png','logo nuovo negozio');
+	/*INSERT INTO logo values (NEW.username,'images/working_progress.png','logo nuovo negozio');*/
 end if;
 END
 $$ DELIMITER ;
 
 INSERT INTO type_account VALUES ('admin', 'general_admin');
 INSERT INTO type_account VALUES ('user', 'general_private');
+INSERT INTO account VALUES ('user', 'user', '0ec3dafe79c9fbe57ee7c0e94a00f6f13d92def1');
 INSERT INTO account VALUES ('admin', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997');

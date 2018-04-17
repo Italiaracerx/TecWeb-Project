@@ -20,15 +20,14 @@ class login extends connection implements query{
         $query = "INSERT INTO account VALUES ('$this->username','user','$this->password')";
         return parent::execute_query($query);
     }
-    public function read(){
+    public function login(){
         $query = "SELECT A.username, T.user_type, T.link FROM account A INNER JOIN type_account T ON A.type = T.user_type WHERE A.username = '$this->username' AND A.password = '$this->password'";
         $utente =mysqli_fetch_array(parent::execute_query($query));
         return $utente;
     }
-    public function all(){
-        $query = "SELECT username FROM account WHERE user_type <> 'admin'";
-        $utente =mysqli_fetch_array(parent::execute_query($query));
-        return $utente;
+    public function read(){
+        $query = "SELECT username FROM account WHERE type <> 'admin'";
+        return mysqli_fetch_array(parent::execute_query($query));
     } 
     public function delete(){
         $query = "DELETE FROM account WHERE username = '$this->username'";

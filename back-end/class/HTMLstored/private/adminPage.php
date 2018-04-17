@@ -4,8 +4,8 @@ require_once __DIR__.'\..\..\query\log.php';
 require_once __DIR__.'\..\..\sistema\connection.php';
 
 $log = new login();
-$lista_utenti =$log.all();
-
+$lista_utenti =$log->all();
+print_r($lista_utenti);
 ?>
 
 <div id="content">
@@ -36,8 +36,8 @@ $lista_utenti =$log.all();
                 <select name="negozio" id="negozio" class="allarga">
                 <option value="Cerca nel menu:">Cerca nel menu:</option>
                     <?php 
-                    foreach ($lista_utenti as $utente ) {
-                        echo '<option value="'.$utente.'">'.$utente.'</option>';
+                    foreach ($lista_utenti as $utente ){
+                        echo '<option value="'.$utente['username'].'">'.$utente['username'].'</option>';
                     }
                     ?>
                 </select>               
