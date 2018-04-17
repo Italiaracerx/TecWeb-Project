@@ -1,0 +1,9 @@
+//pagina negozi:mettere a posto didascalie 
+//mettere a posto le promozioni in generale
+//inserire data su novità più java script
+//mettere a posto la parte di java script di general_admin
+//java script anche su data di aperure chiusure
+//in home sistemare tabella laterale, rimpiciolire e dare un colore all'intera tabella
+//modificare la dimensione di giochi, ci sono tre giochi fissi 
+//mettere a posto gli orari su home 
+//spostare la parte java in una cartella a parte e cancellare dal html
