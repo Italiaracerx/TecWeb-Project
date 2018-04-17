@@ -10,14 +10,11 @@ class page_private implements type_page{
 		$this->pag_corrente=$pg;
 	}
 	public function intestazione(){
-    echo '	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-			"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-			<html xmlns="http://www.w3.org/1999/xhtml">
-			<head>
-				<meta http-equiv="Content-Type" content="txt/html charset= UTF-8" />
-				<title>Centro Archimede: '.$this->pag_corrente->getNamePage().'</title>
-				<link rel="stylesheet" type="text/css" href="'.page_private::$style.'" media="handheld, screen"/>
-			</head>';
+		$file = file_get_contents('./preambolo.html', FILE_USE_INCLUDE_PATH);
+		$file = str_replace('__USER__',$_SESSION['user'],$file);
+		$file = str_replace('__NAME_PAGE__',$this->pag_corrente->getNamePage(),$file);
+		$file = str_replace('__STYLE__',page_private::$style,$file);
+		echo $file;
     }
     public function header(){
     	echo '	<div id="header">
