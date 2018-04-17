@@ -13,9 +13,9 @@ class news extends connection implements query{
 
     //metodi
     public function __construct($tipo, $date, $evento =NULL){
-        $this->type =parent::escaced_string($tipo);
-        $this->date =parent::escaced_string($date);
-        $this->news =parent::escaced_string($evento);
+        $this->type =parent::escaped_string($tipo);
+        $this->date =parent::escaped_string($date);
+        $this->news =parent::escaped_string($evento);
 
     }
     public function write(){

@@ -15,7 +15,7 @@ class orario extends connection implements query{
     public function __construct(){
         parent::__construct();
         for($i=0; $i<7; $i++){
-            $this->orari[$i]=mysqli::real_escape_string($_POST[$orari[$i]]);
+            $this->orari[$i]=parent::escaped_string($_POST[$orari[$i]]);
         }
     }
 

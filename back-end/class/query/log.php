@@ -12,9 +12,9 @@ class login extends connection implements query{
 
     //metodi
     public function __construct($user,$psw1, $psw2=0){
-        $this->username =parent::escaced_string($user);
-        $this->password =hash('sha1',parent::escaced_string($psw1));
-        $this->confirm =hash('sha1',parent::escaced_string($psw2));
+        $this->username =parent::escaped_string($user);
+        $this->password =hash('sha1',parent::escaped_string($psw1));
+        $this->confirm =hash('sha1',parent::escaped_string($psw2));
     }
     public function write(){
         $query = "INSERT INTO account VALUES ('$this->username','user','$this->password')";
