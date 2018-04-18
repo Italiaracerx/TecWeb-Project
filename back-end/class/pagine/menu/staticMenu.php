@@ -1,9 +1,9 @@
 <?php
-require_once __DIR__.'\schedaMenu.php';
+require_once __DIR__.'/schedaMenu.php';
 //penso vadano inseriti gl indirizzi assoluti...
 class staticPath{
-    private static $link_logout='mainForm\logout.php';
-    private static $link_admin='\..\general_admin.php';
+    private static $link_logout='mainForm/logout.php';
+    private static $link_admin='/../general_admin.php';
     private static $link_general_private='general_private.php';
     private static $link_promozioni_private='promozioni_private.php';
     private static $link_prodotti_private='prodotti_private.php';

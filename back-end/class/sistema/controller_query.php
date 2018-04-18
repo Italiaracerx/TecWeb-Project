@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__.'\controller.php';
-require_once __DIR__.'\..\interfacce\query.php';
-require_once __DIR__.'\..\query\log.php';
+require_once __DIR__.'/controller.php';
+require_once __DIR__.'/../interfacce/query.php';
+require_once __DIR__.'/../query/log.php';
 
 class controller_query extends controller{
 	private $question;

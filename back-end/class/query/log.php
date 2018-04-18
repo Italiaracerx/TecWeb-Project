@@ -1,8 +1,8 @@
 <?php 
 
-require_once __DIR__.'\..\sistema\exeption.php';
-require_once __DIR__.'\..\sistema\connection.php';
-require_once __DIR__.'\..\interfacce\query.php';
+require_once __DIR__.'/../sistema/exeption.php';
+require_once __DIR__.'/../sistema/connection.php';
+require_once __DIR__.'/../interfacce/query.php';
 
 class login extends connection implements query{
     //campi privati
@@ -23,6 +23,8 @@ class login extends connection implements query{
     public function login(){
         $query = "SELECT A.username, T.user_type, T.link FROM account A INNER JOIN type_account T ON A.type = T.user_type WHERE A.username = '$this->username' AND A.password = '$this->password'";
         $utente =mysqli_fetch_array(parent::execute_query($query));
+        echo $utente;
+
         return $utente;
     }
     public function read(){

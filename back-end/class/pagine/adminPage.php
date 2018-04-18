@@ -23,9 +23,6 @@ class adminPage implements page_template{
 	public function menu(){
 		$this->menu->print();
 	}	
-	public function getPage(){
-		require_once ('..\class\HTMLstored\private\adminPage.php');
-	}
 }
 
 ?>

@@ -1,8 +1,8 @@
 <?php 
 
-require_once __DIR__.'\..\sistema\exeption.php';
-require_once __DIR__.'\..\sistema\connection.php';
-require_once __DIR__.'\..\interfacce\query.php';
+require_once __DIR__.'/../sistema/exeption.php';
+require_once __DIR__.'/../sistema/connection.php';
+require_once __DIR__.'/../interfacce/query.php';
 
 class permission extends connection implements query{
     //campi privati

@@ -8,6 +8,6 @@ interface type_page{
     public function print_bar();
     public function footer();
     public function body();
-	public function printHTML();
+	public function head();
 }
 ?>

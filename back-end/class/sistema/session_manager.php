@@ -1,6 +1,6 @@
 <?php
 
-    require_once __DIR__.'\..\query\permission.php';
+    require_once __DIR__.'/../query/permission.php';
 
 class session_manager{
 	//metodi
@@ -30,8 +30,8 @@ class session_manager{
         //setto nell'array di sessione le informazioni
 
         if($utente == NULL){
-            $this->set_flag(new exeption("error","Login o password errati."));
-        	header("Location: ..\login.php");
+           $this->set_flag(new exeption("error","Login o password errati."));
+        	//header("Location: ../login.php");
         }
         else{
 	        $_SESSION['user']=$utente['username'];

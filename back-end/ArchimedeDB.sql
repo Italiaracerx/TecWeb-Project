@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS archimede;
-CREATE DATABASE archimede;
-
+/*DROP DATABASE IF EXISTS darossi;
+CREATE DATABASE darossi;
+*/
 CREATE TABLE type_account(
 	user_type varchar(64) PRIMARY KEY,
 	link varchar(64) NOT NULL
