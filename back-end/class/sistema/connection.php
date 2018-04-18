@@ -22,7 +22,7 @@ class connection{
         $sql=$this->connect();
         $result =$sql->query($query);
         $sql->close();
-        return $result; 
+        return $result;
     }
 }
 

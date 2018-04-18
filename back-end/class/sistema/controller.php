@@ -13,7 +13,7 @@ class controller{
     function __construct(type_page $type_page =NULL){
 
         $this->page =$type_page;
-    	$this->managerS =new session_manager;
+    	$this->managerS =new session_manager();
     }
     public function head(){
         try{

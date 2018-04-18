@@ -17,6 +17,7 @@ class session_manager{
         if(empty($_SESSION)){
             $_SESSION['user'] = NULL;//inizializzo a NULL l'utente corrente
             $_SESSION['type'] = 'unlogged';//type rapprensenta il tipo di utente se messo a NULL nessun utente loggato
+            $_SESSION['link'] = NULL;
             $this->set_flag(new exeption());
         }
     }
@@ -25,13 +26,16 @@ class session_manager{
         if(!$permission->read()){
             header("Location: login.php");            
         }
+        else{
+            $_SESSION['link']=$withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', basename($_SERVER['PHP_SELF']));
+        }
     }
     public function define_session($utente){
         //setto nell'array di sessione le informazioni
 
         if($utente == NULL){
            $this->set_flag(new exeption("error","Login o password errati."));
-        	//header("Location: ../login.php");
+        	header("Location: ../login.php");
         }
         else{
 	        $_SESSION['user']=$utente['username'];
@@ -46,6 +50,9 @@ class session_manager{
         $this->session();
         $this->set_flag(new exeption("correct","Logout avvenuto con successo.")); 
         header('Location: '.'..'.DIRECTORY_SEPARATOR.'login.php');
+    }
+    public function GoTo(){
+        header('Location: '.'..'.DIRECTORY_SEPARATOR.$_SESSION['link'].'.php');
     }
 }
 

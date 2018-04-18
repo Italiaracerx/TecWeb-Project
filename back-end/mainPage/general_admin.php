@@ -8,9 +8,6 @@
     $controller = new controller(new page_private(new adminPage()));
     $controller->check_session();
     $controller->head();
-    
-    $log = new login();
-    $lista_utenti =$log->read();
 ?>
     <div id="content">
         <div id="sopra">
@@ -18,10 +15,10 @@
             <div class="form_sopra">
               <p class="intestazione">CREAZIONE NEGOZIO</p>
               <div id="demo"></div>
-              <form  action="" method="post" onsubmit="return validateForm(this)">
+              <form  action="mainForm/newUser.php" method="post" onsubmit="return validateForm(this)">
                 <div>
                 <label for="nome_negozio">Nome Negozio:</label>
-                <input type="text" id="nome_negozio" name="nome_negozio"/>    
+                <input type="text" id="username" name="username"/>    
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" />
                 <label for="conferma_password">Conferma Password:</label>
@@ -37,15 +34,18 @@
             <div class="form_sopra">
               <p class="intestazione">ELIMINA NEGOZIO</p> 
               <div id="demo_1"></div>
-              <form  action="" method="post" onsubmit="return validateUser()">
+              <form  action="mainForm/deleteUser.php" method="post" onsubmit="return validateUser()">
                 <div>
                   <label for="elimina_negozio">Nome Negozio:</label>
                   <select name="nelimina_negozio" id="elimina_negozio" >
                   <option value="Cerca nel menu:">Cerca nel menu:</option>
-                  <option value="volvo">Volvo</option>
-                  <option value="saab">Saab</option>
-                  <option value="opel">Opel</option>
-                  <option value="audi">Audi</option>
+                    <?php 
+                        $log = new login();
+                        $lista_utenti =$log->read();
+                        foreach ($lista_utenti as $key) {
+                            echo '<option value="'.$key['username'].'">'.$key['username'].'</option>';           
+                        }
+                    ?>
                   </select>  
                   <div class="invia">                
                   <input type="reset"  name="tasto_reset"  value="Reset"/>  

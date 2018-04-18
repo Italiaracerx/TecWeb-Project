@@ -22,9 +22,22 @@ class controller_query extends controller{
     public function write(){
         try{
             $this->question->write();
+            $this->managerS->set_flag(new exeption('correct','Operazione eseguita con successo.'));
         }
         catch(exeption $ex){
             $this->managerS->set_flag($ex);
-        }      }
+        }
+        $this->managerS->GoTo();
+    }
+    public function delete(){
+        try{
+            $this->question->delete();
+            $this->managerS->set_flag(new exeption('correct','Operazione eseguita con successo.'));
+        }
+        catch(exeption $ex){
+            $this->managerS->set_flag($ex);
+        }
+        $this->managerS->GoTo();
+    }
 }
 ?>
