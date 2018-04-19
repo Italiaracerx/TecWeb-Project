@@ -1,19 +1,27 @@
-DROP DATABASE IF EXISTS archimede;
-CREATE DATABASE archimede;
+/*DROP DATABASE IF EXISTS darossi;
+CREATE DATABASE darossi;
+*/
+SET FOREIGN_KEY_CHECKS=0;
 
+
+DROP TABLE type_account;
 CREATE TABLE type_account(
-	user_type varchar(64) PRIMARY KEY,
-	link varchar(64) NOT NULL
+	user_type varchar(64) NOT NULL,
+	link varchar(64) NOT NULL,
+	home boolean DEFAULT '0',
+	PRIMARY KEY(user_type,link)
 );
 
+DROP TABLE account;
 CREATE TABLE account(
 	username varchar(64),
 	type char(64) NOT NULL,
 	password varchar(64) NOT NULL,
-	PRIMARY KEY (username,password),	
+	PRIMARY KEY (username),
 	FOREIGN KEY (type) REFERENCES type_account(user_type)
 );
 
+DROP TABLE orario;
 CREATE TABLE orario(
 	username varchar(64) PRIMARY KEY,
 	lunedi varchar(64) NOT NULL,
@@ -26,6 +34,7 @@ CREATE TABLE orario(
 	FOREIGN KEY (username) REFERENCES account(username)
 );
 
+DROP TABLE logo;
 CREATE TABLE logo(
 	username varchar(64) PRIMARY KEY,
 	logo varchar(64) NOT NULL,
@@ -33,6 +42,7 @@ CREATE TABLE logo(
 	FOREIGN KEY (username) REFERENCES account(username)
 );
 
+DROP TABLE info;
 CREATE TABLE info(
 	username varchar(64) PRIMARY KEY,
 	negozio varchar(64) NOT NULL,
@@ -45,6 +55,7 @@ CREATE TABLE info(
 	FOREIGN KEY (username) REFERENCES account(username)
 );
 
+DROP TABLE prodotti;
 CREATE TABLE prodotti(
 	username varchar(64) NOT NULL,
 	ID int NOT NULL AUTO_INCREMENT,
@@ -56,6 +67,7 @@ CREATE TABLE prodotti(
 	FOREIGN KEY (username) REFERENCES account(username)
 );
 
+DROP TABLE promozioni;
 CREATE TABLE promozioni(
 	username varchar(64) NOT NULL,
 	ID int NOT NULL AUTO_INCREMENT,
@@ -64,9 +76,9 @@ CREATE TABLE promozioni(
 	data datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (ID),
 	FOREIGN KEY (username) REFERENCES account(username)
-
 );
 
+DROP TABLE eventi;
 CREATE TABLE eventi(
 	ID int NOT NULL AUTO_INCREMENT,
 	type ENUM('APERTURA','CHIUSURA','NOVITA') NOT NULL,
@@ -74,30 +86,39 @@ CREATE TABLE eventi(
 	PRIMARY KEY(ID) 
 );
 
+SET FOREIGN_KEY_CHECKS=1;
+
+
 DELIMITER $$
-CREATE TRIGGER `EliminaUtente` BEFORE DELETE ON `account` FOR EACH ROW BEGIN
-if OLD.username <> 'admin'
-then
-	DELETE FROM info WHERE user =OLD.username;
-	DELETE FROM orario WHERE user =OLD.username;
-	DELETE FROM logo WHERE user =OLD.username;
-	DELETE FROM promozioni WHERE user =OLD.username;
-	DELETE FROM prodotti WHERE user =OLD.username;
-end if;
+CREATE TRIGGER EliminaUtente BEFORE DELETE ON account FOR EACH ROW 
+BEGIN
+	DELETE FROM info WHERE username =OLD.username;
+	DELETE FROM orario WHERE username =OLD.username;
+	DELETE FROM logo WHERE username =OLD.username;
+	DELETE FROM promozioni WHERE username =OLD.username;
+	DELETE FROM prodotti WHERE username =OLD.username;
 END
 $$ DELIMITER ;
 
 DELIMITER $$
-CREATE TRIGGER `NuovoUtente` AFTER INSERT ON `account` FOR EACH ROW BEGIN
-if NEW.username <> 'admin'
+CREATE TRIGGER NuovoUtente AFTER INSERT ON account FOR EACH ROW BEGIN
+if NEW.type <> 'admin'
 then
-	INSERT INTO info values (NEW.username,NEW.username,'WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS');
+	INSERT INTO info values (NEW.username,NEW.username,'WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS');
 	INSERT INTO orario values (NEW.username,'08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00');
 	INSERT INTO logo values (NEW.username,'images/working_progress.png','logo nuovo negozio');
 end if;
 END
 $$ DELIMITER ;
 
-INSERT INTO type_account VALUES ('admin', 'general_admin');
-INSERT INTO type_account VALUES ('user', 'general_private');
+INSERT INTO type_account VALUES ('admin', 'general_admin','1');
+INSERT INTO type_account VALUES ('user', 'general_private','1');
+INSERT INTO type_account VALUES ('user', 'promozioni_private','0');
+INSERT INTO type_account VALUES ('user', 'prodotti_private','0');
+INSERT INTO type_account VALUES ('admin', 'login','0');
+INSERT INTO type_account VALUES ('user', 'login','0');
+INSERT INTO type_account VALUES ('unlogged', 'login','1');
+
+
+
 INSERT INTO account VALUES ('admin', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997');

@@ -1,6 +1,6 @@
 <?php
 
-    require_once __DIR__.'\..\query\permission.php';
+    require_once __DIR__.'/../query/permission.php';
 
 class session_manager{
 	//metodi
@@ -17,21 +17,31 @@ class session_manager{
         if(empty($_SESSION)){
             $_SESSION['user'] = NULL;//inizializzo a NULL l'utente corrente
             $_SESSION['type'] = 'unlogged';//type rapprensenta il tipo di utente se messo a NULL nessun utente loggato
+            $_SESSION['link'] = NULL;
             $this->set_flag(new exeption());
         }
     }
     public function check_session(){
         $permission= new permission();
-        if(!$permission->read()){
-            header("Location: login.php");            
-        }
+        echo $permission->getPage().'----'.$_SESSION['link'];
+        if($permission->getPage() != 'login' || $_SESSION['link'] != NULL){
+            if($permission->read()){
+                $this->logout();
+            }
+            elseif(basename($_SERVER['PHP_SELF'],'.php') == 'login'){
+                //header('location: '.$_SESSION['link'].'.php');
+            }
+            else{
+                $_SESSION['link'] =$permission->getPage();
+            }
+        }   
     }
     public function define_session($utente){
         //setto nell'array di sessione le informazioni
 
         if($utente == NULL){
-            $this->set_flag(new exeption("error","Login o password errati."));
-        	header("Location: ..\login.php");
+           $this->set_flag(new exeption("error","Login o password errati."));
+        	header("Location: ../login.php");
         }
         else{
 	        $_SESSION['user']=$utente['username'];
@@ -44,8 +54,10 @@ class session_manager{
         session_unset();
         session_destroy();
         $this->session();
-        $this->set_flag(new exeption("correct","Logout avvenuto con successo.")); 
         header('Location: '.'..'.DIRECTORY_SEPARATOR.'login.php');
+    }
+    public function GoTo(){
+        header('Location: '.'..'.DIRECTORY_SEPARATOR.$_SESSION['link'].'.php');
     }
 }
 
