@@ -1,5 +1,5 @@
 <?php 
-require_once __DIR__.'\..\interfacce\type_page.php';
+require_once __DIR__.'/../interfacce/type_page.php';
 
 
 class page_private implements type_page{
@@ -10,7 +10,7 @@ class page_private implements type_page{
 		$this->pag_corrente=$pg;
 	}
 	public function intestazione(){
-		$file = file_get_contents('..\class\HTMLstored\private\common\preambolo.html', FILE_USE_INCLUDE_PATH);
+		$file = file_get_contents('../class/HTMLstored/private/common/preambolo.html', FILE_USE_INCLUDE_PATH);
 		$file = str_replace('__USER__',$_SESSION['user'],$file);
 		$file = str_replace('__NAME_PAGE__',$this->pag_corrente->getNamePage(),$file);
 		$file = str_replace('__STYLE__',page_private::$style,$file);
@@ -48,14 +48,10 @@ class page_private implements type_page{
 		$this->menu();
     	$this->breadcrumb();
     	$this->print_bar();
-		$this->pag_corrente->getPage();
-		$this->footer();
-
     }
-	public function printHTML(){
+	public function head(){
 		$this->intestazione();
 		$this->body();
-
 	}
 }
 ?>

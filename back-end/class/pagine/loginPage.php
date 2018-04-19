@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__.'\..\interfacce\page_template.php';
-require_once __DIR__.'\menu\menu.php';
-require_once __DIR__.'\menu\staticMenu.php';
+require_once __DIR__.'/../interfacce/page_template.php';
+require_once __DIR__.'/menu/menu.php';
+require_once __DIR__.'/menu/staticMenu.php';
 
 class loginPage implements page_template{
 	private $menu;
@@ -18,11 +18,7 @@ class loginPage implements page_template{
 	}
 	public function menu(){
 		$this->menu->print();
-	}
-	public function getPage(){
-		$file = file_get_contents('..\class\HTMLstored\private\loginPage.php', FILE_USE_INCLUDE_PATH);
-		echo $file;   
-	}
+	} 
 
 }
 

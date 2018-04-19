@@ -13,8 +13,6 @@ html, body{
 	color:white;
 }
 
-
-
 .accesaid{
 	position: absolute;
 	height: 0;
@@ -96,13 +94,13 @@ html, body{
     overflow: auto;
     padding-bottom: 1em;
 }
-/*---------GENERALE PRIVATO---------*/
+/*---------GENERALE_ADMIN-----------*/
 #content_generale{
 	overflow:auto;
 	padding: 1em;
 }
 
-#titolo_negozio{
+#titolo_generale{
     display: block;	
 	padding-top:1em;	
 	padding-bottom: 1em;
@@ -113,6 +111,17 @@ html, body{
 	font-weight: 400;
 	text-transform: uppercase;
 }
+
+#sopra{
+	overflow: auto;
+	margin-top:1em;
+}
+#sotto{
+	width:100%;
+	margin-top:1.5em;
+	overflow: auto;
+}
+
 .intestazione{
 	padding-bottom:0.5em;
 	border-bottom: 2px #585753	 solid;
@@ -121,18 +130,50 @@ html, body{
 	letter-spacing: 2px;
 	font-size: 1.2em;
 }
-#sopra{
-	overflow: auto;
-	margin-top:1em;
-}
 
-.boxSopra{
+.form_sopra{
 	text-align: center;
 	float:left;
 	display: block;
 	width:49%;
 	margin:0.25em;	
 }
+
+.form_sopra form{
+	width:50%;
+	margin: 0 auto;
+}
+
+.form_sotto{
+	float: left;
+	width: 32%;
+	margin: 0.25em;
+	text-align: center;
+}
+.form_sotto form{
+	width: 70%;
+	text-align: center;
+	display: inline-block;
+}
+select{
+	font-size: 0.9em;
+	width: 90%;
+	margin-bottom:0.5em;
+	text-align: center;
+}
+
+.form_sotto textarea{
+	margin-bottom:0.5em;
+}
+
+.invia{
+	margin-top:0.5em;
+	font-size: 1em;
+}
+
+/*---------GENERALE PRIVATO---------*/
+
+
 #parte_centrale{
 	float:left;
 	margin-top:2%;
@@ -140,31 +181,30 @@ html, body{
 	width: 100%;
 	text-align: center;
 }
-
-.boxSotto{
+.form_centrali{
 	float: left;
 	width: 49%;
 	margin: 0.25em;
 }
+.form_centrali form{
+	width: 100%;
+	display: inline-block;
+}
 
+#modifica_nome{
+	margin-top: 1em;
+}
 
-#negozio label{
+#modifica_nome label{
 	float: left;
 	margin:0 0 1% 15%;	
 }
 
-#negozio input{
+#modifica_nome input{
 	float: left;
 	margin-left:5%;
 }
 
-
-#sotto{
-	width:100%;
-	float:left;
-	margin-top:1.5em;
-	overflow: auto;
-}
 
 #sinistra{
 	float:left;
@@ -195,12 +235,6 @@ html, body{
 #destra{
 	margin-left: 30%;
 	display: block;
-}
-
-
-#testo_descrizione{
-	padding-top: 1em;
-	padding-bottom: 1em;	
 }
 
 input{ 
@@ -234,26 +268,18 @@ textarea{
 
 /*-------------PROMOZIONI PRIVATO---------*/
 
-#ColonnaSinistra{
+#colonna_sinistra{
 	width: 30%;	
 	float:left;
-}
-.NuovaPromozione{
-	float:left;
-	display:block;
 	text-align: center;
-	margin-left:5%;
 }
-.SottoTitolo{
-	text-align: center;
-	margin-top:1em;
-	margin-bottom:0.5em;
+#colonna_sinistra
+{
+
 }
 
-.invia{
-	margin-top:0.5em;
-}
-#PromozioniCorrenti{
+
+#colonna_destra{
 	margin-left: 32%;
 	display: block;
 	margin-top: 2em;
@@ -297,6 +323,16 @@ textarea{
 	background-color: #A9A9A9;
 	 cursor: pointer;
 }
+
+#demo {background-color: #bcbcbc;
+	text-align:center;}
+
+#demo_1 {background-color: #bcbcbc;
+	text-align:center;}
+
+#demos {background-color: #bcbcbc;
+	text-align:center;}
+
 #demo_passw {background-color: #bcbcbc;
 	text-align:center;}
 
@@ -331,3 +367,96 @@ textarea{
 	font-size: 0.85em;
 	margin-bottom: 1em;
 }
+
+#uno{
+	background-color: #bcbcbc;
+	margin-left: 90%;
+	margin-right: 2%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	color:#bcbcbc;
+	border-radius: 100px;
+}
+
+#due{
+	background-color: #bcbcbc;
+	margin-left: 90%;
+	margin-right: 2%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	color:#bcbcbc;
+	border-radius: 100px;
+}
+
+#tre{
+	background-color: #bcbcbc;
+	margin-left: 90%;
+	margin-right: 2%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	color:#bcbcbc;
+	border-radius: 100px;
+}
+
+#quattro{
+	background-color: #bcbcbc;
+	margin-left: 90%;
+	margin-right: 2%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	color:#bcbcbc;
+	border-radius: 100px;
+}
+
+#cinque{
+	background-color: #bcbcbc;
+	margin-left: 90%;
+	margin-right: 2%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	color:#bcbcbc;
+	border-radius: 100px;
+}
+
+#sei{
+	background-color: #bcbcbc;
+	margin-left: 90%;
+	margin-right: 2%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	color:#bcbcbc;
+	border-radius: 100px;
+}
+
+#sette{
+	background-color: #bcbcbc;
+	margin-left: 90%;
+	margin-right: 2%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	color:#bcbcbc;
+	border-radius: 100px;
+}
+
+#correct{
+	font-size: 1em;
+	text-transform: uppercase;
+	padding-top:0.5em;
+	padding-bottom:0.5em;
+	font-weight: normal;
+	text-align: center;
+	color: white;
+	background-color: #4CAF50;
+  }
+   
+  #error{
+	font-size: 1em;
+	text-transform: uppercase;
+	padding-top:0.5em;
+	padding-bottom:0.5em;
+	font-weight: normal;
+	text-align: center;
+	color: white;
+	background-color: rgba(218, 0, 0, 0.693);
+  }
+

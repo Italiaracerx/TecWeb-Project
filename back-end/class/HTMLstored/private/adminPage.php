@@ -5,8 +5,6 @@ require_once __DIR__.'\..\..\sistema\connection.php';
 
 $log = new login();
 $lista_utenti =$log->all();
-print_r($lista_utenti);
-?>
 
 <div id="content">
         <h3 id="titolo_negozio">GENERALE</h3>
@@ -35,11 +33,9 @@ print_r($lista_utenti);
                 <label for="negozio">Nome Negozio:</label>
                 <select name="negozio" id="negozio" class="allarga">
                 <option value="Cerca nel menu:">Cerca nel menu:</option>
-                    <?php 
-                    foreach ($lista_utenti as $utente ){
+                    '.foreach ($lista_utenti as $utente ){
                         echo '<option value="'.$utente['username'].'">'.$utente['username'].'</option>';
-                    }
-                    ?>
+                    }.'
                 </select>               
                 <input title="Tasto Reset" type="reset" value="Reset"/>  
                 <input title="Tasto Salva" type="submit" value="Salva"/>
@@ -87,4 +83,5 @@ print_r($lista_utenti);
     </div>
         
         
-    </div>
+    </div>';
+    ?>
