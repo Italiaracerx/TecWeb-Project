@@ -11,8 +11,14 @@ class permission extends connection implements query{
 
     //metodi
     public function __construct(){
-        $this->type_user=$_SESSION['type'];
-        $this->page=basename($_SERVER['PHP_SELF'],'.php');
+        $this->type_user =$_SESSION['type'];
+        $this->page =preg_replace('/\\.[^.\\s]{3,4}$/', '', basename($_SERVER['PHP_SELF']));
+        if($this->page == 'login'){
+            $this->page=$_SESSION['link'];
+        }
+    }
+    public function getPage(){
+        return $this->page;
     }
     public function write(){
         $query = "INSERT INTO type_account VALUES ('$this->username','user','$this->password')";
@@ -21,8 +27,8 @@ class permission extends connection implements query{
     public function read(){
         $query = "SELECT link FROM type_account WHERE user_type = '$this->type_user' AND link = '$this->page'";
         $permission=NULL;
-        $permission=mysqli_fetch_array(parent::execute_query($query));
-        return isset($permission);
+        $permission =parent::execute_query($query);
+        return is_null($permission);
     }
 }
 

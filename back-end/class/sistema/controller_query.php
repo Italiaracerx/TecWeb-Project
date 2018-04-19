@@ -39,5 +39,15 @@ class controller_query extends controller{
         }
         $this->managerS->GoTo();
     }
+    public function update(){
+        try{
+            $this->question->update();
+            $this->managerS->set_flag(new exeption('correct','Operazione eseguita con successo.'));
+        }
+        catch(exeption $ex){
+            $this->managerS->set_flag($ex);
+        }
+        $this->managerS->GoTo();
+    }
 }
 ?>

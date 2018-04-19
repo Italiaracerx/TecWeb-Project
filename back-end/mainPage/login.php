@@ -5,6 +5,7 @@
 
 
     $controller = new controller(new page_private(new loginPage()));
+    $controller->check_session();
     $controller->head();
 ?>
 <div id="content">

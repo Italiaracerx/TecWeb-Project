@@ -3,10 +3,13 @@ CREATE DATABASE darossi;
 */
 SET FOREIGN_KEY_CHECKS=0;
 
+
 DROP TABLE type_account;
 CREATE TABLE type_account(
-	user_type varchar(64) PRIMARY KEY,
-	link varchar(64) NOT NULL
+	user_type varchar(64) NOT NULL,
+	link varchar(64) NOT NULL,
+	home boolean DEFAULT '0',
+	PRIMARY KEY(user_type,link)
 );
 
 DROP TABLE account;
@@ -108,6 +111,14 @@ end if;
 END
 $$ DELIMITER ;
 
-INSERT INTO type_account VALUES ('admin', 'general_admin');
-INSERT INTO type_account VALUES ('user', 'general_private');
+INSERT INTO type_account VALUES ('admin', 'general_admin','1');
+INSERT INTO type_account VALUES ('user', 'general_private','1');
+INSERT INTO type_account VALUES ('user', 'promozioni_private','0');
+INSERT INTO type_account VALUES ('user', 'prodotti_private','0');
+INSERT INTO type_account VALUES ('admin', 'login','0');
+INSERT INTO type_account VALUES ('user', 'login','0');
+INSERT INTO type_account VALUES ('unlogged', 'login','1');
+
+
+
 INSERT INTO account VALUES ('admin', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997');

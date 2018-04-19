@@ -36,7 +36,8 @@ class controller{
     	$this->managerS->check_session();
     }
     public function logout(){
-    	$this->managerS->logout();
+        $this->managerS->logout();
+        $this->managerS->set_flag(new exeption("correct","Logout avvenuto con successo."));
     }
 }
 

@@ -93,7 +93,7 @@
             <div class="form_sotto">
                 <p class="intestazione">MODIFICA PASSWORD</p>
                 <div id="demos"></div>
-                <form  action="" method="post" onsubmit="return validateForm_1(this)" >
+                <form  action="mainForm/changePassword.php" method="post" onsubmit="return validateForm_1(this)" >
                  <div>
                   <label for="nuova_password">Password:</label>
                   <input type="password" name="nuova_password" id="nuova_password" />
