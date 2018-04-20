@@ -24,17 +24,22 @@ class session_manager{
     public function check_session(){
         $permission= new permission();
         echo $permission->getPage().'----'.$_SESSION['link'];
-        if($permission->getPage() != 'login' || $_SESSION['link'] != NULL){
-            if($permission->read()){
-                $this->logout();
+        if(basename($_SERVER['PHP_SELF'],'.php') == 'login'){
+            if($_SESSION['link'] != NULL){
+                if($permission->read()){
+                    $this->logout();
+                }
+                else{
+                    header('location: '.$_SESSION['link'].'.php');
+                }
             }
-            elseif(basename($_SERVER['PHP_SELF'],'.php') == 'login'){
-                //header('location: '.$_SESSION['link'].'.php');
-            }
-            else{
-                $_SESSION['link'] =$permission->getPage();
-            }
-        }   
+        }
+        elseif($permission->read()){
+            $this->logout();
+        }
+        else{
+            $_SESSION['link'] =$permission->getPage();
+        }
     }
     public function define_session($utente){
         //setto nell'array di sessione le informazioni
@@ -45,9 +50,11 @@ class session_manager{
         }
         else{
 	        $_SESSION['user']=$utente['username'];
-	        $_SESSION['type']=$utente['user_type'];
-	        $this->set_flag(new exeption("correct","Login effettuato con successo. Benvenuto ".$utente['username'].'.'));
-            header('Location: '.'..'.DIRECTORY_SEPARATOR.$utente['link'].'.php');
+            $_SESSION['type']=$utente['user_type'];
+            $_SESSION['link']=$utente['link'];
+            $this->set_flag(new exeption("correct","Login effettuato con successo. Benvenuto ".$_SESSION['user'].'.'));
+            
+            header('Location: '.'..'.DIRECTORY_SEPARATOR.$_SESSION['link'].'.php');
         }
     }
     public function logout(){
@@ -55,9 +62,15 @@ class session_manager{
         session_destroy();
         $this->session();
         header('Location: '.'..'.DIRECTORY_SEPARATOR.'login.php');
+        die;
     }
     public function GoTo(){
-        header('Location: '.'..'.DIRECTORY_SEPARATOR.$_SESSION['link'].'.php');
+        if($_SESSION['link'] != NULL){
+            header('Location: '.'..'.DIRECTORY_SEPARATOR.$_SESSION['link'].'.php');
+        }
+        else{
+            $this->logout();
+        }
     }
 }
 
