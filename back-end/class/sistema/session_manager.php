@@ -23,7 +23,6 @@ class session_manager{
     }
     public function check_session(){
         $permission= new permission();
-        echo $permission->getPage().'----'.$_SESSION['link'];
         if(basename($_SERVER['PHP_SELF'],'.php') == 'login'){
             if($_SESSION['link'] != NULL){
                 if($permission->read() == 0){
@@ -35,7 +34,7 @@ class session_manager{
             }
         }
         elseif($permission->read() == 0){
-            $this->logout();
+            header('Location: login.php');
         }
         else{
             $_SESSION['link'] =$permission->getPage();
