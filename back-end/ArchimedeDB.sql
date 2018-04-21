@@ -4,7 +4,7 @@ CREATE DATABASE darossi;
 SET FOREIGN_KEY_CHECKS=0;
 
 
-DROP TABLE type_account;
+DROP TABLE IF EXISTS type_account;
 CREATE TABLE type_account(
 	user_type varchar(64) NOT NULL,
 	link varchar(64) NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE type_account(
 	PRIMARY KEY(user_type,link)
 );
 
-DROP TABLE account;
+DROP TABLE IF EXISTS account;
 CREATE TABLE account(
 	username varchar(64),
 	type char(64) NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE account(
 	FOREIGN KEY (type) REFERENCES type_account(user_type)
 );
 
-DROP TABLE orario;
+DROP TABLE IF EXISTS orario;
 CREATE TABLE orario(
 	username varchar(64) PRIMARY KEY,
 	lunedi varchar(64) NOT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE orario(
 	FOREIGN KEY (username) REFERENCES account(username)
 );
 
-DROP TABLE logo;
+DROP TABLE IF EXISTS logo;
 CREATE TABLE logo(
 	username varchar(64) PRIMARY KEY,
 	logo varchar(64) NOT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE logo(
 	FOREIGN KEY (username) REFERENCES account(username)
 );
 
-DROP TABLE info;
+DROP TABLE IF EXISTS info;
 CREATE TABLE info(
 	username varchar(64) PRIMARY KEY,
 	negozio varchar(64) NOT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE info(
 	FOREIGN KEY (username) REFERENCES account(username)
 );
 
-DROP TABLE prodotti;
+DROP TABLE IF EXISTS prodotti;
 CREATE TABLE prodotti(
 	username varchar(64) NOT NULL,
 	ID int NOT NULL AUTO_INCREMENT,
@@ -67,7 +67,7 @@ CREATE TABLE prodotti(
 	FOREIGN KEY (username) REFERENCES account(username)
 );
 
-DROP TABLE promozioni;
+DROP TABLE IF EXISTS promozioni;
 CREATE TABLE promozioni(
 	username varchar(64) NOT NULL,
 	ID int NOT NULL AUTO_INCREMENT,
@@ -78,7 +78,7 @@ CREATE TABLE promozioni(
 	FOREIGN KEY (username) REFERENCES account(username)
 );
 
-DROP TABLE eventi;
+DROP TABLE IF EXISTS eventi;
 CREATE TABLE eventi(
 	ID int NOT NULL AUTO_INCREMENT,
 	type ENUM('APERTURA','CHIUSURA','NOVITA') NOT NULL,
