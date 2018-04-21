@@ -28,7 +28,7 @@ class permission extends connection implements query{
         $query = "SELECT link FROM type_account WHERE user_type = '$this->type_user' AND link = '$this->page'";
         $permission=NULL;
         $permission =parent::execute_query($query);
-        return is_null($permission);
+        return mysqli_num_rows($permission);
     }
 }
 

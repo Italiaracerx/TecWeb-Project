@@ -26,7 +26,7 @@ class session_manager{
         echo $permission->getPage().'----'.$_SESSION['link'];
         if(basename($_SERVER['PHP_SELF'],'.php') == 'login'){
             if($_SESSION['link'] != NULL){
-                if($permission->read()){
+                if($permission->read() == 0){
                     $this->logout();
                 }
                 else{
@@ -34,7 +34,7 @@ class session_manager{
                 }
             }
         }
-        elseif($permission->read()){
+        elseif($permission->read() == 0){
             $this->logout();
         }
         else{
