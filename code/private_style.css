@@ -324,44 +324,56 @@ textarea{
 	 cursor: pointer;
 }
 
-#demo {background-color: #bcbcbc;
+   /*///// Div General-Admin /////////////*/
+
+#controllo_creaNeg {background-color: #fd3516;
 	text-align:center;}
 
-#demo_1 {background-color: #bcbcbc;
+#controllo_eliminaNeg {background-color: #fd3516;
 	text-align:center;}
 
-#demos {background-color: #bcbcbc;
+#verifica_passwAdmin {background-color: #fd3516;
 	text-align:center;}
 
-#demo_passw {background-color: #bcbcbc;
-	text-align:center;}
-
-#demo_corario {background-color: #bcbcbc;
-	text-align:center;}
-
-#demo_oktel {background-color: #bcbcbc;
-	text-align:center;}
-
-#demo_okmail {background-color: #bcbcbc;
-	text-align:center;
-}
-
-#demo_sito {background-color: #bcbcbc;
-	text-align:center;
-}
-
-#demo_descrizione {background-color: #bcbcbc;
-	text-align:center;
-}
-
-#demo_nomenegozio {background-color: #bcbcbc;
-	text-align:center;
-}
-
-#demo_orario {background-color: #bcbcbc;
+#controllo_novita {background-color: #fd3516;
 	text-align:center;
 	margin-bottom: 0.4em;
 }
+
+#controllo_openclose{background-color: #fd3516;
+	text-align:center;
+	margin-bottom: 0.4em;
+}
+
+   /*///// Div General-Private //////////*/
+   
+#verifica_passw {background-color: #fd3516;
+	text-align:center;}
+
+#verifica_tel {background-color: #fd3516;
+	text-align:center;}
+
+#verifica_mail {background-color: #fd3516;
+	text-align:center;
+}
+
+#verifica_sito {background-color: #fd3516;
+	text-align:center;
+}
+
+#verifica_descrizione {background-color: #fd3516;
+	text-align:center;
+}
+
+#verifica_nomenegozio {background-color: #fd3516;
+	text-align:center;
+}
+
+#verifica_orario {background-color: #fd3516;
+	text-align:center;
+	margin-bottom: 0.4em;
+}
+
 
 #esempio{
 	font-size: 0.85em;
@@ -369,72 +381,72 @@ textarea{
 }
 
 #uno{
-	background-color: #bcbcbc;
+	background-color: #fd3516;
 	margin-left: 90%;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#bcbcbc;
+	color:#fd3516;
 	border-radius: 100px;
 }
 
 #due{
-	background-color: #bcbcbc;
+	background-color: #fd3516;
 	margin-left: 90%;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#bcbcbc;
+	color:#fd3516;
 	border-radius: 100px;
 }
 
 #tre{
-	background-color: #bcbcbc;
+	background-color: #fd3516;
 	margin-left: 90%;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#bcbcbc;
+	color:#fd3516;
 	border-radius: 100px;
 }
 
 #quattro{
-	background-color: #bcbcbc;
+	background-color: #fd3516;
 	margin-left: 90%;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#bcbcbc;
+	color:#fd3516;
 	border-radius: 100px;
 }
 
 #cinque{
-	background-color: #bcbcbc;
+	background-color: #fd3516;
 	margin-left: 90%;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#bcbcbc;
+	color:#fd3516;
 	border-radius: 100px;
 }
 
 #sei{
-	background-color: #bcbcbc;
+	background-color: #fd3516;
 	margin-left: 90%;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#bcbcbc;
+	color:#fd3516;
 	border-radius: 100px;
 }
 
 #sette{
-	background-color: #bcbcbc;
+	background-color: #fd3516;
 	margin-left: 90%;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#bcbcbc;
+	color:#fd3516;
 	border-radius: 100px;
 }
 
