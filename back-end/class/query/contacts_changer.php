@@ -10,18 +10,22 @@ class infos_changer extends connection implements query{
     private $webLink;
 
     public function__construct($username, $phone, $email, $website){
-        $this->user=parent::escaped_string($user);
+        $this->user=parent::escaped_string($username);
         $this->phoneNumber=parent::escaped_string($phone);
         $this->emailAddress=parent::escaped_string($email);
         $this->weblink=parent::escaped_string($website);
     }
 
-    public function update(){
+    public function update_contacts(){
         $query="UPDATE info SET telefono='$phoneNumber', mail='$emailAddress', sito='$webLink' WHERE username='$user';";
         if(parent::execute_query($query) == NULL){
             throw new exeption('error', 'modifica non eseguita');
         }
     }
+
+    public function read(){}
+
+    public function write(){}
 }
 
 ?>
