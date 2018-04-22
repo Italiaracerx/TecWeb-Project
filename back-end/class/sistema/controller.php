@@ -1,7 +1,6 @@
 <?php
 
 require_once __DIR__.'/exeption.php';
-require_once __DIR__.'/../interfacce/page_template.php';
 require_once __DIR__.'/../interfacce/type_page.php';
 require_once __DIR__.'/../pagine/page_private.php';
 require_once __DIR__.'/session_manager.php';
