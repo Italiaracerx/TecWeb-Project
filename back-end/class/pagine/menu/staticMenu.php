@@ -8,6 +8,10 @@ class staticPath{
     private static $link_promozioni_private='promozioni_private.php';
     private static $link_prodotti_private='prodotti_private.php';
     private static $link_negozio='negozio.php';
+    private static $link_home='home.php';
+    private static $link_promozioni='promozioni.php';
+    private static $link_dove_siamo='dove_siamo.php';
+    private static $link_contatti='contatti.php';
 
     public function admin(){
         $admin = array();
@@ -25,6 +29,15 @@ class staticPath{
     }
     public function login(){
         return array();
+    }
+    public function public(){
+        $private = array();
+        $private[]=new schedaMenu("Home",staticPath::$link_home);
+        $private[]=new schedaMenu("Negozio",staticPath::$link_negozio);
+        $private[]=new schedaMenu("Dove siamo",staticPath::$link_dove_siamo);
+        $private[]=new schedaMenu("Contatti",staticPath::$link_contatti);
+        $private[]=new schedaMenu("Promozioni",staticPath::$link_promozioni);
+        return $private;
     }
 
 }
