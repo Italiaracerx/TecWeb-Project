@@ -8,21 +8,21 @@ class page_private implements type_page{
 	private $name;
 	private $javascript;
 
-	public function __construct($name, menu $menu, $javascript =NULL){
+	public function __construct($name, menu $menu, $js =NULL){
 		$this->name =$name;
 		$this->menu =$menu;
-		$this->javascipt =$javascript;
+		$this->javascript =$js;
 	}
 	public function intestazione(){
 		$file = file_get_contents('../class/HTMLstored/private/preambolo.html', FILE_USE_INCLUDE_PATH);
 		$file = str_replace('__USER__',$_SESSION['user'],$file);
 		$file = str_replace('__NAME_PAGE__',$this->name,$file);
 		$file = str_replace('__STYLE__',page_private::$style,$file);
-		$javascript =NULL;
+		$js =NULL;
 		if($this->javascript != NULL){
-			$javascipt ='<script type="text/javascript" src="Javascript/'.$this->javascript.'.js"></script>';
+			$js ='<script type="text/javascript" src="Javascript/'.$this->javascript.'.js"></script>';
 		}
-		$file = str_replace('__JAVASCRIPT__',$javascript,$file);
+		$file = str_replace('__JAVASCRIPT__',$js,$file);
 		echo $file;
     }
     public function header(){

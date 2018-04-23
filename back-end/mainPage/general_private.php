@@ -5,7 +5,7 @@
     require_once __DIR__.'/../class/query/log.php';
 
 
-    $controller = new controller(new page_private(new generalPrivatePage()));
+    $controller = new controller(new page_private('Generale',(new menu((new staticPath())->user())), 'general_private'));
     $controller->check_session();
     $controller->head();
 ?>

@@ -14,7 +14,7 @@ class staticPath{
         $admin[]=new schedaMenu("Logout",staticPath::$link_logout);
         return $admin;
     }
-    public function privat(){
+    public function user(){
         $private = array();
         $private[]=new schedaMenu("Generale",staticPath::$link_general_private);
         $private[]=new schedaMenu("Promozioni",staticPath::$link_promozioni_private);

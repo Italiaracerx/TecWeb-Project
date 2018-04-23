@@ -16,7 +16,7 @@
             <div class="form_sopra">
               <p class="intestazione">CREAZIONE NEGOZIO</p>
               <div id="controllo_creaNeg"></div>
-              <form  action="" method="post" onsubmit="return validateForm(this)">
+              <form  action="mainForm/newUser.php" method="post" onsubmit="return validateForm(this)">
                 <div>
                 <label for="nome_negozio">Nome Negozio:</label>
                 <input type="text" id="nome_negozio" name="username"/>    
@@ -35,7 +35,7 @@
             <div class="form_sopra">
               <p class="intestazione">ELIMINA NEGOZIO</p> 
               <div id="controllo_eliminaNeg"></div>
-              <form  action="" method="post" onsubmit="return validateUser()">
+              <form  action="mainForm/deleteUser.php" method="post" onsubmit="return validateUser()">
                 <div>
                   <label for="elimina_negozio">Nome Negozio:</label>
                   <select name="nelimina_negozio" id="elimina_negozio">
@@ -97,7 +97,7 @@
             <div class="form_sotto">
                 <p class="intestazione">MODIFICA PASSWORD</p>
                 <div id="verifica_passwAdmin"></div>
-                <form  action="" method="post" onsubmit="return validateForm_1(this)" >
+                <form  action="mainForm/changePassword.php" method="post" onsubmit="return validateForm_1(this)" >
                  <div>
                   <label for="nuova_password">Password:</label>
                   <input type="password" name="password" id="nuova_password" />
