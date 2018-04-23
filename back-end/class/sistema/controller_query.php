@@ -6,9 +6,10 @@ require_once __DIR__.'/../query/log.php';
 class controller_query extends controller{
 	private $question;
     
-    public function __construct(query $query){
+    public function __construct(){
         parent::__construct();
-    	$this->page =NULL;
+    }
+    public function setQuery(query $query){
     	$this->question =$query;
     }
     public function login(){

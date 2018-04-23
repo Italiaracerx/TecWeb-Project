@@ -6,7 +6,8 @@
     require_once __DIR__.'/../class/pagine/menu/staticMenu.php';
 
 
-    $controller = new controller(new page_private('Promozioni',(new menu((new staticPath())->user())), 'general_private'));
+    $controller = new controller();
+    $controller->setPage(new page_private('Promozioni',(new menu((new staticPath())->user())), 'general_private'));
     $controller->check_session();
     $controller->head();
 ?>
