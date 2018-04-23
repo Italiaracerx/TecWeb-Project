@@ -51,10 +51,10 @@
                     <div class="form_sopra">
                         <p class="intestazione">MODIFICA CONTATTI</p>
                         <div id="verifica_sito"></div> <div id="verifica_tel"></div> <div id="verifica_mail"></div>
-                        <form action="" method="post" onsubmit="return checkEmail(this)" >
+                        <form action="change_shop_constacts.php" method="post" onsubmit="return checkEmail(this)" >
                         <div>
                           <label for="Telefono">Telefono / Fax:</label>
-                          <input type="text" name="Telefono" id="Telefono" value="041610265"/>
+                          <input type="text" name="Telefono" id="telefono" value="041610265"/>
                           <label for="Email">Email:</label>
                           <input type="text" name="Email" id="Email" value="blablabla@lego.com" />
                           <label for="Sito_web">Sito web:</label>
@@ -70,12 +70,12 @@
                     <div class="form_sopra">
                         <p class="intestazione">MODIFICA PASSWORD</p>
                         <div id="verifica_passw"></div>
-                        <form  action="" method="post" onsubmit="return validateForm(this)">
+                        <form  action="changePassword.php" method="post" onsubmit="return validateForm(this)">
                         <div>
                           <label for="password">Password:</label>
-                          <input type="password" name="password" id="password"/>
+                          <input type="password" name="nuova_password" id="nuova_password"/>
                           <label for="conferma_password">Conferma Password:</label>
-                          <input type="password" name="conferma_password" id="conferma_password"/> 
+                          <input type="password" name="conferma_nuova_password" id="conferma_nuova_password"/> 
                           <div class="invia">              
                           <input type="reset"  value="Reset"/>  
                           <input type="submit" value="Salva"/>   
@@ -90,10 +90,10 @@
 
                     <div class="form_centrali">
                     <p class="intestazione">MODIFICA LOGO</p>
-                      <form action="" method="post" enctype="multipart/form-data">
+                      <form action="insertImage.php" method="post" enctype="multipart/form-data">
                           <div>
                           <label for="carica_immmagine">Selezionare un file:</label>
-                          <input type="file" name="immagine" id="carica_immmagine"/>
+                          <input type="file" name="immagine" id="immagine"/>
                           <input type="submit" value="Salva"/>
                           </div>
                      </form>
@@ -102,7 +102,7 @@
                     <div class="form_centrali">
                     <p class="intestazione">MODIFICA NOME NEGOZIO</p>
                         <div id="verifica_nomenegozio"></div>
-                        <form   action="" method="post" onsubmit="return negozio(this)" > 
+                        <form   action="change_shop_name.php" method="post" onsubmit="return negozio(this)" > 
                             <div id="modifica_nome">
                             <label for="nome_negozio">Nome:</label>
                             <input type="text" name="nome_negozio" id="nome_negozio" value="LEGO STORE" />
@@ -173,12 +173,12 @@
                     <div id="descrizione">
                         <p class="intestazione">MODIFICA DESCRIZIONE</p>
                         <div id="verifica_descrizione"></div>
-                        <form action="" method="post" onsubmit="return descrizione(this)">
+                        <form action="change_shop_slogan" method="post" onsubmit="return descrizione(this)">
                               <div>
                                  <label for="motto">Motto:</label>                                          
-                                 <textarea name="testo_motto" id="motto" rows="2" cols="50">Our mission: To inspire and develop the builders of tomorrow</textarea>  
+                                 <textarea name="testo_motto" id="testo_motto" rows="2" cols="50">Our mission: To inspire and develop the builders of tomorrow</textarea>  
                                  <label for="descrizione_negozio">Descrizione:</label>                     
-                                 <textarea name="testo_descrizione" id="descrizione_negozio" rows="5" cols="50">Il nostro scopo è ispirare ed educare i bambini a pensare creativamente, ragionare in modo sistematico e realizzare il loro potenziale, plasmando il loro futuro e sperimentando le infinite possibilità umane. </textarea>  
+                                 <textarea name="testo_descrizione" id="testo_descrizione" rows="5" cols="50">Il nostro scopo è ispirare ed educare i bambini a pensare creativamente, ragionare in modo sistematico e realizzare il loro potenziale, plasmando il loro futuro e sperimentando le infinite possibilità umane. </textarea>  
                                  <div class="pulsante">
                                  <input  type="submit" value="Salva"/>                                
                                  <input  type="reset" value="Reset"/>   
