@@ -4,7 +4,9 @@
     require_once __DIR__.'/../class/pagine/menu/menu.php';
     require_once __DIR__.'/../class/pagine/menu/staticMenu.php';
 
-    $controller = new controller(new page_private('Login', (new menu((new staticPath())->login()))));
+
+    $controller = new controller();
+    $controller->setPage(new page_private('Login', (new menu((new staticPath())->login()))));
     $controller->check_session();
     $controller->head();
 ?>

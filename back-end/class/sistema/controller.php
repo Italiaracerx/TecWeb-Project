@@ -9,10 +9,11 @@ class controller{
 	private $page;
     protected $managerS;
     //metodi
-    function __construct(type_page $type_page =NULL){
-
-        $this->page =$type_page;
+    function __construct(){
     	$this->managerS =new session_manager();
+    }
+    public function setPage(type_page $type_page){
+        $this->page =$type_page;
     }
     public function head(){
         try{
