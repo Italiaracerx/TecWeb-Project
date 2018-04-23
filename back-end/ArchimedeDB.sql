@@ -1,6 +1,7 @@
 /*DROP DATABASE IF EXISTS darossi;
 CREATE DATABASE darossi;
 */
+USE darossi;
 SET FOREIGN_KEY_CHECKS=0;
 
 

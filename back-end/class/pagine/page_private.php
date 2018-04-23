@@ -4,16 +4,25 @@ require_once __DIR__.'/../interfacce/type_page.php';
 
 class page_private implements type_page{
 	private static $style="private_style.css";
-	private $pag_corrente;
-	
-	function __construct(page_template $pg){
-		$this->pag_corrente=$pg;
+	private $menu;
+	private $name;
+	private $javascript;
+
+	public function __construct($name, menu $menu, $js =NULL){
+		$this->name =$name;
+		$this->menu =$menu;
+		$this->javascript =$js;
 	}
 	public function intestazione(){
-		$file = file_get_contents('../class/HTMLstored/private/common/preambolo.html', FILE_USE_INCLUDE_PATH);
+		$file = file_get_contents('../class/HTMLstored/private/preambolo.html', FILE_USE_INCLUDE_PATH);
 		$file = str_replace('__USER__',$_SESSION['user'],$file);
-		$file = str_replace('__NAME_PAGE__',$this->pag_corrente->getNamePage(),$file);
+		$file = str_replace('__NAME_PAGE__',$this->name,$file);
 		$file = str_replace('__STYLE__',page_private::$style,$file);
+		$js =NULL;
+		if($this->javascript != NULL){
+			$js ='<script type="text/javascript" src="Javascript/'.$this->javascript.'.js"></script>';
+		}
+		$file = str_replace('__JAVASCRIPT__',$js,$file);
 		echo $file;
     }
     public function header(){
@@ -25,11 +34,11 @@ class page_private implements type_page{
 				</div>';
 	}
 	public function menu(){
-		$this->pag_corrente->menu();
+		$this->menu->print();
 	}		
     public function breadcrumb(){
     	echo '	<div id="breadcrumb">
-        			<h2><strong>'.$this->pag_corrente->getNamePage().'</strong></h2>        
+        			<h2><strong>'.$this->name.'</strong></h2>        
     			</div>';
     }
     public function print_bar(){

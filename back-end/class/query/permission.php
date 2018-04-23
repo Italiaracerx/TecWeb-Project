@@ -13,7 +13,7 @@ class permission extends connection implements query{
     public function __construct(){
         $this->type_user =$_SESSION['type'];
         $this->page =preg_replace('/\\.[^.\\s]{3,4}$/', '', basename($_SERVER['PHP_SELF']));
-        if($this->page == 'login'){
+        if($this->page == 'login' && $_SESSION['link'] != NULL){
             $this->page=$_SESSION['link'];
         }
     }
@@ -28,7 +28,7 @@ class permission extends connection implements query{
         $query = "SELECT link FROM type_account WHERE user_type = '$this->type_user' AND link = '$this->page'";
         $permission=NULL;
         $permission =parent::execute_query($query);
-        return is_null($permission);
+        return mysqli_num_rows($permission);
     }
 }
 
