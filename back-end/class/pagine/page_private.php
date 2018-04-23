@@ -26,20 +26,23 @@ class page_private implements type_page{
 		echo $file;
     }
     public function header(){
-    	echo '	<div id="header">
-   				    <div id="titolo">
-		                <h3>CENTRO COMMERCIALE ARCHIMEDE</h3>
-		                <h1>AMMINISTRAZIONE</h1>
-					</div>
-				</div>';
+		$file = file_get_contents('../class/HTMLstored/private/header.html', FILE_USE_INCLUDE_PATH);
+        echo $file;
 	}
 	public function menu(){
+		echo '<div id="menu">';
 		$this->menu->print();
+		echo '</div>';
 	}		
     public function breadcrumb(){
-    	echo '	<div id="breadcrumb">
-        			<h2><strong>'.$this->name.'</strong></h2>        
-    			</div>';
+    	$file ='<div id="breadcrumb"><h2><strong>';
+    	if($_SESSION['user'] != NULL){
+    		$file =$file.$_SESSION['user'].' -> </strong> '.$this->name.'</h2></div>';
+    	}
+    	else{
+    		$file =$file.$this->name.'</strong></h2></div>';
+    	}
+    	echo $file;
     }
     public function print_bar(){
         if($_SESSION['flag'] != NULL){

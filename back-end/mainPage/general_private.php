@@ -7,7 +7,7 @@
 
 
     $controller = new controller();
-    $controller->setPage(new page_private('Generale',(new menu((new staticPath())->user())), 'general_private'));
+    $controller->setPage(new page_private('Generale',(new menu((new staticPath())->user('0'))), 'general_private'));
     $controller->check_session();
     $controller->head();
 ?>

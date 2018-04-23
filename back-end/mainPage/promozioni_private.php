@@ -7,7 +7,7 @@
 
 
     $controller = new controller();
-    $controller->setPage(new page_private('Promozioni',(new menu((new staticPath())->user())), 'general_private'));
+    $controller->setPage(new page_private('Promozioni',(new menu((new staticPath())->user('1'))), 'general_private'));
     $controller->check_session();
     $controller->head();
 ?>

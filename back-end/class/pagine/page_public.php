@@ -6,38 +6,25 @@ class page_public implements type_page{
 	private static $style="style.css";
 	private $menu;
 	private $name;
-	private $javascript;
 
-	public function __construct($name, menu $menu, $js =NULL){
+	public function __construct($name, menu $menu){
 		$this->name =$name;
 		$this->menu =$menu;
-		$this->javascript =$js;
 	}
 	public function intestazione(){
 		$file = file_get_contents('../class/HTMLstored/public/preambolo.html', FILE_USE_INCLUDE_PATH);
 		$file = str_replace('__USER__',$_SESSION['user'],$file);
 		$file = str_replace('__NAME_PAGE__',$this->name,$file);
-		$file = str_replace('__STYLE__',page_private::$style,$file);
-		$js =NULL;
-		if($this->javascript != NULL){
-			$js ='<script type="text/javascript" src="Javascript/'.$this->javascript.'.js"></script>';
-		}
-		$file = str_replace('__JAVASCRIPT__',$js,$file);
+		$file = str_replace('__STYLE__',page_public::$style,$file);
+
 		echo $file;
     }
     public function header(){
-        echo '	
-        <div id="header">	    
-            <div id="contenutoHeader">
-                <img id="logo" alt="logo" src="images/logo.jpg"/>						
-                <div id="titolo">
-                    <h1>Archimede</h1>
-                    <h3>Centro Commerciale</h3>
-                </div>
-            </div>
-        </div>';
+        $file = file_get_contents('../class/HTMLstored/public/header.html', FILE_USE_INCLUDE_PATH);
+        echo $file;
 	}
 	public function menu(){
+        echo '<div id="menu">';
 		$this->menu->print();
 	}		
     public function breadcrumb(){
@@ -49,14 +36,9 @@ class page_public implements type_page{
         echo '       
         <div id="footer">
             <div id="footerMenu">
-                <div id="contentMenuFooter">
-                <ul>
-                <li><a href="#header"><span xml:lang="en">Home</span></a></li>
-                <li><a href="negozi.html">Negozi</a></li>
-                <li><a href="dovesiamo.html">Dove siamo</a></li>
-                <li><a href="contatti.html">Contatti</a></li>
-                <li><a href="promozioni_public.html">Promozioni</a></li>
-                </ul>
+                <div id="contentMenuFooter">';
+                    $this->menu->print();
+                echo '
             </div>
         </div>
 
