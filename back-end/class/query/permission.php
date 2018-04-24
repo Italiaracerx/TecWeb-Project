@@ -6,11 +6,13 @@ require_once __DIR__.'/../interfacce/query.php';
 
 class permission extends connection implements query{
     //campi privati
+    private $user;
     private $type_user;
     private $page;
 
     //metodi
     public function __construct(){
+        $this->user =$_SESSION['user'];
         $this->type_user =$_SESSION['type'];
         $this->page =preg_replace('/\\.[^.\\s]{3,4}$/', '', basename($_SERVER['PHP_SELF']));
         if($this->page == 'login' && $_SESSION['link'] != NULL){
@@ -25,7 +27,7 @@ class permission extends connection implements query{
         return parent::execute_query($query);
     }
     public function read(){
-        $query = "SELECT link FROM type_account WHERE user_type = '$this->type_user' AND link = '$this->page'";
+        $query = "SELECT T.link FROM type_account T JOIN account A WHERE T.user_type = '$this->type_user' AND T.link = '$this->page' AND A.username = '$this->user'";
         $permission=NULL;
         $permission =parent::execute_query($query);
         return mysqli_num_rows($permission);

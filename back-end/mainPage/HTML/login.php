@@ -1,8 +1,8 @@
 <?php
-    require_once __DIR__.'/../class/sistema/controller.php';
-    require_once __DIR__.'/../class/pagine/page_private.php';
-    require_once __DIR__.'/../class/pagine/menu/menu.php';
-    require_once __DIR__.'/../class/pagine/menu/staticMenu.php';
+    require_once __DIR__.'/../../class/sistema/controller.php';
+    require_once __DIR__.'/../../class/pagine/page_private.php';
+    require_once __DIR__.'/../../class/pagine/menu/menu.php';
+    require_once __DIR__.'/../../class/pagine/menu/staticMenu.php';
 
 
     $controller = new controller();
@@ -13,7 +13,7 @@
 
 <div id="content">
     <div id="content">
-        <form action="mainForm/verifica.php" method="post">
+        <form action="../mainForm/verifica.php" method="post">
             <div id="formLogin">
                 <label for="NomeUtente">Nome Utente:</label>
                 <input name="username" type="text">

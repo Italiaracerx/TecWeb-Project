@@ -45,7 +45,7 @@ class session_manager{
 
         if($utente == NULL){
            $this->set_flag(new exeption("error","Login o password errati."));
-        	header("Location: ../login.php");
+        	header("Location: ../HTML/login.php");
         }
         else{
 	        $_SESSION['user']=$utente['username'];
@@ -53,19 +53,18 @@ class session_manager{
             $_SESSION['link']=$utente['link'];
             $this->set_flag(new exeption("correct","Login effettuato con successo. Benvenuto ".$_SESSION['user'].'.'));
             
-            header('Location: '.'..'.DIRECTORY_SEPARATOR.$_SESSION['link'].'.php');
+            header('Location: '.'../HTML'.DIRECTORY_SEPARATOR.$_SESSION['link'].'.php');
         }
     }
     public function logout(){
         session_unset();
         session_destroy();
         $this->session();
-        header('Location: '.'..'.DIRECTORY_SEPARATOR.'login.php');
-        die;
+        header('Location: '.'../HTML'.DIRECTORY_SEPARATOR.'login.php');
     }
     public function GoTo(){
         if($_SESSION['link'] != NULL){
-            header('Location: '.'..'.DIRECTORY_SEPARATOR.$_SESSION['link'].'.php');
+            header('Location: '.'../HTML'.DIRECTORY_SEPARATOR.$_SESSION['link'].'.php');
         }
         else{
             $this->logout();
