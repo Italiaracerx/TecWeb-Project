@@ -13,7 +13,7 @@
 
 <div id="content">
     <div id="content">
-        <form action="mainForm/verifica.php" method="post">
+        <form action="../mainForm/verifica.php" method="post">
             <div id="formLogin">
                 <label for="NomeUtente">Nome Utente:</label>
                 <input name="username" type="text">

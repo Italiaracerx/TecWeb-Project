@@ -83,6 +83,7 @@ DROP TABLE IF EXISTS eventi;
 CREATE TABLE eventi(
 	ID int NOT NULL AUTO_INCREMENT,
 	type ENUM('APERTURA','CHIUSURA','NOVITA') NOT NULL,
+	data datetime NOT NULL,
 	descrizione varchar(64),
 	PRIMARY KEY(ID) 
 );

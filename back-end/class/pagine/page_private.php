@@ -20,7 +20,7 @@ class page_private implements type_page{
 		$file = str_replace('__STYLE__',page_private::$style,$file);
 		$js =NULL;
 		if($this->javascript != NULL){
-			$js ='<script type="text/javascript" src="Javascript/'.$this->javascript.'.js"></script>';
+			$js ='<script type="text/javascript" src="../Javascript/'.$this->javascript.'.js"></script>';
 		}
 		$file = str_replace('__JAVASCRIPT__',$js,$file);
 		echo $file;
