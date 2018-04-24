@@ -86,7 +86,7 @@
                 <form  action="../mainForm/insert_novita.php" method="post" onsubmit="return novita()">
                    <div>
                    <label for="data_novità">Inserire Data:</label>
-                   <input type="text" name="data" id="data_novità"/>  
+                   <input type="text" name="data" id="data_1"/>  
                    <label for="novità">Descrizione:</label>
                    <textarea id="novità" name="testo" rows="4" cols="36" >Inserisci la nuova novità</textarea>
                    <input type="reset" name="tasto_reset"  value="Reset"/>  
