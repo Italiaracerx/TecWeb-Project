@@ -14,7 +14,7 @@ class page_private implements type_page{
 		$this->javascript =$js;
 	}
 	public function intestazione(){
-		$file = file_get_contents('../class/HTMLstored/private/preambolo.html', FILE_USE_INCLUDE_PATH);
+		$file = file_get_contents('../../class/HTMLstored/private/preambolo.html', FILE_USE_INCLUDE_PATH);
 		$file = str_replace('__USER__',$_SESSION['user'],$file);
 		$file = str_replace('__NAME_PAGE__',$this->name,$file);
 		$file = str_replace('__STYLE__',page_private::$style,$file);
@@ -26,7 +26,7 @@ class page_private implements type_page{
 		echo $file;
     }
     public function header(){
-		$file = file_get_contents('../class/HTMLstored/private/header.html', FILE_USE_INCLUDE_PATH);
+		$file = file_get_contents('../../class/HTMLstored/private/header.html', FILE_USE_INCLUDE_PATH);
         echo $file;
 	}
 	public function menu(){

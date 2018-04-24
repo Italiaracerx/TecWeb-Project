@@ -12,7 +12,7 @@ class page_public implements type_page{
 		$this->menu =$menu;
 	}
 	public function intestazione(){
-		$file = file_get_contents('../class/HTMLstored/public/preambolo.html', FILE_USE_INCLUDE_PATH);
+		$file = file_get_contents('../../class/HTMLstored/public/preambolo.html', FILE_USE_INCLUDE_PATH);
 		$file = str_replace('__USER__',$_SESSION['user'],$file);
 		$file = str_replace('__NAME_PAGE__',$this->name,$file);
 		$file = str_replace('__STYLE__',page_public::$style,$file);
@@ -20,7 +20,7 @@ class page_public implements type_page{
 		echo $file;
     }
     public function header(){
-        $file = file_get_contents('../class/HTMLstored/public/header.html', FILE_USE_INCLUDE_PATH);
+        $file = file_get_contents('../../class/HTMLstored/public/header.html', FILE_USE_INCLUDE_PATH);
         echo $file;
 	}
 	public function menu(){
