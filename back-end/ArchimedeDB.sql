@@ -1,7 +1,10 @@
-/*DROP DATABASE IF EXISTS darossi;
-CREATE DATABASE darossi;
-*/
+/*
 USE darossi;
+*/
+
+DROP DATABASE IF EXISTS Archimede;
+CREATE DATABASE Archimede;
+
 SET FOREIGN_KEY_CHECKS=0;
 
 
@@ -50,7 +53,6 @@ CREATE TABLE info(
 	telefono varchar(64) NOT NULL,
 	mail varchar(64),
 	sito varchar(64),
-	titolo varchar(64),
 	motto varchar(64),
 	descrizione varchar(256),
 	FOREIGN KEY (username) REFERENCES account(username)
@@ -106,7 +108,7 @@ DELIMITER $$
 CREATE TRIGGER NuovoUtente AFTER INSERT ON account FOR EACH ROW BEGIN
 if NEW.type <> 'admin'
 then
-	INSERT INTO info values (NEW.username,NEW.username,'WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS');
+	INSERT INTO info values (NEW.username,NEW.username,'WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS');
 	INSERT INTO orario values (NEW.username,'08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00');
 	INSERT INTO logo values (NEW.username,'images/working_progress.png','logo nuovo negozio');
 end if;

@@ -1,6 +1,7 @@
 <?php
     require_once __DIR__.'/../../class/sistema/controller.php';
     require_once __DIR__.'/../../class/pagine/page_private.php';
+    require_once __DIR__.'/../../class/query/contacts_changer.php';
     require_once __DIR__.'/../../class/query/log.php';
     require_once __DIR__.'/../../class/pagine/menu/menu.php';
     require_once __DIR__.'/../../class/pagine/menu/staticMenu.php';
@@ -10,7 +11,7 @@
     $controller->setPage(new page_private('Generale',(new menu((new staticPath())->user('0'))), 'general_private'));
     $controller->check_session();
     $controller->head();
-?>
+    ?>
     <div id="content">
 
 <div id="content_generale">
@@ -20,14 +21,18 @@
          <div class="form_sopra">
              <p class="intestazione">MODIFICA CONTATTI</p>
              <div id="verifica_sito"></div> <div id="verifica_tel"></div> <div id="verifica_mail"></div>
-             <form action="" method="post" onsubmit="return checkEmail(this)" >
+             <form action="../mainForm/change_shop_contacts.php" method="post" onsubmit="return checkEmail(this)" >
              <div>
-               <label for="Telefono">Telefono / Fax:</label>
-               <input type="text" name="Telefono" id="Telefono" value="041610265"/>
+              <?php
+                $contatti =new infos_changer();
+                $array_contatti =$contatti->read();
+               echo '<label for="Telefono">Telefono / Fax:</label>
+               <input type="text" name="Telefono" id="Telefono" value="'.$array_contatti['telefono'].'"/>
                <label for="Email">Email:</label>
-               <input type="text" name="Email" id="Email" value="blablabla@lego.com" />
+               <input type="text" name="Email" id="Email" value="'.$array_contatti['mail'].'" />
                <label for="Sito_web">Sito web:</label>
-               <input type="text" name="Sito_web" id="Sito_web" value="www.lego.com/it-it" />
+               <input type="text" name="Sito_web" id="Sito_web" value="'.$array_contatti['sito'].'" />';
+               ?>
                <div class="invia">   
                <input type="reset" value="Reset"/>  
                <input type="submit" value="Salva"/>    
@@ -39,12 +44,12 @@
          <div class="form_sopra">
              <p class="intestazione">MODIFICA PASSWORD</p>
              <div id="verifica_passw"></div>
-             <form  action="" method="post" onsubmit="return validateForm(this)">
+             <form  action="../mainForm/changePassword.php" method="post" onsubmit="return validateForm(this)">
              <div>
                <label for="password">Password:</label>
                <input type="password" name="password" id="password"/>
                <label for="conferma_password">Conferma Password:</label>
-               <input type="password" name="conferma_password" id="conferma_password"/> 
+               <input type="password" name="Password_1" id="conferma_password"/> 
                <div class="invia">              
                <input type="reset"  value="Reset"/>  
                <input type="submit" value="Salva"/>   
@@ -71,7 +76,7 @@
          <div class="form_centrali">
          <p class="intestazione">MODIFICA NOME NEGOZIO</p>
              <div id="verifica_nomenegozio"></div>
-             <form   action="" method="post" onsubmit="return negozio(this)" > 
+             <form   action="../mainForm/change_shop_name.php" method="post" onsubmit="return negozio(this)" > 
                  <div id="modifica_nome">
                  <label for="nome_negozio">Nome:</label>
                  <input type="text" name="nome_negozio" id="nome_negozio" value="LEGO STORE" />
@@ -88,7 +93,7 @@
          <p id="esempio">Il centro apre alle 08:30 </br> chiude alle 21:30  </p>
 
          <div id="verifica_orario"></div>
-         <form action="" method="post" onsubmit="return checkorario(this)">
+         <form action="../mainForm/changeOrari.php" method="post" onsubmit="return checkorario(this)">
 
              <div class="orario">
              <label for="lunedì"> Lunedì :</label>
@@ -142,7 +147,7 @@
          <div id="descrizione">
              <p class="intestazione">MODIFICA DESCRIZIONE</p>
              <div id="verifica_descrizione"></div>
-             <form action="" method="post" onsubmit="return descrizione(this)">
+             <form action="../mainForm/change_shop_slogan.php" method="post" onsubmit="return descrizione(this)">
                    <div>
                       <label for="motto">Motto:</label>                                          
                       <textarea name="testo_motto" id="motto" rows="2" cols="50">Our mission: To inspire and develop the builders of tomorrow</textarea>  

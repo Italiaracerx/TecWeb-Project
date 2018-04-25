@@ -52,7 +52,6 @@ class session_manager{
             $_SESSION['type']=$utente['user_type'];
             $_SESSION['link']=$utente['link'];
             $this->set_flag(new exeption("correct","Login effettuato con successo. Benvenuto ".$_SESSION['user'].'.'));
-            
             header('Location: '.'../HTML'.DIRECTORY_SEPARATOR.$_SESSION['link'].'.php');
         }
     }
