@@ -67,7 +67,7 @@
 
          <div class="form_centrali">
          <p class="intestazione">MODIFICA LOGO</p>
-           <form action="" method="post" enctype="multipart/form-data">
+           <form action="../mainForm/insertLogo.php" method="post" enctype="multipart/form-data">
                <div>
                <label for="carica_immmagine">Selezionare un file:</label>
                <input type="file" name="immagine" id="carica_immmagine"/>
