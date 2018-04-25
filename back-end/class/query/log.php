@@ -9,16 +9,20 @@ class login extends connection implements query{
     private $username;
     private $password;
     private $confirm;
+    private $type_account;
     private $length;
 
     //metodi
-    public function __construct($user=NULL,$psw1=NULL, $psw2=NULL){
+    public function __construct($user=NULL,$psw1=NULL, $psw2=NULL,$type=NULL){
         $this->username =parent::escaped_string($user);
         $this->password =parent::escaped_string($psw1);
         $this->confirm =parent::escaped_string($psw2);
+        $this->type_account =parent::escaped_string($type);
+
         $this->length=strlen($this->password);
         $this->password =sha1($this->password);
         $this->confirm =sha1($this->confirm);
+
     }
     public function write(){
         if($this->length < '4'){throw new exeption('error','password troppo corta');}
@@ -32,8 +36,6 @@ class login extends connection implements query{
         $query ="SELECT A.username, T.user_type, T.link FROM account A INNER JOIN type_account T ON A.type = T.user_type
         WHERE A.username = '$this->username' AND A.password = '$this->password' AND T.home = '1'";
         $utente =mysqli_fetch_array(parent::execute_query($query));
-        echo $utente;
-
         return $utente;
     }
     public function read(){
@@ -52,11 +54,11 @@ class login extends connection implements query{
     public function update(){
         if($this->length < '4'){throw new exeption('error','password troppo corta');}
         if($this->password != $this->confirm){throw new exeption('error','password discordanti');}
-        $query = "UPDATE account SET password = '$this->password' WHERE username = '$this->username'";
+        $query = "UPDATE `account` SET `password`='$this->password' WHERE username = '$this->username' AND type = '$this->type_account'";
         if(parent::execute_query($query) == NULL){
             throw new exeption('error', 'modifica non eseguita');
-        }    
-    }    
+        }
+    }
 }
 
 ?>

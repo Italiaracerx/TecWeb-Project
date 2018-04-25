@@ -29,12 +29,12 @@
             $this->statusCheck=0;
         }
         //funzione per ottenere lo status del check
-        public getStatus()const{
+        public getStatus(){
             return $this->statusCheck;
         }
 
         /*funzione per controllare se il file da
-        *inserire è valido o presenta dei problemi
+        inserire è valido o presenta dei problemi
         */
         public function checker($fileEmpty, $imageSize){
             if(!$fileEmpty){

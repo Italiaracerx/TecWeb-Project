@@ -1,7 +1,10 @@
-/*DROP DATABASE IF EXISTS darossi;
-CREATE DATABASE darossi;
-*/
 USE darossi;
+/*
+
+DROP DATABASE IF EXISTS Archimede;
+CREATE DATABASE Archimede;
+*/
+
 SET FOREIGN_KEY_CHECKS=0;
 
 
@@ -50,7 +53,6 @@ CREATE TABLE info(
 	telefono varchar(64) NOT NULL,
 	mail varchar(64),
 	sito varchar(64),
-	titolo varchar(64),
 	motto varchar(64),
 	descrizione varchar(256),
 	FOREIGN KEY (username) REFERENCES account(username)
@@ -59,23 +61,13 @@ CREATE TABLE info(
 DROP TABLE IF EXISTS prodotti;
 CREATE TABLE prodotti(
 	username varchar(64) NOT NULL,
+	type ENUM('PRODOTTO','PROMOZIONE') NOT NULL,
 	ID int NOT NULL AUTO_INCREMENT,
 	titolo varchar(64) NOT NULL,
 	alt varchar(64) NOT NULL,	
 	descrizione varchar(64) NOT NULL,
 	data datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (ID),
-	FOREIGN KEY (username) REFERENCES account(username)
-);
-
-DROP TABLE IF EXISTS promozioni;
-CREATE TABLE promozioni(
-	username varchar(64) NOT NULL,
-	ID int NOT NULL AUTO_INCREMENT,
-	alt varchar(64) NOT NULL,
-	descrizione varchar(64) NOT NULL,
-	data datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	PRIMARY KEY (ID),
 	FOREIGN KEY (username) REFERENCES account(username)
 );
 
@@ -106,9 +98,9 @@ DELIMITER $$
 CREATE TRIGGER NuovoUtente AFTER INSERT ON account FOR EACH ROW BEGIN
 if NEW.type <> 'admin'
 then
-	INSERT INTO info values (NEW.username,NEW.username,'WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS');
+	INSERT INTO info values (NEW.username,NEW.username,'WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS');
 	INSERT INTO orario values (NEW.username,'08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00');
-	INSERT INTO logo values (NEW.username,'images/working_progress.png','logo nuovo negozio');
+	INSERT INTO logo values (NEW.username,'working_progress.png','logo negozio');
 end if;
 END
 $$ DELIMITER ;
