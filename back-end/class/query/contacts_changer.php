@@ -24,7 +24,7 @@ class infos_changer extends connection implements query{
     }
 
     public function read(){
-        $query = "SELECT A.telefono, A.mail, A.sito FROM account A WHERE A.username = '$this->user'";
+        $query = "SELECT A.telefono, A.mail, A.sito FROM info A WHERE A.username = '$this->user'";
         return mysqli_fetch_array(parent::execute_query($query));
     }
 

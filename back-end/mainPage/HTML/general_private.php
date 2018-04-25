@@ -2,6 +2,9 @@
     require_once __DIR__.'/../../class/sistema/controller.php';
     require_once __DIR__.'/../../class/pagine/page_private.php';
     require_once __DIR__.'/../../class/query/contacts_changer.php';
+    require_once __DIR__.'/../../class/query/shop_name_changer.php';
+    require_once __DIR__.'/../../class/query/shop_slogan_changer.php';
+    require_once __DIR__.'/../../class/query/orario.php';
     require_once __DIR__.'/../../class/query/log.php';
     require_once __DIR__.'/../../class/pagine/menu/menu.php';
     require_once __DIR__.'/../../class/pagine/menu/staticMenu.php';
@@ -79,7 +82,11 @@
              <form   action="../mainForm/change_shop_name.php" method="post" onsubmit="return negozio(this)" > 
                  <div id="modifica_nome">
                  <label for="nome_negozio">Nome:</label>
-                 <input type="text" name="nome_negozio" id="nome_negozio" value="LEGO STORE" />
+                 <?php 
+                 $negozio=new name_change();
+                 $nome=$negozio->read();
+                 echo '<input type="text" name="nome_negozio" id="nome_negozio" value="'.$nome['negozio'].'" />';
+                 ?>
                  <input type="submit" value="Salva"/>
                  </div>
              </form>
@@ -94,48 +101,21 @@
 
          <div id="verifica_orario"></div>
          <form action="../mainForm/changeOrari.php" method="post" onsubmit="return checkorario(this)">
+          <?php 
 
-             <div class="orario">
-             <label for="lunedì"> Lunedì :</label>
-             <input type="text" name="lunedi" id="lunedì" maxlength="11" onkeypress="return onlyNumeric(event);"/>
-             <div id="uno"></div>
-             </div>
-
-             <div class="orario">
-             <label for="martedì"> Martedì :</label>
-             <input type="text" name="martedi" id="martedì"  maxlength="11" onkeypress="return onlyNumeric(event);"/>
-             <div id="due"></div>
-             </div>
-
-             <div class="orario">
-             <label for="mercoledì" > Mercoledì :</label>
-             <input type="text" name="mercoledi" id="mercoledì"  maxlength="11" onkeypress="return onlyNumeric(event);"/>
-             <div id="tre"></div>
-             </div>
-             
-             <div class="orario">
-             <label for="giovedì" > Giovedì :</label>
-             <input type="text" name="giovedi" id="giovedì" maxlength="11" onkeypress="return onlyNumeric(event);" />
-             <div id="quattro"></div>
-             </div>
-
-             <div class="orario">
-             <label for="venerdì" > Venerdì :</label>
-             <input type="text" name="venerdi" id="venerdì"  maxlength="11" onkeypress="return onlyNumeric(event);"/>
-             <div id="cinque"></div>
-             </div>
-
-             <div class="orario">
-             <label for="sabato" > Sabato :</label>
-             <input  type="text" name="sabato" id="sabato"  maxlength="11" onkeypress="return onlyNumeric(event);"/>
-             <div id="sei"></div>
-             </div>
-
-             <div class="orario">
-             <label for="domenica" > Domenica :</label>
-             <input type="text" name="domenica"  id="domenica" maxlength="11" onkeypress="return onlyNumeric(event);"/>
-             <div id="sette"></div>
-             </div>                        
+            $orari = new orario();
+            $ora=$orari->read();
+            $giorni=$orari->getGiorni();
+            $numeri=$orari->getNumeri();
+            for($i=0;$i<7;$i++){
+                echo '             
+                <div class="orario">
+                    <label for="'.$giorni[$i].'"> '.$giorni[$i].' :</label>
+                    <input type="text" name="'.$giorni[$i].'" id="'.$giorni[$i].'" value="'.$ora[$i].'" maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                    <div id="'.$numeri[$i].'"></div>
+                </div>';
+            }
+          ?>
               <div class="pulsante">
              <input  type="submit" value="Salva"/>                                
              <input  type="reset" value="Reset"/>  
@@ -149,10 +129,15 @@
              <div id="verifica_descrizione"></div>
              <form action="../mainForm/change_shop_slogan.php" method="post" onsubmit="return descrizione(this)">
                    <div>
-                      <label for="motto">Motto:</label>                                          
-                      <textarea name="testo_motto" id="motto" rows="2" cols="50">Our mission: To inspire and develop the builders of tomorrow</textarea>  
+                      <label for="motto">Motto:</label>
+                      <?php 
+                        $testo = new shop_slogan();
+                        $array_testo =$testo->read();
+                      echo '
+                      <textarea name="testo_motto" id="motto" rows="2" cols="50">'.$array_testo['motto'].'</textarea>  
                       <label for="descrizione_negozio">Descrizione:</label>                     
-                      <textarea name="testo_descrizione" id="descrizione_negozio" rows="5" cols="50">Il nostro scopo è ispirare ed educare i bambini a pensare creativamente, ragionare in modo sistematico e realizzare il loro potenziale, plasmando il loro futuro e sperimentando le infinite possibilità umane. </textarea>  
+                      <textarea name="testo_descrizione" id="descrizione_negozio" rows="5" cols="50">'.$array_testo['descrizione'].'</textarea>  
+                      ';?>
                       <div class="pulsante">
                       <input  type="submit" value="Salva"/>                                
                       <input  type="reset" value="Reset"/>   

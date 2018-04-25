@@ -8,8 +8,8 @@ class shop_slogan extends connection implements query{
     private $newSlogan;
     private $newDescription;
 
-    public function __construct($username, $shopSlogan, $shopDescription){
-        $this->user=parent::escaped_string($username);
+    public function __construct($shopSlogan=NULL, $shopDescription=NULL){
+        $this->user=parent::escaped_string($_SESSION['user']);
         $this->newSlogan=parent::escaped_string($shopSlogan);
         $this->newDescription=parent::escaped_string($shopDescription);
 
@@ -24,7 +24,10 @@ class shop_slogan extends connection implements query{
         }
     }
 
-    public function read(){}
+    public function read(){
+        $query="SELECT motto, descrizione FROM info WHERE username='$this->user'";
+        return mysqli_fetch_array(parent::execute_query($query));
+    }
 
     public function write(){}
 }

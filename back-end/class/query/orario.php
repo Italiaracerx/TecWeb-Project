@@ -6,6 +6,7 @@ require_once __DIR__.'/../interfacce/query.php';
 
 class orario extends connection implements query{
     //campi privati
+    private $numeri;
     private $giorni;
     private $orari;
     private $apertura =510;
@@ -15,12 +16,15 @@ class orario extends connection implements query{
 
     //metodi
     public function __construct(){
-        $this->giorni = ['lunedi', 'martedi', 'mercoledi', 'giovedi', 'venerdi', 'sabato', 'domenica'];
-        $this->orari = array();
-        for($i=0; $i<7; $i++){
-            $this->orari[$i]=parent::escaped_string($_POST[$this->giorni[$i]]);
-        }
         $this->user =$_SESSION['user'];
+        $this->numeri = ['uno','due','tre','quettro','cinque','sei','sette'];
+        $this->giorni = ['lunedi', 'martedi', 'mercoledi', 'giovedi', 'venerdi', 'sabato', 'domenica'];
+        if(!empty($_POST)){
+            $this->orari = array();
+            for($i=0; $i<7; $i++){
+                $this->orari[$i]=parent::escaped_string($_POST[$this->giorni[$i]]);
+            }
+        }
     }
 
 
@@ -57,12 +61,25 @@ class orario extends connection implements query{
         }
     }
     public function read(){
-        $controller->session();
-        $user =$_SESSION['user'];
-        $query = "SELECT * FROM orario WHERE username = $user";
+        $query = 'SELECT ';
+        for($i=0; $i<7; $i++){
+            if($i != 0){
+                $query=$query.', ';
+            }
+
+            $query =$query.$this->giorni[$i];
+        }
+        $query =$query." FROM orario WHERE username = '$this->user'";
+
         return mysqli_fetch_array(parent::execute_query($query));
     }
     public function write(){}
+    public function getGiorni(){
+        return $this->giorni;
+    }
+    public function getNumeri(){
+        return $this->numeri;
+    }
 }
 
 ?>
