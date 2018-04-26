@@ -6,7 +6,7 @@ require_once __DIR__.'/../interfacce/query.php';
 require_once __DIR__.'/image.php';
 
 
-class promozione extends image{
+class promoprodo extends image{
         private $user;
         private $name;
         private $size;
@@ -15,10 +15,12 @@ class promozione extends image{
         private $destination;
         private $extention;
         private $directory;
+        private $type;
         //costruttore della classe inputPicture
 
-        public function __construct(){
-            $this->directory ='../../mainPage/HTML/images/prodotto/';
+        public function __construct($type){
+            $this->type =$type;
+            $this->directory ='../../mainPage/HTML/images/'.$this->type.'/';
             parent::__construct($this->directory);
             $this->user =$_SESSION['user'];
             $this->name =$_FILES["immagine"]["name"];
@@ -31,7 +33,7 @@ class promozione extends image{
         }
         public function read(){}
         public function delete(){
-            $query="SELECT titolo FROM immagini WHERE username = '$this->user' AND titolo = 'PROMOZIONE' ORDER BY data DESC";
+            $query="SELECT titolo FROM immagini WHERE username = '$this->user' AND titolo = '$this->type' ORDER BY data DESC";
             $file_to_delete=parent::execute_query($query);
             if(mysqli_num_rows($file_to_delete) == '3'){
                 mysqli_fetch_array($file_to_delete);
@@ -41,7 +43,7 @@ class promozione extends image{
         }
         public function update(){
             $rename=sha1($this->name).'.'.pathinfo($this->name, PATHINFO_EXTENSION);
-            $query="INSERT INTO immagini VALUES ('$this->user','PROMOZIONE','NULL','$this->name','NULL','NULL','NULL')";
+            $query="INSERT INTO immagini VALUES ('$this->user','$this->type','NULL','$this->name','NULL','NULL','NULL')";
             if(parent::execute_query($query) == NULL){
                 throw new exeption('error','upload fallito, si posso caricare solo immagini.');
             }

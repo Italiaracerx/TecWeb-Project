@@ -18,6 +18,7 @@
         private $extention;
         private $size;
         private $directory;
+        private $type;
 
         //costruttore della classe inputPicture
         public function __construct($where){
@@ -32,7 +33,7 @@
             }
             $this->directory =$where;
             $this->extention= ['jpg', 'png','jpeg','gif'];
-
+            
         }
         public function checker(){
             if($this->error != '0'){throw new exeption('error','upload fallito, errore '.$this->error.'.');}
@@ -53,7 +54,8 @@
             }
             if(!$sent){throw new exeption('error','upload fallito, si posso caricare solo immagini.');}
         }
-        public function write(){
+
+        public function store(){
             $this->checker();
             if(!move_uploaded_file($this->tmp_name, $this->directory.$this->name)){
                 throw new exeption('error','upload fallito.');
