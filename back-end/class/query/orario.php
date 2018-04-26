@@ -17,7 +17,7 @@ class orario extends connection implements query{
     //metodi
     public function __construct(){
         $this->user =$_SESSION['user'];
-        $this->numeri = ['uno','due','tre','quettro','cinque','sei','sette'];
+        $this->numeri = ['uno','due','tre','quattro','cinque','sei','sette'];
         $this->giorni = ['lunedi', 'martedi', 'mercoledi', 'giovedi', 'venerdi', 'sabato', 'domenica'];
         if(!empty($_POST)){
             $this->orari = array();
