@@ -347,37 +347,37 @@ var lu , mi,me,gi,ve,sa,dm=true;
 
 
             if(Lunedi!="chiuso" && lu!=false){
-           if(lunedi_close_0<=9 || lunedi_close_0>21 || lunedi_close_0==21 && lunedi_close_1>0 || lunedi_close_1>59) 
+           if(lunedi_close_0<=9 || lunedi_close_0>21 || lunedi_close_0==21 && lunedi_close_1>30 || lunedi_close_1>59) 
             { document.all.uno.innerHTML = "."; lu=false; } else{ document.all.uno.innerHTML = null;}
     }
 
             if(Martedi!="chiuso" && mi!=false){
-           if( martedi_close_0<=9 || martedi_close_0>21 || martedi_close_0==21 && martedi_close_1>0 || martedi_close_1>59)
+           if( martedi_close_0<=9 || martedi_close_0>21 || martedi_close_0==21 && martedi_close_1>30 || martedi_close_1>59)
              { document.all.due.innerHTML = "."; mi=false; } else{ document.all.due.innerHTML = null;}
      }
 
             if(Mercoledi!="chiuso" && me!=false){
-           if( mercoledi_close_0<=9 || mercoledi_close_0>21 || mercoledi_close_0==21 && mercoledi_close_1>0 || mercoledi_close_1>59)
+           if( mercoledi_close_0<=9 || mercoledi_close_0>21 || mercoledi_close_0==21 && mercoledi_close_1>30 || mercoledi_close_1>59)
              { document.all.tre.innerHTML = "."; me=false; } else{ document.all.tre.innerHTML = null;}
      }
 
             if(Giovedi!="chiuso" && gi!=false){
-           if(giovedi_close_0<=9 || giovedi_close_0>21 || giovedi_close_0==21 && giovedi_close_1>0 || giovedi_close_1>59 )
+           if(giovedi_close_0<=9 || giovedi_close_0>21 || giovedi_close_0==21 && giovedi_close_1>30 || giovedi_close_1>59 )
      { document.all.quattro.innerHTML = "."; gi=false; } else{ document.all.quattro.innerHTML = null;}
          }
 
              if(Venerdi!="chiuso" && ve!=false){
-            if( venerdi_close_0<=9 || venerdi_close_0>21 || venerdi_close_0==21 && venerdi_close_1>0 || venerdi_close_1>59)
+            if( venerdi_close_0<=9 || venerdi_close_0>21 || venerdi_close_0==21 && venerdi_close_1>30 || venerdi_close_1>59)
      { document.all.cinque.innerHTML = "."; ve=false; } else{ document.all.cinque.innerHTML = null;}
          }
 
              if(Sabato!="chiuso" && sa!=false){
-           if(sabato_close_0<=9 || sabato_close_0>21 || sabato_close_0==21 && sabato_close_1>0 || sabato_close_1>59)
+           if(sabato_close_0<=9 || sabato_close_0>21 || sabato_close_0==21 && sabato_close_1>30 || sabato_close_1>59)
             { document.all.sei.innerHTML = "."; sa=false; } else{ document.all.sei.innerHTML = null;}
          }
 
             if(Domenica!="chiuso" && dm!=false){
-         if( domenica_close_0<=9 || domenica_close_0>21 || domenica_close_0==21 && domenica_close_1>00 || domenica_close_1>59)
+         if( domenica_close_0<=9 || domenica_close_0>21 || domenica_close_0==21 && domenica_close_1>30 || domenica_close_1>59)
         { document.all.sette.innerHTML = "."; dm=false; } else{ document.all.sette.innerHTML = null;}
     }
 
