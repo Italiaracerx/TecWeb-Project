@@ -30,14 +30,14 @@
                 $this->name =$_FILES["immagine"]["name"];
                 $this->tmp_name =$_FILES["immagine"]["tmp_name"];
             }
-            $this->directory ='../../mainPage/HTML/images/'.$where.'/';
+            $this->directory =$where;
             $this->extention= ['jpg', 'png','jpeg','gif'];
 
         }
         public function checker(){
             if($this->error != '0'){throw new exeption('error','upload fallito, errore '.$this->error.'.');}
             //controllo se l'immagine non ha dimensione 0                
-            if($this->size == false){throw new exeption('error','size nulla.');}
+            if($this->size == false || $this->name == NULL){throw new exeption('error','size nulla.');}
             /*controllo che l'immagine inserita non sia troppo
             * grande per essere inserita nel sito
             */
@@ -54,18 +54,13 @@
             if(!$sent){throw new exeption('error','upload fallito, si posso caricare solo immagini.');}
         }
         public function write(){
+            $this->checker();
             if(!move_uploaded_file($this->tmp_name, $this->directory.$this->name)){
                 throw new exeption('error','upload fallito.');
             }
+
         }
         public function read(){
 
-        }
-        public function delete(){
-            $query="SELECT logo FROM logo WHERE username = '$this->user'";
-            $file_to_delete=mysqli_fetch_array(parent::execute_query($query));
-            if($file_to_delete['logo']!='working_progress.png'){
-                unlink($this->directory.$file_to_delete['logo']);
-            }
-
+        } 
     }

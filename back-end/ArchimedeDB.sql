@@ -58,8 +58,8 @@ CREATE TABLE info(
 	FOREIGN KEY (username) REFERENCES account(username)
 );
 
-DROP TABLE IF EXISTS prodotti;
-CREATE TABLE prodotti(
+DROP TABLE IF EXISTS immagini;
+CREATE TABLE immagini(
 	username varchar(64) NOT NULL,
 	type ENUM('PRODOTTO','PROMOZIONE') NOT NULL,
 	ID int NOT NULL AUTO_INCREMENT,

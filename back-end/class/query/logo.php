@@ -14,21 +14,20 @@ class logo extends image{
         private $error;
         private $destination;
         private $extention;
+        private $directory;
         //costruttore della classe inputPicture
 
         public function __construct(){
-            $this->directory ='logo';
+            $this->directory ='../../mainPage/HTML/images/logo/';
             parent::__construct($this->directory);
             $this->user =$_SESSION['user'];
             $this->name =$_FILES["immagine"]["name"];
             $this->tmp_name =$_FILES["immagine"]["tmp_name"];
-
         }
         public function write(){
-            parent::checker();
             parent::write();
             $this->delete();
-            return $this->update();
+            $this->update();
         }
         public function read(){}
         public function delete(){
@@ -41,9 +40,12 @@ class logo extends image{
         public function update(){
             $rename=sha1($this->name).'.'.pathinfo($this->name, PATHINFO_EXTENSION);
             $query="UPDATE logo SET logo ='$rename', alt ='logo negozio' WHERE username = '$this->user'";
-            parent::execute_query($query);
+            if(parent::execute_query($query) == NULL){
+                throw new exeption('error','upload fallito, si posso caricare solo immagini.');
+            }
             rename($this->directory.$this->name,$this->directory.$rename);  
         }
+        
     }
     
 ?>
