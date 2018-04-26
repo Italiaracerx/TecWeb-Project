@@ -1,27 +1,25 @@
-<?php
-    require_once __DIR__.'/../sistema/exeption.php';
-    require_once __DIR__.'/../sistema/connection.php';
-    require_once __DIR__.'/../interfacce/query.php';
+<?php 
 
-    /*creo una classe utile a immagazzinare dati
-    * quali il file stesso, il formato 
-    * dell'immagine, lo status degli errori,
-    * i messaggi di errore e le directory
-    * di salvataggio
-    */
-    class image extends connection implements query{
+require_once __DIR__.'/../sistema/exeption.php';
+require_once __DIR__.'/../sistema/connection.php';
+require_once __DIR__.'/../interfacce/query.php';
+
+
+class image extends connection implements query{
         private $user;
         private $name;
+        private $size;
         private $tmp_name;
         private $error;
         private $destination;
         private $extention;
-        private $size;
         private $directory;
         private $type;
-
         //costruttore della classe inputPicture
-        public function __construct($where){
+
+        public function __construct($type){
+            $this->type =$type;
+            $this->directory ='../../mainPage/HTML/images/'.$this->type.'/';
             $this->user =$_SESSION['user'];
             if($_FILES){
                 $this->name =$_FILES["immagine"]["name"];
@@ -31,7 +29,6 @@
                 $this->name =$_FILES["immagine"]["name"];
                 $this->tmp_name =$_FILES["immagine"]["tmp_name"];
             }
-            $this->directory =$where;
             $this->extention= ['jpg', 'png','jpeg','gif'];
             
         }
@@ -60,9 +57,32 @@
             if(!move_uploaded_file($this->tmp_name, $this->directory.$this->name)){
                 throw new exeption('error','upload fallito.');
             }
-
         }
-        public function read(){
+        public function write(){
+            $this->store();
+            $this->delete();
+            $this->update();
+        }
+        public function read(){}
+        public function delete(){
+            $query="SELECT titolo FROM immagini WHERE username = '$this->user' AND titolo = '$this->type' ORDER BY data DESC";
+            $file_to_delete=parent::execute_query($query);
+            if(mysqli_num_rows($file_to_delete) == '3'){
+                mysqli_fetch_array($file_to_delete);
+                unlink($this->directory.$file_to_delete[0]);
 
-        } 
+            }
+        }
+        public function update(){
+            $date=date("d/m/Y");
+            $rename=sha1($this->name).'.'.pathinfo($this->name, PATHINFO_EXTENSION);
+            $query="INSERT INTO immagini VALUES ('$this->user','$this->type','NULL','$rename','NULL','NULL','$date')";
+            if(parent::execute_query($query) == NULL){
+                throw new exeption('error','upload fallito, si posso caricare solo immagini.');
+            }
+            rename($this->directory.$this->name,$this->directory.$rename);  
+        }
+        
     }
+    
+?>

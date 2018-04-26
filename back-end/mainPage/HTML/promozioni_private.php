@@ -16,7 +16,7 @@
             <div id="colonna_sinistra">
               
                     <p class="intestazione">NUOVA PROMOZIONE</p>
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="../mainForm/insertPromozione.php" method="post" enctype="multipart/form-data">
                         <div>
                           <label for="campo_alt">Alternativa testuale dell'immagine della promozione:</label>
                           <input type="text" name="campo_alt" id="campo_alt"/>

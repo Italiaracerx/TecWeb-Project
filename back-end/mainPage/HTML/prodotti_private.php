@@ -15,7 +15,7 @@
         <div id="content_promozioni">
             <div id="colonna_sinistra">
                     <p class="intestazione">NUOVO PRODOTTO</p>
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="../mainForm/insertProdotto.php" method="post" enctype="multipart/form-data">
                         <div>
                     	<label for="nome_prodotto">Nome:</label>
                         <input type="text" name="nome_prodotto" id="nome_prodotto" value="Star-Wars 75104" />

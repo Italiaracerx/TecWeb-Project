@@ -1,10 +1,9 @@
+
 USE darossi;
 /*
-
 DROP DATABASE IF EXISTS Archimede;
 CREATE DATABASE Archimede;
 */
-
 SET FOREIGN_KEY_CHECKS=0;
 
 
@@ -66,7 +65,7 @@ CREATE TABLE immagini(
 	titolo varchar(64) NOT NULL,
 	alt varchar(64) NOT NULL,	
 	descrizione varchar(64) NOT NULL,
-	data datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	data datetime NOT NULL,
     PRIMARY KEY (ID),
 	FOREIGN KEY (username) REFERENCES account(username)
 );
@@ -99,7 +98,7 @@ CREATE TRIGGER NuovoUtente AFTER INSERT ON account FOR EACH ROW BEGIN
 if NEW.type <> 'admin'
 then
 	INSERT INTO info values (NEW.username,NEW.username,'WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS');
-	INSERT INTO orario values (NEW.username,'08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00','08:30 - 22:00');
+	INSERT INTO orario values (NEW.username,'08:30-21:30','08:30-21:30','08:30-21:30','08:30-21:30','08:30-21:30','08:30-21:30','08:30-21:30');
 	INSERT INTO logo values (NEW.username,'working_progress.png','logo negozio');
 end if;
 END

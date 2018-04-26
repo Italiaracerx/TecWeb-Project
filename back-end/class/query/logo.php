@@ -19,13 +19,13 @@ class logo extends image{
 
         public function __construct(){
             $this->directory ='../../mainPage/HTML/images/logo/';
-            parent::__construct($this->directory);
+            parent::__construct('logo');
             $this->user =$_SESSION['user'];
             $this->name =$_FILES["immagine"]["name"];
             $this->tmp_name =$_FILES["immagine"]["tmp_name"];
         }
         public function write(){
-            parent::write();
+            parent::store();
             $this->delete();
             $this->update();
         }
