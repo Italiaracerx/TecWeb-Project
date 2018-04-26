@@ -18,7 +18,7 @@ class promozione extends image{
         //costruttore della classe inputPicture
 
         public function __construct(){
-            $this->directory ='../../mainPage/HTML/images/promozione/';
+            $this->directory ='../../mainPage/HTML/images/prodotto/';
             parent::__construct($this->directory);
             $this->user =$_SESSION['user'];
             $this->name =$_FILES["immagine"]["name"];
@@ -31,15 +31,17 @@ class promozione extends image{
         }
         public function read(){}
         public function delete(){
-            $query="SELECT logo FROM logo WHERE username = '$this->user'";
-            $file_to_delete=mysqli_fetch_array(parent::execute_query($query));
-            if($file_to_delete['logo']!='working_progress.png'){
-                unlink($this->directory.$file_to_delete['logo']);
+            $query="SELECT titolo FROM immagini WHERE username = '$this->user' AND titolo = 'PROMOZIONE' ORDER BY data DESC";
+            $file_to_delete=parent::execute_query($query);
+            if(mysqli_num_rows($file_to_delete) == '3'){
+                mysqli_fetch_array($file_to_delete);
+                unlink($this->directory.$file_to_delete[0]);
+
             }
         }
         public function update(){
             $rename=sha1($this->name).'.'.pathinfo($this->name, PATHINFO_EXTENSION);
-            $query="UPDATE logo SET logo ='$rename', alt ='logo negozio' WHERE username = '$this->user'";
+            $query="INSERT INTO immagini VALUES ('$this->user','PROMOZIONE','NULL','$this->name','NULL','NULL','NULL')";
             if(parent::execute_query($query) == NULL){
                 throw new exeption('error','upload fallito, si posso caricare solo immagini.');
             }

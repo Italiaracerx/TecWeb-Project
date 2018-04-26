@@ -31,16 +31,17 @@ class prodotto extends image{
         }
         public function read(){}
         public function delete(){
-            $query="SELECT titolo FROM immagini WHERE username = '$this->user' AND titolo = 'PRODOTTO'";
+            $query="SELECT titolo FROM immagini WHERE username = '$this->user' AND titolo = 'PRODOTTO' ORDER BY data DESC";
             $file_to_delete=parent::execute_query($query);
             if(mysqli_num_rows($file_to_delete) == '3'){
-                unlink($this->directory.$file_to_delete);
+                mysqli_fetch_array($file_to_delete);
+                unlink($this->directory.$file_to_delete[0]);
 
             }
         }
         public function update(){
             $rename=sha1($this->name).'.'.pathinfo($this->name, PATHINFO_EXTENSION);
-            $query="UPDATE logo SET logo ='$rename', alt ='logo negozio' WHERE username = '$this->user'";
+            $query="INSERT INTO immagini VALUES ('$this->user','PRODOTTO','NULL','$this->name','NULL','NULL','NULL')";
             if(parent::execute_query($query) == NULL){
                 throw new exeption('error','upload fallito, si posso caricare solo immagini.');
             }
