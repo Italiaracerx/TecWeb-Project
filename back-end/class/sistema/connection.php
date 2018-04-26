@@ -4,9 +4,9 @@ require_once __DIR__.'/exeption.php';
 class connection{
     //campi privati
     private static $host = "localhost";
-    private static $db_user = "root";
-    private static $db_psw = "";
-    private static $db_name = "archimede";
+    private static $db_user = "darossi";
+    private static $db_psw = "buiTer9unge9hohy";
+    private static $db_name = "darossi";
 
     //metodi
     public function connect(){

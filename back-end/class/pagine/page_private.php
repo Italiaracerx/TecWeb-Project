@@ -53,8 +53,6 @@ class page_private implements type_page{
     	echo '  <div id="footer">
     			</div>
 				</body>
-				</html>
-				</body>
 				</html>';
     }
     public function body(){
