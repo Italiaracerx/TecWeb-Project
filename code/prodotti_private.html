@@ -40,7 +40,7 @@
         <h2><strong>NOME ACCOUNT</strong> > PRODOTTI</h2>
     </div>
     <div id="content">
-        <div id="content_promozioni">
+        
             <div id="colonna_sinistra">
                     <p class="intestazione">NUOVO PRODOTTO</p>
                     <form action="" method="post" enctype="multipart/form-data">
@@ -62,7 +62,7 @@
 
                        </div>                                                     
                     </form>
-            </div>
+            </div><!--chiusura colonna_sinistra -->
             
             <div id="colonna_destra">
                 <p class="intestazione">PRODOTTI CORRENTI</p>
@@ -75,16 +75,16 @@
                 <div class="imgPromozione">
                     <img class="promozione" src="images/lego3.jpg" alt="promozione"/> 
                 </div>
-            </div>            
-        </div>
+            </div><!--chiusura colonna_destra -->            
+        
 
-        <div class="form_sopra">
-              <p class="intestazione">ELIMINA PRODOTTI </p> 
-              <div id="controllo_eliminaNeg"></div>
+        <div id="destra_prodotti">
+              <p class="intestazione_1">ELIMINA PRODOTTI</p> 
+              <div id="controllo_Prod"></div>
               <form  action="" method="post" onsubmit="return validateUser()">
                 <div>
-                  <label for="elimina_negozio">Nome Negozio:</label>
-                  <select name="nelimina_negozio" id="elimina_negozio">
+                  <label for="deleteProd">Nome Negozio:</label>
+                  <select name="deleteProd" id="deleteProd">
                   <option value="Cerca nel menu:">Cerca nel menu:</option>
                   <option value="volvo">Volvo</option>
                   <option value="saab">Saab</option>
@@ -97,7 +97,8 @@
                   </div>
                 </div>
                </form>
-            </div>
+            </div><!--chiusura destra_prodotti -->
+            
 
     </div>
     <div id="footer">

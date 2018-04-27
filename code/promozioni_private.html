@@ -40,7 +40,7 @@
         <h2><strong>NOME ACCOUNT</strong> > PROMOZIONI</h2>
     </div>
     <div id="content">
-        <div id="content_promozioni">
+        
             <div id="colonna_sinistra">
               
                     <p class="intestazione">NUOVA PROMOZIONE</p>
@@ -74,7 +74,9 @@
                
             </div>
 
+            <!--<div id="destra">-->
             <div id="colonna_destra">
+
                 <p class="intestazione">PROMOZIONI CORRENTI</p>
                 <div class="imgPromozione">
                     <img class="promozione" src="images/promo1.jpg" alt="promozione"/> 
@@ -85,16 +87,17 @@
                 <div class="imgPromozione">
                     <img class="promozione" src="images/promo3.png" alt="promozione"/> 
                 </div>
-            </div>            
-        </div>
 
-        <div class="form_sopra">
+            </div>            
+        
+
+        <div id="colonna_destra_sotto">
               <p class="intestazione">ELIMINA PROMOZIONI</p> 
-              <div id="controllo_eliminaNeg"></div>
+              <div id="controllo_eliminaprom"></div>
               <form  action="" method="post" onsubmit="return validateUser()">
                 <div>
-                  <label for="elimina_negozio">Nome Negozio:</label>
-                  <select name="nelimina_negozio" id="elimina_negozio">
+                  <label for="deleteProm" >Nome Negozio:</label>
+                  <select name="deleteProm" id="deleteProm">
                   <option value="Cerca nel menu:">Cerca nel menu:</option>
                   <option value="volvo">Volvo</option>
                   <option value="saab">Saab</option>
@@ -108,7 +111,7 @@
                 </div>
                </form>
             </div>
-
+<!--</div>-->
     </div>
 
     <div id="footer">

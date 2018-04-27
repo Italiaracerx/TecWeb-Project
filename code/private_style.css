@@ -131,6 +131,15 @@ html, body{
 	font-size: 1.2em;
 }
 
+.intestazione_1{
+	padding-bottom:0.5em;
+	border-bottom: 2px #585753	 solid;
+	text-align: center;
+	margin-bottom:1em;
+	letter-spacing: 2px;
+	font-size: 1.2em;
+}
+
 .form_sopra{
 	text-align: center;
 	float:left;
@@ -272,18 +281,37 @@ textarea{
 	width: 30%;	
 	float:left;
 	text-align: center;
-}
-#colonna_sinistra
-{
-
+	margin-top: 2em;
+	display: block;
 }
 
 
 #colonna_destra{
 	margin-left: 32%;
 	display: block;
-	margin-top: 2em;
 	padding-right: 1em;
+	text-align: center;
+	margin-top: 2em;
+	overflow: auto;
+}
+
+#colonna_destra_sotto{
+	margin-left: 32%;
+	display: block;
+	padding-right: 1em;
+	text-align: center;
+	margin-top: 3.5em;
+}
+
+#destra_prodotti{
+	margin-left: 32%;
+	padding-right: 1em;
+	text-align: center;
+	margin-top: 2em;
+}
+
+#deleteProd{
+	width: 40%;
 }
 
 .promozione{
@@ -324,7 +352,9 @@ textarea{
 	 cursor: pointer;
 }
 
-   /*///// Div General-Admin /////////////*/
+   /* /////////////////////////////
+   //    Div General-Admin   //
+   ///////////////////////////// */
 
 #controllo_creaNeg {background-color: #fd3516;
 	text-align:center;}
@@ -345,7 +375,10 @@ textarea{
 	margin-bottom: 0.4em;
 }
 
-   /*///// Div General-Private //////////*/
+ 
+   /* /////////////////////////////
+   //    Div General-Private   //
+   ///////////////////////////// */
    
 #verifica_passw {background-color: #fd3516;
 	text-align:center;}
@@ -373,6 +406,31 @@ textarea{
 	text-align:center;
 	margin-bottom: 0.4em;
 }
+
+
+/* /////////////////////////////
+   // Div Promozioni_private  //
+   ///////////////////////////// */
+
+
+#controllo_eliminaprom{background-color: #fd3516;
+	text-align:center;
+	margin-bottom: 0.4em;}
+
+#deleteProm{
+	width: 40%;
+}
+
+#controllo_eliminaprom{background-color: #fd3516;
+	text-align:center;
+	margin-bottom: 0.4em;}
+
+
+/* /////////////////////////////
+   // Div Prodotti_private  //
+   ///////////////////////////// */
+
+#controllo_Prod{}
 
 
 #esempio{
