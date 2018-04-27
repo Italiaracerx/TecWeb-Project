@@ -7,6 +7,13 @@ require_once __DIR__.'/../interfacce/query.php';
 
 class image extends connection implements query{
         private $user;
+
+        private $name_image;
+        private $alt;
+        private $start;
+        private $finish;
+        private $description;
+
         private $name;
         private $size;
         private $tmp_name;
@@ -20,7 +27,16 @@ class image extends connection implements query{
         public function __construct($type){
             $this->type =$type;
             $this->directory ='../../mainPage/HTML/images/'.$this->type.'/';
-            $this->user =$_SESSION['user'];
+            if($_POST){
+                $this->name_image =$_POST['nome'];
+                $this->alt =$_POST['alt'];
+                $this->start =$_POST['start'];
+                $this->finish =$_POST['finish'];
+                $this->description =$_POST['description'];
+            }
+            if($_SESSION){
+                $this->user =$_SESSION['user'];
+            }
             if($_FILES){
                 $this->name =$_FILES["immagine"]["name"];
                 $this->size =$_FILES["immagine"]["size"];
@@ -43,6 +59,7 @@ class image extends connection implements query{
             /*controllo che il formato dell'immagine inserito
             * sia accettato dal sito
             */
+            
             $sent =false;
             foreach($this->extention as $formato){
                 if(pathinfo($this->name, PATHINFO_EXTENSION) == $formato){
@@ -58,30 +75,41 @@ class image extends connection implements query{
                 throw new exeption('error','upload fallito.');
             }
         }
-        public function write(){
-            $this->store();
-            $this->delete();
-            $this->update();
+        public function read(){
+            $query="SELECT titolo FROM immagini WHERE username = '$this->user' AND type = '$this->type'";
+            if($this->user == NULL){
+                $query="SELECT titolo FROM immagini WHERE type = '$this->type'";
+            }
+            return parent::execute_query($query);
         }
-        public function read(){}
+        public function how_much(){
+            $result =$this->read();
+            if(mysqli_num_rows($result) == '3'){
+                throw new exeption('error','inserimento '.$this->type.' fallito, eliminane uno per inserirne quello nuovo.');
+            }
+        }
+        public function write(){
+            $this->how_much();
+            $this->store();
+            $this->insert();
+        }
         public function delete(){
-            $query="SELECT titolo FROM immagini WHERE username = '$this->user' AND titolo = '$this->type' ORDER BY data DESC";
+            $query="SELECT titolo FROM immagini WHERE username = '$this->user' AND type = '$this->type' ORDER BY data DESC";
             $file_to_delete=parent::execute_query($query);
             if(mysqli_num_rows($file_to_delete) == '3'){
                 mysqli_fetch_array($file_to_delete);
                 unlink($this->directory.$file_to_delete[0]);
             }
         }
-        public function update(){
+        public function insert(){
             $date=date("Y/m/d");
             $rename=sha1($this->name).'.'.pathinfo($this->name, PATHINFO_EXTENSION);
-            $query="INSERT INTO immagini VALUES ('$this->user','$this->type','NULL','$rename','NULL','NULL','$date')";
-            echo $query;
-            if(parent::execute_query($query) == NULL){
+            $insert_immagine="INSERT INTO immagini VALUES ('$this->user','$this->type','NULL','$rename','$this->name_image','$this->alt','$this->start','$this->finish','$this->description','$date')";
+            echo $insert_immagine;
+            if(parent::execute_query($insert_immagine) == NULL){
                 throw new exeption('error','upload fallito, si posso caricare solo immagini.');
             }
             rename($this->directory.$this->name,$this->directory.$rename);  
-
         }
         
     }

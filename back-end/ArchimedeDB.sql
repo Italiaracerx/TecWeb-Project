@@ -62,12 +62,16 @@ CREATE TABLE immagini(
 	username varchar(64) NOT NULL,
 	type ENUM('PRODOTTO','PROMOZIONE') NOT NULL,
 	ID int NOT NULL AUTO_INCREMENT,
+	source varchar(64) NOT NULL ,
 	titolo varchar(64) NOT NULL,
 	alt varchar(64) NOT NULL,
+	start varchar(64) NOT NULL,
+	finish varchar(64) NOT NULL,
 	descrizione varchar(64) NOT NULL,
 	data_inserimento date NOT NULL,
     PRIMARY KEY (ID),
-	FOREIGN KEY (username) REFERENCES account(username)
+	FOREIGN KEY (username) REFERENCES account(username),
+	CONSTRAINT AK_TransactionID UNIQUE(titolo) 
 );
 
 DROP TABLE IF EXISTS eventi;
