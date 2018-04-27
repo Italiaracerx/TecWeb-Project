@@ -4,6 +4,7 @@
 
 	$controller = new controller_query();
 	$prodotto =new image('prodotto');
+	$prodotto->take_data();
 	$controller->setQuery($prodotto);
 	$controller->write();
 ?>

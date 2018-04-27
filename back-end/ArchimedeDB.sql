@@ -71,7 +71,11 @@ CREATE TABLE immagini(
 	data_inserimento date NOT NULL,
     PRIMARY KEY (ID),
 	FOREIGN KEY (username) REFERENCES account(username),
-	CONSTRAINT AK_TransactionID UNIQUE(titolo) 
+	CONSTRAINT AK_Titolo UNIQUE(titolo),
+	CONSTRAINT AK_source UNIQUE(source),
+	FOREIGN KEY (username) REFERENCES account(username)
+
+ 
 );
 
 DROP TABLE IF EXISTS eventi;

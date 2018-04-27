@@ -10,8 +10,8 @@ class image extends connection implements query{
 
         private $name_image;
         private $alt;
-        private $start;
-        private $finish;
+        private $start =NULL;
+        private $finish =NULL;
         private $description;
 
         private $name;
@@ -27,11 +27,16 @@ class image extends connection implements query{
         public function __construct($type){
             $this->type =$type;
             $this->directory ='../../mainPage/HTML/images/'.$this->type.'/';
+            $this->extention= ['jpg', 'png','jpeg','gif'];
+        }
+        public function take_data(){
             if($_POST){
                 $this->name_image =$_POST['nome'];
                 $this->alt =$_POST['alt'];
-                $this->start =$_POST['start'];
-                $this->finish =$_POST['finish'];
+                if($this->type =='promozione'){
+                    $this->start =$_POST['start'];
+                    $this->finish =$_POST['finish'];
+                }
                 $this->description =$_POST['description'];
             }
             if($_SESSION){
@@ -45,8 +50,6 @@ class image extends connection implements query{
                 $this->name =$_FILES["immagine"]["name"];
                 $this->tmp_name =$_FILES["immagine"]["tmp_name"];
             }
-            $this->extention= ['jpg', 'png','jpeg','gif'];
-            
         }
         public function checker(){
             if($this->error != '0'){throw new exeption('error','upload fallito, errore '.$this->error.'.');}
@@ -94,12 +97,10 @@ class image extends connection implements query{
             $this->insert();
         }
         public function delete(){
-            $query="SELECT titolo FROM immagini WHERE username = '$this->user' AND type = '$this->type' ORDER BY data DESC";
+            $delete =$_POST['immagine'];
+            $query="DELETE FROM immagini WHERE type = '$this->type' AND titolo = '$delete'";
             $file_to_delete=parent::execute_query($query);
-            if(mysqli_num_rows($file_to_delete) == '3'){
-                mysqli_fetch_array($file_to_delete);
-                unlink($this->directory.$file_to_delete[0]);
-            }
+            unlink($this->directory.$delete);
         }
         public function insert(){
             $date=date("Y/m/d");
