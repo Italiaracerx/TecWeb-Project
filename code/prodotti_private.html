@@ -77,6 +77,28 @@
                 </div>
             </div>            
         </div>
+
+        <div class="form_sopra">
+              <p class="intestazione">ELIMINA PRODOTTI </p> 
+              <div id="controllo_eliminaNeg"></div>
+              <form  action="" method="post" onsubmit="return validateUser()">
+                <div>
+                  <label for="elimina_negozio">Nome Negozio:</label>
+                  <select name="nelimina_negozio" id="elimina_negozio">
+                  <option value="Cerca nel menu:">Cerca nel menu:</option>
+                  <option value="volvo">Volvo</option>
+                  <option value="saab">Saab</option>
+                  <option value="opel">Opel</option>
+                  <option value="audi">Audi</option>
+                  </select>  
+                  <div class="invia">                
+                   <input type="reset"  name="tasto_reset"  value="Reset"/>  
+                   <input type="submit" name="tasto_salva"  value="Salva"/>
+                  </div>
+                </div>
+               </form>
+            </div>
+
     </div>
     <div id="footer">
     </div>
