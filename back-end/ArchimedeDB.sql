@@ -63,9 +63,9 @@ CREATE TABLE immagini(
 	type ENUM('PRODOTTO','PROMOZIONE') NOT NULL,
 	ID int NOT NULL AUTO_INCREMENT,
 	titolo varchar(64) NOT NULL,
-	alt varchar(64) NOT NULL,	
+	alt varchar(64) NOT NULL,
 	descrizione varchar(64) NOT NULL,
-	data datetime NOT NULL,
+	data_inserimento date NOT NULL,
     PRIMARY KEY (ID),
 	FOREIGN KEY (username) REFERENCES account(username)
 );

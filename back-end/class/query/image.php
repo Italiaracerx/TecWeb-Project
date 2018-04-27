@@ -70,17 +70,18 @@ class image extends connection implements query{
             if(mysqli_num_rows($file_to_delete) == '3'){
                 mysqli_fetch_array($file_to_delete);
                 unlink($this->directory.$file_to_delete[0]);
-
             }
         }
         public function update(){
-            $date=date("d/m/Y");
+            $date=date("Y/m/d");
             $rename=sha1($this->name).'.'.pathinfo($this->name, PATHINFO_EXTENSION);
             $query="INSERT INTO immagini VALUES ('$this->user','$this->type','NULL','$rename','NULL','NULL','$date')";
+            echo $query;
             if(parent::execute_query($query) == NULL){
                 throw new exeption('error','upload fallito, si posso caricare solo immagini.');
             }
             rename($this->directory.$this->name,$this->directory.$rename);  
+
         }
         
     }
