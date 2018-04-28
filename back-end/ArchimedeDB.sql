@@ -1,10 +1,9 @@
+
 USE darossi;
 /*
-
 DROP DATABASE IF EXISTS Archimede;
 CREATE DATABASE Archimede;
 */
-
 SET FOREIGN_KEY_CHECKS=0;
 
 
@@ -58,17 +57,25 @@ CREATE TABLE info(
 	FOREIGN KEY (username) REFERENCES account(username)
 );
 
-DROP TABLE IF EXISTS prodotti;
-CREATE TABLE prodotti(
+DROP TABLE IF EXISTS immagini;
+CREATE TABLE immagini(
 	username varchar(64) NOT NULL,
-	type ENUM('PRODOTTO','PROMOZIONE') NOT NULL,
+	type ENUM('promozione','prodotto') NOT NULL,
 	ID int NOT NULL AUTO_INCREMENT,
+	source varchar(64) NOT NULL ,
 	titolo varchar(64) NOT NULL,
-	alt varchar(64) NOT NULL,	
+	alt varchar(64) NOT NULL,
+	start varchar(64) NOT NULL,
+	finish varchar(64) NOT NULL,
 	descrizione varchar(64) NOT NULL,
-	data datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	data_inserimento date NOT NULL,
     PRIMARY KEY (ID),
+	FOREIGN KEY (username) REFERENCES account(username),
+	CONSTRAINT AK_Titolo UNIQUE(titolo),
+	CONSTRAINT AK_source UNIQUE(source),
 	FOREIGN KEY (username) REFERENCES account(username)
+
+ 
 );
 
 DROP TABLE IF EXISTS eventi;
