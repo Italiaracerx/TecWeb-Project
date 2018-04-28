@@ -4,6 +4,7 @@
 
 	$controller = new controller_query();
 	$logo =new logo();
+	$logo->take_data();
 	$controller->setQuery($logo);
 	$controller->write();
 ?>

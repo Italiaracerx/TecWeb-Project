@@ -4,7 +4,6 @@
 
 	$controller = new controller_query();
 	$promozione =new image('promozione');
-	$promozione->take_data();
 	$controller->setQuery($promozione);
-	$controller->write();
+	$controller->delete();
 ?>

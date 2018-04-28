@@ -1,7 +1,7 @@
 <?php
     require_once __DIR__.'/../../class/sistema/controller.php';
     require_once __DIR__.'/../../class/pagine/page_private.php';
-    require_once __DIR__.'/../../class/query/log.php';
+    require_once __DIR__.'/../../class/query/image.php';
     require_once __DIR__.'/../../class/pagine/menu/menu.php';
     require_once __DIR__.'/../../class/pagine/menu/staticMenu.php';
 
@@ -20,16 +20,16 @@
                   <div>
 
                       <label for="nome_prodotto">Nome:</label>
-                  <input type="text" name="nome" id="nome_prodotto" value="Star-Wars 75104" />
+                  <input type="text" name="nome" id="nome_prodotto"  />
 
                     <label for="campo_alt">Alternativa testuale dell'immagine della promozione:</label>
-                    <input type="text" name="alt" id="campo_alt"/>
+                    <input type="text" name="alt" id="campo_alt" />
 
                     <label for="data">Data Inizio :</label>
-                    <input type="text" name="start" id="data"  /> 
+                    <input type="text" name="start" id="data" /> 
 
                     <label for="data">Data Fine :</label>
-                    <input type="text" name="finish" id="data"  /> 
+                    <input type="text" name="finish" id="data" /> 
 
                     <label for="descrizione_promozione">Descrizione promozione:</label>
                     <textarea name="description" id="descrizione_promozione" rows="10" cols="30" ></textarea>
@@ -48,29 +48,39 @@
 
             <div id="colonna_destra">
                 <p class="intestazione">PROMOZIONI CORRENTI</p>
-                <div class="imgPromozione">
-                    <img class="promozione" src="images/promo1.jpg" alt="promozione"/> 
-                </div>
-                <div class="imgPromozione">
-                    <img class="promozione" src="images/promo2.jpg" alt="promozione"/> 
-                </div>
-                <div class="imgPromozione">
-                    <img class="promozione" src="images/promo3.png" alt="promozione"/> 
-                </div>
+                  <?php 
+                    $promozioni =new image('promozione');
+                    $result_pro =$promozioni->read();
+                    $rows =array();
+                    while($row = $result_pro->fetch_array(MYSQLI_ASSOC)){
+                      $rows[] = $row;
+                    }
+                    if(!count($rows)){
+                      echo 'non ci sono promozioni';
+                    }
+                    else{
+                      foreach($rows as $row){
+                            echo '<div class="imgPromozione">
+                          <img class="promozione" src="images/promozione/'.$row['source'].'" alt="'.$row['alt'].'"/> 
+                          </div>';
+                      }
+                    }
+                  ?>
             </div>            
         </div>
         <div class="form_sopra">
               <p class="intestazione">ELIMINA PROMOZIONI</p> 
               <div id="controllo_eliminaNeg"></div>
-              <form  action="" method="post" onsubmit="return validateUser()">
+              <form  action="../mainForm/deletePromozione.php" method="post" onsubmit="return validateUser()">
                 <div>
                   <label for="elimina_negozio">Nome Negozio:</label>
-                  <select name="nelimina_negozio" id="elimina_negozio">
+                  <select name="titolo" id="elimina_negozio">
                   <option value="Cerca nel menu:">Cerca nel menu:</option>
-                  <option value="volvo">Volvo</option>
-                  <option value="saab">Saab</option>
-                  <option value="opel">Opel</option>
-                  <option value="audi">Audi</option>
+                  <?php 
+                      foreach($rows as $row){
+                      echo '<option value="'.$row['titolo'].'">'.$row['titolo'].'</option>';
+                    }
+                  ?>
                   </select>  
                   <div class="invia">                
                    <input type="reset"  name="tasto_reset"  value="Reset"/>  

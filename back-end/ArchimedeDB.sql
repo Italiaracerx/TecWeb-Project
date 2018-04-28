@@ -60,7 +60,7 @@ CREATE TABLE info(
 DROP TABLE IF EXISTS immagini;
 CREATE TABLE immagini(
 	username varchar(64) NOT NULL,
-	type ENUM('PRODOTTO','PROMOZIONE') NOT NULL,
+	type ENUM('promozione','prodotto') NOT NULL,
 	ID int NOT NULL AUTO_INCREMENT,
 	source varchar(64) NOT NULL ,
 	titolo varchar(64) NOT NULL,

@@ -25,6 +25,10 @@ class image extends connection implements query{
         //costruttore della classe inputPicture
 
         public function __construct($type){
+            $this->user =NULL;
+            if($_SESSION){
+                $this->user =$_SESSION['user'];
+            }
             $this->type =$type;
             $this->directory ='../../mainPage/HTML/images/'.$this->type.'/';
             $this->extention= ['jpg', 'png','jpeg','gif'];
@@ -38,9 +42,6 @@ class image extends connection implements query{
                     $this->finish =$_POST['finish'];
                 }
                 $this->description =$_POST['description'];
-            }
-            if($_SESSION){
-                $this->user =$_SESSION['user'];
             }
             if($_FILES){
                 $this->name =$_FILES["immagine"]["name"];
@@ -79,7 +80,7 @@ class image extends connection implements query{
             }
         }
         public function read(){
-            $query="SELECT titolo FROM immagini WHERE username = '$this->user' AND type = '$this->type'";
+            $query="SELECT source, titolo, alt FROM immagini WHERE username = '$this->user' AND type = '$this->type'";
             if($this->user == NULL){
                 $query="SELECT titolo FROM immagini WHERE type = '$this->type'";
             }
@@ -97,10 +98,18 @@ class image extends connection implements query{
             $this->insert();
         }
         public function delete(){
-            $delete =$_POST['immagine'];
+            $delete =$_POST['titolo'];
+            $query_to_delete="SELECT source FROM immagini WHERE username = '$this->user' AND type = '$this->type' AND titolo = '$delete'";
+            echo $query_to_delete;
+            $file_to_delete=mysqli_fetch_array(parent::execute_query($query_to_delete));
+            echo($file_to_delete);
+            echo 'ciucia';
             $query="DELETE FROM immagini WHERE type = '$this->type' AND titolo = '$delete'";
-            $file_to_delete=parent::execute_query($query);
-            unlink($this->directory.$delete);
+            if(parent::execute_query($query)){
+                if(!unlink($this->directory.$file_to_delete['source'])){
+                    throw new exception('er','ewr');
+                }
+            }
         }
         public function insert(){
             $date=date("Y/m/d");
@@ -108,9 +117,12 @@ class image extends connection implements query{
             $insert_immagine="INSERT INTO immagini VALUES ('$this->user','$this->type','NULL','$rename','$this->name_image','$this->alt','$this->start','$this->finish','$this->description','$date')";
             echo $insert_immagine;
             if(parent::execute_query($insert_immagine) == NULL){
+                unlink($this->directory.$this->name);
                 throw new exeption('error','upload fallito, si posso caricare solo immagini.');
             }
-            rename($this->directory.$this->name,$this->directory.$rename);  
+            else{
+                rename($this->directory.$this->name,$this->directory.$rename);
+            }
         }
         
     }
