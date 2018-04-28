@@ -113,12 +113,12 @@ class image extends connection implements query{
         }
         public function insert(){
             $date=date("Y/m/d");
-            $rename=sha1($this->name).'.'.pathinfo($this->name, PATHINFO_EXTENSION);
+            $rename=sha1($this->name.$this->user).'.'.pathinfo($this->name, PATHINFO_EXTENSION);
             $insert_immagine="INSERT INTO immagini VALUES ('$this->user','$this->type','NULL','$rename','$this->name_image','$this->alt','$this->start','$this->finish','$this->description','$date')";
             echo $insert_immagine;
             if(parent::execute_query($insert_immagine) == NULL){
                 unlink($this->directory.$this->name);
-                throw new exeption('error','upload fallito, si posso caricare solo immagini.');
+                throw new exeption('error','upload fallito, riprovare più tardi.');
             }
             else{
                 rename($this->directory.$this->name,$this->directory.$rename);
