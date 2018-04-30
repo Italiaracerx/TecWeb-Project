@@ -86,7 +86,7 @@ function descrizione(){
 
 
 function validateUser(){
-	var indice_selezionato = document.getElementById('negozio').selectedIndex;
+	var indice_selezionato = document.getElementById('elimina_negozio').selectedIndex;
 	if(indice_selezionato==0)
 		{var a="Nome negozio non valido";
     document.getElementById("controllo_eliminaNeg").innerHTML = a ;

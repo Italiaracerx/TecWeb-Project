@@ -413,12 +413,16 @@ textarea{
    ///////////////////////////// */
 
 
-#controllo_eliminaprom{background-color: #fd3516;
+#deletePromo{background-color: #fd3516;
 	text-align:center;
 	margin-bottom: 0.4em;}
 
 #deleteProm{
 	width: 40%;
+}
+
+#nuova_promozione{background-color: #fd3516;
+	text-align:center;
 }
 
 #controllo_eliminaprom{background-color: #fd3516;
@@ -430,8 +434,15 @@ textarea{
    // Div Prodotti_private  //
    ///////////////////////////// */
 
-#controllo_Prod{}
+#newProduct{
+	background-color: #fd3516;
+	text-align:center;
+}
 
+#deleteProdo{
+	background-color: #fd3516;
+	text-align:center;
+}
 
 #esempio{
 	font-size: 0.85em;
@@ -507,6 +518,7 @@ textarea{
 	color:#fd3516;
 	border-radius: 100px;
 }
+
 
 
 
