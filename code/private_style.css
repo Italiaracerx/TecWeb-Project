@@ -94,6 +94,7 @@ html, body{
     overflow: auto;
     padding-bottom: 1em;
 }
+
 /*---------GENERALE_ADMIN-----------*/
 #content_generale{
 	overflow:auto;
@@ -325,7 +326,19 @@ textarea{
 	margin-left:4.1%;
 	margin-right:4.1%;
 }
+.no_image{
+padding: 1em 1em 1em 1em;
+background-color: #bb9911;
+}
+.text_message{
 
+	padding-top: 5em;
+	padding-bottom: 5em;
+	height:50%;
+	background-color: #5f5f5e;
+	text-align: center;
+	text-transform: uppercase;
+}
 /*--------LOGIN---------*/
 #formLogin
 {
