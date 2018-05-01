@@ -31,7 +31,8 @@ function checkProd(){
      var fup = document.getElementById('immagine'); 
      var fileName = fup.value; 
      var ext = fileName.substring(fileName.lastIndexOf('.') + 1); 
-     if(ext != "JPEG" && ext != "jpeg" && ext != "jpg" && ext != "JPG" && ext != "PNG" && ext != "png"){ 
+     if(ext != "JPEG" && ext != "jpeg" && ext != "jpg" && ext != "JPG" && ext != "PNG" && ext != "png" 
+     	&&  ext != "GIF" && ext != "gif" ){ 
         var a="Immagine consentite:</br> JPEG o PNG o JPG";
     document.getElementById("newProduct").innerHTML = a ;
     return false;
