@@ -154,13 +154,17 @@ html, body{
 #aperture{
 	display: inline-block;
 	margin:2em 0em 1em 0em;
-	border:3px solid #a02222;
+}
+#aperture h4{
+	border-bottom:2px solid #a02222;
 }
 #novità{
 	display: inline-block;
 	margin:2em 0em 1em 0em;
-	border:3px solid #a02222;
+}
 
+#novità h4{
+	border-bottom:2px solid #a02222;
 }
 
 #sottoPiano{
@@ -217,14 +221,18 @@ html, body{
 	overflow: auto;
 
 }
+.singola_promozione a{
+	display: inline-block;
+	}
 .promozione{
 	width: 100%;
+
 }
 #elencoPromozioni{
 	overflow: auto;
 }
 
-#elencoPromozioni p{
+.singola_promozione p{
 	padding: 1%;
 	background-color: #A52A2A;
 	color: #FFFFFF;
@@ -251,7 +259,7 @@ html, body{
   overflow: auto;
 } 
 .vetrina img{ 
-    width: 100%; 
+  width: 100%; 
   float:left; 
 } 
 
@@ -321,13 +329,7 @@ html, body{
 /*--------PROMOZIONI_PUBLIC--------*/
 
 
-.imgPromozione{
-    width: 21.75%;
-    float: left;
-    text-align: center;
-    padding: 1em;
-    margin: 1%;
-}
+
 #PromozioniAttive{
 	text-align: center;
 	font-size: 1em;
@@ -335,14 +337,12 @@ html, body{
 }
 #PromozioniAttive div{
 	width: 22%;
+	float: left;
 	text-align: center;
 	margin:1%;
 }
 
-#PromozioniAttive p{
-    padding-top: 0.5em;
-    width: 100%;
-}
+
 
 /*-----------NEGOZIO LEGO---------*/
 
@@ -442,9 +442,13 @@ html, body{
 
 .prodotto img{
 	width: 100%;
-	height: 10em;
-}
+	height: 11em;
+	margin:0em;
 
+}
+.prodotto a{
+	display: inline-block;
+}
  
 #prodotti{ 
   margin-bottom: 2em; 
