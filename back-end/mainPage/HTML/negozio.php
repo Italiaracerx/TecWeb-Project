@@ -7,7 +7,6 @@
 
 
     $controller = new controller();
-    $controller->setPage(new page_public('Contatti',(new menu((new staticPath())->public_menu('3')))));
     $controller->head();
 ?>
 <div id="content"><!--NEGOZI-->

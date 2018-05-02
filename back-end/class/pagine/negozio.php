@@ -36,7 +36,29 @@ class page_public implements type_page{
     	echo '	<div id="breadcrumb">
         			<h2><strong>'.$this->name.'</strong>'.$this->shop.'</h2>        
     			</div>';
-    }
+	}
+	public function content(){
+		$query="SELECT I.negozio, L.logo FROM logo L INNER JOIN info I ON L.username = I.username";
+		$rows =array();
+		while($row = $result_pro->fetch_array(MYSQLI_ASSOC)){
+		  $rows[] = $row;
+		}
+		if(!count($rows)){
+		  echo 'non ci sono promozioni';
+		}
+		else{
+		  foreach($rows as $row){
+				echo '        
+				<div class="vetrina">
+				<a href="trony.html">
+					<img src="images/imgtrony.jpg" alt="Logo negozio Trony"/>
+				</a>
+				<h5 class="NomeItem">LEGO STORE</h5>
+		
+				</div>';
+		  }
+		}
+	}
     public function footer(){
         echo '       
         <div id="footer">
@@ -59,6 +81,7 @@ class page_public implements type_page{
 		$this->header();
 		$this->menu();
 		$this->breadcrumb();
+		$this->content();
     }
 	public function head(){
 		$this->intestazione();
