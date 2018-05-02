@@ -56,7 +56,10 @@
                       $rows[] = $row;
                     }
                     if(!count($rows)){
-                      echo 'non ci sono promozioni';
+                      echo '                <div class ="no_image">
+                    <p class="text_message">coming soon</p>
+                </div>
+';
                     }
                     else{
                       foreach($rows as $row){
