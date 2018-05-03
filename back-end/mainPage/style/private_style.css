@@ -533,6 +533,26 @@ padding: 1em 1em 1em 1em;
 	border-radius: 100px;
 }
 
-
+#correct{ 
+	font-size: 1em; 
+	text-transform: uppercase; 
+	padding-top:0.5em; 
+	padding-bottom:0.5em; 
+	font-weight: normal; 
+	text-align: center; 
+	color: white; 
+	background-color: #4CAF50; 
+	} 
+	  
+	#error{ 
+	font-size: 1em; 
+	text-transform: uppercase; 
+	padding-top:0.5em; 
+	padding-bottom:0.5em; 
+	font-weight: normal; 
+	text-align: center; 
+	color: white; 
+	background-color: rgba(218, 0, 0, 0.693); 
+	} 
 
 
