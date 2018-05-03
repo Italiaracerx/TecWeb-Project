@@ -1,9 +1,9 @@
-/*
+
 USE darossi;
-*/
+/*
 DROP DATABASE IF EXISTS Archimede;
 CREATE DATABASE Archimede;
-
+*/
 SET FOREIGN_KEY_CHECKS=0;
 
 
