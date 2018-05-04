@@ -44,9 +44,15 @@
                   <option value="Cerca nel menu:">Cerca nel menu:</option>
                     <?php 
                         $log = new login();
-                        $lista_utenti =$log->read();
-                        foreach ($lista_utenti as $key) {
-                            echo '<option value="'.$key['username'].'">'.$key['username'].'</option>';           
+                        $result_pro =$log->read();
+                        $rows =array();
+                        while($row = $result_pro->fetch_array(MYSQLI_ASSOC)){
+                          $rows[] = $row;
+                        }
+                        if(count($rows)){
+                            foreach($rows as $row){
+                                echo '<option value="'.$row['username'].'">'.$row['username'].'</option>';           
+                            }
                         }
                     ?>
                   </select>  
