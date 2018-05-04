@@ -11,7 +11,7 @@
     $controller->head();
 ?>
   <div id="content">
-    <img id="torre" alt="immagine torre archimede" src="images/torre 2.jpg"/>
+    <img id="torre" alt="immagine torre archimede" src="images/default/torre 2.jpg"/>
 
     <h2  id="intestazione">Benvenuti nel Centro Commerciale Archimede</h2>
     <div id="eventi_promozioni">

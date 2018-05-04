@@ -21,7 +21,7 @@ class negozi implements type_page{
 		$file = file_get_contents('../../class/HTMLstored/public/preambolo.html', FILE_USE_INCLUDE_PATH);
 		$file = str_replace('__USER__',$_SESSION['user'],$file);
 		$file = str_replace('__NAME_PAGE__',$this->name,$file);
-		$file = str_replace('__STYLE__',page_public::$style,$file);
+		$file = str_replace('__STYLE__',negozi::$style,$file);
 
 		echo $file;
     }
