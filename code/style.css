@@ -139,6 +139,14 @@ html, body{
 #tabellaLaterale h4{
 	font-weight: bold;	
 }
+
+#tabellaLaterale ul{
+	list-style-type: none;
+}
+#tabellaLaterale li{
+	border-bottom: 1px solid grey;
+}
+
 #tabella_orari{
 	display: inline-block;
 	margin-bottom: 10%;
@@ -151,11 +159,11 @@ html, body{
 	margin: 1em;
 }
 
-#aperture{
+.aperture_chiusure{
 	display: inline-block;
 	margin:2em 0em 1em 0em;
 }
-#aperture h4{
+.aperture_chiusure h4{
 	border-bottom:2px solid #a02222;
 }
 #novità{
