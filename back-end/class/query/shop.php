@@ -12,7 +12,7 @@ class shop extends connection implements query{
     //metodi
     public function __construct(){
         $this->name =NULL;
-        if(isset($_POST['shop'])){
+        if(isset($_GET['shop'])){
             $this->name =$_POST['shop'];
         }
     }
