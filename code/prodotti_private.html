@@ -66,25 +66,28 @@
             
             <div id="colonna_destra">
                 <p class="intestazione">PRODOTTI CORRENTI</p>
-                <div class="imgPromozione">
-                    <img class="promozione" src="images/lego1.jpg" alt="promozione"/> 
+                <div class="contenuto_corrente">
+                    <img  src="images/lego1.jpg" alt="prodotto corrente"/> 
+                    <h5>Gioco_1</h5>
                 </div>
-                <div class="imgPromozione">
-                    <img class="promozione" src="images/lego2.jpg" alt="promozione"/> 
+                <div class="contenuto_corrente">
+                    <img src="images/lego2.jpg" alt="prodotto corrente"/> 
+                    <h5>Gioco_2</h5>
                 </div>
-                <div class="imgPromozione">
-                    <img class="promozione" src="images/lego3.jpg" alt="promozione"/> 
+                <div class="contenuto_corrente">
+                    <img src="images/lego3.jpg" alt="prodotto corrente"/> 
+                    <h5>Gioco_3</h5>
                 </div>
             </div><!--chiusura colonna_destra -->            
         
 
-        <div id="destra_prodotti">
-              <p class="intestazione_1">ELIMINA PRODOTTI</p> 
+        <div id="colonna_destra_sotto">
+              <p class="intestazione">ELIMINA PRODOTTI</p> 
               <div id="controllo_Prod"></div>
               <form  action="" method="post" onsubmit="return validateUser()">
                 <div>
-                  <label for="deleteProd">Nome Negozio:</label>
-                  <select name="deleteProd" id="deleteProd">
+                  <label for="elimina_prodotto">Nome Negozio:</label>
+                  <select name="elimina_prodotto" id="elimina_prodotto">
                   <option value="Cerca nel menu:">Cerca nel menu:</option>
                   <option value="volvo">Volvo</option>
                   <option value="saab">Saab</option>
