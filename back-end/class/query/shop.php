@@ -17,6 +17,15 @@ class shop extends connection implements query{
         }
     }
     public function write(){}
+    public function alone(){
+        $logo ="SELECT * FROM logo L WHERE L.username = '$this->name'";
+        $info ="SELECT * FROM info I WHERE I.username = '$this->name'";
+        $orario ="SELECT * FROM orario O WHERE O.username = '$this->name'";
+        $prodotto ="SELECT * FROM immagini I WHERE I.username = '$this->name' AND I.type = 'prodotto'";
+        $promozione ="SELECT * FROM immagini I WHERE I.username = '$this->name' AND I.type = 'promozione'";
+        
+
+    }    
     public function all(){
         $query = "SELECT L.username, L.logo, L.alt, I.negozio FROM logo L JOIN info I ON L.username = I.username";
         return parent::execute_query($query);

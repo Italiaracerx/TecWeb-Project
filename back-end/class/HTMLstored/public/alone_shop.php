@@ -1,30 +1,36 @@
 <?php
-echo '        <div id="content_negozio">
-            <h3 id="titolo_negozio">LEGO STORE</h3>
-            <div id="informazioni">
-                <img id="logo_negozio" src="images/imglego.jpg" alt="logo"/>
-                <div id="contatti">
-                    <h4 class="informazione">TELEFONO / FAX</h4>';
-                    
-                    <p class="dato">041610265</p>
-                    <h4 class="informazione"><span xml:lang="en">EMAIL</span></h4>
-                    <p class="dato">blablabla@lego.com</p>
-                    <h4 class="informazione">SITO WEB</h4>
-                    <a class="dato" href="https://www.lego.com/it-it">www.lego.com/it-it</a>
-                    <div id="orari">
-                        <h4 class="informazione">ORARI</h4>
-                        <p class="dato"><strong>Luned&igrave; :</strong> 9:00 - 21:00</p>
-                        <p class="dato"><strong>Marted&iacute; :</strong>  9:00 - 21:00</p>
-                        <p class="dato"><strong>Mercoled&iacute; :</strong>  9:00 - 21:00</p>
-                        <p class="dato"><strong>Gioved&iacute; :</strong>  9:00 - 21:00</p>
-                        <p class="dato"><strong>Venerd&iacute; :</strong>  9:00 - 21:00</p>
-                        <p class="dato"><strong>Sabato :</strong>  9:00 - 21:00</p>
-                        <p class="dato"><strong>Domenica :</strong>  9:00 - 21:00</p>
-                            
-                    </div>
 
+require_once __DIR__.'/../../query/shop.php';
+
+$shop =new shop();
+
+
+echo 
+    '<div id="content_negozio">
+        <h3 id="titolo_negozio">'.$cicuia.'</h3>';
+
+echo   '<div id="informazioni">
+            <img id="logo_negozio" src="images/imglego.jpg" alt="logo"/>
+            <div id="contatti">
+                <h4 class="informazione">TELEFONO / FAX</h4>
+                <p class="dato">041610265</p>
+                <h4 class="informazione"><span xml:lang="en">EMAIL</span></h4>
+                <p class="dato">blablabla@lego.com</p>
+                <h4 class="informazione">SITO WEB</h4>
+                <a class="dato" href="https://www.lego.com/it-it">www.lego.com/it-it</a>
+    
+                <div id="orari">
+                    <h4 class="informazione">ORARI</h4>
+                    <p class="dato"><strong>Luned&igrave; :</strong> 9:00 - 21:00</p>
+                    <p class="dato"><strong>Marted&iacute; :</strong>  9:00 - 21:00</p>
+                    <p class="dato"><strong>Mercoled&iacute; :</strong>  9:00 - 21:00</p>
+                    <p class="dato"><strong>Gioved&iacute; :</strong>  9:00 - 21:00</p>
+                    <p class="dato"><strong>Venerd&iacute; :</strong>  9:00 - 21:00</p>
+                    <p class="dato"><strong>Sabato :</strong>  9:00 - 21:00</p>
+                    <p class="dato"><strong>Domenica :</strong>  9:00 - 21:00</p>                
                 </div>
             </div>
+        </div>';
 
             <div id="descrizione">
                     <p id="testo">               
