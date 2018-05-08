@@ -74,7 +74,7 @@ class orario extends connection implements query{
         }
         $query =$query." FROM orario WHERE username = '$this->user'";
 
-        return parent::execute_query($query)->fetch_array(MYSQLI_NUM);
+        return parent::execute_query($query);
     }
     public function write(){}
     public function getGiorni(){

@@ -1,27 +1,27 @@
 <?php
 
-require_once __DIR__.'../../query/orario.php';
-require_once __DIR__.'../../query/logo.php';
-require_once __DIR__.'../../query/image.php';
+require_once __DIR__.'/../../query/orario.php';
+require_once __DIR__.'/../../query/logo.php';
+require_once __DIR__.'/../../query/image.php';
+require_once __DIR__.'/../../sistema/connection.php';
 
+        $shop =$_GET['shop'];
 
-        $logo = new logo($_GET['shop']);
-        $orario =new orario($_GET['shop']);
+        $connection= new connection();
+        $logo = new logo($shop);
+        $orario =new orario($shop);
+        $promozione = new image('promozione',$shop);
+        $prodotto = new image('prodotto',$shop);
 
-        $info ="SELECT * FROM info I WHERE I.username = '$this->name'";
-        $prodotto ="SELECT * FROM immagini I WHERE I.username = '$this->name' AND I.type = 'prodotto'";
-        $promozione ="SELECT * FROM immagini I WHERE I.username = '$this->name' AND I.type = 'promozione'";
+        $info ="SELECT * FROM info I WHERE I.username = '$shop'";
 
-        $info = parent::execute_query($info);
-        $prodotto = parent::execute_query($prodotto);
-        $promozione = parent::execute_query($promozione);
+        $result_info = $connection->execute_query($info)->fetch_array(MYSQLI_ASSOC);
+        $result_logo =$logo->read()->fetch_array(MYSQLI_ASSOC);
+        $result_orario =$orario->read()->fetch_array(MYSQLI_NUM);
 
         $giorni = array();
         $giorni =$orario->getGiorniHTML();
 
-        $result_logo =$logo->read()->fetch_array(MYSQLI_ASSOC);;
-        $result_info = $info->fetch_array();
-        $result_orario =$orario->read();
 
 
 echo 
@@ -73,8 +73,29 @@ echo           '</div>
                              </a>
                             <h5 class="NomeItem">gioco 3</h5>
                         </div>                       
-                    </div>
-                    
+                    </div>';
+                    $result_promozione =$promozione->read();
+                    $rows =array();
+                    while($row = $result_promozione->fetch_array(MYSQLI_ASSOC)){
+                      $rows[] = $row;
+                    }
+                    if(!count($rows)){
+                      echo '                <div class ="no_image">
+                    <p class="text_message">coming soon</p>
+                </div>
+';
+                    }
+                    else{
+                      foreach($rows as $row){
+                            echo '                        <div class="prodotto">
+                            <a href="prodotto1.html">
+                            <img class="gioco" src="images/lego2.jpg" alt="prodotto in vendita"/>
+                             </a>
+                            <h5 class="NomeItem">gioco 2</h5>
+                        </div>';
+                      }
+                    }
+                    echo '
                     <div id="promozioni">
 
                       <h4 class="titolo_prodotti">PROMOZIONI</h4>

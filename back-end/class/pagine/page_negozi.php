@@ -7,12 +7,12 @@ class negozi implements type_page{
 	private static $style="style.css";
 	private $menu;
 	private $name;
-
+    private $shop;
 	public function __construct(menu $menu){
-        if(isset($_GET['shop'])){
-            $this->name ='negozio :'.$_GET['shop'];            
-        }
         $this->name ='negozio';
+        if(isset($_GET['shop'])){
+            $this->shop =': '.$_GET['shop'];
+        }
 		$this->menu =$menu;
 	}
 	public function intestazione(){
@@ -33,7 +33,7 @@ class negozi implements type_page{
 	}		
     public function breadcrumb(){
     	echo '	<div id="breadcrumb">
-        			<h2><strong>'.$this->name.'</strong></h2>        
+        			<h2><strong>'.$this->name.'</strong>'.$this->shop.'</h2>        
     			</div>';
     }
     public function footer(){
