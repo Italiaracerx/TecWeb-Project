@@ -471,3 +471,31 @@ html, body{
   padding: 1em 1em 1em 1em; 
   margin: 1em 1em 1em 1em; 
 }
+
+/*PRODPROMO CSS*/
+
+/*uguale a negozio lego*/
+#titolo_prodpromo{
+	padding-top:1em;	
+	padding-bottom: 1em;
+	font-size:2em;
+	letter-spacing: 10px;
+	line-height: 1em;
+	border-bottom: 2px solid #A21E1E;
+	text-align: center;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+#img_prodpromo{
+	float: left;
+	max-width: 50%;
+}
+
+#prodpromo_rightSide{
+	float:right;
+}
+
+#descrizione_prodpromo{
+	padding-top: 1em;
+}
