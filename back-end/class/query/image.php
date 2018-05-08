@@ -60,12 +60,13 @@ class image extends connection implements query{
                 preg_match($this->regex, $this->finish, $okfinish, PREG_OFFSET_CAPTURE); 
                 if(empty($okfinish)){throw new exeption('error','data non in formato GG-MM-AAAA o non calendarizzato');} 
                 $startdate=str_replace("-", "", $this->start); 
-                $enddate=str_replace("-", "", $this->end); 
+                $enddate=str_replace("-", "", $this->finish); 
                 $arraystart=str_split($startdate, 2); 
                 $arrayend=str_split($enddate, 2); 
-                if(intval($arraystart[3], 10)>=intval($arrayend[3], 10)&&intval($arraystart[2], 10)>=intval($arrayend[2], 10)){ 
-                    if(intval($arraystart[1], 10)>=intval($arrayend[1],10)){ 
-                        if(intval($arraystart[0], 10)>=intval($arrayend[0], 10)){throw new exeption('error','Data di fine precedente a quella di inizio');} 
+                
+                if(($arraystart[3]>=$arrayend[3]) && ($arraystart[2]>=$arrayend[2])){ 
+                    if($arraystart[1]>=$arrayend[1]){ 
+                        if($arraystart[0]>=$arrayend[0]){throw new exeption('error','Data di fine precedente a quella di inizio');} 
                     } 
                 } 
             } 
