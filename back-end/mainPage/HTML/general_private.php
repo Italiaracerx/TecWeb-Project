@@ -103,8 +103,8 @@
          <form action="../mainForm/changeOrari.php" method="post" onsubmit="return checkorario(this)">
           <?php 
 
-            $orari = new orario();
-            $ora=$orari->read();
+            $orari = new orario($_SESSION['user']);
+            $ora=$orari->read()->fetch_array(MYSQLI_NUM);
             $giorni=$orari->getGiorni();
             $numeri=$orari->getNumeri();
             for($i=0;$i<7;$i++){

@@ -13,7 +13,6 @@ class page_public implements type_page{
 	}
 	public function intestazione(){
 		$file = file_get_contents('../../class/HTMLstored/public/preambolo.html', FILE_USE_INCLUDE_PATH);
-		$file = str_replace('__USER__',$_SESSION['user'],$file);
 		$file = str_replace('__NAME_PAGE__',$this->name,$file);
 		$file = str_replace('__STYLE__',page_public::$style,$file);
 
@@ -24,8 +23,8 @@ class page_public implements type_page{
         echo $file;
 	}
 	public function menu(){
-        echo '<div id="menu">';
-		$this->menu->print();
+		$str ='<div id="menu">'.$this->menu->print().'</div>';
+		echo $str;
 	}		
     public function breadcrumb(){
     	echo '	<div id="breadcrumb">
@@ -37,13 +36,13 @@ class page_public implements type_page{
         <div id="footer">
             <div id="footerMenu">
                 <div id="contentMenuFooter">';
-                    $this->menu->print();
+                    $this->menu();
                 echo '
             </div>
         </div>
 
             <h3>Centro Commerciale Archimede</h3>
-            <img id="logoFooter" alt="logofooter" src="images/logo.jpg"/>
+            <img id="logoFooter" alt="logofooter" src="images/default/logo.jpg"/>
             <div id="infoFooter">
             <p>Via Trieste, 63  | 35121 Padova (<span xml:lang="en">Italy</span>)| Telefono: +39 049 827 1200 | <span xml:lang="en">e-mail</span>:info@centro.archimede.it</p>
 			</div> <!-- fine contatti_footer--></div>

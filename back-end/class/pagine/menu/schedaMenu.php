@@ -9,7 +9,8 @@ class schedaMenu{
         $this->link =$lk;
     }
     public function printScheda(){
-        echo '<li><a '.$this->active.' href="'.$this->link.'">'.$this->name.'</a></li>';
+        $str ='<li><a '.$this->active.' href="'.$this->link.'">'.$this->name.'</a></li>';
+        return $str;
     }
     public function activation(){
     	$this->active ='class ="active"';

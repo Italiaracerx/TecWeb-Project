@@ -22,26 +22,25 @@ class image extends connection implements query{
         private $extention;
         private $directory;
         private $type;
-        private $regex= '/^(?:(((([012][0-9]|(3[01]))\-(((0[13578]))|(1[02])))|(([012][0-9]|(3[0]))\-(((0[469]))|(1[1])))|((([01][0-9])|2[0-7])\-02))\-2((01[89])|(0[2-9]\d)|(1\d{2}))))/';
+        private $regex= '/^(?:(((([012][0-9]|(3[01]))\-(((0[13578]))|(1[02])))|(([012][0-9]|(3[0]))\-(((0[469]))|(1[1])))|((([01][0-9])|2[0-7])\-02))\-2((01[89])|(0[2-9]\d)|(1\d{2}))))/'; 
+
         //costruttore della classe inputPicture
 
-        public function __construct($type){
+        public function __construct($type, $user = NULL){
             $this->user =NULL;
-            if($_SESSION){
-                $this->user =$_SESSION['user'];
-            }
+            $this->user =$user;
+
             $this->type =$type;
             $this->directory ='../../mainPage/HTML/images/'.$this->type.'/';
             $this->extention= ['jpg', 'png','jpeg','gif'];
         }
         public function take_data(){
             if($_POST){
-                $this->name_image =parent::escaped_string($_POST['nome']);
+                $this->name_image =parent::escaped_string($_POST['nome']); 
                 $this->alt =$_POST['alt'];
                 if($this->type =='promozione'){
                     $this->start =$_POST['start'];
                     $this->finish =$_POST['finish'];
-                    
                 }
                 $this->description =$_POST['description'];
             }
@@ -55,22 +54,21 @@ class image extends connection implements query{
             }
         }
         public function checker(){
-            if($this->type=='promozione'){
-                preg_match($this->regex, $this->start, $okstart, PREG_OFFSET_CAPTURE);
-                if(empty($okstart)){throw new exeption('error','Orario non in formato GG-MM-AAAA o non calendarizzato');}
-                preg_match($this->regex, $this->finish, $okfinish, PREG_OFFSET_CAPTURE);
-                if(empty($okfinish)){throw new exeption('error','Orario non in formato GG-MM-AAAA o non calendarizzato');}
-                $startdate=str_replace("-", "", $this->start);
-                $enddate=str_replace("-", "", $this->end);
-                $arraystart=str_split($startdate, 2);
-                $arrayend=str_split($enddate, 2);
-                if(intval($arraystart[3], 10)>=intval($arrayend[3], 10)&&intval($arraystart[2], 10)>=intval($arrayend[2], 10)){
-                    if(intval($arraystart[1], 10)>=intval($arrayend[1],10)){
-                        if(intval($arraystart[0], 10)>=intval($arrayend[0], 10)){throw new exeption('error','Data di fine precedente a quella di inizio');}
-                    }
-                }
-            }
-
+            if($this->type=='promozione'){ 
+                preg_match($this->regex, $this->start, $okstart, PREG_OFFSET_CAPTURE); 
+                if(empty($okstart)){throw new exeption('error','data non in formato GG-MM-AAAA o non calendarizzato');} 
+                preg_match($this->regex, $this->finish, $okfinish, PREG_OFFSET_CAPTURE); 
+                if(empty($okfinish)){throw new exeption('error','data non in formato GG-MM-AAAA o non calendarizzato');} 
+                $startdate=str_replace("-", "", $this->start); 
+                $enddate=str_replace("-", "", $this->end); 
+                $arraystart=str_split($startdate, 2); 
+                $arrayend=str_split($enddate, 2); 
+                if(intval($arraystart[3], 10)>=intval($arrayend[3], 10)&&intval($arraystart[2], 10)>=intval($arrayend[2], 10)){ 
+                    if(intval($arraystart[1], 10)>=intval($arrayend[1],10)){ 
+                        if(intval($arraystart[0], 10)>=intval($arrayend[0], 10)){throw new exeption('error','Data di fine precedente a quella di inizio');} 
+                    } 
+                } 
+            } 
             if($this->error != '0'){throw new exeption('error','upload fallito, errore '.$this->error.'.');}
             //controllo se l'immagine non ha dimensione 0                
             if($this->size == false || $this->name == NULL){throw new exeption('error','size nulla.');}

@@ -49,14 +49,17 @@
             <div id="colonna_destra">
                 <p class="intestazione">PROMOZIONI CORRENTI</p>
                   <?php 
-                    $promozioni =new image('promozione');
+                    $promozioni =new image('promozione',$_SESSION['user']);
                     $result_pro =$promozioni->read();
                     $rows =array();
                     while($row = $result_pro->fetch_array(MYSQLI_ASSOC)){
                       $rows[] = $row;
                     }
                     if(!count($rows)){
-                      echo 'non ci sono promozioni';
+                      echo '                <div class ="no_image">
+                    <p class="text_message">coming soon</p>
+                </div>
+';
                     }
                     else{
                       foreach($rows as $row){

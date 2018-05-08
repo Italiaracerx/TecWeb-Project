@@ -94,6 +94,7 @@ html, body{
     overflow: auto;
     padding-bottom: 1em;
 }
+
 /*---------GENERALE_ADMIN-----------*/
 #content_generale{
 	overflow:auto;
@@ -123,6 +124,15 @@ html, body{
 }
 
 .intestazione{
+	padding-bottom:0.5em;
+	border-bottom: 2px #585753	 solid;
+	text-align: center;
+	margin-bottom:1em;
+	letter-spacing: 2px;
+	font-size: 1.2em;
+}
+
+.intestazione_1{
 	padding-bottom:0.5em;
 	border-bottom: 2px #585753	 solid;
 	text-align: center;
@@ -272,18 +282,37 @@ textarea{
 	width: 30%;	
 	float:left;
 	text-align: center;
-}
-#colonna_sinistra
-{
-
+	margin-top: 2em;
+	display: block;
 }
 
 
 #colonna_destra{
 	margin-left: 32%;
 	display: block;
-	margin-top: 2em;
 	padding-right: 1em;
+	text-align: center;
+	margin-top: 2em;
+	overflow: auto;
+}
+
+#colonna_destra_sotto{
+	margin-left: 32%;
+	display: block;
+	padding-right: 1em;
+	text-align: center;
+	margin-top: 3.5em;
+}
+
+#destra_prodotti{
+	margin-left: 32%;
+	padding-right: 1em;
+	text-align: center;
+	margin-top: 2em;
+}
+
+#deleteProd{
+	width: 40%;
 }
 
 .promozione{
@@ -297,7 +326,20 @@ textarea{
 	margin-left:4.1%;
 	margin-right:4.1%;
 }
+.no_image{
+padding: 1em 1em 1em 1em;
+}
+.text_message{
 
+	margin-top: 2em;
+	margin-bottom: 2em;
+	padding-top:1em;
+	padding-bottom:1em;
+	height:50%;
+	background-color: #96969064;
+	text-align: center;
+	text-transform: uppercase;
+}
 /*--------LOGIN---------*/
 #formLogin
 {
@@ -324,7 +366,9 @@ textarea{
 	 cursor: pointer;
 }
 
-   /*///// Div General-Admin /////////////*/
+   /* /////////////////////////////
+   //    Div General-Admin   //
+   ///////////////////////////// */
 
 #controllo_creaNeg {background-color: #fd3516;
 	text-align:center;}
@@ -345,7 +389,10 @@ textarea{
 	margin-bottom: 0.4em;
 }
 
-   /*///// Div General-Private //////////*/
+ 
+   /* /////////////////////////////
+   //    Div General-Private   //
+   ///////////////////////////// */
    
 #verifica_passw {background-color: #fd3516;
 	text-align:center;}
@@ -374,6 +421,42 @@ textarea{
 	margin-bottom: 0.4em;
 }
 
+
+/* /////////////////////////////
+   // Div Promozioni_private  //
+   ///////////////////////////// */
+
+
+#deletePromo{background-color: #fd3516;
+	text-align:center;
+	margin-bottom: 0.4em;}
+
+#deleteProm{
+	width: 40%;
+}
+
+#nuova_promozione{background-color: #fd3516;
+	text-align:center;
+}
+
+#controllo_eliminaprom{background-color: #fd3516;
+	text-align:center;
+	margin-bottom: 0.4em;}
+
+
+/* /////////////////////////////
+   // Div Prodotti_private  //
+   ///////////////////////////// */
+
+#newProduct{
+	background-color: #fd3516;
+	text-align:center;
+}
+
+#deleteProdo{
+	background-color: #fd3516;
+	text-align:center;
+}
 
 #esempio{
 	font-size: 0.85em;
@@ -450,26 +533,26 @@ textarea{
 	border-radius: 100px;
 }
 
-#correct{
-	font-size: 1em;
-	text-transform: uppercase;
-	padding-top:0.5em;
-	padding-bottom:0.5em;
-	font-weight: normal;
-	text-align: center;
-	color: white;
-	background-color: #4CAF50;
-  }
-   
-  #error{
-	font-size: 1em;
-	text-transform: uppercase;
-	padding-top:0.5em;
-	padding-bottom:0.5em;
-	font-weight: normal;
-	text-align: center;
-	color: white;
-	background-color: rgba(218, 0, 0, 0.693);
-  }
+#correct{ 
+	font-size: 1em; 
+	text-transform: uppercase; 
+	padding-top:0.5em; 
+	padding-bottom:0.5em; 
+	font-weight: normal; 
+	text-align: center; 
+	color: white; 
+	background-color: #4CAF50; 
+	} 
+	  
+	#error{ 
+	font-size: 1em; 
+	text-transform: uppercase; 
+	padding-top:0.5em; 
+	padding-bottom:0.5em; 
+	font-weight: normal; 
+	text-align: center; 
+	color: white; 
+	background-color: rgba(218, 0, 0, 0.693); 
+	} 
 
 

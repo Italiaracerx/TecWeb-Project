@@ -12,7 +12,7 @@
 ?>
     <div id="content">
         <h2 id="intestazione">Comunicazione diretta con il Centro</h2>
-        <img id="fotoContatti" src="images/ArchimedeEsterno.jpg" alt="Foto del Centro Archimede" />
+        <img id="fotoContatti" src="images/default/ArchimedeEsterno.jpg" alt="Foto del Centro Archimede" />
         <div id="testoInformazioni">
     	<h3>Centro Archimede</h3>
     	<p> Indirizzo: Via Trieste, 63 - 35121 Padova <span xml:lang="en">(Italy)</span></p>

@@ -39,7 +39,7 @@
             <div id="colonna_destra">
                 <p class="intestazione">PRODOTTI CORRENTI</p>
                   <?php 
-                    $promozioni =new image('prodotto');
+                    $promozioni =new image('prodotto',$_SESSION['user']);
                     $result_pro =$promozioni->read();
                     $rows =array();
                     while($row = $result_pro->fetch_array(MYSQLI_ASSOC)){
