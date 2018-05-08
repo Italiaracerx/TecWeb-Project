@@ -99,9 +99,9 @@ echo           '</div>
                             echo '
                             <div class="singola_promozione">
                                 <a href="promo2.html">
-                                    <img class="promozione" src="images/promozione/'.$row[source].'" alt="'.$row[alt].'"/>
+                                    <img class="promozione" src="images/promozione/'.$row['source'].'" alt="'.$row['alt'].'"/>
                                 </a> 
-                                <p>'.$row[titolo].'</p>
+                                <p>'.$row['titolo'].'</p>
                             </div>';
                         }
                         echo '  </div>';
