@@ -7,7 +7,7 @@
 
 
     $controller = new controller();
-    $controller->setPage(new page_public('Generale',(new menu((new staticPath())->public_menu('0')))));
+    $controller->setPage(new page_public('home',(new menu((new staticPath())->public_menu('0')))));
     $controller->head();
 ?>
   <div id="content">
