@@ -17,19 +17,24 @@ class logo extends image{
         private $directory;
         //costruttore della classe inputPicture
 
-        public function __construct(){
+        public function __construct($user){
             $this->directory ='../../mainPage/HTML/images/logo/';
             parent::__construct('logo');
-            $this->user =$_SESSION['user'];
-            $this->name =$_FILES["immagine"]["name"];
-            $this->tmp_name =$_FILES["immagine"]["tmp_name"];
+            $this->user =$user;
+            if(isset($_FILES['immagine'])){
+                $this->name =$_FILES["immagine"]["name"];
+                $this->tmp_name =$_FILES["immagine"]["tmp_name"];
+            }
         }
         public function write(){
             parent::store();
             $this->delete();
             $this->update();
         }
-        public function read(){}
+        public function read(){
+            $logo ="SELECT * FROM logo L WHERE L.username = '$this->user'";
+            return parent::execute_query($logo);
+        }
         public function delete(){
             $query="SELECT logo FROM logo WHERE username = '$this->user'";
             $file_to_delete=mysqli_fetch_array(parent::execute_query($query));

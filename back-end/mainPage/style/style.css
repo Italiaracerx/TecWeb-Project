@@ -146,9 +146,6 @@ html, body{
 #tabella_orari h4{
 	border-bottom:2px solid #a02222;
 }
-#tabella_orari p{
-	text-align: left;
-}
 
 #tabella_eventi{
 	margin: 1em;
@@ -157,13 +154,17 @@ html, body{
 #aperture{
 	display: inline-block;
 	margin:2em 0em 1em 0em;
-	border:3px solid #a02222;
+}
+#aperture h4{
+	border-bottom:2px solid #a02222;
 }
 #novità{
 	display: inline-block;
 	margin:2em 0em 1em 0em;
-	border:3px solid #a02222;
+}
 
+#novità h4{
+	border-bottom:2px solid #a02222;
 }
 
 #sottoPiano{
@@ -201,9 +202,6 @@ html, body{
 	text-align: center;
 }
 
-#elencoPromozioni{
-	overflow: auto;
-}
 #sottoPiano h2{
 	border-bottom: 1px solid #000;
 	font-weight: 500;
@@ -214,22 +212,30 @@ html, body{
 	text-align: center;
 	margin-top: 0.5em;
 }
-.promozioneHome{
+.singola_promozione{
 	border:2px solid #000;
 	float: left;
-	width: 23%;
-	margin: 4%;
+	width: 26%;
+	margin: 3%;
 	text-align: center;
 	overflow: auto;
 
 }
+.singola_promozione a{
+	display: inline-block;
+	}
 .promozione{
 	width: 100%;
+
 }
-#elencoPromozioni p{
+#elencoPromozioni{
+	overflow: auto;
+}
+
+.singola_promozione p{
 	padding: 1%;
-
-
+	background-color: #A52A2A;
+	color: #FFFFFF;
 }
 
 /*--------NEGOZI---------*/
@@ -253,7 +259,7 @@ html, body{
   overflow: auto;
 } 
 .vetrina img{ 
-    width: 100%; 
+  width: 100%; 
   float:left; 
 } 
 
@@ -323,28 +329,20 @@ html, body{
 /*--------PROMOZIONI_PUBLIC--------*/
 
 
-.imgPromozione{
-    width: 21.75%;
-    float: left;
-    text-align: center;
-    padding: 1em;
-    margin: 1%;
-}
+
 #PromozioniAttive{
 	text-align: center;
 	font-size: 1em;
 	margin:0% 5% 0% 5%;
 }
 #PromozioniAttive div{
-	width: 18%;
+	width: 22%;
+	float: left;
 	text-align: center;
-	margin:3%;
+	margin:1%;
 }
 
-#PromozioniAttive p{
-    padding-top: 0.5em;
-    width: 100%;
-}
+
 
 /*-----------NEGOZIO LEGO---------*/
 
@@ -394,12 +392,7 @@ html, body{
 	text-align: center;
 
 }
-#orari p{
-	margin-left: 10%;
-	text-align: left;
 
-
-}
 .informazione{
 	font-weight: 400;
 	padding-top:1em;
@@ -436,27 +429,26 @@ html, body{
 #promozioni{
 	padding-bottom:2em;
 }
-
+#promozioni div div{
+	width: 28.5%;
+	margin:2%;
+}
 .prodotto{
-	margin:1.5% 5% 0% 4%;
-	width: 23%;
+	margin:1.5% 1% 0% 1%;
+	width: 30%;
 	float:left; 
   	border:3px solid black;
 }
 
 .prodotto img{
 	width: 100%;
-	height: 8em;
-}
+	height: 11em;
+	margin:0em;
 
-.promo{
-  width: 30%; 
-  margin-right:1%; 
-  margin-top: 1%; 
-  margin-left: 1%; 
-  display:inline-block; 
-  padding-top:1em;   
-} 
+}
+.prodotto a{
+	display: inline-block;
+}
  
 #prodotti{ 
   margin-bottom: 2em; 

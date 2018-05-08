@@ -1,5 +1,7 @@
 <?php 
 require_once __DIR__.'/../interfacce/type_page.php';
+require_once __DIR__.'/../query/shop.php';
+
 
 class negozi implements type_page{
 	private static $style="style.css";

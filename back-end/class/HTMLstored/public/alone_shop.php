@@ -1,41 +1,55 @@
 <?php
 
-require_once __DIR__.'/../../query/shop.php';
+require_once __DIR__.'../../query/orario.php';
+require_once __DIR__.'../../query/logo.php';
+require_once __DIR__.'../../query/image.php';
 
-$shop =new shop();
+
+        $logo = new logo($_GET['shop']);
+        $orario =new orario($_GET['shop']);
+
+        $info ="SELECT * FROM info I WHERE I.username = '$this->name'";
+        $prodotto ="SELECT * FROM immagini I WHERE I.username = '$this->name' AND I.type = 'prodotto'";
+        $promozione ="SELECT * FROM immagini I WHERE I.username = '$this->name' AND I.type = 'promozione'";
+
+        $info = parent::execute_query($info);
+        $prodotto = parent::execute_query($prodotto);
+        $promozione = parent::execute_query($promozione);
+
+        $giorni = array();
+        $giorni =$orario->getGiorniHTML();
+
+        $result_logo =$logo->read()->fetch_array(MYSQLI_ASSOC);;
+        $result_info = $info->fetch_array();
+        $result_orario =$orario->read();
 
 
 echo 
     '<div id="content_negozio">
-        <h3 id="titolo_negozio">'.$cicuia.'</h3>';
+        <h3 id="titolo_negozio">'.$result_info['negozio'].'</h3>';
 
 echo   '<div id="informazioni">
-            <img id="logo_negozio" src="images/imglego.jpg" alt="logo"/>
+            <img id="logo_negozio" src="images/logo/'.$result_logo['logo'].'" alt="'.$result_logo['alt'].'"/>
             <div id="contatti">
                 <h4 class="informazione">TELEFONO / FAX</h4>
-                <p class="dato">041610265</p>
+                <p class="dato">'.$result_info['telefono'].'</p>
                 <h4 class="informazione"><span xml:lang="en">EMAIL</span></h4>
-                <p class="dato">blablabla@lego.com</p>
+                <p class="dato">'.$result_info['mail'].'</p>
                 <h4 class="informazione">SITO WEB</h4>
-                <a class="dato" href="https://www.lego.com/it-it">www.lego.com/it-it</a>
-    
+                <a class="dato" href="'.$result_info['sito'].'">'.$result_info['sito'].'</a>
+                
                 <div id="orari">
-                    <h4 class="informazione">ORARI</h4>
-                    <p class="dato"><strong>Luned&igrave; :</strong> 9:00 - 21:00</p>
-                    <p class="dato"><strong>Marted&iacute; :</strong>  9:00 - 21:00</p>
-                    <p class="dato"><strong>Mercoled&iacute; :</strong>  9:00 - 21:00</p>
-                    <p class="dato"><strong>Gioved&iacute; :</strong>  9:00 - 21:00</p>
-                    <p class="dato"><strong>Venerd&iacute; :</strong>  9:00 - 21:00</p>
-                    <p class="dato"><strong>Sabato :</strong>  9:00 - 21:00</p>
-                    <p class="dato"><strong>Domenica :</strong>  9:00 - 21:00</p>                
-                </div>
+                    <h4 class="informazione">ORARI</h4>';
+                    for($i =0; $i < 7 ; $i ++){
+                        echo '<p class="dato"><strong>'.$giorni[$i].':</strong>'.$result_orario[$i].'</p>';
+                    }
+echo           '</div>
             </div>
-        </div>';
+        </div>
 
             <div id="descrizione">
                     <p id="testo">               
-                        <strong><span xml:lang="en">Our mission: To inspire and develop the builders of tomorrow</span></strong><br/>Il nostro scopo è ispirare ed educare i bambini a pensare creativamente, ragionare in modo sistematico e realizzare il loro potenziale, plasmando il loro futuro e sperimentando le infinite possibilità umane.  
-                    </p>
+                        <strong>'.$result_info['motto'].'</strong><br/>'.$result_info['descrizione'].'</p>
                     <div id="prodotti">
                         <h4 class="titolo_prodotti">PRODOTTI</h4>
                         
@@ -102,4 +116,15 @@ echo   '<div id="informazioni">
             </div>
          </div>  
 ';
+/*
+$rows =array();
+while($row = $result_pro->fetch_array(MYSQLI_ASSOC)){
+    $rows[] = $row;
+}
+if(count($rows)){
+    foreach($rows as $row){
+        echo '<option value="'.$row['username'].'">'.$row['username'].'</option>';           
+    }
+}
+*/
 ?>

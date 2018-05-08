@@ -8,6 +8,7 @@ class orario extends connection implements query{
     //campi privati
     private $numeri;
     private $giorni;
+    private $giorni_html;
     private $orari;
     private $apertura =510;
     private $chiusura =1350;
@@ -15,10 +16,12 @@ class orario extends connection implements query{
     private $user;
 
     //metodi
-    public function __construct(){
-        $this->user =$_SESSION['user'];
+    public function __construct($user){
+        $this->user =$user;
         $this->numeri = ['uno','due','tre','quattro','cinque','sei','sette'];
         $this->giorni = ['lunedi', 'martedi', 'mercoledi', 'giovedi', 'venerdi', 'sabato', 'domenica'];
+        $this->giorni_html = ['Luned&igrave;', 'Marted&iacute;', 'Mercoled&iacute;', 'Gioved&iacute;', 'Venerd&iacute;', 'Sabato', 'Domenica'];
+
         if(!empty($_POST)){
             $this->orari = array();
             for($i=0; $i<7; $i++){
@@ -71,7 +74,7 @@ class orario extends connection implements query{
         }
         $query =$query." FROM orario WHERE username = '$this->user'";
 
-        return mysqli_fetch_array(parent::execute_query($query));
+        return parent::execute_query($query)->fetch_array(MYSQLI_NUM);
     }
     public function write(){}
     public function getGiorni(){
@@ -79,6 +82,9 @@ class orario extends connection implements query{
     }
     public function getNumeri(){
         return $this->numeri;
+    }
+    public function getGiorniHTML(){
+        return $this->giorni_html;
     }
 }
 

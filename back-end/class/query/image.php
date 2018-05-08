@@ -26,11 +26,10 @@ class image extends connection implements query{
 
         //costruttore della classe inputPicture
 
-        public function __construct($type){
+        public function __construct($type, $user = NULL){
             $this->user =NULL;
-            if($_SESSION){
-                $this->user =$_SESSION['user'];
-            }
+            $this->user =$user;
+
             $this->type =$type;
             $this->directory ='../../mainPage/HTML/images/'.$this->type.'/';
             $this->extention= ['jpg', 'png','jpeg','gif'];
