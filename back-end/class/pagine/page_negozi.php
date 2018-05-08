@@ -28,8 +28,8 @@ class negozi implements type_page{
         echo $file;
 	}
 	public function menu(){
-        echo '<div id="menu">';
-		$this->menu->print();
+		$str ='<div id="menu">'.$this->menu->print().'</div>';
+		echo $str;
 	}		
     public function breadcrumb(){
     	echo '	<div id="breadcrumb">
@@ -41,7 +41,7 @@ class negozi implements type_page{
         <div id="footer">
             <div id="footerMenu">
                 <div id="contentMenuFooter">';
-                    $this->menu->print();
+                    $this->menu();
                 echo '
             </div>
         </div>

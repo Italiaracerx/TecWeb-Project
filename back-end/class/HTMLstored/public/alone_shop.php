@@ -67,45 +67,45 @@ echo           '</div>
                 }
                 else{
                     foreach($row_p as $row){
-                        echo '
-                        <div class="prodotto">
-                            <a href="prodotto1.html">
-                                <img class="gioco" src="images/prodotto/'.$row['source'].'" alt="'.$row['alt'].'"/>
-                            </a>
-                            <h5 class="NomeItem">'.$row['titolo'].'</h5>
-                        </div>';
+                        echo '  <div class="prodotto">
+                                    <a href="prodotto1.html">
+                                        <img class="gioco" src="images/prodotto/'.$row['source'].'" alt="'.$row['alt'].'"/>
+                                    </a>
+                                    <h5 class="NomeItem">'.$row['titolo'].'</h5>
+                                </div>';
                     }
-                }                 
-        echo '  </div>';
-            echo '
+                }
+                echo '</div>';
+                 
+                echo '
                     
-            <div id="promozioni">
-                <h4 class="titolo_prodotti">PROMOZIONI</h4>
-                <div id="elencoPromozioni">';
+                <div id="promozioni">
+                    <h4 class="titolo_prodotti">PROMOZIONI</h4>';
 
-                $result_promozione =$promozione->read();
-                $rows =array();
-                while($row = $result_promozione->fetch_array(MYSQLI_ASSOC)){
-                    $rows[] = $row;
-                }
-                if(!count($rows)){
-                    echo '                
-                    <div class ="no_image">
-                        <p class="text_message">coming soon</p>
-                    </div>';
-                }
-                else{
-                    foreach($rows as $row){
-                        echo '
-                        <div class="singola_promozione">
-                            <a href="promo2.html">
-                                <img class="promozione" src="images/promozione/'.$row[source].'" alt="'.$row[alt].'"/>
-                            </a> 
-                            <p>'.$row[titolo].'</p>
+                    $result_promozione =$promozione->read();
+                    $rows =array();
+                    while($row = $result_promozione->fetch_array(MYSQLI_ASSOC)){
+                        $rows[] = $row;
+                    }
+                    if(!count($rows)){
+                        echo '                
+                        <div class ="no_image">
+                            <p class="text_message">coming soon</p>
                         </div>';
                     }
-                }                 
-        echo '  </div>';
+                    else{
+                        echo '<div id="elencoPromozioni">';
+                        foreach($rows as $row){
+                            echo '
+                            <div class="singola_promozione">
+                                <a href="promo2.html">
+                                    <img class="promozione" src="images/promozione/'.$row[source].'" alt="'.$row[alt].'"/>
+                                </a> 
+                                <p>'.$row[titolo].'</p>
+                            </div>';
+                        }
+                        echo '  </div>';
+                    }                 
         echo '
 
             </div>

@@ -22,7 +22,7 @@ class page_private implements type_page{
 		if($this->javascript != NULL){
 			$js ='<script type="text/javascript" src="../Javascript/'.$this->javascript.'.js"></script>';
 		}
-		$file = str_replace('__JAVASCRIPT__',$js,$file);
+		$file =str_replace('__JAVASCRIPT__',$js,$file);
 		echo $file;
     }
     public function header(){
@@ -30,9 +30,9 @@ class page_private implements type_page{
         echo $file;
 	}
 	public function menu(){
-		echo '<div id="menu">';
-		$this->menu->print();
-		echo '</div>';
+		$str ='<div id="menu">'.$this->menu->print().'</div>';
+		$str =str_replace('__USER_NAME__',$_SESSION['user'],$str);
+		echo $str;
 	}		
     public function breadcrumb(){
     	$file ='<div id="breadcrumb"><h2><strong>';

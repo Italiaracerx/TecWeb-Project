@@ -6,12 +6,13 @@ class menu{
         $this->link =$mn;
     }
     public function print(){
-        echo '<p><a href="#content" class="accesaid">Skip navigation</a></p>
-                    <ul>';
+        $str =NULL;
+        $str ='<p><a href="#content" class="accesaid">Skip navigation</a></p><ul>';
                         foreach($this->link as $scheda){
-                            echo $scheda->printScheda();
+                            $str = $str.$scheda->printScheda();
                         }
-        echo ' </ul>';
+        return $str.' </ul>';
+        
     }
 }
 ?>

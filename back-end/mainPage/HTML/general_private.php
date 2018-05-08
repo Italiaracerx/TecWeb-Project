@@ -104,7 +104,7 @@
           <?php 
 
             $orari = new orario($_SESSION['user']);
-            $ora=$orari->read();
+            $ora=$orari->read()->fetch_array(MYSQLI_NUM);
             $giorni=$orari->getGiorni();
             $numeri=$orari->getNumeri();
             for($i=0;$i<7;$i++){

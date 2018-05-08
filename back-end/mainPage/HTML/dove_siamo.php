@@ -13,7 +13,7 @@
 	<div id="content">
 	   <h3 id="intestazione"> Come raggiungere il Centro Archimede</h3>
         <div id="doveandare">
-        <img id="mappa" src="images/mappaArchimede.png" alt="mappa del centro"/>
+        <img id="mappa" src="images/default/mappaArchimede.png" alt="mappa del centro"/>
         <div id="testoInformazioni">
 			<h3>Dalla stazione ferroviaria:</h3>
 			<p> si prende un autobus per via Tommaseo ("Fiera di Padova"), si scende di fronte alla "Fiera di Padova", si prende via U. Bassi (sulla destra al semaforo) e si cammina per circa 200m.</p>

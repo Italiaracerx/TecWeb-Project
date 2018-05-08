@@ -13,7 +13,6 @@ class page_public implements type_page{
 	}
 	public function intestazione(){
 		$file = file_get_contents('../../class/HTMLstored/public/preambolo.html', FILE_USE_INCLUDE_PATH);
-		$file = str_replace('__USER__',$_SESSION['user'],$file);
 		$file = str_replace('__NAME_PAGE__',$this->name,$file);
 		$file = str_replace('__STYLE__',page_public::$style,$file);
 
@@ -24,8 +23,8 @@ class page_public implements type_page{
         echo $file;
 	}
 	public function menu(){
-        echo '<div id="menu">';
-		$this->menu->print();
+		$str ='<div id="menu">'.$this->menu->print().'</div>';
+		echo $str;
 	}		
     public function breadcrumb(){
     	echo '	<div id="breadcrumb">
@@ -37,7 +36,7 @@ class page_public implements type_page{
         <div id="footer">
             <div id="footerMenu">
                 <div id="contentMenuFooter">';
-                    $this->menu->print();
+                    $this->menu();
                 echo '
             </div>
         </div>

@@ -8,6 +8,7 @@ class staticPath{
     private static $link_promozioni_private='promozioni_private.php';
     private static $link_prodotti_private='prodotti_private.php';
     private static $link_negozio='negozio.php';
+    private static $get='?shop=__USER_NAME__';
     private static $link_home='home.php';
     private static $link_promozioni='promozioni.php';
     private static $link_dove_siamo='dove_siamo.php';
@@ -23,7 +24,7 @@ class staticPath{
         $private[]=new schedaMenu("Generale",staticPath::$link_general_private);
         $private[]=new schedaMenu("Promozioni",staticPath::$link_promozioni_private);
         $private[]=new schedaMenu("Prodotti",staticPath::$link_prodotti_private);
-        $private[]=new schedaMenu("Link Negozio",staticPath::$link_negozio);
+        $private[]=new schedaMenu("Link Negozio",staticPath::$link_negozio.staticPath::$get);
         $private[]=new schedaMenu("Logout",staticPath::$link_logout);
         if($active < '5'){
         $private[$active]->activation();
