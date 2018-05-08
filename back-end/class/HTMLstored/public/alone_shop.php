@@ -48,104 +48,69 @@ echo           '</div>
         </div>
 
             <div id="descrizione">
-                    <p id="testo">               
-                        <strong>'.$result_info['motto'].'</strong><br/>'.$result_info['descrizione'].'</p>
-                    <div id="prodotti">
-                        <h4 class="titolo_prodotti">PRODOTTI</h4>
-                        
-                        <div class="prodotto">
-                            <a href="prodotto1.html">
-                            <img class="gioco" src="images/lego1.jpg" alt="prodotto in vendita"/>
-                             </a>
-                            <h5 class="NomeItem">gioco 1</h5>
-                        </div>  
-
-                        <div class="prodotto">
-                            <a href="prodotto1.html">
-                            <img class="gioco" src="images/lego2.jpg" alt="prodotto in vendita"/>
-                             </a>
-                            <h5 class="NomeItem">gioco 2</h5>
-                        </div>
-
-                        <div class="prodotto">
-                            <a href="prodotto1.html">
-                            <img class="gioco" src="images/lego3.jpg" alt="prodotto  in vendita"/>
-                             </a>
-                            <h5 class="NomeItem">gioco 3</h5>
-                        </div>                       
+                <p id="testo">               
+                    <strong>'.$result_info['motto'].'</strong><br/>'.$result_info['descrizione'].'
+                </p>
+                <div id="prodotti">
+                    <h4 class="titolo_prodotti">PRODOTTI</h4>';
+                    
+                $result_prodotto =$prodotto->read();
+                $row_p =array();
+                while($row = $result_prodotto->fetch_array(MYSQLI_ASSOC)){
+                    $row_p[] = $row;
+                }
+                if(!count($row_p)){
+                    echo '                
+                    <div class ="no_image">
+                        <p class="text_message">coming soon</p>
                     </div>';
-                    $result_promozione =$promozione->read();
-                    $rows =array();
-                    while($row = $result_promozione->fetch_array(MYSQLI_ASSOC)){
-                      $rows[] = $row;
-                    }
-                    if(!count($rows)){
-                      echo '                <div class ="no_image">
-                    <p class="text_message">coming soon</p>
-                </div>
-';
-                    }
-                    else{
-                      foreach($rows as $row){
-                            echo '                        <div class="prodotto">
+                }
+                else{
+                    foreach($row_p as $row){
+                        echo '
+                        <div class="prodotto">
                             <a href="prodotto1.html">
-                            <img class="gioco" src="images/lego2.jpg" alt="prodotto in vendita"/>
-                             </a>
-                            <h5 class="NomeItem">gioco 2</h5>
+                                <img class="gioco" src="images/prodotto/'.$row['source'].'" alt="'.$row['alt'].'"/>
+                            </a>
+                            <h5 class="NomeItem">'.$row['titolo'].'</h5>
                         </div>';
-                      }
                     }
-                    echo '
-                    <div id="promozioni">
+                }                 
+        echo '  </div>';
+            echo '
+                    
+            <div id="promozioni">
+                <h4 class="titolo_prodotti">PROMOZIONI</h4>
+                <div id="elencoPromozioni">';
 
-                      <h4 class="titolo_prodotti">PROMOZIONI</h4>
-                     <div id="elencoPromozioni">
-                       <div class="singola_promozione">
-                          <a href="promo1.html">
-                          <img class="promozione" src="images/promo1.jpg" alt="promozione del negozio"/> 
-                          </a>
-                          <p>Nome_Negozio_1</p>
-                       </div>
-                       <div class="singola_promozione">
-                          <a href="promo2.html">
-                          <img class="promozione" src="images/promo2.jpg" alt="promozione del negozio"/>
-                          </a> 
-                          <p>Nome_Negozio_2</p>
-                        </div>
-                       <div class="singola_promozione">
-                         <a href="promo3.html">
-                         <img class="promozione" src="images/promo3.png" alt="promozione del negozio"/> 
-                          </a>
-                         <p>Nome_Negozio_3</p>
-                        </div>
-                       <div class="singola_promozione">
-                          <a href="promo4.html">
-                          <img class="promozione" src="images/promo1.jpg" alt="promozione del negozio"/> 
-                          </a>
-                          <p>Nome_Negozio_4</p>
-                       </div>
-                       <div class="singola_promozione">
-                         <a href="promo5.html">
-                         <img class="promozione" src="images/promo1.jpg" alt="promozione"/> 
-                          </a>
-                          <p>Nome_Negozio_4</p>
-                        </div>
-                      </div>
+                $result_promozione =$promozione->read();
+                $rows =array();
+                while($row = $result_promozione->fetch_array(MYSQLI_ASSOC)){
+                    $rows[] = $row;
+                }
+                if(!count($rows)){
+                    echo '                
+                    <div class ="no_image">
+                        <p class="text_message">coming soon</p>
+                    </div>';
+                }
+                else{
+                    foreach($rows as $row){
+                        echo '
+                        <div class="singola_promozione">
+                            <a href="promo2.html">
+                                <img class="promozione" src="images/promozione/'.$row[source].'" alt="'.$row[alt].'"/>
+                            </a> 
+                            <p>'.$row[titolo].'</p>
+                        </div>';
+                    }
+                }                 
+        echo '  </div>';
+        echo '
 
-
-                    </div>
+            </div>
             </div>
          </div>  
 ';
-/*
-$rows =array();
-while($row = $result_pro->fetch_array(MYSQLI_ASSOC)){
-    $rows[] = $row;
-}
-if(count($rows)){
-    foreach($rows as $row){
-        echo '<option value="'.$row['username'].'">'.$row['username'].'</option>';           
-    }
-}
-*/
+
 ?>
