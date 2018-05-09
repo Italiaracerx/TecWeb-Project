@@ -139,6 +139,14 @@ html, body{
 #tabellaLaterale h4{
 	font-weight: bold;	
 }
+
+#tabellaLaterale ul{
+	list-style-type: none;
+}
+#tabellaLaterale li{
+	border-bottom: 1px solid grey;
+}
+
 #tabella_orari{
 	display: inline-block;
 	margin-bottom: 10%;
@@ -151,11 +159,11 @@ html, body{
 	margin: 1em;
 }
 
-#aperture{
+.aperture_chiusure{
 	display: inline-block;
 	margin:2em 0em 1em 0em;
 }
-#aperture h4{
+.aperture_chiusure h4{
 	border-bottom:2px solid #a02222;
 }
 #novità{
@@ -464,17 +472,30 @@ html, body{
   margin: 1em 1em 1em 1em; 
 }
 
-.no_image{
-	padding: 1em 1em 1em 1em;
-	}
-	.text_message{
-	
-		margin-top: 2em;
-		margin-bottom: 2em;
-		padding-top:1em;
-		padding-bottom:1em;
-		height:50%;
-		background-color: #96969064;
-		text-align: center;
-		text-transform: uppercase;
-	}
+/*PRODPROMO CSS*/
+
+/*uguale a negozio lego*/
+#titolo_prodpromo{
+	padding-top:1em;	
+	padding-bottom: 1em;
+	font-size:2em;
+	letter-spacing: 10px;
+	line-height: 1em;
+	border-bottom: 2px solid #A21E1E;
+	text-align: center;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+#img_prodpromo{
+	float: left;
+	max-width: 50%;
+}
+
+#prodpromo_rightSide{
+	float:right;
+}
+
+#descrizione_prodpromo{
+	padding-top: 1em;
+}
