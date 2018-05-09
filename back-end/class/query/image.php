@@ -95,10 +95,10 @@ class image extends connection implements query{
                 throw new exeption('error','upload fallito.');
             }
         }
-        public function read(){
+        public function read($limit = NULL){
             $query="SELECT source, titolo, alt FROM immagini WHERE username = '$this->user' AND type = '$this->type'";
             if($this->user == NULL){
-                $query="SELECT I.source, F.negozio, I.alt FROM immagini I JOIN info F WHERE I.type = '$this->type' AND I.username = F.username";
+                $query="SELECT I.source, F.negozio, I.alt FROM immagini I JOIN info F WHERE I.type = '$this->type' AND I.username = F.username LIMIT 6";
             }
             return parent::execute_query($query);
         }
