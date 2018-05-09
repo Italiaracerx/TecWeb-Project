@@ -26,14 +26,14 @@
                         </div>';
                     }
                     else{
-                        echo '<div id="promozioniAttive">';
+                        echo '<div id="PromozioniAttive">';
                         foreach($rows as $row){
                             echo '
                             <div class="singola_promozione">
                                 <a href="promo2.html">
                                     <img class="promozione" src="images/promozione/'.$row['source'].'" alt="'.$row['alt'].'"/>
                                 </a> 
-                                <p>'.$row['negozio'].'</p>
+                                <p class="nome_negozio">'.$row['negozio'].'</p>
                             </div>';
                         }
                         echo '  </div>';

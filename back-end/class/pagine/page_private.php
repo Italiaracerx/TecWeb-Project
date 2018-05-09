@@ -37,7 +37,7 @@ class page_private implements type_page{
     public function breadcrumb(){
     	$file ='<div id="breadcrumb"><h2><strong>';
     	if($_SESSION['user'] != NULL){
-    		$file =$file.$_SESSION['user'].' -> </strong> '.$this->name.'</h2></div>';
+    		$file =$file.$_SESSION['user'].' : </strong> '.$this->name.'</h2></div>';
     	}
     	else{
     		$file =$file.$this->name.'</strong></h2></div>';

@@ -36,7 +36,7 @@ echo   '<div id="informazioni">
                 <h4 class="informazione"><span xml:lang="en">EMAIL</span></h4>
                 <p class="dato">'.$result_info['mail'].'</p>
                 <h4 class="informazione">SITO WEB</h4>
-                <a class="dato" href="'.$result_info['sito'].'">'.$result_info['sito'].'</a>
+                <a class="dato" href="http://'.$result_info['sito'].'">'.$result_info['sito'].'</a>
                 
                 <div id="orari">
                     <h4 class="informazione">ORARI</h4>';
