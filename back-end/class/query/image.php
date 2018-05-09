@@ -27,7 +27,6 @@ class image extends connection implements query{
         //costruttore della classe inputPicture
 
         public function __construct($type, $user = NULL){
-            $this->user =NULL;
             $this->user =$user;
 
             $this->type =$type;
@@ -99,7 +98,7 @@ class image extends connection implements query{
         public function read(){
             $query="SELECT source, titolo, alt FROM immagini WHERE username = '$this->user' AND type = '$this->type'";
             if($this->user == NULL){
-                $query="SELECT titolo FROM immagini WHERE type = '$this->type'";
+                $query="SELECT I.source, F.negozio, I.alt FROM immagini I JOIN info F WHERE I.type = '$this->type' AND I.username = F.username";
             }
             return parent::execute_query($query);
         }

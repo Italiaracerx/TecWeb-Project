@@ -103,12 +103,9 @@ $$ DELIMITER ;
 
 DELIMITER $$
 CREATE TRIGGER NuovoUtente AFTER INSERT ON account FOR EACH ROW BEGIN
-if NEW.type <> 'admin'
-then
 	INSERT INTO info values (NEW.username,NEW.username,'WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS');
 	INSERT INTO orario values (NEW.username,'08:30-21:30','08:30-21:30','08:30-21:30','08:30-21:30','08:30-21:30','08:30-21:30','08:30-21:30');
 	INSERT INTO logo values (NEW.username,'working_progress.png','logo negozio');
-end if;
 END
 $$ DELIMITER ;
 
