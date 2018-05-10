@@ -65,7 +65,7 @@ class image extends connection implements query{
                 
                 if(($arraystart[3]>=$arrayend[3]) && ($arraystart[2]>=$arrayend[2])){ 
                     if($arraystart[1]>=$arrayend[1]){ 
-                        if($arraystart[0]>=$arrayend[0]){throw new exeption('error','Data di fine precedente a quella di inizio');} 
+                        if($arraystart[0]>$arrayend[0]){throw new exeption('error','Data di fine precedente a quella di inizio');} 
                     } 
                 } 
             } 
@@ -134,7 +134,8 @@ class image extends connection implements query{
             echo $insert_immagine;
             if(parent::execute_query($insert_immagine) == NULL){
                 unlink($this->directory.$this->name);
-                throw new exeption('error','upload fallito, riprovare più tardi.');
+
+                throw new exception('error','upload fallito, riprovare più tardi.');
             }
             else{
                 rename($this->directory.$this->name,$this->directory.$rename);
