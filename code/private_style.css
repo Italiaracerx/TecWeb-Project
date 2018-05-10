@@ -346,7 +346,11 @@ textarea{
 }
 .contenuto_corrente h5{
 	padding: 2px;
+	color: white;
+	background-color: rgb(60, 57, 57);
 }
+
+
 #colonna_destra_sotto{
 	margin-left: 32%;
 	display: block;
