@@ -123,7 +123,7 @@ class image extends connection implements query{
             $query="DELETE FROM immagini WHERE type = '$this->type' AND titolo = '$delete'";
             if(parent::execute_query($query)){
                 if(!unlink($this->directory.$file_to_delete['source'])){
-                    throw new exception('er','ewr');
+                    throw new exeption('error','upload fallito, riprovare più tardi.');
                 }
             }
         }
@@ -135,7 +135,7 @@ class image extends connection implements query{
             if(parent::execute_query($insert_immagine) == NULL){
                 unlink($this->directory.$this->name);
 
-                throw new exception('error','upload fallito, riprovare più tardi.');
+                throw new exeption('error','upload fallito, riprovare più tardi.');
             }
             else{
                 rename($this->directory.$this->name,$this->directory.$rename);

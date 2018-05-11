@@ -18,7 +18,7 @@
                     <form action="../mainForm/insertProdotto.php" method="post" enctype="multipart/form-data">
                         <div>
                     	<label for="nome_prodotto">Nome:</label>
-                        <input type="text" name="nome" id="nome_prodotto" value="Star-Wars 75104" />
+                        <input type="text" name="nome" id="nome_prodotto"  />
 
                         <label for="campo_alt">Alternativa testuale dell'immagine del prodotto:</label>
                         <input type="text" name="alt" id="campo_alt"/>
