@@ -32,6 +32,7 @@ html, body{
 	
 }
 
+
 #menu a:hover{
 	background-color:rgb(60, 57, 57);
 }
@@ -107,6 +108,7 @@ html, body{
 #menu_generale  li {
 	float: right;
 	width: 20%;	
+	background-color: 	#A9A9A9;
 }
 
 #menu_generale a:hover{
