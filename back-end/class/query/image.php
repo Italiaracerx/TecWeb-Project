@@ -16,6 +16,8 @@ class image extends connection implements query{
 
         private $name;
         private $size;
+        private $imageHeight;
+        private $imageWidth;
         private $tmp_name;
         private $error;
         private $destination;
@@ -31,7 +33,7 @@ class image extends connection implements query{
 
             $this->type =$type;
             $this->directory ='../../mainPage/HTML/images/'.$this->type.'/';
-            $this->extention= ['jpg', 'png','jpeg','gif'];
+            $this->extention= ['jpg', 'png','jpeg','gif', 'JPG'];
         }
         public function take_data(){
             if($_POST){
@@ -50,10 +52,17 @@ class image extends connection implements query{
                 $this->user =$_SESSION['user'];
                 $this->name =$_FILES["immagine"]["name"];
                 $this->tmp_name =$_FILES["immagine"]["tmp_name"];
+                $temp=getimagesize(realpath($this->tmp_name));
+                $this->imageHeight=$temp[1];
+                $this->imageWidth=$temp[0];
             }
         }
         public function checker(){
-            if($this->type=='promozione'){ 
+            if($this->type=='logo'){
+                if($this->imageWidth/$this->imageHeight!=(1)){throw new exeption('error','upload fallito, l\'immagine caricata deve essere in formato 1:1.');}
+            }
+            if($this->type=='promozione'){
+                if($this->imageWidth/$this->imageHeight!=(4/3)){throw new exeption('error','upload fallito, l\'immagine caricata deve essere in formato 4:3.');}
                 preg_match($this->regex, $this->start, $okstart, PREG_OFFSET_CAPTURE); 
                 if(empty($okstart)){throw new exeption('error','data non in formato GG-MM-AAAA o non calendarizzato');} 
                 preg_match($this->regex, $this->finish, $okfinish, PREG_OFFSET_CAPTURE); 
@@ -79,7 +88,8 @@ class image extends connection implements query{
             /*controllo che il formato dell'immagine inserito
             * sia accettato dal sito
             */
-            
+
+
             $sent =false;
             foreach($this->extention as $formato){
                 if(pathinfo($this->name, PATHINFO_EXTENSION) == $formato){
