@@ -61,6 +61,10 @@ class image extends connection implements query{
             if($this->type=='logo'){
                 if($this->imageWidth/$this->imageHeight!=(1)){throw new exeption('error','upload fallito, l\'immagine caricata deve essere in formato 1:1.');}
             }
+            if($this->type=='prodotto'){
+                if($this->imageWidth/$this->imageHeight!=(4/3)){throw new exeption('error','upload fallito, l\'immagine caricata deve essere in formato 4:3.');}
+            }
+
             if($this->type=='promozione'){
                 if($this->imageWidth/$this->imageHeight!=(4/3)){throw new exeption('error','upload fallito, l\'immagine caricata deve essere in formato 4:3.');}
                 preg_match($this->regex, $this->start, $okstart, PREG_OFFSET_CAPTURE); 
