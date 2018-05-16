@@ -101,8 +101,6 @@ html, body{
 
 #content h2{
     text-align: center;
-
-
 }
 #torre{ 
   width: 100%; 
@@ -492,4 +490,10 @@ html, body{
 
 #descrizione_prodpromo{
 	padding-top: 1em;
+	padding-bottom: 1em;
+}
+#date_inizio_fine{
+	padding-top: 0.5em;
+	text-align: right;
+	border-top: 2px solid #A21E1E;
 }
