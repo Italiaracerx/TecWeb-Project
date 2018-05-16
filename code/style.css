@@ -206,19 +206,12 @@ html, body{
 	background: linear-gradient(to bottom right,brown,	#DB7093);
 }
 
-#titolo_promozione{
+#titolo_promozione{ /*utile???*/
 	text-align: center;
 }
 
 #sottoPiano h2{
-	border-bottom: 1px solid #000;
-	font-weight: 500;
-	text-transform: uppercase;
-	font-size: 2em;
-	display: inline-block;
 	width: 95%;
-	text-align: center;
-	margin-top: 0.5em;
 }
 .singola_promozione{
 	border:2px solid #000;
@@ -238,6 +231,7 @@ html, body{
 
 }
 #elencoPromozioni{
+	padding-top: 1em;
 	overflow: auto;
 }
 
@@ -476,9 +470,9 @@ html, body{
 /*PRODPROMO CSS*/
 
 /*uguale a negozio lego*/
-#titolo_prodpromo{
+.titolo_body{
 	padding-top:1em;	
-	padding-bottom: 1em;
+	padding-bottom: 0.5em;
 	font-size:2em;
 	letter-spacing: 10px;
 	line-height: 1em;
