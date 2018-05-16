@@ -231,6 +231,7 @@ html, body{
 }
 .singola_promozione a{
 	display: inline-block;
+	text-decoration: none;
 	}
 .promozione{
 	width: 100%;
