@@ -20,6 +20,7 @@ html, body{
 }
 
 #menu ul {
+
 	list-style-type: none;
 	margin: 0;
 	overflow: hidden;
@@ -31,7 +32,6 @@ html, body{
 	width: 20%;
 	
 }
-
 
 #menu a:hover{
 	background-color:rgb(60, 57, 57);
@@ -96,38 +96,6 @@ html, body{
 }
 
 /*---------GENERALE_ADMIN-----------*/
-
-
-#menu_generale ul {
-	list-style-type: none;
-	margin: 0;
-	overflow: hidden;
-	background-color: #6a6a6a;
-}
-
-#menu_generale  li {
-	float: right;
-	width: 20%;	
-	background-color: 	#A9A9A9;
-}
-
-#menu_generale a:hover{
-	background-color:rgb(60, 57, 57);
-}
-#menu_generale li a {
-	display: block;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-}
-#menu_generale a:link{
-    color:white;
-}
-#menu_generale a:visited{
-    color:white;
-}
-
-
 #content_generale{
 	overflow:auto;
 	padding: 1em;
@@ -164,6 +132,14 @@ html, body{
 	font-size: 1.2em;
 }
 
+.intestazione_1{
+	padding-bottom:0.5em;
+	border-bottom: 2px #585753	 solid;
+	text-align: center;
+	margin-bottom:1em;
+	letter-spacing: 2px;
+	font-size: 1.2em;
+}
 
 .form_sopra{
 	text-align: center;
@@ -300,8 +276,7 @@ textarea{
 }
 
 
-
-/*-------------PROMOZIONI - PRODOTTIPRIVATO---------*/
+/*-------------PROMOZIONI PRIVATO---------*/
 
 #colonna_sinistra{
 	width: 30%;	
@@ -329,47 +304,33 @@ textarea{
 	margin-top: 3.5em;
 }
 
-#colonna_destra_sotto form{
-	display: inline-block;
+#destra_prodotti{
+	margin-left: 32%;
+	padding-right: 1em;
+	text-align: center;
+	margin-top: 2em;
+}
+
+#deleteProd{
 	width: 40%;
 }
-.contenuto_corrente{
+
+.promozione{
+	width: 100%;
+}
+.imgPromozione{
 	margin-top:1em;
 	float:left;
 	display:block;
-	width: 26%;
-	margin:0 3% 0 3%;
-	border:2px solid black;
-
+	width: 25%;
+	margin-left:4.1%;
+	margin-right:4.1%;
 }
-.contenuto_corrente img{
-	height:11em;
-	width: 100%;
-}
-.contenuto_corrente h5{
-	padding: 2px;
-	color: white;
-	background-color: rgb(60, 57, 57);
-}
-
-
-#colonna_destra_sotto{
-	margin-left: 32%;
-	display: block;
-	padding-right: 1em;
-	text-align: center;
-	margin-top: 3.5em;
-}
-
-#colonna_destra_sotto form{
-	display: inline-block;
-	width: 40%;
-}
-
 .no_image{
 padding: 1em 1em 1em 1em;
 }
 .text_message{
+
 	margin-top: 2em;
 	margin-bottom: 2em;
 	padding-top:1em;
@@ -379,8 +340,6 @@ padding: 1em 1em 1em 1em;
 	text-align: center;
 	text-transform: uppercase;
 }
-
-
 /*--------LOGIN---------*/
 #formLogin
 {
@@ -460,6 +419,11 @@ padding: 1em 1em 1em 1em;
 #verifica_orario {background-color: #fd3516;
 	text-align:center;
 	margin-bottom: 0.4em;
+}
+
+#logoChange{
+	background-color: #fd3516;
+	text-align:center;
 }
 
 
@@ -574,6 +538,26 @@ padding: 1em 1em 1em 1em;
 	border-radius: 100px;
 }
 
-
+#correct{ 
+	font-size: 1em; 
+	text-transform: uppercase; 
+	padding-top:0.5em; 
+	padding-bottom:0.5em; 
+	font-weight: normal; 
+	text-align: center; 
+	color: white; 
+	background-color: #4CAF50; 
+	} 
+	  
+	#error{ 
+	font-size: 1em; 
+	text-transform: uppercase; 
+	padding-top:0.5em; 
+	padding-bottom:0.5em; 
+	font-weight: normal; 
+	text-align: center; 
+	color: white; 
+	background-color: rgba(218, 0, 0, 0.693); 
+	} 
 
 
