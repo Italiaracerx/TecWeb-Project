@@ -98,15 +98,17 @@
     return false;
       }
 
-      var img=document.getElementById('imgPromo').value;
 
-      if(img!="") { 
+     var img=document.getElementById('imgPromo').value;     
+      
+
+   if(img!="") { 
      var fup = document.getElementById('imgPromo'); 
      var fileName = fup.value; 
      var ext = fileName.substring(fileName.lastIndexOf('.') + 1); 
-     if(ext != "JPEG" && ext != "jpeg" && ext != "jpg" && ext != "JPG" && ext != "PNG" && ext != "png"
+     if(ext != "JPEG" && ext != "jpeg" && ext != "jpg" && ext != "JPG" && ext != "PNG" && ext != "png"  
       &&  ext != "GIF" && ext != "gif" ){ 
-        var a="Immagine consentite:</br> JPEG o PNG o JPG";
+        var a="Immagine consentite:</br> JPEG  PNG  JPG  GIF";
     document.getElementById("nuova_promozione").innerHTML = a ;
     return false;
      } 
@@ -114,9 +116,18 @@
   var a="Inserire un'immagine";
     document.getElementById("nuova_promozione").innerHTML = a ;
     return false;
-} 
+}
+
+ var ima=document.getElementById('imgPromo');
+      
+      if(ima.offsetHeight!=ima.offsetWidth){
+ var a="Altezza e larghezza immagine</br>  non uguali";
+    document.getElementById("nuova_promozione").innerHTML = a ;
+    return false;} 
+
 return true; 
 }
+
 
   function validatePromo(){
   var indice_selezionato = document.getElementById('deleteProm').selectedIndex;

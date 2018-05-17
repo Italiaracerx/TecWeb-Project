@@ -456,3 +456,34 @@ if(charCode==118 || charCode==99 || charCode==97 || charCode==104 || charCode==1
     if(charCode!=45  && (charCode<48 || charCode>58))
       {return false;}
 }
+
+
+function changeLogo()
+{
+        var img=document.getElementById('immmagine').value;     
+if(img!="") { 
+     var fup = document.getElementById('immmagine'); 
+     var fileName = fup.value; 
+     var ext = fileName.substring(fileName.lastIndexOf('.') + 1); 
+     if(ext != "JPEG" && ext != "jpeg" && ext != "jpg" && ext != "JPG" && ext != "PNG" && ext != "png"  
+      &&  ext != "GIF" && ext != "gif" ){ 
+        var a="Immagine consentite:</br> JPEG  PNG  JPG  GIF";
+    document.getElementById("logoChange").innerHTML = a ;
+    return false;
+     } 
+}else{
+  var a="Inserire un'immagine";
+    document.getElementById("logoChange").innerHTML = a ;
+    return false;
+}
+
+ var ima=document.getElementById('immmagine');
+      
+      if(ima.offsetHeight!=ima.offsetWidth){
+ var a="Altezza e larghezza immagine</br>  non uguali";
+    document.getElementById("logoChange").innerHTML = a ;
+    return false;} 
+
+return true; 
+
+}

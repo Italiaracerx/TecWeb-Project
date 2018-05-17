@@ -33,7 +33,7 @@ function checkProd(){
      var ext = fileName.substring(fileName.lastIndexOf('.') + 1); 
      if(ext != "JPEG" && ext != "jpeg" && ext != "jpg" && ext != "JPG" && ext != "PNG" && ext != "png" 
      	&&  ext != "GIF" && ext != "gif" ){ 
-        var a="Immagine consentite:</br> JPEG o PNG o JPG";
+        var a="Immagine consentite:</br> JPEG  PNG  JPG  GIF";
     document.getElementById("newProduct").innerHTML = a ;
     return false;
      } 
@@ -41,7 +41,14 @@ function checkProd(){
   var a="Inserire un'immagine";
     document.getElementById("newProduct").innerHTML = a ;
     return false;
-} 
+}
+
+var ima=document.getElementById('immagine');
+      
+      if(ima.offsetHeight!=ima.offsetWidth){
+ var a="Altezza e larghezza immagine</br>  non uguali";
+    document.getElementById("newProduct").innerHTML = a ;
+    return false;}  
 return true; 
 
 }
