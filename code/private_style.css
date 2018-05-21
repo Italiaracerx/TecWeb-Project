@@ -46,7 +46,8 @@ html, body{
 	display: block;
 	text-align: center;
 	padding: 14px 16px;
-	text-decoration: none;
+	text-decoration: none;contenuto_corrente
+
 }
 
 #menu a:link{
@@ -55,6 +56,16 @@ html, body{
 #menu a:visited{
     color:white;
 }
+
+#menu_secondario ul{
+	background-color:#D3D3D3;
+}
+
+#menu_secondario li{
+	float: right;
+	background-color:#6a6a6a;
+}
+
 
 #header h2{
 	font-size: 1.5em;
@@ -276,7 +287,8 @@ textarea{
 }
 
 
-/*-------------PROMOZIONI PRIVATO---------*/
+
+/*-------------PROMOZIONI - PRODOTTIPRIVATO---------*/
 
 #colonna_sinistra{
 	width: 30%;	
@@ -302,6 +314,29 @@ textarea{
 	padding-right: 1em;
 	text-align: center;
 	margin-top: 3.5em;
+}
+
+#colonna_destra_sotto form{
+  display: inline-block;
+  width: 40%;
+}
+.contenuto_corrente{
+  margin-top:1em;
+  float:left;
+  display:block;
+  width: 26%;
+  margin:0 3% 0 3%;
+  border:2px solid black;
+ 
+}
+.contenuto_corrente img{
+  height:11em;
+  width: 100%;
+}
+.contenuto_corrente h5{
+  padding: 2px;
+  color: white;
+  background-color: rgb(60, 57, 57);
 }
 
 #destra_prodotti{
