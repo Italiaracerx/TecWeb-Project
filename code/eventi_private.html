@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<!-- Specifico il charset -->
+	<meta http-equiv="Content-Type" content="txt/html charset= UTF-8" />
+
+	<title>Centro Archimede</title>
+	<link rel="stylesheet" type="text/css" href="private_style.css" media="handheld, screen"/>
+	<!--<link rel="stylesheet" type="text/css" href="mobile.css" media="handheld, screen and (max-width:480px),
+	only screen and (max-device-width:480px)"/>per dispositivi mobili
+
+	<link rel="stylesheet" type="text/css" href="print" media="print"/>STAMPA
+    -->
+<script type="text/javascript" src="Javascript/general_admin.js"></script>
+    
+</head>
+ 
+<body>
+    <div id="header">	    
+            <div id="titolo">
+                <h3>CENTRO COMMERCIALE ARCHIMEDE</h3>
+                <h1>AMMINISTRAZIONE</h1>
+            </div>
+    </div>
+
+    <div id="menu">
+        <p><a href="#content" class="accesaid">Skip navigation</a></p>
+        <ul>
+            <li><a href="generale_admin.html">Generale</a></li>
+            <li><a class="active" href="">Eventi</a></li>
+            <li xml:lang="en"><a href="">Logout</a></li>
+        </ul> 
+    </div>
+
+    <div id="breadcrumb">
+        <h2><strong>ADMINISTRATOR</strong> > GENERALE</h2>        
+    </div>
+    <div id="content">
+        <div class="sopra">
+            <div class="form_sopra">
+                <p class="intestazione">APERTURA/CHIUSURA</p>
+                <div id="controllo_openclose"></div>
+                <form  action="" method="post" onsubmit="return descrizione()" >
+                    <div >
+                    <label for="evento">Tipo di evento:</label>
+                    <select name="evento" id="evento">
+                    <option value="Cerca nel menu:">Cerca nel menu:</option>
+                    <option value="Apertura">Apertura</option>
+                    <option value="Chiusura">Chiusura</option>
+                    </select> 
+                    <label for="data">Inserire Data:</label>
+                    <input type="text" name="data" id="data"  />  
+                    <input type="submit" name="tasto_salva" value="Salva"/>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form_sopra">
+                <p class="intestazione">NOVITA'</p>
+                <div id="controllo_novita"></div>
+                <form  action="" method="post" onsubmit="return novita()">
+                    <div>
+                    <label for="data_novità">Inserire Data:</label>
+                    <input type="text" name="data_novità" id="data_novità"/>  
+                    <label for="novità">Descrizione:</label>
+                    <textarea id="novità" name="testo" rows="4" cols="36" >Inserisci la nuova novità</textarea>
+                    <input type="reset" name="tasto_reset"  value="Reset"/>  
+                    <input type="submit" name="tasto_salva"  value="Salva"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="sopra">
+            <div class="form_sopra">
+                <p class="intestazione">ELIMINA APERTURE O CHIUSURE</p>
+                <form action="" method="post" onsubmit="">
+                    <div>
+                    <label for="cancella_data">Segli evento da cancellare:</label>
+                    <input type="radio" name="date" value="apertura 13/11/2011"> apertura 13/11/2011<br>
+                    <input type="radio" name="date" value="chiusura 12/11/2011"> chiusura 12/11/2011<br>
+                    <input type="radio" name="date" value="apertura 11/11/2011"> apertura 11/11/2011<br>
+                    <input type="submit" name="tasto_cancella"  value="Cancella"/>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form_sopra">
+                <p class="intestazione">ELIMINA NOVITA'</p>
+                <form action="" method="post" onsubmit="">
+                    <div>
+                        <label for="cancella_novita">Scegli novita' da cancellare:</label>
+                        <input type="radio" name="novita" value="Aperti con orario continuato 1/05/2018">Aperti con orario continuato 1/05/2018<br>
+                        <input type="radio" name="novita" value="Aperti con orario continuato 2/05/2018">Aperti con orario continuato 1/05/2018<br>
+                        <input type="submit" name="tasto_cancella"  value="Cancella"/>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <div id="footer">
+        </div>
+</body>
+</html> 
