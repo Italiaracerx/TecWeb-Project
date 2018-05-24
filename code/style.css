@@ -220,13 +220,12 @@ html, body{
 	margin: 3%;
 	text-align: center;
 	overflow: auto;
-
 }
 .singola_promozione a{
 	display: inline-block;
 	text-decoration: none;
 	}
-.promozione{
+.singola_promozione img{
 	width: 100%;
 
 }
