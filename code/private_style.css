@@ -24,7 +24,7 @@ html, body{
 	list-style-type: none;
 	margin: 0;
 	overflow: hidden;
-	background-color: #6a6a6a;
+	background-color: #0006;
 }
 
 #menu li {
@@ -58,7 +58,6 @@ html, body{
 }
 
 #menu_secondario ul{
-	background-color:#D3D3D3;
 }
 
 #menu_secondario li{
