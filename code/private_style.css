@@ -30,6 +30,8 @@ html, body{
 #menu li {
 	float: left;
 	width: 20%;
+	background-color:#6a6a6a;
+
 	
 }
 
@@ -46,7 +48,7 @@ html, body{
 	display: block;
 	text-align: center;
 	padding: 14px 16px;
-	text-decoration: none;contenuto_corrente
+	text-decoration: none;
 
 }
 
@@ -55,14 +57,6 @@ html, body{
 }
 #menu a:visited{
     color:white;
-}
-
-#menu_secondario ul{
-}
-
-#menu_secondario li{
-	float: right;
-	background-color:#6a6a6a;
 }
 
 
