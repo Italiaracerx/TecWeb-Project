@@ -480,11 +480,14 @@ html, body{
 	text-transform: uppercase;
 }
 
-#img_prodpromo{
+#prodpromo_leftSide{
 	float: left;
 	max-width: 50%;
 }
-
+#img_prodpromo{
+	float: left;
+	max-width: 100%;
+}
 #prodpromo_rightSide{
 	float:right;
 }
@@ -494,9 +497,8 @@ html, body{
 	padding-bottom: 1em;
 }
 #date_inizio_fine{
-	padding-top: 0.5em;
+	padding-top: 1em;
 	text-align: right;
-	border-top: 2px solid #A21E1E;
 }
 
 #loading_screen
