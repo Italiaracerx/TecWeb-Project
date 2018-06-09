@@ -490,6 +490,7 @@ html, body{
 }
 #prodpromo_rightSide{
 	float:right;
+	width: 47.5%;
 }
 
 #descrizione_prodpromo{
