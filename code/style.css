@@ -238,6 +238,30 @@ html, body{
 	color: #FFFFFF;
 }
 
+#area_amm li{
+	list-style-type: none;
+	background-color: #6a6a6a;
+	overflow: auto;
+	padding: 0.5em;
+	color: white;
+}
+
+#area_amm a{
+		text-decoration: none;
+		color: white;
+}
+
+#toLogin{
+	float: right;
+	margin-right: 1.5em;
+	margin-top: 0.5em;
+}
+
+#area_amm li:hover{
+	background-color:black;
+
+}
+
 /*--------NEGOZI---------*/
 
 .NomeItem{ 

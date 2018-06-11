@@ -58,7 +58,43 @@ html, body{
 #menu a:visited{
     color:white;
 }
+#exit_amm{
+	float: right;
+	margin-right: 1.5em;
 
+}
+
+#exit_amm li{
+	list-style-type: none;
+	background-color: #6a6a6a;
+	overflow: auto;
+	padding: 0.5em;
+	color: white;
+}
+
+#exit_amm a{
+		text-decoration: none;
+		color: white;
+}
+
+#exit_amm li:hover{
+	background-color:black;
+
+}
+
+#toLogin{
+	float: right;
+	margin-right: 1em;
+	margin-top: 0.5em;
+}
+
+#profilo{
+	width: 3em;
+	float: left;
+	margin-right: 0.5em;
+	
+
+}
 
 #header h2{
 	font-size: 1.5em;
