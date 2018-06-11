@@ -101,8 +101,6 @@ html, body{
 
 #content h2{
     text-align: center;
-
-
 }
 #torre{ 
   width: 100%; 
@@ -482,17 +480,26 @@ html, body{
 	text-transform: uppercase;
 }
 
-#img_prodpromo{
+#prodpromo_leftSide{
 	float: left;
 	max-width: 50%;
 }
-
+#img_prodpromo{
+	float: left;
+	max-width: 100%;
+}
 #prodpromo_rightSide{
 	float:right;
+	width: 47.5%;
 }
 
 #descrizione_prodpromo{
 	padding-top: 1em;
+	padding-bottom: 1em;
+}
+#date_inizio_fine{
+	padding-top: 1em;
+	text-align: right;
 }
 
 #loading_screen

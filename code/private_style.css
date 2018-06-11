@@ -323,8 +323,8 @@ textarea{
  
 }
 .contenuto_corrente img{
-  height:11em;
-  width: 100%;
+	width: 100%;
+
 }
 .contenuto_corrente h5{
   padding: 2px;
@@ -564,6 +564,23 @@ padding: 1em 1em 1em 1em;
 	margin-bottom: 1%;
 	color:#fd3516;
 	border-radius: 100px;
+}
+
+/* /////////////////////////////
+   // modifica promozioni private //
+   ///////////////////////////// */
+
+#imgProdotto_modifica{
+	margin-top: 2em;
+	float: left;
+	width: 32.5%;
+}
+
+#modspace{
+	margin-top: 2em;
+	float: right;
+	width: 60%;
+	padding-left: 2em;
 }
 
 #correct{ 
