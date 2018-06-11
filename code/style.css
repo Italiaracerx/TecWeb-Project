@@ -244,6 +244,7 @@ html, body{
 	overflow: auto;
 	padding: 0.5em;
 	color: white;
+
 }
 
 #area_amm a{
@@ -252,9 +253,8 @@ html, body{
 }
 
 #toLogin{
-	float: right;
-	margin-right: 1.5em;
 	margin-top: 0.5em;
+
 }
 
 #area_amm li:hover{
@@ -263,8 +263,9 @@ html, body{
 }
 
 #profilo{
-	width: 5em;
+	width: 3.8em;
 	float: left;
+
 
 }
 
