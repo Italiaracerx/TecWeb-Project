@@ -117,7 +117,7 @@ html, body{
 	text-transform: uppercase;
 }
 
-#sopra{
+.sopra{
 	overflow: auto;
 	margin-top:1em;
 }
@@ -299,6 +299,10 @@ textarea{
 	text-align: center;
 	margin-top: 2em;
 	overflow: auto;
+}
+
+#colonna_destra img{
+	
 }
 
 #colonna_destra_sotto{
@@ -604,5 +608,42 @@ padding: 1em 1em 1em 1em;
 	color: white; 
 	background-color: rgba(218, 0, 0, 0.693); 
 	} 
+/* /////////////////////////////
+   // Div ProdPromoMod  //
+   ///////////////////////////// */
 
+#ProdPromoMod_LeftPart{
+	width: 40%;	
+	float:left;
+	text-align: center;
+	margin-top: 2em;
+	display: block;
+	margin-right: 3em;
 
+}
+
+#ProdPromoMod_LeftPart img{
+	width: 100%;
+}
+
+.singola_promozione{
+	border:2px solid #000;
+	float: left;
+	width: 26%;
+	margin: 3%;
+	text-align: center;
+	overflow: auto;
+}
+.singola_promozione a{
+	display: inline-block;
+	text-decoration: none;
+	}
+.singola_promozione img{
+	width: 100%;
+}
+
+.singola_promozione p{
+	padding: 1%;
+	background-color: #A52A2A;
+	color: #FFFFFF;
+}

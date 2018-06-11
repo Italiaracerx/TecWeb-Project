@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<!-- Specifico il charset -->
+	<meta http-equiv="Content-Type" content="txt/html charset= UTF-8" />
+
+	<title>Centro Archimede</title>
+	<link rel="stylesheet" type="text/css" href="private_style.css" media="handheld, screen"/>
+	<link rel="stylesheet" type="text/css" href="private_tablet.css" media="handheld, screen and (max-width:768px),
+    only screen and (max-device-width:768px)"/>
+    <link rel="stylesheet" type="text/css" href="private_mobile.css" media="handheld, screen and (max-width:480px),
+    only screen and (max-device-width:480px)"/>
+    <!--<link rel="stylesheet" type="text/css" href="print" media="print"/>STAMPA
+    -->
+
+    <script type="text/javascript" src="Javascript/promozioni_private.js"></script>
+</head>
+ 
+<body>
+
+	<div id="header">	    
+		    <div id="titolo">
+                <h3>CENTRO COMMERCIALE ARCHIMEDE</h3>
+                <h1>AMMINISTRAZIONE</h1>
+                
+			</div>
+	</div>
+
+	<div id="menu">
+        <p><a href="#content" class="accesaid">Skip navigation</a></p>
+        <ul>
+            <li><a  href="generale_private.html">Generale</a></li>
+            <li><a class="promozioni_private.html" href="">Promozioni</a></li>
+            <li><a href="prodotti_private.html">Prodotti</a></li>
+            <li><a href="lego.html">Pagina Negozio</a></li>
+            <li><a href="">Logout</a></li>
+        </ul> 
+    </div>
+
+	<div id="breadcrumb">
+        <h2><strong>NOME ACCOUNT</strong> > PROMOZIONI</h2>
+    </div>
+    <div id="content">
+        
+        <div id="ProdPromoMod_LeftPart">
+            <img src="images/promo1.jpg" alt="promozione"/>
+            <form action="" method="post" onsubmit="">
+                <div>
+                    <label for="modifica_immagine">Modifica immagine</label>
+                    <input type="file" name="immagine" id="imgPromo"/>
+                    <input type="submit" value="Salva"/>  
+                    
+                </div>
+            </form>
+
+        </div>
+
+        <div id="colonna_destra">
+            <form action="" method="post" enctype="multipart/form-data" onsubmit="return checkPromo()">
+                <div>
+                    <label for="nome_prodotto">Nome:</label>
+                <input type="text" name="nome_prodotto" id="nome_prodotto" value="Star-Wars 75104" />
+
+                  <label for="campo_alt">Alternativa testuale dell'immagine della promozione:</label>
+                  <input type="text" name="campo_alt" id="campo_alt" />
+                  <label for="descrizione_promozione">Descrizione promozione:</label>
+                  <textarea name="descrizione_promozione" id="descrizione_promozione" rows="10" cols="30" ></textarea>
+                  <div class="invia">
+                  <input type="submit" value="Salva"/>  
+                  </div>
+                 </div>                                                      
+            </form>
+        </div>
+    </div>
+</body>
+</html>
