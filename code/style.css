@@ -52,6 +52,29 @@ html, body{
 	width: 20%;	
 }
 
+#area_amm li{
+	list-style-type: none;
+	background-color: #6a6a6a;
+	overflow: auto;
+	padding: 0.5em;
+	color: white;
+}
+
+#area_amm a{
+		text-decoration: none;
+		color: white;
+}
+
+#toLogin{
+	float: right;
+	margin-right: 1.5em;
+	margin-top: 0.5em;
+}
+
+#area_amm li:hover{
+	background-color:black;
+
+}
 
 .active{
 	color:white;
@@ -96,7 +119,6 @@ html, body{
 	margin: 0 auto ;
 	overflow: auto;
 	padding-bottom:1em;
-	height: 100%;
 }
 
 #content h2{
@@ -127,56 +149,40 @@ html, body{
 }
 
 #tabellaLaterale{
-	width: 23%;
+	width: 30%;
 	float: right;
 	padding-top: 1em;
 	text-align: center;
 	font-size: 1em;	
-	height: 100%;
-	display: inline-block;
 }
 
-#tabellaLaterale h4{
-	font-weight: bold;	
-}
 
-#tabellaLaterale ul{
-	list-style-type: none;
+#tabellaLaterale caption{
+	font-weight: bold;
 }
-#tabellaLaterale li{
-	border-bottom: 1px solid grey;
-}
-
 #tabella_orari{
-	display: inline-block;
-	margin-bottom: 10%;
+	width: 100%
 }
-#tabella_orari h4{
-	border-bottom:2px solid #a02222;
-}
+
 
 #tabella_eventi{
 	margin: 1em;
 }
 
-.aperture_chiusure{
-	display: inline-block;
-	margin:2em 0em 1em 0em;
-}
-.aperture_chiusure h4{
-	border-bottom:2px solid #a02222;
+#aperture{
+	margin:1em 0em 1em 0em;
+	border:3px solid #a02222;
+
+	 border-style: outset;
 }
 #novità{
-	display: inline-block;
-	margin:2em 0em 1em 0em;
-}
-
-#novità h4{
-	border-bottom:2px solid #a02222;
+		margin:1em 0em 1em 0em;
+	border:1px solid #000;
+	 border-radius: 5px;
 }
 
 #sottoPiano{
-	width: 75%;
+	width: 65%;
 	display: inline-block;
 	border-right: 1px solid #000;
 	}
@@ -206,40 +212,47 @@ html, body{
 	background: linear-gradient(to bottom right,brown,	#DB7093);
 }
 
-#titolo_promozione{ /*utile???*/
+#titolo_promozione{
 	text-align: center;
 }
 
-#sottoPiano h2{
-	width: 95%;
+#elencoPromozioni{
+	overflow: auto;
 }
-.singola_promozione{
-	border:2px solid #000;
+#sottoPiano h2{
+	border-bottom: 1px solid #000;
+	font-weight: 500;
+	text-transform: uppercase;
+	font-size: 2em;
+	display: inline-block;
+	width: 90%;
+	text-align: center;
+	margin-top: 0.5em;
+}
+.promozioneHome{
 	float: left;
-	width: 26%;
+	width: 26.3%;
 	margin: 3%;
 	text-align: center;
 	overflow: auto;
 
 }
-.singola_promozione a{
-	display: inline-block;
-	text-decoration: none;
-	}
 .promozione{
 	width: 100%;
-
-}
-#elencoPromozioni{
-	padding-top: 1em;
-	overflow: auto;
 }
 
-.singola_promozione p{
+#elencoPromozioni p{
 	padding: 1%;
-	background-color: #A52A2A;
-	color: #FFFFFF;
+
+
 }
+
+#profilo{
+	width: 5em;
+	float: left;
+
+}
+
 
 /*--------NEGOZI---------*/
 
@@ -262,7 +275,7 @@ html, body{
   overflow: auto;
 } 
 .vetrina img{ 
-  width: 100%; 
+    width: 100%; 
   float:left; 
 } 
 
@@ -332,6 +345,13 @@ html, body{
 /*--------PROMOZIONI_PUBLIC--------*/
 
 
+.imgPromozione{
+    width: 21.75%;
+    float: left;
+    text-align: center;
+    padding: 1em;
+    margin: 1%;
+}
 
 #PromozioniAttive{
 	text-align: center;
@@ -339,13 +359,15 @@ html, body{
 	margin:0% 5% 0% 5%;
 }
 #PromozioniAttive div{
-	width: 22%;
-	float: left;
+	width: 18%;
 	text-align: center;
-	margin:1%;
+	margin:0.5;
 }
 
-
+#PromozioniAttive p{
+    padding-top: 0.5em;
+    width: 100%;
+}
 
 /*-----------NEGOZIO LEGO---------*/
 
@@ -395,14 +417,19 @@ html, body{
 	text-align: center;
 
 }
+#orari p{
+	margin-left: 10%;
+	text-align: left;
 
+
+}
 .informazione{
 	font-weight: 400;
 	padding-top:1em;
 }
 
 .dato{
-	padding-top: 3%;
+	padding-top: 1%;
 	color: black;
 }
 
@@ -432,31 +459,31 @@ html, body{
 #promozioni{
 	padding-bottom:2em;
 }
-#promozioni div div{
-	width: 28.5%;
-	margin:2%;
-}
+
 .prodotto{
-	margin:1.5% 1% 0% 1%;
-	width: 30%;
+	margin:1.5% 1.5% 0% 1.5%;
+	width: 20%;
 	float:left; 
   	border:3px solid black;
 }
 
 .prodotto img{
 	width: 100%;
-	height: 11em;
-	margin:0em;
+	height: 8em;
+}
 
-}
-.prodotto a{
-	display: inline-block;
-}
+.promo{
+	 width: 30%; 
+  margin-right:1%; 
+  margin-top: 1%; 
+  margin-left: 1%; 
+  display:inline-block; 
+  padding-top:1em;   
+} 
  
 #prodotti{ 
   margin-bottom: 2em; 
   overflow: auto;
-  text-align: center;
 	
 }
 
@@ -467,34 +494,6 @@ html, body{
   margin: 1em 1em 1em 1em; 
 }
 
-/*PRODPROMO CSS*/
-
-/*uguale a negozio lego*/
-.titolo_body{
-	padding-top:1em;	
-	padding-bottom: 0.5em;
-	font-size:2em;
-	letter-spacing: 10px;
-	line-height: 1em;
-	border-bottom: 2px solid #A21E1E;
-	text-align: center;
-	font-weight: 400;
-	text-transform: uppercase;
-}
-
-#img_prodpromo{
-	float: left;
-	max-width: 50%;
-}
-
-#prodpromo_rightSide{
-	float:right;
-}
-
-#descrizione_prodpromo{
-	padding-top: 1em;
-}
-
 #loading_screen
 {  
   display: none;
@@ -503,10 +502,10 @@ html, body{
   top: 0px;
   height: 100%;
   width: 100%;
-  background-color: white;
-  color: black;  
+  background-color: black;
+  color: white;  
   text-align: center;
   padding-top: 100px;
-  /*opacity: 0.5;
-  filter: alpha(opacity=50);*/
+  opacity: 0.5;
+  filter: alpha(opacity=50);
 }

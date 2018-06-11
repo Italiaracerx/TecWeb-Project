@@ -11,9 +11,8 @@
 	only screen and (max-device-width:768px)"/>
 	<link rel="stylesheet" type="text/css" href="mobile.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)"/>
 	<link rel="stylesheet" type="text/css" href="print.css" media="print"/><!--STAMPA-->
-</head>
- 
-<script type="text/javascript">
+
+	<script type="text/javascript">
     (function(){   
       if (window.addEventListener)
       {
@@ -25,17 +24,23 @@
     function mostra_loading_screen()
     {
       document.getElementById("loading_screen").style.display = 'block';
+
     }
     function nascondi_loading_screen()
     {
       document.getElementById("loading_screen").style.display = 'none';
     }
+
+
+//onload="window.setTimeout(mostra_loading_screen(),10000)"
+   
     </script>
+    
+</head>
+ 
+<body >
 
-<body>
-
-
-    <div id="loading_screen">
+  <div id="loading_screen">
         <h1>Loading...</h1> 
         <p>La pagina è in caricamento<br/>
         Resta connesso e non cambiare sito!</p>
@@ -43,6 +48,7 @@
       <script type="text/javascript">
       mostra_loading_screen();
       </script>
+
 
 	<div id="header">	    
 		<div id="contenutoHeader">
@@ -74,40 +80,46 @@
 		<h2  id="intestazione">Benvenuti nel Centro Commerciale Archimede</h2>
 		<div id="eventi_promozioni">
 		<div id="tabellaLaterale">
-			<div id="tabella_orari">
-                <h4 class="informazione">ORARI</h4>
-                <p class="dato"><strong>Lunedì :</strong> 9:00 - 21:00</p>
-                <p class="dato"><strong>Martedì:</strong>  9:00 - 21:00</p>
-                <p class="dato"><strong>Mercoledì :</strong>  9:00 - 21:00</p>
-                <p class="dato"><strong>Giovedì :</strong>  9:00 - 21:00</p>
-                <p class="dato"><strong>Venerdì:</strong>  9:00 - 21:00</p>
-                <p class="dato"><strong>Sabato :</strong>  9:00 - 21:00</p>
-                <p class="dato"><strong>Domenica :</strong>  9:00 - 21:00</p>           
-      </div>
+			<table id="tabella_orari" summary="In questa tabella vengono elencati gli orari del centro commerciale Archimede di tutti i giorni della settimana">
+				<caption>Orari</caption>
+				<tr>
+					<td>Luned&igrave;: 9:00 - 21:00</td>
+				</tr>
+				<tr>
+					<td>Marted&igrave;: 9:00 - 21:00</td>
+				</tr>
+				<tr>
+					<td>Mercol&igrave;: 9:00 - 21:00</td>
+				</tr>
+				<tr>
+					<td>Gioved&igrave;: 9:00 - 21:00</td>
+				</tr>
+				<tr>
+					<td>Venerd&igrave;: 9:00 - 21:00</td>
+				</tr>
+				<tr>
+					<td>Sabato: 9:00 - 21:00</td>
+				</tr>
+				<tr>
+					<td>Domenica: 9:00 - 21:00</td>
+				</tr>
+			</table>
 
-			<div class="aperture_chiusure">
-				<h4>Aperture Straordinarie</h4>
-				<ul>
-          <li>Aperti primo maggio con orario continuato</li>
-          <li>Aperti primo maggio con orario continuato</li>
-          <li>Aperti primo maggio con orario continuato</li>
-          <li>Aperti primo maggio con orario continuato</li>
-        </ul>
+			<div id="aperture">
+				<h4>Aperture/Chiusure Straordinare</h4>
+				<p>Aperti primo maggio con orario continuato</p>
 			</div>
-
-      <div class="aperture_chiusure">
-        <h4>Chiusure Straordinarie</h4>
-        <ul>
-          <li>Chiusi il 23 dicembre tutto il giorno</li>
-        </ul>
-      </div>
 
 			<div id="novità">
 				<h4>Novità</h4>
-				<ul>
-          <li>Aperti con orario continuato 1/05/2018</li>
-        </ul>
+				<p>13/05/2018 Apertura nuovo  negozio di abbigliamento Forpen </p>
 			</div>
+
+			<div id="area_amm">
+			 <a href="login.html"><ul>
+              <li ><p id="toLogin">AREA </br>AMMINISTRAZIONE</p><img id="profilo" alt="immagine area amministratore" src="images/profilo.jpg"></li>
+            </ul></a>
+            </div>
 
         </div>
 
@@ -117,39 +129,29 @@
 		   <p class="casella"><a href="negozi.html">Dove Siamo</a></p>
 		   <p class="casella"><a href="negozi.html">Contatti</a></p>
 		    </div>
-		   
-		   <h2 class="titolo_body">Promozioni</h2>
-		   
+		   <div id="titolo_promozione">
+		    <h2>Promozioni</h2>
+		   </div>
 		    <div id="elencoPromozioni">
-                <div class="singola_promozione">
-                	<a href="promo1.html">
-                    <img class="promozione" src="images/promo1.jpg" alt="promozione"/>
+                <div class="promozioneHome">
+                    <img class="promozione" src="images/promo1.jpg" alt="promozione"/> 
                     <p>Nome_Negozio_1</p>
-                    </a>
                 </div>
-                <div class="singola_promozione">
-                	<a href="promo2.html">
-                    <img class="promozione" src="images/promo2.jpg" alt="promozione"/>
+                <div class="promozioneHome">
+                    <img class="promozione" src="images/promo2.jpg" alt="promozione"/> 
                     <p>Nome_Negozio_2</p>
-                    </a>
                 </div>
-                <div class="singola_promozione">
-                	<a href="promo3.html">
+                <div class="promozioneHome">
                     <img class="promozione" src="images/promo3.png" alt="promozione"/> 
                     <p>Nome_Negozio_3</p>
-                    </a>
                 </div>
-                <div class="singola_promozione">
-                	<a href="promo4.html">
+                <div class="promozioneHome">
                     <img class="promozione" src="images/promo1.jpg" alt="promozione"/> 
                     <p>Nome_Negozio_4</p>
-                    </a>
                 </div>
-                <div class="singola_promozione">
-                	<a href="promo5.html">
+                <div class="promozioneHome">
                     <img class="promozione" src="images/promo1.jpg" alt="promozione"/> 
                     <p>Nome_Negozio_4</p>
-                    </a>
                 </div>
             </div>
 
