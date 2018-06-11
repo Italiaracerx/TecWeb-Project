@@ -49,6 +49,45 @@ html, body{
 	text-decoration: none;
 }
 
+#exit_amm{
+	float: right;
+	margin-right: 1.5em;
+
+}
+
+#exit_amm li{
+	list-style-type: none;
+	background-color: #6a6a6a;
+	overflow: auto;
+	padding: 0.5em;
+	color: white;
+}
+
+#exit_amm a{
+		text-decoration: none;
+		color: white;
+}
+
+#exit_amm li:hover{
+	background-color:black;
+
+}
+
+#toLogin{
+	float: right;
+	margin-right: 1em;
+	margin-top: 0.5em;
+}
+
+#profilo{
+	width: 3em;
+	float: left;
+	margin-right: 0.5em;
+	
+
+}
+
+
 #menu a:link{
     color:white;
 }
@@ -113,7 +152,7 @@ html, body{
 	text-transform: uppercase;
 }
 
-#sopra{
+.sopra{
 	overflow: auto;
 	margin-top:1em;
 }
@@ -150,18 +189,25 @@ html, body{
 }
 
 .form_sopra form{
-	width:50%;
+	width:60%;
 	margin: 0 auto;
 }
 
+#delete p{
+	border-bottom: 2px solid black;
+}
+
+
+
 .form_sotto{
-	float: left;
-	width: 32%;
-	margin: 0.25em;
-	text-align: center;
+text-align: center;
+	float:left;
+	display: block;
+	width:49%;
+	margin:0.25em;	
 }
 .form_sotto form{
-	width: 70%;
+	width: 75%;
 	text-align: center;
 	display: inline-block;
 }
@@ -294,6 +340,10 @@ textarea{
 	text-align: center;
 	margin-top: 2em;
 	overflow: auto;
+}
+
+#colonna_destra img{
+	
 }
 
 #colonna_destra_sotto{
@@ -559,5 +609,42 @@ padding: 1em 1em 1em 1em;
 	color: white; 
 	background-color: rgba(218, 0, 0, 0.693); 
 	} 
+/* /////////////////////////////
+   // Div ProdPromoMod  //
+   ///////////////////////////// */
 
+#ProdPromoMod_LeftPart{
+	width: 40%;	
+	float:left;
+	text-align: center;
+	margin-top: 2em;
+	display: block;
+	margin-right: 3em;
 
+}
+
+#ProdPromoMod_LeftPart img{
+	width: 100%;
+}
+
+.singola_promozione{
+	border:2px solid #000;
+	float: left;
+	width: 26%;
+	margin: 3%;
+	text-align: center;
+	overflow: auto;
+}
+.singola_promozione a{
+	display: inline-block;
+	text-decoration: none;
+	}
+.singola_promozione img{
+	width: 100%;
+}
+
+.singola_promozione p{
+	padding: 1%;
+	background-color: #A52A2A;
+	color: #FFFFFF;
+}
