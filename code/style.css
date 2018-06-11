@@ -123,8 +123,6 @@ html, body{
 
 #content h2{
     text-align: center;
-
-
 }
 #torre{ 
   width: 100%; 
@@ -235,9 +233,13 @@ html, body{
 	margin: 3%;
 	text-align: center;
 	overflow: auto;
-
 }
-.promozione{
+
+.singola_promozione a{
+	display: inline-block;
+	text-decoration: none;
+	}
+.singola_promozione img{
 	width: 100%;
 }
 
@@ -493,6 +495,45 @@ html, body{
   padding: 1em 1em 1em 1em; 
   margin: 1em 1em 1em 1em; 
 }
+
+
+/*PRODPROMO CSS*/
+
+/*uguale a negozio lego*/
+.titolo_body{
+	padding-top:1em;	
+	padding-bottom: 0.5em;
+	font-size:2em;
+	letter-spacing: 10px;
+	line-height: 1em;
+	border-bottom: 2px solid #A21E1E;
+	text-align: center;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+#prodpromo_leftSide{
+	float: left;
+	max-width: 50%;
+}
+#img_prodpromo{
+	float: left;
+	max-width: 100%;
+}
+#prodpromo_rightSide{
+	float:right;
+	width: 47.5%;
+}
+
+#descrizione_prodpromo{
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+#date_inizio_fine{
+	padding-top: 1em;
+	text-align: right;
+}
+
 
 #loading_screen
 {  

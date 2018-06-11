@@ -24,12 +24,14 @@ html, body{
 	list-style-type: none;
 	margin: 0;
 	overflow: hidden;
-	background-color: #6a6a6a;
+	background-color: #0006;
 }
 
 #menu li {
 	float: left;
 	width: 20%;
+	background-color:#6a6a6a;
+
 	
 }
 
@@ -47,6 +49,7 @@ html, body{
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
+
 }
 
 #exit_amm{
@@ -94,6 +97,7 @@ html, body{
 #menu a:visited{
     color:white;
 }
+
 
 #header h2{
 	font-size: 1.5em;
@@ -322,7 +326,8 @@ textarea{
 }
 
 
-/*-------------PROMOZIONI PRIVATO---------*/
+
+/*-------------PROMOZIONI - PRODOTTIPRIVATO---------*/
 
 #colonna_sinistra{
 	width: 30%;	
@@ -352,6 +357,29 @@ textarea{
 	padding-right: 1em;
 	text-align: center;
 	margin-top: 3.5em;
+}
+
+#colonna_destra_sotto form{
+  display: inline-block;
+  width: 40%;
+}
+.contenuto_corrente{
+  margin-top:1em;
+  float:left;
+  display:block;
+  width: 26%;
+  margin:0 3% 0 3%;
+  border:2px solid black;
+ 
+}
+.contenuto_corrente img{
+	width: 100%;
+
+}
+.contenuto_corrente h5{
+  padding: 2px;
+  color: white;
+  background-color: rgb(60, 57, 57);
 }
 
 #destra_prodotti{
@@ -588,6 +616,23 @@ padding: 1em 1em 1em 1em;
 	border-radius: 100px;
 }
 
+/* /////////////////////////////
+   // modifica promozioni private //
+   ///////////////////////////// */
+
+#imgProdotto_modifica{
+	margin-top: 2em;
+	float: left;
+	width: 32.5%;
+}
+
+#modspace{
+	margin-top: 2em;
+	float: right;
+	width: 60%;
+	padding-left: 2em;
+}
+
 #correct{ 
 	font-size: 1em; 
 	text-transform: uppercase; 
@@ -622,7 +667,6 @@ padding: 1em 1em 1em 1em;
 	margin-right: 3em;
 
 }
-
 #ProdPromoMod_LeftPart img{
 	width: 100%;
 }
