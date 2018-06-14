@@ -460,9 +460,9 @@ if(charCode==118 || charCode==99 || charCode==97 || charCode==104 || charCode==1
 
 function changeLogo()
 {
-        var img=document.getElementById('immmagine').value;     
+        var img=document.getElementById('immagine').value;     
 if(img!="") { 
-     var fup = document.getElementById('immmagine'); 
+     var fup = document.getElementById('immagine'); 
      var fileName = fup.value; 
      var ext = fileName.substring(fileName.lastIndexOf('.') + 1); 
      if(ext != "JPEG" && ext != "jpeg" && ext != "jpg" && ext != "JPG" && ext != "PNG" && ext != "png"  
@@ -476,13 +476,6 @@ if(img!="") {
     document.getElementById("logoChange").innerHTML = a ;
     return false;
 }
-
- var ima=document.getElementById('immmagine');
-      
-      if(ima.offsetHeight!=ima.offsetWidth){
- var a="Altezza e larghezza immagine</br>  non uguali";
-    document.getElementById("logoChange").innerHTML = a ;
-    return false;} 
 
 return true; 
 
