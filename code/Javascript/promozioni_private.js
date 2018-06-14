@@ -118,19 +118,12 @@
     return false;
 }
 
- var ima=document.getElementById('imgPromo');
-      
-      if(ima.offsetHeight!=ima.offsetWidth){
- var a="Altezza e larghezza immagine</br>  non uguali";
-    document.getElementById("nuova_promozione").innerHTML = a ;
-    return false;} 
-
 return true; 
 }
 
 
   function validatePromo(){
-  var indice_selezionato = document.getElementById('deleteProm').selectedIndex;
+  var indice_selezionato = document.getElementById('elimina_promozione').selectedIndex;
   if(indice_selezionato==0)
     {var a="Nome negozio non valido";
     document.getElementById("deletePromo").innerHTML = a ;

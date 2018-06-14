@@ -526,7 +526,7 @@ padding: 1em 1em 1em 1em;
 	text-align:center;
 }
 
-#deleteProdo{
+#controllo_Prod{
 	background-color: #fd3516;
 	text-align:center;
 }
@@ -682,4 +682,25 @@ padding: 1em 1em 1em 1em;
 	padding: 1%;
 	background-color: #A52A2A;
 	color: #FFFFFF;
+}
+
+/* FOOTER  */
+
+#footer{
+	background-color: #585753;
+	height: 100%;
+	text-align: center;
+	color: white;
+	padding-bottom: 1em;
+}
+
+#footer h3{
+	margin-top: 1em;
+}
+#logoFooter{
+	width: 10%;
+	padding:1em;
+}
+#infoFooter{
+	font-size:0.8em;
 }

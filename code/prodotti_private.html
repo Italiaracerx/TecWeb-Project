@@ -14,6 +14,7 @@
     <!--
 	<link rel="stylesheet" type="text/css" href="print" media="print"/>STAMPA
     -->
+    <script type="text/javascript" src="Javascript/prodotti_private.js"></script>
 </head>
  
 <body>
@@ -25,7 +26,7 @@
 			</div>
 
       <div id="exit_amm">
-             <a href="home.html"><ul>
+             <a href="login.html"><ul>
               <li xml:lang="en"><p id="toLogin">LOGOUT</p><img id="profilo" alt="immagine exit area amministrazione" src="images/exit.png"></li>
             </ul></a>
             </div>
@@ -48,7 +49,8 @@
         
             <div id="colonna_sinistra">
                     <p class="intestazione">NUOVO PRODOTTO</p>
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <div id="newProduct"></div>
+                    <form action="" method="post" enctype="multipart/form-data" onsubmit="return checkProd()">
                         <div>
                     	<label for="nome_prodotto">Nome:</label>
                         <input type="text" name="nome_prodotto" id="nome_prodotto" value="Star-Wars 75104" />
@@ -60,7 +62,7 @@
                         <textarea name="descrizione_prodotto" id="descrizione_prodotto" rows="10" cols="30"></textarea>
                         
                         <label for="seleziona_promozione">Seleziona il prodotto da inserire:</label>
-                        <input type="file" name="immagine" id="seleziona_promozione"/>
+                        <input type="file" name="immagine" id="immagine"/>
                         <div class="invia">
                         <input  type="submit" value="Salva"/>   
                         </div>
@@ -95,7 +97,7 @@
         <div id="colonna_destra_sotto">
               <p class="intestazione">ELIMINA PRODOTTI</p> 
               <div id="controllo_Prod"></div>
-              <form  action="" method="post" onsubmit="return validateUser()">
+              <form  action="" method="post" onsubmit="return validateProd()">
                 <div>
                   <label for="elimina_prodotto">Nome Negozio:</label>
                   <select name="elimina_prodotto" id="elimina_prodotto">
@@ -116,6 +118,11 @@
 
     </div>
     <div id="footer">
+      <h3>Centro Commerciale Archimede</h3>
+             <img id="logoFooter" alt="logofooter" src="images/logo_copia.jpg"/>
+             <div id="infoFooter">
+              <p>Via Trieste, 63  | 35121 Padova (<span xml:lang="en">Italy</span>)| Telefono: +39 049 827 1200 | <span xml:lang="en">e-mail</span>:info@centro.archimede.it</p>
+               </div> <!-- fine contatti_footer-->
     </div>
 </body>
 </html> 

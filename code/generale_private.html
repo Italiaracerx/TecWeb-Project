@@ -15,7 +15,6 @@
 	<!--<link rel="stylesheet" type="text/css" href="print" media="print"/>STAMPA
     -->
 
-    <script type="text/javascript" src="Javascript/general_private.js"></script>
 
 </head>
  
@@ -27,7 +26,7 @@
                 <h1>AMMINISTRAZIONE</h1>
 			</div>
       <div id="exit_amm">
-             <a href="home.html"><ul>
+             <a href="login.html"><ul>
               <li xml:lang="en"><p id="toLogin">LOGOUT</p><img id="profilo" alt="immagine exit area amministrazione" src="images/exit.png"></li>
             </ul></a>
             </div>
@@ -77,9 +76,9 @@
                         <form  action="changePassword.php" method="post" onsubmit="return validateForm(this)">
                         <div>
                           <label for="password">Password:</label>
-                          <input type="password" name="nuova_password" id="nuova_password"/>
+                          <input type="password" name="nuova_password" id="password"/>
                           <label for="conferma_password">Conferma Password:</label>
-                          <input type="password" name="conferma_nuova_password" id="conferma_nuova_password"/> 
+                          <input type="password" name="conferma_nuova_password" id="conferma_password"/> 
                           <div class="invia">              
                           <input type="reset"  value="Reset"/>  
                           <input type="submit" value="Salva"/>   
@@ -94,7 +93,8 @@
 
                     <div class="form_centrali">
                     <p class="intestazione">MODIFICA LOGO</p>
-                      <form action="insertImage.php" method="post" enctype="multipart/form-data">
+                    <div id="logoChange"></div>
+                      <form action="insertImage.php" method="post" enctype="multipart/form-data" onsubmit="return changeLogo()">
                           <div>
                           <label for="carica_immmagine">Selezionare un file:</label>
                           <input type="file" name="immagine" id="immagine"/>
@@ -196,6 +196,11 @@
         </div>
     </div>
     <div id="footer">
+      <h3>Centro Commerciale Archimede</h3>
+             <img id="logoFooter" alt="logofooter" src="images/logo_copia.jpg"/>
+             <div id="infoFooter">
+              <p>Via Trieste, 63  | 35121 Padova (<span xml:lang="en">Italy</span>)| Telefono: +39 049 827 1200 | <span xml:lang="en">e-mail</span>:info@centro.archimede.it</p>
+               </div> <!-- fine contatti_footer-->
     </div>
 </body>
 </html> 

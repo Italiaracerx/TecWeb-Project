@@ -43,20 +43,14 @@ function checkProd(){
     return false;
 }
 
-var ima=document.getElementById('immagine');
-      
-      if(ima.offsetHeight!=ima.offsetWidth){
- var a="Altezza e larghezza immagine</br>  non uguali";
-    document.getElementById("newProduct").innerHTML = a ;
-    return false;}  
 return true; 
 
 }
 
       function validateProd(){
-  var indice_selezionato = document.getElementById('deleteProd').selectedIndex;
+  var indice_selezionato = document.getElementById('elimina_prodotto').selectedIndex;
   if(indice_selezionato==0)
     {var a="Nome negozio non valido";
-    document.getElementById("deleteProdo").innerHTML = a ;
+    document.getElementById("controllo_Prod").innerHTML = a ;
     return false;}
 }
