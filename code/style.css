@@ -130,7 +130,9 @@ html, body{
 	border-bottom: 1px solid grey;
 }
 
-
+#contentRight p{
+	margin:2% 0% 2% 0%;
+}
 #area_amministrazione{
 	margin-top: 1.5em;
     background-color: #6a6a6a;
