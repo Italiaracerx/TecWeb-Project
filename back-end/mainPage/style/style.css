@@ -434,7 +434,6 @@ html, body{
 	width: 7em;
 	height: auto;
 	display:inline-block;
-	padding-top:1em;
 }
 
 .titolo_prodotti{
@@ -469,7 +468,6 @@ html, body{
 
 .prodotto img{
 	width: 100%;
-	height: 11em;
 	margin:0em;
 
 }
