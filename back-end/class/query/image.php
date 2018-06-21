@@ -3,7 +3,7 @@
 require_once __DIR__.'/../sistema/exeption.php';
 require_once __DIR__.'/../sistema/connection.php';
 require_once __DIR__.'/../interfacce/query.php';
-
+require_once __DIR__.'/ImageManipulator.php';
 
 class image extends connection implements query{
         private $user;
@@ -52,21 +52,10 @@ class image extends connection implements query{
                 $this->user =$_SESSION['user'];
                 $this->name =$_FILES["immagine"]["name"];
                 $this->tmp_name =$_FILES["immagine"]["tmp_name"];
-                $temp=getimagesize(realpath($this->tmp_name));
-                $this->imageHeight=$temp[1];
-                $this->imageWidth=$temp[0];
             }
         }
         public function checker(){
-            if($this->type=='logo'){
-                if($this->imageWidth/$this->imageHeight!=(1)){throw new exeption('error','upload fallito, l\'immagine caricata deve essere in formato 1:1.');}
-            }
-            if($this->type=='prodotto'){
-                if($this->imageWidth/$this->imageHeight!=(4/3)){throw new exeption('error','upload fallito, l\'immagine caricata deve essere in formato 4:3.');}
-            }
-
             if($this->type=='promozione'){
-                if($this->imageWidth/$this->imageHeight!=(4/3)){throw new exeption('error','upload fallito, l\'immagine caricata deve essere in formato 4:3.');}
                 preg_match($this->regex, $this->start, $okstart, PREG_OFFSET_CAPTURE); 
                 if(empty($okstart)){throw new exeption('error','data non in formato GG-MM-AAAA o non calendarizzato');} 
                 preg_match($this->regex, $this->finish, $okfinish, PREG_OFFSET_CAPTURE); 
@@ -103,12 +92,6 @@ class image extends connection implements query{
             if(!$sent){throw new exeption('error','upload fallito, si posso caricare solo immagini.');}
         }
 
-        public function store(){
-            $this->checker();
-            if(!move_uploaded_file($this->tmp_name, $this->directory.$this->name)){
-                throw new exeption('error','upload fallito.');
-            }
-        }
         public function read($limit = NULL){
             $query="SELECT source, titolo, alt FROM immagini WHERE username = '$this->user' AND type = '$this->type'";
             if($this->user == NULL){
@@ -123,17 +106,15 @@ class image extends connection implements query{
             }
         }
         public function write(){
+            $this->checker();
             $this->how_much();
-            $this->store();
+            $this->resize_and_store();
             $this->insert();
         }
         public function delete(){
             $delete =$_POST['titolo'];
             $query_to_delete="SELECT source FROM immagini WHERE username = '$this->user' AND type = '$this->type' AND titolo = '$delete'";
-            echo $query_to_delete;
             $file_to_delete=mysqli_fetch_array(parent::execute_query($query_to_delete));
-            echo($file_to_delete);
-            echo 'ciucia';
             $query="DELETE FROM immagini WHERE type = '$this->type' AND titolo = '$delete'";
             if(parent::execute_query($query)){
                 if(!unlink($this->directory.$file_to_delete['source'])){
@@ -145,17 +126,38 @@ class image extends connection implements query{
             $date=date("Y/m/d");
             $rename=sha1($this->name.$this->user).'.'.pathinfo($this->name, PATHINFO_EXTENSION);
             $insert_immagine="INSERT INTO immagini VALUES ('$this->user','$this->type','NULL','$rename','$this->name_image','$this->alt','$this->start','$this->finish','$this->description','$date')";
-            echo $insert_immagine;
             if(parent::execute_query($insert_immagine) == NULL){
                 unlink($this->directory.$this->name);
-
                 throw new exeption('error','upload fallito, riprovare più tardi.');
             }
             else{
                 rename($this->directory.$this->name,$this->directory.$rename);
             }
         }
-        
+
+        public function resize_and_store(){
+            $manipulator = new ImageManipulator($this->tmp_name);
+            $width  = $manipulator->getWidth();
+            $height = $manipulator->getHeight();
+
+            $size = min($width, $height);
+            $size = $size/2;
+            
+            $centreX = round($width / 2);
+            $centreY = round($height / 2);
+            // our dimensions will be define a square
+
+            $x1 = $centreX - $size;
+            $y1 = $centreY - $size;
+     
+            $x2 = $centreX + $size;
+            $y2 = $centreY + $size;
+
+            // center cropping to 200x130
+            $newImage = $manipulator->crop($x1, $y1, $x2, $y2);
+            // saving file to uploads folder
+            $manipulator->save($this->directory.$this->name);
+        }
     }
     
 ?>
