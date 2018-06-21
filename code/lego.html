@@ -1,23 +1,26 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<!-- Specifico il charset -->
-	<meta http-equiv="Content-Type" content="txt/html charset= UTF-8" />
 
-	<title>Centro Archimede</title>
-	<link rel="stylesheet" type="text/css" href="style.css" media="handheld, screen"/>
-	<link rel="stylesheet" type="text/css" href="tablet.css" media="handheld, screen and (max-width:768px),
-    only screen and (max-device-width:768px)"/>
-    <link rel="stylesheet" type="text/css" href="mobile.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)"/>
-	 <link rel="stylesheet" type="text/css" href="print.css" media="print"/><!--STAMPA-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+<head>
+ <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+  <title>Centro Archimede</title>
+  <link rel="stylesheet" type="text/css" href="style.css" media="handheld, screen"/>
+
+  <link rel="stylesheet" type="text/css" href="tablet.css" media="handheld, screen and (max-width:768px),
+  only screen and (max-device-width:768px)"/>
+
+  <link rel="stylesheet" type="text/css" href="mobile.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)"/>
+
+  <link rel="stylesheet" type="text/css" href="print.css" media="print"/>
 </head>
  
 <body>
 
 	<div id="header">	    
 		<div id="contenutoHeader">
-			<img id="logo" alt="logo" src="images/logo.jpg"/>						
+			<img id="imgLogo" alt="logo" src="images/logo.jpg"/>						
 		    <div id="titolo">
 				<h1>Archimede</h1>
 		        <h3>Centro Commerciale</h3>
@@ -32,7 +35,7 @@
                 <li><a class="active" href="negozi.html">Negozi</a></li>
                 <li><a href="dovesiamo.html">Dove siamo</a></li>
                 <li><a href="contatti.html">Contatti</a></li>
-				<li><a href="promozioni_public.html">Promozioni</a></li>
+                <li><a href="promozioni_public.html">Promozioni</a></li>
              </ul> 
         </div>
 
@@ -41,8 +44,10 @@
     </div>
     
 	<div id="content">
+
         <div id="content_negozio">
-            <h3 class="titolo_body">LEGO STORE</h3>
+            <h3 id="intestazione">LEGO STORE</h3>
+            
             <div id="informazioni">
                 <img id="logo_negozio" src="images/imglego.jpg" alt="logo"/>
                 <div id="contatti">
@@ -99,38 +104,38 @@
                     <div id="promozioni">
 
                       <h4 class="titolo_prodotti">PROMOZIONI</h4>
-                     <div id="elencoPromozioni">
-                       <div class="singola_promozione">
-                          <a href="promo1.html">
-                          <img class="promozione" src="images/promo1.jpg" alt="promozione del negozio"/> 
-                          <p>Nome_Negozio_1</p>
-                          </a>
-                       </div>
-                       <div class="singola_promozione">
-                          <a href="promo2.html">
-                          <img class="promozione" src="images/promo2.jpg" alt="promozione del negozio"/>
-                          <p>Nome_Negozio_2</p>
-                          </a>
-                        </div>
-                       <div class="singola_promozione">
-                         <a href="promo3.html">
-                         <img class="promozione" src="images/promo3.png" alt="promozione del negozio"/> 
-                         <p>Nome_Negozio_3</p>
-                         </a>
-                        </div>
-                       <div class="singola_promozione">
-                          <a href="promo4.html">
-                          <img class="promozione" src="images/promo1.jpg" alt="promozione del negozio"/> 
-                          <p>Nome_Negozio_4</p>
-                          </a>
-                       </div>
-                       <div class="singola_promozione">
-                         <a href="promo5.html">
-                         <img class="promozione" src="images/promo1.jpg" alt="promozione"/> 
-                          <p>Nome_Negozio_4</p>
-                          </a>
-                        </div>
-                      </div>
+                 <ul id="promozione">
+                   <li>
+                     <a href="promo1.html">
+                    <img src="images/promo1.jpg" alt="promozione"/>
+                    Nome_Negozio_1
+                    </a>
+                </li>
+                <li>
+                  <a href="promo2.html">
+                    <img  src="images/promo2.jpg" alt="promozione"/>
+                    Nome_Negozio_2
+                    </a>
+                </li>
+                <li>
+                  <a href="promo3.html">
+                    <img class="promozione" src="images/promo3.png" alt="promozione"/> 
+                    Nome_Negozio_3
+                    </a>
+                </li>
+                <li>
+                  <a href="promo4.html">
+                    <img src="images/promo1.jpg" alt="promozione"/> 
+                    Nome_Negozio_4
+                    </a>
+                </li>
+                <li>
+                  <a href="promo5.html">
+                    <img  src="images/promo1.jpg" alt="promozione"/> 
+                    Nome_Negozio_4
+                    </a>
+                </li>
+            </ul>
 
 
                     </div>
