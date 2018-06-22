@@ -15,25 +15,10 @@ class negozi implements type_page{
         }
 		$this->menu =$menu;
 	}
-	public function intestazione(){
-		$file = file_get_contents('../../class/HTMLstored/public/preambolo.html', FILE_USE_INCLUDE_PATH);
-		$file = str_replace('__USER__',$_SESSION['user'],$file);
-		$file = str_replace('__NAME_PAGE__',$this->name,$file);
-		$file = str_replace('__STYLE__',negozi::$style,$file);
-
-		echo $file;
-    }
-    public function header(){
-        $file = file_get_contents('../../class/HTMLstored/public/header.html', FILE_USE_INCLUDE_PATH);
-        echo $file;
-	}
-	public function menu(){
-		$str ='<div id="menu">'.$this->menu->print().'</div>';
-		echo $str;
-	}		
+	
     public function breadcrumb(){
     	echo '	<div id="breadcrumb">
-        			<h2><strong>'.$this->name.'</strong>'.$this->shop.'</h2>        
+        			<h2><strong>'.$this->name.'</strong>'.$this->shop.'</h2>
     			</div>';
     }
     public function footer(){
@@ -54,15 +39,7 @@ class negozi implements type_page{
 			</body>
 			</html>';
     }
-    public function body(){
-		$this->header();
-		$this->menu();
-    	$this->breadcrumb();
-    }
-	public function head(){
-		$this->intestazione();
-		$this->body();
-    }
+
     public function content(){
         echo '<div id="content">';
 

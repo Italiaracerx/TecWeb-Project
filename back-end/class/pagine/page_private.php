@@ -13,6 +13,7 @@ class page_private implements type_page{
 		$this->menu =$menu;
 		$this->javascript =$js;
 	}
+	
 	public function intestazione(){
 		$file = file_get_contents('../../class/HTMLstored/private/preambolo.html', FILE_USE_INCLUDE_PATH);
 		$file = str_replace('__USER__',$_SESSION['user'],$file);
