@@ -1,7 +1,6 @@
 <?php 
 require_once __DIR__.'/../interfacce/type_page.php';
 
-
 class page_private implements type_page{
 	private static $style="private_style.css";
 	private $menu;

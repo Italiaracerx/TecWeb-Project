@@ -6,6 +6,7 @@ require_once __DIR__.'/../../query/image.php';
 require_once __DIR__.'/../../sistema/connection.php';
 
         $shop =$_GET['shop'];
+        unset($_GET['shop']);
 
         $connection= new connection();
         $logo = new logo($shop);
@@ -22,7 +23,10 @@ require_once __DIR__.'/../../sistema/connection.php';
         $giorni = array();
         $giorni =$orario->getGiorniHTML();
 
-
+        if($result_info == NULL || $result_logo == NULL || $result_orario == NULL){
+            header('location: negozio.php');
+            die;
+        }
 
 echo 
     '<div id="content_negozio">
@@ -68,7 +72,7 @@ echo           '</div>
                 else{
                     foreach($row_p as $row){
                         echo '  <div class="prodotto">
-                                    <a href="prodotto1.html">
+                                    <a href="visual_page.php?titolo='.$row['titolo'].'">
                                         <img class="gioco" src="images/prodotto/'.$row['source'].'" alt="'.$row['alt'].'"/>
                                     </a>
                                     <h5 class="NomeItem">'.$row['titolo'].'</h5>
@@ -98,7 +102,7 @@ echo           '</div>
                         foreach($rows as $row){
                             echo '
                             <div class="singola_promozione">
-                                <a href="promo2.html">
+                                <a href="visual_page.php?titolo='.$row['titolo'].'">
                                     <img class="promozione" src="images/promozione/'.$row['source'].'" alt="'.$row['alt'].'"/>
                                 </a> 
                                 <p>'.$row['titolo'].'</p>
