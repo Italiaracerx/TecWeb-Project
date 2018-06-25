@@ -1,9 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it">
 <head>
+  <meta http-equiv="Content-Script-Type" content="application/javascript" />
 	<!-- Specifico il charset -->
-	<meta http-equiv="Content-Type" content="txt/html charset= UTF-8" />
+	<meta http-equiv="Content-Type" content="application/xhtml+xml charset= UTF-8" />
 
 	<title>Centro Archimede</title>
 	<link rel="stylesheet" type="text/css" href="private_style.css" media="handheld, screen"/>
@@ -23,12 +24,9 @@
                 <h3>CENTRO COMMERCIALE ARCHIMEDE</h3>
                 <h1>AMMINISTRAZIONE</h1>
 			</div>
-
       <div id="exit_amm">
-             <a href="login.html"><ul>
-              <li xml:lang="en"><p id="toLogin">LOGOUT</p><img id="profilo" alt="immagine exit area amministrazione" src="images/exit.png"></li>
-            </ul></a>
-            </div>
+          <a href="login.html">LOGOUT</a>
+      </div>
 	</div>
 
 	<div id="menu">
@@ -42,7 +40,7 @@
     </div>
 
 	<div id="breadcrumb">
-        <h2><strong>ADMINISTRATOR</strong> > GENERALE</h2>        
+        <h2><strong>ADMINISTRATOR</strong> GENERALE</h2>        
     </div>
     <div id="content">
         <h3 id="titolo_generale">GENERALE</h3>
@@ -56,7 +54,7 @@
                     <label for="nuova_password">Password:</label>
                     <input type="password" name="password" id="nuova_password" />
                     <label for="conferma_nuova_password">Conferma Password:</label>
-                    <input type="password" name="Password_1" id="conferma_nuova_password" />  
+                    <input type="password" name="Password_1" id="conferma_nuova_password"/>  
                     <div class="invia">   
                     <input name="Tasto Reset" type="reset" value="Reset"/>  
                     <input name="Tasto Salva" type="submit" value="Salva"/>
@@ -68,13 +66,13 @@
             <div class="form_sotto">
               <p class="intestazione">CREAZIONE NEGOZIO</p>
               <div id="controllo_creaNeg"></div>
-              <form  action="" method="post" onsubmit="return validateForm(this)">
+              <form action="" method="post" onsubmit="return validateForm(this)">
                 <div>
                 <label for="nome_negozio">Nome Negozio:</label>
                 <input type="text" id="nome_negozio" name="username"/>    
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" />
-                <label for="conferma_password">Conferma Password:</label>
+                <label for="Password_1">Conferma Password:</label>
                 <input type="password" id="Password_1" name="Password_1"  />  
                 <div class="invia">                       
                   <input type="reset"  name="tasto_reset"  value="Reset"/>  

@@ -1,9 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it">
 <head>
+    <meta http-equiv="Content-Script-Type" content="application/javascript" />
 	<!-- Specifico il charset -->
-	<meta http-equiv="Content-Type" content="txt/html charset= UTF-8" />
+	<meta http-equiv="Content-Type" content="application/xhtml+xml charset= UTF-8" />
 
 	<title>Centro Archimede</title>
 	<link rel="stylesheet" type="text/css" href="private_style.css" media="handheld, screen"/>
@@ -22,11 +23,9 @@
                 <h3>CENTRO COMMERCIALE ARCHIMEDE</h3>
                 <h1>AMMINISTRAZIONE</h1>
             </div>
-            <div id="exit_amm">
-             <a href="login.html"><ul>
-              <li xml:lang="en"><p id="toLogin">LOGOUT</p><img id="profilo" alt="immagine exit area amministrazione" src="images/exit.png"></li>
-            </ul></a>
-            </div>
+        <div id="exit_amm">
+            <a href="login.html">LOGOUT</a>
+        </div>
     </div>
 
     <div id="menu">
@@ -38,7 +37,7 @@
     </div>
 
     <div id="breadcrumb">
-        <h2><strong>ADMINISTRATOR</strong> > GENERALE</h2>        
+        <h2><strong>ADMINISTRATOR</strong> GENERALE</h2>        
     </div>
     <div id="content">
         <div class="sopra">
@@ -65,10 +64,10 @@
                 <div id="controllo_novita"></div>
                 <form  action="" method="post" onsubmit="return novita()">
                     <div>
-                    <label for="data_novità">Inserire Data:</label>
+                    <label for="data_1">Inserire Data:</label>
                     <input type="text" name="data_novità" id="data_1"/>  
-                    <label for="novità">Descrizione:</label>
-                    <textarea id="novità" name="testo" rows="4" cols="36" >Inserisci la nuova novità</textarea>
+                    <label for="novita">Descrizione:</label>
+                    <textarea id="novita" name="testo" rows="4" cols="36" >Inserisci la nuova novità</textarea>
                     <input type="reset" name="tasto_reset"  value="Reset"/>  
                     <input type="submit" name="tasto_salva"  value="Salva"/>
                     </div>
@@ -79,12 +78,14 @@
             <div class="form_sopra">
                 <p class="intestazione">ELIMINA APERTURE O CHIUSURE</p>
                 <form action="" method="post" onsubmit="">
-                    <div>
+                    <div aria-label="Type">
                     <label for="cancella_data">Segli evento da cancellare:</label>
-                    <input type="radio" name="date" value="apertura 13/11/2011"> apertura 13/11/2011<br>
-                    <input type="radio" name="date" value="chiusura 12/11/2011"> chiusura 12/11/2011<br>
-                    <input type="radio" name="date" value="apertura 11/11/2011"> apertura 11/11/2011<br>
-                    <input type="submit" name="tasto_cancella"  value="Cancella"/>
+                    <fieldset id="cancella_data">
+                        <input type="radio" name="date1" value="apertura 13/11/2011"/> apertura 13/11/2011<br/>
+                        <input type="radio" name="date2" value="chiusura 12/11/2011"/> chiusura 12/11/2011<br/>
+                        <input type="radio" name="date3" value="apertura 11/11/2011"/> apertura 11/11/2011<br/>
+                        </fieldset>
+                        <input type="submit" name="tasto_cancella"  value="Cancella"/>
                     </div>
                 </form>
             </div>
@@ -94,8 +95,8 @@
                 <form action="" method="post" onsubmit="">
                     <div>
                         <label for="cancella_novita">Scegli novita' da cancellare:</label>
-                        <input type="radio" name="novita" value="Aperti con orario continuato 1/05/2018">Aperti con orario continuato 1/05/2018<br>
-                        <input type="radio" name="novita" value="Aperti con orario continuato 2/05/2018">Aperti con orario continuato 1/05/2018<br>
+                        <input type="radio" name="novita" value="Aperti con orario continuato 1/05/2018">Aperti con orario continuato 1/05/2018<br/>
+                        <input type="radio" name="novita" value="Aperti con orario continuato 2/05/2018">Aperti con orario continuato 1/05/2018<br/>
                         <input type="submit" name="tasto_cancella"  value="Cancella"/>
                     </div>
                 </form>

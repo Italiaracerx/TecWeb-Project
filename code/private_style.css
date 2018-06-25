@@ -61,25 +61,18 @@ html, body{
 #exit_amm{
 	float: right;
 	margin-right: 1.5em;
-
-}
-
-#exit_amm li{
-	list-style-type: none;
-	background-color: #6a6a6a;
-	overflow: auto;
-	padding: 0.5em;
-	color: white;
 }
 
 #exit_amm a{
-		text-decoration: none;
-		color: white;
+	text-decoration: none;
+	color: white;
+	padding-top: 0.5em: 
+	padding-bottom: 0.5em;
+
 }
 
-#exit_amm li:hover{
+#exit_amm:hover{
 	background-color:black;
-
 }
 
 #toLogin{
