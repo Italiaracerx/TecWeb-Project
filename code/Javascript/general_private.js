@@ -29,16 +29,12 @@ function checkEmail(form){
     document.getElementById("verifica_tel").innerHTML = o ;
     return false;}
     else{
-    var o="N. TELEFONO OK !!!";
-    document.getElementById("verifica_tel").innerHTML = o ;
     
   if (validaEmail(email) && email!="" && email!=" ") {
       if(sito!="" && sito!=" ")
     {
         return true;}
     else{
-        var a="EMAIL OK !!!";
-    document.getElementById("verifica_mail").innerHTML = a ;
     
          var o="SITO WEB NON VALIDO !!!";
     document.getElementById("verifica_sito").innerHTML = o ;
@@ -49,11 +45,6 @@ function checkEmail(form){
       var o="ERRORE EMAIL !!!";
     document.getElementById("verifica_mail").innerHTML = o ;
 
-    if(sito=="" && sito==" ")
-      {var a="SITO WEB VALIDO !!!";
-    document.getElementById("verifica_sito").innerHTML = a ;
-    return false;
-        }
 return false;
   
 }}
