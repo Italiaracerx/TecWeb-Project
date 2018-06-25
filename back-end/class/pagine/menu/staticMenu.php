@@ -16,7 +16,7 @@ class staticPath{
 
     public function admin(){
         $admin = array();
-        $admin[]=new schedaMenu("Logout",staticPath::$link_logout);
+        $admin[]=new schedaMenu("Logout",staticPath::$link_logout,"en");
         return $admin;
     }
     public function user($active){
@@ -25,7 +25,7 @@ class staticPath{
         $private[]=new schedaMenu("Promozioni",staticPath::$link_promozioni_private);
         $private[]=new schedaMenu("Prodotti",staticPath::$link_prodotti_private);
         $private[]=new schedaMenu("Link Negozio",staticPath::$link_negozio.staticPath::$get);
-        $private[]=new schedaMenu("Logout",staticPath::$link_logout);
+        $private[]=new schedaMenu("Logout",staticPath::$link_logout,"en");
         if($active < '5'){
         $private[$active]->activation();
         }
@@ -36,7 +36,7 @@ class staticPath{
     }
     public function public_menu($active){
         $private = array();
-        $private[]=new schedaMenu("Home",staticPath::$link_home);
+        $private[]=new schedaMenu("Home",staticPath::$link_home,"en");
         $private[]=new schedaMenu("Negozio",staticPath::$link_negozio);
         $private[]=new schedaMenu("Dove siamo",staticPath::$link_dove_siamo);
         $private[]=new schedaMenu("Contatti",staticPath::$link_contatti);

@@ -6,10 +6,15 @@ class page_public implements type_page{
 	private static $style="style.css";
 	private $menu;
 	private $name;
+	private $lang;
 
-	public function __construct($name, menu $menu){
+	public function __construct($name, menu $menu,$lg =NULL){
 		$this->name =$name;
 		$this->menu =$menu;
+		$this->lang =NULL;
+		if($lg != NULL){
+			$this->lang ='xml:lang="'.$lg.'"';
+		}
 	}
 	public function intestazione(){
 		$file = file_get_contents('../../class/HTMLstored/public/preambolo.html', FILE_USE_INCLUDE_PATH);
@@ -28,7 +33,7 @@ class page_public implements type_page{
 	}		
     public function breadcrumb(){
     	echo '	<div id="breadcrumb">
-        			<h2><strong>'.$this->name.'</strong></h2>        
+        			<h2'.$this->lang.'>'.$this->name.'</h2>
     			</div>';
     }
     public function footer(){
