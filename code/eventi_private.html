@@ -78,13 +78,14 @@
             <div class="form_sopra">
                 <p class="intestazione">ELIMINA APERTURE O CHIUSURE</p>
                 <form action="" method="post" onsubmit="">
-                    <div aria-label="Type">
+                    <div>
                     <label for="cancella_data">Segli evento da cancellare:</label>
-                    <fieldset id="cancella_data">
-                        <input type="radio" name="date1" value="apertura 13/11/2011"/> apertura 13/11/2011<br/>
-                        <input type="radio" name="date2" value="chiusura 12/11/2011"/> chiusura 12/11/2011<br/>
-                        <input type="radio" name="date3" value="apertura 11/11/2011"/> apertura 11/11/2011<br/>
-                        </fieldset>
+                        <input type="radio" name="date1" id="cancella_data" value="apertura 13/11/2011"/> apertura 13/11/2011<br/>
+                        <label for="cancella_data"></label>
+                        <input type="radio" name="cancella_data2" value="chiusura 12/11/2011"/> chiusura 12/11/2011<br/>
+                        <label for="cancella_data2"></label>
+                        <input type="radio" name="cancella_data3" value="apertura 11/11/2011"/> apertura 11/11/2011<br/>
+                        <label for="cancella_data3"></label>
                         <input type="submit" name="tasto_cancella"  value="Cancella"/>
                     </div>
                 </form>

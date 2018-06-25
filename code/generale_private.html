@@ -1,9 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it">
 <head>
-	<!-- Specifico il charset -->
-	<meta http-equiv="Content-Type" content="txt/html charset= UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="application/javascript" />
+  <!-- Specifico il charset -->
+  <meta http-equiv="Content-Type" content="application/xhtml+xml charset= UTF-8" />
 
 	<title>Centro Archimede</title>
 	<link rel="stylesheet" type="text/css" href="private_style.css" media="handheld, screen"/>
@@ -26,10 +27,8 @@
                 <h1>AMMINISTRAZIONE</h1>
 			</div>
       <div id="exit_amm">
-             <a href="login.html"><ul>
-              <li xml:lang="en"><p id="toLogin">LOGOUT</p><img id="profilo" alt="immagine exit area amministrazione" src="images/exit.png"></li>
-            </ul></a>
-            </div>
+          <a href="login.html">LOGOUT</a>
+      </div>
 	</div>
 
 	<div id="menu">
@@ -43,7 +42,7 @@
     </div>
 
 	<div id="breadcrumb">
-        <h2><strong>NOME ACCOUNT</strong> > GENERALE</h2>        
+        <h2><strong>NOME ACCOUNT</strong> GENERALE</h2>        
     </div>
     <div id="content">
 
@@ -56,7 +55,7 @@
                         <div id="verifica_sito"></div> <div id="verifica_tel"></div> <div id="verifica_mail"></div>
                         <form action="change_shop_constacts.php" method="post" onsubmit="return checkEmail(this)" >
                         <div>
-                          <label for="Telefono">Telefono / Fax:</label>
+                          <label for="telefono">Telefono / Fax:</label>
                           <input type="text" name="Telefono" id="telefono" value="041610265"/>
                           <label for="Email">Email:</label>
                           <input type="text" name="Email" id="Email" value="blablabla@lego.com" />
@@ -96,7 +95,7 @@
                     <div id="logoChange"></div>
                       <form action="insertImage.php" method="post" enctype="multipart/form-data" onsubmit="return changeLogo()">
                           <div>
-                          <label for="carica_immmagine">Selezionare un file:</label>
+                          <label for="immagine">Selezionare un file:</label>
                           <input type="file" name="immagine" id="immagine"/>
                           <input type="submit" value="Salva"/>
                           </div>
@@ -120,38 +119,38 @@
 
                 <div id="sinistra">
                     <p class="intestazione">MODIFICA ORARIO</p>
-                    <p id="esempio">Il centro apre alle 08:30 </br> chiude alle 21:30  </p>
+                    <p id="esempio">Il centro apre alle 08:30 <br/> chiude alle 21:30  </p>
 
                     <div id="verifica_orario"></div>
                     <form action="" method="post" onsubmit="return checkorario(this)">
 
                         <div class="orario">
-                        <label for="lunedì"> Lunedì :</label>
-                        <input type="text" name="lunedi" id="lunedì" maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                        <label for="lunedi"> Lunedì :</label>
+                        <input type="text" name="lunedi" id="lunedi" maxlength="11" onkeypress="return onlyNumeric(event);"/>
                         <div id="uno"></div>
                         </div>
 
                         <div class="orario">
-                        <label for="martedì"> Martedì :</label>
-                        <input type="text" name="martedi" id="martedì"  maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                        <label for="martedi"> Martedì :</label>
+                        <input type="text" name="martedi" id="martedi"  maxlength="11" onkeypress="return onlyNumeric(event);"/>
                         <div id="due"></div>
                         </div>
 
                         <div class="orario">
-                        <label for="mercoledì" > Mercoledì :</label>
-                        <input type="text" name="mercoledi" id="mercoledì"  maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                        <label for="mercoledi" > Mercoledì :</label>
+                        <input type="text" name="mercoledi" id="mercoledi"  maxlength="11" onkeypress="return onlyNumeric(event);"/>
                         <div id="tre"></div>
                         </div>
                         
                         <div class="orario">
-                        <label for="giovedì" > Giovedì :</label>
-                        <input type="text" name="giovedi" id="giovedì" maxlength="11" onkeypress="return onlyNumeric(event);" />
+                        <label for="giovedi" > Giovedì :</label>
+                        <input type="text" name="giovedi" id="giovedi" maxlength="11" onkeypress="return onlyNumeric(event);" />
                         <div id="quattro"></div>
                         </div>
 
                         <div class="orario">
-                        <label for="venerdì" > Venerdì :</label>
-                        <input type="text" name="venerdi" id="venerdì"  maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                        <label for="venerdi" > Venerdì :</label>
+                        <input type="text" name="venerdi" id="venerdi"  maxlength="11" onkeypress="return onlyNumeric(event);"/>
                         <div id="cinque"></div>
                         </div>
 
@@ -179,9 +178,9 @@
                         <div id="verifica_descrizione"></div>
                         <form action="change_shop_slogan" method="post" onsubmit="return descrizione(this)">
                               <div>
-                                 <label for="motto">Motto:</label>                                          
+                                 <label for="testo_motto">Motto:</label>                                          
                                  <textarea name="testo_motto" id="testo_motto" rows="2" cols="50">Our mission: To inspire and develop the builders of tomorrow</textarea>  
-                                 <label for="descrizione_negozio">Descrizione:</label>                     
+                                 <label for="testo_descrizione">Descrizione:</label>                     
                                  <textarea name="testo_descrizione" id="testo_descrizione" rows="5" cols="50">Il nostro scopo è ispirare ed educare i bambini a pensare creativamente, ragionare in modo sistematico e realizzare il loro potenziale, plasmando il loro futuro e sperimentando le infinite possibilità umane. </textarea>  
                                  <div class="pulsante">
                                  <input  type="submit" value="Salva"/>                                
