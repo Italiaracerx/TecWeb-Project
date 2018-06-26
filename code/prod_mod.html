@@ -1,9 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it">
 <head>
-	<!-- Specifico il charset -->
-	<meta http-equiv="Content-Type" content="txt/html charset= UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="application/javascript" />
+  <!-- Specifico il charset -->
+  <meta http-equiv="Content-Type" content="application/xhtml+xml charset= UTF-8" />
 
 	<title>Centro Archimede</title>
 	<link rel="stylesheet" type="text/css" href="private_style.css" media="handheld, screen"/>
@@ -21,15 +22,13 @@
 
 	<div id="header">	    
 		    <div id="titolo">
-                <h3>CENTRO COMMERCIALE ARCHIMEDE</h3>
-                <h1>AMMINISTRAZIONE</h1>                 
+                <h1>CENTRO COMMERCIALE ARCHIMEDE</h1>
+                <h2>AMMINISTRAZIONE</h2>                 
 			</div>
 
-<div id="exit_amm">
-             <a href="login.html"><ul>
-              <li xml:lang="en"><p id="toLogin">LOGOUT</p><img id="profilo" alt="immagine exit area amministrazione" src="images/exit.png"></li>
-            </ul></a>
-            </div>
+      <div id="exit_amm">
+          <a href="login.html">LOGOUT</a>
+      </div>
                         
 	</div>
 
@@ -44,7 +43,7 @@
     </div>
 
 	<div id="breadcrumb">
-        <h2><strong>NOME ACCOUNT</strong> > PROMOZIONI</h2>
+        <h2><strong>NOME ACCOUNT</strong> &gt; PROMOZIONI</h2>
     </div>
     <div id="content">
         
@@ -52,7 +51,7 @@
             <img src="images/promo1.jpg" alt="promozione"/>
             <form action="" method="post" onsubmit="return checkProd()">
                 <div>
-                    <label for="modifica_immagine">Modifica immagine</label>
+                    <label for="immagine">Modifica immagine</label>
                     <input type="file" name="immagine" id="immagine"/>
                     <input type="submit" value="Salva"/>  
                     
@@ -71,7 +70,7 @@
                   <label for="campo_alt">Alternativa testuale dell'immagine della promozione:</label>
                   <input type="text" name="campo_alt" id="campo_alt" />
                   <label for="descrizione_promozione">Descrizione promozione:</label>
-                  <textarea name="descrizione_promozione" id="descrizione_prodotto" rows="10" cols="30" ></textarea>
+                  <textarea name="descrizione_promozione" id="descrizione_promozione" rows="10" cols="30" ></textarea>
                   <div class="invia">
                   <input type="submit" value="Salva"/>  
                   </div>
