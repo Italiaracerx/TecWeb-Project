@@ -3,9 +3,11 @@
 require_once __DIR__.'/../../query/orario.php';
 require_once __DIR__.'/../../query/logo.php';
 require_once __DIR__.'/../../query/image.php';
+require_once __DIR__.'/../../query/lang.php';
 require_once __DIR__.'/../../sistema/connection.php';
 
         $shop =$_GET['shop'];
+        unset($_GET['shop']);
 
         $connection= new connection();
         $logo = new logo($shop);
@@ -22,26 +24,45 @@ require_once __DIR__.'/../../sistema/connection.php';
         $giorni = array();
         $giorni =$orario->getGiorniHTML();
 
+        if($result_info == NULL || $result_logo == NULL || $result_orario == NULL){
+            header('location: negozio.php');
+            die;
+        }
+
+        $langMotto=getTextLanguage($result_info['motto'],'it');
+        $startMotto=NULL;
+        $endMotto=NULL;
+        if($langMotto != 'it'){
+            $startMotto='<span xml:lang="'.$langMotto.'">';
+            $endMotto='</span>';
+        }
+
+        $langDescr=getTextLanguage($result_info['descrizione'],'it');
+        $startDescr=NULL;
+        $endDescr=NULL;
+        if($langDescr != 'it'){
+            $startDescr='<span xml:lang="'.$langDescr.'">';
+            $endDescr='</span>';
+        }
 
 
-echo 
-    '<div id="content_negozio">
-        <h3 id="titolo_negozio">'.$result_info['negozio'].'</h3>';
+echo '<div id="content_negozio">';
+    echo '<h3 id="intestazione">'.$result_info['negozio'].'</h3>';
 
-echo   '<div id="informazioni">
-            <img id="logo_negozio" src="images/logo/'.$result_logo['logo'].'" alt="'.$result_logo['alt'].'"/>
+        echo   '<div id="informazioni">';
+            echo '<img id="logo_negozio" src="images/logo/'.$result_logo['logo'].'" alt="Logo del negozio '.$result_info['negozio'].'"/>
             <div id="contatti">
-                <h4 class="informazione">TELEFONO / FAX</h4>
-                <p class="dato">'.$result_info['telefono'].'</p>
-                <h4 class="informazione"><span xml:lang="en">EMAIL</span></h4>
-                <p class="dato">'.$result_info['mail'].'</p>
-                <h4 class="informazione">SITO WEB</h4>
-                <a class="dato" href="http://'.$result_info['sito'].'">'.$result_info['sito'].'</a>
-                
-                <div id="orari">
-                    <h4 class="informazione">ORARI</h4>';
+                <h4>Telefono \ Fax</h4>
+                <p>'.$result_info['telefono'].'</p>
+                <h4><span xml:lang="en">Email</span></h4>
+                <p>'.$result_info['mail'].'</p>
+                <h4>Sito web</h4>
+                <a href="http://'.$result_info['sito'].'">'.$result_info['sito'].'</a>'; 
+
+            echo '<div id="orari">
+                    <h4>Orari</h4>';
                     for($i =0; $i < 7 ; $i ++){
-                        echo '<p class="dato"><strong>'.$giorni[$i].':</strong>'.$result_orario[$i].'</p>';
+                        echo '<p><strong>'.$giorni[$i].':</strong>'.$result_orario[$i].'</p>';
                     }
 echo           '</div>
             </div>
@@ -49,10 +70,10 @@ echo           '</div>
 
             <div id="descrizione">
                 <p id="testo">               
-                    <strong>'.$result_info['motto'].'</strong><br/>'.$result_info['descrizione'].'
+                    <strong>'.$startMotto.$result_info['motto'].$endMotto.'</strong><br/>'.$startDescr.$result_info['descrizione'].$startDescr.'
                 </p>
-                <div id="prodotti">
-                    <h4 class="titolo_prodotti">PRODOTTI</h4>';
+                <div id="prodotto">
+                    <h4>Prodotti</h4>';
                     
                 $result_prodotto =$prodotto->read();
                 $row_p =array();
@@ -66,21 +87,23 @@ echo           '</div>
                     </div>';
                 }
                 else{
+                    echo '<ul>';
                     foreach($row_p as $row){
-                        echo '  <div class="prodotto">
-                                    <a href="prodotto1.html">
-                                        <img class="gioco" src="images/prodotto/'.$row['source'].'" alt="'.$row['alt'].'"/>
+                        echo '  <li>
+                                    <a href="visual_page.php?titolo='.$row['titolo'].'">
+                                        <img src="images/prodotto/'.$row['source'].'" alt="'.$row['alt'].'"/>'
+                                    .$row['titolo'].'
                                     </a>
-                                    <h5 class="NomeItem">'.$row['titolo'].'</h5>
-                                </div>';
+                                </li>';
                     }
+                    echo '</ul>';
                 }
                 echo '</div>';
                  
                 echo '
                     
-                <div id="promozioni">
-                    <h4 class="titolo_prodotti">PROMOZIONI</h4>';
+                <div id="promozione">
+                    <h4>Promozioni</h4>';
 
                     $result_promozione =$promozione->read();
                     $rows =array();
@@ -94,20 +117,19 @@ echo           '</div>
                         </div>';
                     }
                     else{
-                        echo '<div id="elencoPromozioni">';
+                        echo '<ul>';
                         foreach($rows as $row){
-                            echo '
-                            <div class="singola_promozione">
-                                <a href="promo2.html">
-                                    <img class="promozione" src="images/promozione/'.$row['source'].'" alt="'.$row['alt'].'"/>
-                                </a> 
-                                <p>'.$row['titolo'].'</p>
-                            </div>';
+                            echo '  <li>
+                                        <a href="visual_page.php?titolo='.$row['titolo'].'">
+                                            <img src="images/promozione/'.$row['source'].'" alt="'.$row['alt'].'"/>'
+                                        .$row['titolo'].'
+                                        </a>
+                                    </li>';
                         }
-                        echo '  </div>';
-                    }                 
+                        echo '</ul>';
+                    }
         echo '
-
+                </div>
             </div>
             </div>
          </div>  

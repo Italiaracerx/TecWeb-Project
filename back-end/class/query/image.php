@@ -28,7 +28,7 @@ class image extends connection implements query{
 
         //costruttore della classe inputPicture
 
-        public function __construct($type, $user = NULL){
+        public function __construct($type=NULL, $user = NULL){
             $this->user =$user;
 
             $this->type =$type;
@@ -106,7 +106,6 @@ class image extends connection implements query{
             }
         }
         public function write(){
-            $this->checker();
             $this->how_much();
             $this->resize_and_store();
             $this->insert();
@@ -136,6 +135,7 @@ class image extends connection implements query{
         }
 
         public function resize_and_store(){
+            $this->checker();
             $manipulator = new ImageManipulator($this->tmp_name);
             $width  = $manipulator->getWidth();
             $height = $manipulator->getHeight();
@@ -157,6 +157,11 @@ class image extends connection implements query{
             $newImage = $manipulator->crop($x1, $y1, $x2, $y2);
             // saving file to uploads folder
             $manipulator->save($this->directory.$this->name);
+        }
+        
+        public function search($titolo){
+            $query="SELECT * FROM immagini WHERE titolo = '$titolo'";
+            return parent::execute_query($query);
         }
     }
     

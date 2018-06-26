@@ -8,84 +8,96 @@
 
 
     $controller = new controller();
-    $controller->setPage(new page_public('home',(new menu((new staticPath())->public_menu('0')))));
+    $controller->setPage(new page_public('home',(new menu((new staticPath())->public_menu('0'))),'en'));
     $controller->head();
 ?>
-  <div id="content">
-    <img id="torre" alt="immagine torre archimede" src="images/default/torre 2.jpg"/>
+	  <div id="content">
+      <div id="corpo">
+		    <img id="imgTorre" src="images/default/torre 2.jpg" alt="immagine torre archimede" />
+		    <h2>Benvenuti nel Centro Commerciale Archimede</h2>
 
-    <h2  id="intestazione">Benvenuti nel Centro Commerciale Archimede</h2>
-    <div id="eventi_promozioni">
-    <div id="tabellaLaterale">
-      <div id="tabella_orari">
-            <h4 class="informazione">ORARI</h4>
-            <?php
-                $orario =new orario('admin');
-                $giorni = array();
-                $giorni =$orario->getGiorniHTML();
-                $result_orario =$orario->read()->fetch_array(MYSQLI_NUM);
-                
-                for($i =0; $i < 7 ; $i ++){
-                    echo '<p class="dato"><strong>'.$giorni[$i].':</strong>'.$result_orario[$i].'</p>';
-                }
-            ?>  
+		    <div id="contentRight">
+		  
+                <h3>ORARI</h3>
+                <?php
+                    $orario =new orario('admin');
+                    $giorni = array();
+                    $giorni =$orario->getGiorniHTML();
+                    $result_orario =$orario->read()->fetch_array(MYSQLI_NUM);
+                    
+                    for($i =0; $i < 7 ; $i ++){
+                        echo '<p><strong>'.$giorni[$i].' :</strong> '.$result_orario[$i].'</p>';
+                    }
+                ?>            
+				       <h3>Aperture Straordinarie</h3>
+			        	<ul>
+                  <li>Aperti primo maggio con orario continuato</li>
+                  <li>Aperti primo maggio con orario continuato</li>
+                  <li>Aperti primo maggio con orario continuato</li>
+                  <li>Aperti primo maggio con orario continuato</li>
+                </ul>
+			     
+         
+             <h3>Chiusure Straordinarie</h3>
+               <ul>
+                 <li>Chiusi il 23 dicembre tutto il giorno</li>
+               </ul>
+      
+        
+				      <h3>Novità</h3>
+				       <ul>
+                  <li>Aperti con orario continuato 1/05/2018</li>
+               </ul>
+		  
+      
+            <div id="area_amministrazione">
+                <a href="login.html">
+                 <img src="images/default/profilo.jpg" alt="immagine area amministratore"/>
+                 AREA AMMINISTRAZIONE
+                </a>
             </div>
+          </div>
 
-      <div id="aperture">
-        <h4>Aperture/Chiusure Straordinare</h4>
-        <p>Aperti primo maggio con orario continuato</p>
-      </div>
+		    <div id="contentLeft">
 
-      <div id="novità">
-        <h4>Novità</h4>
-        <p>13/05/2018 Apertura nuovo  negozio di abbigliamento Forpen </p>
-      </div>
+<ul id="casella">
+ <li><a href="negozi.html">Negozi</a></li>
+ <li><a href="dovesiamo.html">Dove Siamo</a></li>
+ <li><a href="contatti.html">Contatti</a></li>
+</ul>
+<h2 >Promozioni</h2>
 
-        </div>
-
-    <div id="sottoPiano">
-      <div id="tre_pulsanti">
-       <p class="casella"><a href="negozi.html">Negozi</a></p>
-       <p class="casella"><a href="negozi.html">Dove Siamo</a></p>
-       <p class="casella"><a href="negozi.html">Contatti</a></p>
-        </div>
-       <div id="titolo_promozione">
-        <h2>Promozioni</h2>
-       </div>
-        <?php
-            $promozione = new image('promozione');
-            $result_promozione =$promozione->read();
-                    $rows =array();
-                    while($row = $result_promozione->fetch_array(MYSQLI_ASSOC)){
-                        $rows[] = $row;
-                    }
-                    if(!count($rows)){
-                        echo '                
-                        <div class ="no_image">
-                            <p class="text_message">coming soon</p>
-                        </div>';
-                    }
-                    else{
-                        echo '<div id="elencoPromozioni">';
-                        foreach($rows as $row){
-                            echo '
-                            <div class="singola_promozione">
-                                <a href="promo2.html">
-                                    <img class="promozione" src="images/promozione/'.$row['source'].'" alt="'.$row['alt'].'"/>
-                                </a> 
-                                <p class="nome_negozio">'.$row['negozio'].'</p>
-                            </div>';
-                        }
-                        echo '  </div>';
-                    }
-        ?>
-
-      </div>
-     </div>
-
+    <?php
+        $promozione = new image('promozione');
+        $result_promozione =$promozione->read();
     
-    
-  </div>
+        $rows =array();
+        while($row = $result_promozione->fetch_array(MYSQLI_ASSOC)){
+            $rows[] = $row;
+        }
+        if(!count($rows)){
+            echo '                
+            <div class ="no_image">
+                <p class="text_message">coming soon</p>
+            </div>';
+        }
+        else{
+            echo '<ul id="promozione">';
+            foreach($rows as $row){
+                echo '
+                <li>
+                    <a href="promo2.html">
+                        <img src="images/promozione/'.$row['source'].'" alt="'.$row['alt'].'"/>
+                    '.$row['negozio'].'
+                    </a> 
+                </li>';
+            }
+            echo '  </ul>';
+        }
+?>
+</div>
+</div>
+</div>
 
 <?php
 $controller->footer();
