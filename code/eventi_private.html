@@ -20,7 +20,7 @@
 <body>
     <div id="header">	    
             <div id="titolo">
-                <h3>CENTRO COMMERCIALE ARCHIMEDE</h3>
+                <h1>CENTRO COMMERCIALE ARCHIMEDE</h1>
                 <h1>AMMINISTRAZIONE</h1>
             </div>
         <div id="exit_amm">
@@ -37,7 +37,7 @@
     </div>
 
     <div id="breadcrumb">
-        <h2><strong>ADMINISTRATOR</strong> GENERALE</h2>        
+        <h2><strong>ADMINISTRATOR</strong> &gt; GENERALE</h2>        
     </div>
     <div id="content">
         <div class="sopra">
@@ -76,16 +76,26 @@
         </div>
         <div class="sopra">
             <div class="form_sopra">
-                <p class="intestazione">ELIMINA APERTURE O CHIUSURE</p>
+                <p class="intestazione">ELIMINA APERTURE O CHIUSURE </p>
+                
                 <form action="" method="post" onsubmit="">
+                    <p>Elimina data:</p>
                     <div>
-                    <label for="cancella_data">Segli evento da cancellare:</label>
-                        <input type="radio" name="date1" id="cancella_data" value="apertura 13/11/2011"/> apertura 13/11/2011<br/>
-                        <label for="cancella_data"></label>
-                        <input type="radio" name="cancella_data2" value="chiusura 12/11/2011"/> chiusura 12/11/2011<br/>
-                        <label for="cancella_data2"></label>
-                        <input type="radio" name="cancella_data3" value="apertura 11/11/2011"/> apertura 11/11/2011<br/>
-                        <label for="cancella_data3"></label>
+
+                        <label for="cancella_data">
+                        <input type="radio" name="date1" id="cancella_data" value="apertura 13/11/2011"/> apertura 13/11/2011
+                        </label>
+                        
+                    
+                        <label for="cancella_data2">
+                        <input type="radio" name="date1" id="cancella_data2" value="chiusura 12/11/2011"/> chiusura 12/11/2011
+                        </label>
+                    
+                    
+                        <label for="cancella_data3">
+                        <input type="radio" name="date1" id="cancella_data3" value="apertura 11/11/2011"/> apertura 11/11/2011
+                        </label>
+                    
                         <input type="submit" name="tasto_cancella"  value="Cancella"/>
                     </div>
                 </form>
@@ -93,11 +103,15 @@
 
             <div class="form_sopra">
                 <p class="intestazione">ELIMINA NOVITA'</p>
+                <p>Elimina novità:</p>
                 <form action="" method="post" onsubmit="">
                     <div>
-                        <label for="cancella_novita">Scegli novita' da cancellare:</label>
-                        <input type="radio" name="novita" value="Aperti con orario continuato 1/05/2018">Aperti con orario continuato 1/05/2018<br/>
-                        <input type="radio" name="novita" value="Aperti con orario continuato 2/05/2018">Aperti con orario continuato 1/05/2018<br/>
+                        <label for="cancella_novita">
+                        <input type="radio" name="novita" id="cancella_novita"value="Aperti con orario continuato 1/05/2018" />Aperti con orario continuato 1/05/2018
+                        </label>
+
+                        <label for="cancella_novita2">
+                        <input type="radio" name="novita" id="cancella_novita2" value="Aperti con orario continuato 2/05/2018"/>Aperti con orario continuato 1/05/2018</label>
                         <input type="submit" name="tasto_cancella"  value="Cancella"/>
                     </div>
                 </form>

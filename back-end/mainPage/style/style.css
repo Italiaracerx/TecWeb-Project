@@ -9,7 +9,6 @@ html, body{
 }
 #header{
 	background-color: #a02222;
-	height: 100%;
 }
 #contenutoHeader{
 	margin: auto;
@@ -18,22 +17,16 @@ html, body{
 	padding-bottom:2em;	
 	
 }
-#header h2{
-	font-size: 1.5em;
-	display: inline;
-}
 
-#logo{
+#imgLogo{
 	float:left;
 	width:7em;
-
 }
 #titolo{
 	display: inline-block;
 	text-align: center;
 	color:white;
 }
-
 .accesaid{
 	position: absolute;
 	height: 0;
@@ -42,7 +35,6 @@ html, body{
 
 #menu ul {
 	list-style-type: none;
-	margin: 0;
 	overflow: auto;
 	background-color: #8B0000;
 }
@@ -65,6 +57,7 @@ html, body{
 	padding: 14px 0em 16px 0em;
 	text-decoration: none;
 }
+
 #menu a:hover{
 	background-color:rgb(184, 11, 11);
 }
@@ -90,35 +83,23 @@ html, body{
 	font-weight: normal;
 }
 
-
 #content{
 	max-width:1024px; 
 	margin: 0 auto ;
 	overflow: auto;
 	padding-bottom:1em;
-	height: 100%;
 }
 
 #content h2{
     text-align: center;
-
-
 }
-#torre{ 
+
+#imgTorre{ 
   width: 100%; 
 } 
-#testoInformazioni{ 
-   text-align: center; 
-   width: 30%; 
-   display: inline-block;
-   padding-left: 0.5em;
-}
 
-#testoInformazioni h3{
-    padding-top: 3em;
-  }
 
-#intestazione{
+#corpo h2{
 	padding:0.8em 0.5em 0.5em 0.5em;
 	text-align: center;
 	font-weight: 500;
@@ -126,75 +107,87 @@ html, body{
 	font-size: 2em;
 }
 
-#tabellaLaterale{
+#contentRight{
 	width: 23%;
 	float: right;
-	padding-top: 1em;
 	text-align: center;
 	font-size: 1em;	
-	height: 100%;
-	display: inline-block;
+	margin: 1%;
 }
 
-#tabellaLaterale h4{
+#contentRight h3{
 	font-weight: bold;	
+	border-bottom:2px solid #a02222;
+	text-transform: uppercase;
+	font-size: 1em;
+	margin-top: 1.5em;
 }
 
-#tabellaLaterale ul{
+#contentRight ul{
 	list-style-type: none;
 }
-#tabellaLaterale li{
+#contentRight li{
 	border-bottom: 1px solid grey;
 }
 
-#tabella_orari{
-	display: inline-block;
-	margin-bottom: 10%;
+#contentRight p{
+	margin:2% 0% 2% 0%;
 }
-#tabella_orari h4{
-	border-bottom:2px solid #a02222;
-}
-
-#tabella_eventi{
-	margin: 1em;
+#area_amministrazione{
+	margin-top: 1.5em;
+    background-color: #6a6a6a;
 }
 
-.aperture_chiusure{
-	display: inline-block;
-	margin:2em 0em 1em 0em;
-}
-.aperture_chiusure h4{
-	border-bottom:2px solid #a02222;
-}
-#novità{
-	display: inline-block;
-	margin:2em 0em 1em 0em;
+#area_amministrazione a{
+  display: block;
+  text-decoration: none;
+  color:white;
+  padding: 0.3em;
+  overflow: auto;}
+
+
+#area_amministrazione  a:hover{
+	background-color:black;
 }
 
-#novità h4{
-	border-bottom:2px solid #a02222;
+#area_amministrazione img{
+	width: 3.8em;
+	float: left;
+	padding: 0.1em;
 }
 
-#sottoPiano{
-	width: 75%;
+#contentLeft{
+	width: 70%;
+	margin: 1%;
 	display: inline-block;
 	border-right: 1px solid #000;
 	}
 
-#tre_pulsanti{
-	overflow: auto;
+#contentLeft h2{
+    padding-top:0.5em;	
+	padding-bottom: 0.5em;
+	font-size:2em;
+	letter-spacing: 3px;
+	line-height: 1em;
+	border-bottom: 2px solid #A21E1E;
 	text-align: center;
+	font-weight: 400;
+	text-transform: uppercase;
+	display: inline-block;
+	width: 95%;
 }
-.casella {
+
+
+#casella li{
 	float: left;
 	width: 30%;
 	margin: 1%;
 	text-transform: uppercase;
 	background-color: brown;
-	overflow: auto;
+	list-style-type: none;
 }
 
-.casella a {
+#casella a {
 	display: block;
 	text-align: center;
 	text-decoration: none;
@@ -202,95 +195,42 @@ html, body{
 	color: white;
 }
 
-.casella a:hover{
+#casella a:hover{
 	background: linear-gradient(to bottom right,brown,	#DB7093);
 }
 
-#titolo_promozione{
-	text-align: center;
-}
-
-#sottoPiano h2{
-	border-bottom: 1px solid #000;
-	font-weight: 500;
-	text-transform: uppercase;
-	font-size: 2em;
-	display: inline-block;
-	width: 95%;
-	text-align: center;
-	margin-top: 0.5em;
-}
-.singola_promozione{
+#promozione li{
 	border:2px solid #000;
 	float: left;
 	width: 26%;
 	margin: 3%;
 	text-align: center;
-	overflow: auto;
-
-}
-.singola_promozione a{
-	display: inline-block;
-	}
-.promozione{
-	width: 100%;
-
-}
-#elencoPromozioni{
-	overflow: auto;
+    list-style-type: none;
 }
 
-.singola_promozione p{
-	padding: 1%;
+#promozione a{
+	text-decoration: none;
 	background-color: #A52A2A;
 	color: #FFFFFF;
-}
-.no_image{
-	padding: 1em 1em 1em 1em;
+	padding-bottom: 0.2em;
+	display: block;
+	}
+
+#promozione img{
+	width: 100%;
 }
 
-.text_message{
-	margin-top: 2em;
-	margin-bottom: 2em;
-	padding-top:1em;
-	padding-bottom:1em;
-	height:50%;
-	background-color: #96969064;
+#intestazione{
+	padding-top:1em;	
+	padding-bottom: 0.5em;
+	font-size:2em;
+	letter-spacing: 3px;
+	line-height: 1em;
+	border-bottom: 2px solid #A21E1E;
 	text-align: center;
-	text-transform: uppercase;
-} 
-/*--------NEGOZI---------*/
-
-.NomeItem{ 
-  float:left; 
-  width: 100%; 
-  text-align:center; 
-  background-color: #A21E1E; 
-  color: white; 
-  padding-top:5%; 
-  padding-bottom:5%; 
-  text-transform: uppercase;
-
- 
-} 
- 
-.vetrina{ 
-  margin:2% 2% 0% 2%;
-  width: 20%; 
-  float:left; 
-  border:3px solid black; 
-  overflow: auto;
-} 
-.vetrina img{ 
-  width: 100%; 
-  float:left; 
-} 
-
-.nome_negozio{
+	font-weight: 400;
 	text-transform: uppercase;
 }
-
-
 
 /*-------FOOTER-----*/
 #footer{
@@ -305,7 +245,7 @@ html, body{
 }
 #footerMenu ul{
 	max-width: 80%;
-	margin:auto;
+	margin:0% 10% 0% 10%;
 	list-style-type: none;
 	overflow:auto;
 }
@@ -313,6 +253,7 @@ html, body{
 #footerMenu li {
 	float: left;
 	width: 20%;
+
 
 }
 #footerMenu li  a{
@@ -337,13 +278,52 @@ html, body{
 	font-size:0.8em;
 }
 
+/*--------NEGOZI---------*/
+
+
+ 
+#negozio li{
+	border:2px solid #000;
+	float: left;
+	width: 20%;
+	margin: 2%;
+	text-align: center;
+    list-style-type: none;
+    text-transform: uppercase;
+
+}
+ #negozio a{ 
+    text-decoration: none;
+	background-color: #A52A2A;
+	color: #FFFFFF;
+	padding-bottom: 0.2em;
+	display: block;
+
+ 
+} #negozio img{ 
+  width:100%; 
+  float:left; 
+}
+
+
+
 /*----------DOVE SIAMO--------*/
 
-#mappa{
+#imgMappa{
     width: 60%;
     float: right;
     padding: 1em;
 }
+#testoInformazioni{ 
+   text-align: center; 
+   width: 30%; 
+   display: inline-block;
+   padding-left: 0.5em;
+}
+
+#testoInformazioni h3{
+    padding-top: 1em;
+  }
 
 /*------------CONTATTI-----------*/
 #fotoContatti{
@@ -358,11 +338,10 @@ html, body{
 
 
 #PromozioniAttive{
-	text-align: center;
 	font-size: 1em;
 	margin:0% 5% 0% 5%;
 }
-#PromozioniAttive div{
+#PromozioniAttive li{
 	width: 22%;
 	float: left;
 	text-align: center;
@@ -387,27 +366,17 @@ html, body{
 
 #informazioni{
 	width:25%;
-	float:left;
-	
-}
-
-#descrizione{
-	padding-top:1em;	
-	margin-right:5%;
-	margin-left:31%;
-	margin-top:1em;	
+	float:left;	
 }
 
 #logo_negozio{
 	width: 90%;
-	height: auto;
 	padding:1em;
 }
 
 #testo{
 	padding: 1em;
 	line-height: 1.4em;
-	color:black; 
 	font-style:italic;
 	font-size: 95%; 
 	text-align: center;
@@ -420,31 +389,33 @@ html, body{
 
 }
 
-.informazione{
-	font-weight: 400;
+#contatti h4{
+	font-weight: 600;
 	padding-top:1em;
+	text-transform: uppercase;
+	margin-bottom: 1em;
 }
 
-.dato{
-	padding-top: 3%;
-	color: black;
+#orari p{
+	margin: 2%;
 }
 
-.gioco{
-	width: 7em;
-	height: auto;
-	display:inline-block;
-}
-
-.titolo_prodotti{
-	display: block;	
+#descrizione{
 	padding-top:1em;	
+	margin-right:5%;
+	margin-left:31%;
+	margin-top:1em;	
+}
+
+#descrizione h4{
+	display: block;	
+	padding-top:1em;
 	margin-left: 5%;
 	margin-right: 5%;
 	margin-bottom: 5%;
 	padding-bottom: 1em;
 	font-size:1.5em;
-	letter-spacing: 10px;
+	letter-spacing: 5px;
 	line-height: 1em;
 	border-bottom: 2px solid #A21E1E;
 	text-align: center;
@@ -452,67 +423,84 @@ html, body{
 	text-transform: uppercase;
 }
 
-#promozioni{
-	padding-bottom:2em;
+#prodotto{
+	display: inline-block;
 }
-#promozioni div div{
-	width: 28.5%;
-	margin:2%;
-}
-.prodotto{
+#prodotto li{
 	margin:1.5% 1% 0% 1%;
 	width: 30%;
 	float:left; 
   	border:3px solid black;
+  	text-align: center;
+  	list-style-type: none;
+  	text-transform: uppercase;
 }
 
-.prodotto img{
+#prodotto a{
+	display: inline-block;
+	text-decoration: none;
+	background-color:#808080;
+	color: #FFFFFF;
+	padding-bottom: 0.2em;
+	display: block;
+}
+
+#prodotto img{
 	width: 100%;
-	margin:0em;
-
+	height: 11em;
 }
-.prodotto a{
+
+#promozione{
 	display: inline-block;
 }
- 
-#prodotti{ 
-  margin-bottom: 2em; 
-  overflow: auto;
-  text-align: center;
-	
-}
 
-.comingsoon{ 
+/*.comingsoon{ 
   text-align: center; 
   background-color: rgb(138, 137, 137); 
   padding: 1em 1em 1em 1em; 
   margin: 1em 1em 1em 1em; 
-}
+}*/
 
 /*PRODPROMO CSS*/
 
 /*uguale a negozio lego*/
-#titolo_prodpromo{
-	padding-top:1em;	
-	padding-bottom: 1em;
-	font-size:2em;
-	letter-spacing: 10px;
-	line-height: 1em;
-	border-bottom: 2px solid #A21E1E;
-	text-align: center;
-	font-weight: 400;
-	text-transform: uppercase;
-}
 
-#img_prodpromo{
+#prodpromo_leftSide{
 	float: left;
 	max-width: 50%;
 }
-
+#img_prodpromo{
+	float: left;
+	max-width: 100%;
+}
 #prodpromo_rightSide{
 	float:right;
+	width: 47.5%;
 }
 
 #descrizione_prodpromo{
-	padding-top: 1em;
+	padding-top: 2em;
+	padding-bottom: 1em;
 }
+#date_inizio_fine{
+	padding-top: 1em;
+	text-align: right;
+}
+
+#loading_screen
+{  
+  display: none;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  color: black;  
+  text-align: center;
+  padding-top: 100px;
+  /*opacity: 0.5;
+  filter: alpha(opacity=50);*/
+}
+
+

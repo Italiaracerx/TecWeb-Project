@@ -1,7 +1,6 @@
 <?php 
 require_once __DIR__.'/../interfacce/type_page.php';
 
-
 class page_private implements type_page{
 	private static $style="private_style.css";
 	private $menu;
@@ -13,6 +12,7 @@ class page_private implements type_page{
 		$this->menu =$menu;
 		$this->javascript =$js;
 	}
+	
 	public function intestazione(){
 		$file = file_get_contents('../../class/HTMLstored/private/preambolo.html', FILE_USE_INCLUDE_PATH);
 		$file = str_replace('__USER__',$_SESSION['user'],$file);
