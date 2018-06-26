@@ -12,7 +12,7 @@ class news extends connection implements query{
 
 
     //metodi
-    public function __construct($tipo, $date, $evento =NULL){
+    public function __construct($tipo, $date=NULL, $evento =NULL){
         $this->type =parent::escaped_string($tipo);
         $this->date =parent::escaped_string($date);
         $this->news =parent::escaped_string($evento);
@@ -27,9 +27,10 @@ class news extends connection implements query{
             throw new exeption("error","Non è stato possibile inserire la novita. Riprovare più tardi.");
         }
     }
-    public function read(){
+    public function read($type=NULL){
+	if($type != NULL){$this->type=$type;}
         $query = "SELECT type, descrizione FROM eventi WHERE type = '$this->type' ORDER BY ID DESC LIMIT 10";
-        return mysqli_fetch_array(parent::execute_query($query));
+        return parent::execute_query($query);
     }
     public function delete(){
         $current_date= date ("d-m-Y");

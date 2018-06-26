@@ -3,6 +3,7 @@
     require_once __DIR__.'/../../class/pagine/page_public.php';
     require_once __DIR__.'/../../class/query/orario.php';
     require_once __DIR__.'/../../class/query/image.php';
+    require_once __DIR__.'/../../class/query/news.php';
     require_once __DIR__.'/../../class/pagine/menu/menu.php';
     require_once __DIR__.'/../../class/pagine/menu/staticMenu.php';
 
@@ -29,25 +30,50 @@
                         echo '<p><strong>'.$giorni[$i].' :</strong> '.$result_orario[$i].'</p>';
                     }
                 ?>            
-				       <h3>Aperture Straordinarie</h3>
-			        	<ul>
-                  <li>Aperti primo maggio con orario continuato</li>
-                  <li>Aperti primo maggio con orario continuato</li>
-                  <li>Aperti primo maggio con orario continuato</li>
-                  <li>Aperti primo maggio con orario continuato</li>
-                </ul>
+				<h3>Aperture Straordinarie</h3>
+                    <ul>
+                    <?php
+                        $news =new news('APERTURA');
+                        $aperture =$news->read();
+                        $rows =array();
+                        while($row = $aperture->fetch_array(MYSQLI_ASSOC)){
+                            $rows[] = $row;
+                        }
+                        foreach($rows as $row){
+                            echo '<li>Aperti in data: '.$row['data'].'</li>';
+                        }
+                    ?>    
+                    </ul>
 			     
          
              <h3>Chiusure Straordinarie</h3>
-               <ul>
-                 <li>Chiusi il 23 dicembre tutto il giorno</li>
-               </ul>
+                <ul>
+                <?php
+                    $chiusure =$news->read('CHIUSURE');
+                    $rows =array();
+                    while($row = $chiusure->fetch_array(MYSQLI_ASSOC)){
+                        $rows[] = $row;
+                    }
+                    foreach($rows as $row){
+                        echo '<li>Chiusi in data: '.$row['data'].'</li>';
+                    }
+                ?>               
+                </ul>
       
         
-				      <h3>Novità</h3>
-				       <ul>
-                  <li>Aperti con orario continuato 1/05/2018</li>
-               </ul>
+                <h3>Novità</h3>
+                    <ul>
+                    <?php
+                        $novita =$news->read('NOVITA');
+                        $rows =array();
+                        while($row = $novita->fetch_array(MYSQLI_ASSOC)){
+                            $rows[] = $row;
+                        }
+                        foreach($rows as $row){
+                            echo '<li>'.$row['descrizione'].'. Data: '.$row['data'].'</li>';
+                        }
+                    ?>                   
+                    </ul>
 		  
       
             <div id="area_amministrazione">
