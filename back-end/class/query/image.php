@@ -106,7 +106,6 @@ class image extends connection implements query{
             }
         }
         public function write(){
-            $this->checker();
             $this->how_much();
             $this->resize_and_store();
             $this->insert();
@@ -136,6 +135,7 @@ class image extends connection implements query{
         }
 
         public function resize_and_store(){
+            $this->checker();
             $manipulator = new ImageManipulator($this->tmp_name);
             $width  = $manipulator->getWidth();
             $height = $manipulator->getHeight();

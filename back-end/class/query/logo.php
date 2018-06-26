@@ -27,7 +27,7 @@ class logo extends image{
             }
         }
         public function write(){
-            parent::store();
+            parent::resize_and_store();
             $this->delete();
             $this->update();
         }

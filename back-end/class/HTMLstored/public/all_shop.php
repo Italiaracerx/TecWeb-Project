@@ -8,6 +8,7 @@ require_once __DIR__.'/../../query/shop.php';
     while($row = $result_pro->fetch_array(MYSQLI_ASSOC)){
         $rows[] = $row;
     }
+    echo '<h2 id="intestazione"> I nostri negozi</h2>';
     if(!count($rows)){
         echo 'non ci sono negozi';
     }

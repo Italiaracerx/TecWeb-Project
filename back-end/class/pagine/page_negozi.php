@@ -25,7 +25,6 @@ class negozi extends page_public{
 
     public function content(){
         echo '<div id="content">';
-        echo '<h2 id="intestazione"> I nostri negozi</h2>';
 
         if(isset($_GET['shop'])){
             require_once __DIR__.'/../HTMLstored/public/alone_shop.php';
