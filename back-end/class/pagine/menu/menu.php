@@ -7,7 +7,7 @@ class menu{
     }
     public function print(){
         $str =NULL;
-        $str ='<p><a xml:lang="en" href="#content" class="accesaid">Skip navigation</a></p><ul>';
+        $str ='<ul>';
             foreach($this->link as $scheda){
                 $str = $str.$scheda->printScheda();
             }

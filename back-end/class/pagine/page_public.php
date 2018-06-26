@@ -28,31 +28,34 @@ class page_public implements type_page{
         echo $file;
 	}
 	public function menu(){
-		$str ='<div id="menu">'.$this->menu->print().'</div>';
+		$skip ='<p><a xml:lang="en" href="#content" class="accesaid">Skip navigation</a></p>';
+		$str ='<div id="menu">
+			'.$skip.$this->menu->print().'</div>';
 		echo $str;
 	}		
     public function breadcrumb(){
     	echo '	<div id="breadcrumb">
-        			<h2'.$this->lang.'>'.$this->name.'</h2>
+        			<h2 '.$this->lang.'>'.$this->name.'</h2>
     			</div>';
     }
     public function footer(){
-        echo '       
-        <div id="footer">
-            <div id="footerMenu">
-                <div id="contentMenuFooter">';
-                    $this->menu();
-                echo '
-            </div>
-        </div>
+		echo '
+		<div id="footer">
+		<div id="footerMenu">
+			 <div id="contentMenuFooter">
+			'.$this->menu->print().'
+		 </div>
+	   </div>
+	   <h3>Centro Commerciale Archimede</h3>
+	   <img id="logoFooter" alt="Logo del centro commerciale" src="images/default/logo.jpg"/>
+	   <div id="infoFooter">
+	   <p>Via Trieste, 63  | 35121 Padova (<span xml:lang="en">Italy</span>)| Telefono: +39 049 827 1200 | <span xml:lang="en">e-mail</span>:info@centro.archimede.it</p>
+	   </div>
+</div>
 
-            <h3>Centro Commerciale Archimede</h3>
-            <img id="logoFooter" alt="logofooter" src="images/default/logo.jpg"/>
-            <div id="infoFooter">
-            <p>Via Trieste, 63  | 35121 Padova (<span xml:lang="en">Italy</span>)| Telefono: +39 049 827 1200 | <span xml:lang="en">e-mail</span>:info@centro.archimede.it</p>
-			</div> <!-- fine contatti_footer--></div>
-			</body>
-			</html>';
+</body>
+</html>
+		';
     }
     public function body(){
 		$this->header();
