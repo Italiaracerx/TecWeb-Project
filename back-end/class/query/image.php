@@ -121,6 +121,7 @@ class image extends connection implements query{
                 }
             }
         }
+        
         public function insert(){
             $date=date("Y/m/d");
             $rename=sha1($this->name.$this->user).'.'.pathinfo($this->name, PATHINFO_EXTENSION);
@@ -162,6 +163,9 @@ class image extends connection implements query{
         public function search($titolo){
             $query="SELECT * FROM immagini WHERE titolo = '$titolo'";
             return parent::execute_query($query);
+        }
+        public function periodic_delete(){
+
         }
     }
     

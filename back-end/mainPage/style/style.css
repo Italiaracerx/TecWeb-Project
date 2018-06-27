@@ -304,9 +304,8 @@ html, body{
 } #negozio img{ 
   width:100%; 
   float:left; 
+  margin-bottom:0.4em;
 }
-
-
 
 /*----------DOVE SIAMO--------*/
 
@@ -372,7 +371,9 @@ html, body{
 
 #logo_negozio{
 	width: 90%;
-	padding:1em;
+	margin:1em;
+	border: 1px black solid;
+
 }
 
 #testo{
@@ -426,6 +427,7 @@ html, body{
 
 #prodotto{
 	display: inline-block;
+	width: 100%;
 }
 #prodotto li{
 	margin:1.5% 1% 0% 1%;
@@ -453,6 +455,7 @@ html, body{
 
 #promozione{
 	display: inline-block;
+	width: 100%;
 }
 
 /*.comingsoon{ 

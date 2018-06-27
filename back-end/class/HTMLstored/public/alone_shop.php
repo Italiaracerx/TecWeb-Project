@@ -5,6 +5,7 @@ require_once __DIR__.'/../../query/logo.php';
 require_once __DIR__.'/../../query/image.php';
 require_once __DIR__.'/../../query/lang.php';
 require_once __DIR__.'/../../sistema/connection.php';
+require_once __DIR__.'/../../utility/EmptyBarGray.php';
 
         $shop =$_GET['shop'];
         unset($_GET['shop']);
@@ -81,10 +82,7 @@ echo           '</div>
                     $row_p[] = $row;
                 }
                 if(!count($row_p)){
-                    echo '                
-                    <div class ="no_image">
-                        <p class="text_message">coming soon</p>
-                    </div>';
+                    EmptyBarGray('prossimamente');
                 }
                 else{
                     echo '<ul>';
@@ -111,10 +109,7 @@ echo           '</div>
                         $rows[] = $row;
                     }
                     if(!count($rows)){
-                        echo '                
-                        <div class ="no_image">
-                            <p class="text_message">coming soon</p>
-                        </div>';
+                        EmptyBarGray('prossimamente');
                     }
                     else{
                         echo '<ul>';

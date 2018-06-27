@@ -38,7 +38,7 @@ class logo extends image{
         public function delete(){
             $query="SELECT logo FROM logo WHERE username = '$this->user'";
             $file_to_delete=mysqli_fetch_array(parent::execute_query($query));
-            if($file_to_delete['logo']!='working_progress.png'){
+            if($file_to_delete['logo']!='working_progress.jpg'){
                 unlink($this->directory.$file_to_delete['logo']);
             }
         }

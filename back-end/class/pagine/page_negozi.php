@@ -9,31 +9,24 @@ require_once __DIR__.'/menu/staticMenu.php';
 class negozi extends page_public{
 	private $name;
     private $shop;
+    private $content;
 	public function __construct(){
         $this->name='negozio';
-        page_public::__construct($this->name,new menu((new staticPath())->public_menu('1')));
+        $this->content='all_shop';
+
         if(isset($_GET['shop'])){
+            $this->content='alone_shop';
             $this->shop =': '.$_GET['shop'];
+            unset($_GET['shop']);
         }
+        page_public::__construct($this->name,new menu((new staticPath())->public_menu('1'),$this->content));
+        
 	}
 	
     public function breadcrumb(){
     	echo '	<div id="breadcrumb">
-        			<h2><strong>'.$this->name.'</strong>'.$this->shop.'</h2>
+        			<h2>'.$this->name.$this->shop.'</h2>
     			</div>';
-    }
-
-    public function content(){
-        echo '<div id="content">';
-
-        if(isset($_GET['shop'])){
-            require_once __DIR__.'/../HTMLstored/public/alone_shop.php';
-        }
-        else{
-            require_once __DIR__.'/../HTMLstored/public/all_shop.php';
-        }
-
-        echo '</div>';
     }
 }
 ?>

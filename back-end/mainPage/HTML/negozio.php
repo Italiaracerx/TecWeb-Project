@@ -6,8 +6,6 @@
     $controller = new controller();
     $shop = new negozi();
     $controller->setPage($shop);
+    $controller->printHTML();
 
-    $controller->head();
-    $shop->content();
-    $controller->footer();
 ?>

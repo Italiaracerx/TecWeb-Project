@@ -15,36 +15,24 @@ class controller{
     public function setPage(type_page $type_page){
         $this->page =$type_page;
     }
-    public function head(){
-        try{
-        $this->page->head();
-        $this->managerS->set_flag(new exeption());            
-        }
-        catch(exeption $ex){
-        $this->managerS->set_flag($ex);                        
-        }
-    }
-    public function footer(){
-        try{
-        $this->page->footer();
-        }
-        catch(exeption $ex){
-        $this->managerS->set_flag($ex);                        
-        }
-    }    
+
     public function check_session(){
     	$this->managerS->check_session();
     }
+
     public function logout(){
         $this->managerS->logout();
         $this->managerS->set_flag(new exeption("correct","Logout avvenuto con successo."));
     }
-    public function comingSoon(){
-        echo '
-                <div class ="no_image">
-                    <p class="text_message">Prossimamente</p>
-                </div>
-        ';
+    
+    public function printHTML(){
+        try{
+            $this->page->head();
+            $this->managerS->set_flag(new exeption());
+        }
+        catch(exeption $ex){
+            $this->managerS->set_flag($ex);
+        }
     }
 }
 

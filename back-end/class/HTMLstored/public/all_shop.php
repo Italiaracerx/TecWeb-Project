@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__.'/../../query/shop.php';
+require_once __DIR__.'/../../utility/EmptyBarGray.php';
 
     $shop = new shop();
     $result_pro =$shop->all();
@@ -10,7 +11,7 @@ require_once __DIR__.'/../../query/shop.php';
     }
     echo '<h2 id="intestazione"> I nostri negozi</h2>';
     if(!count($rows)){
-        echo 'non ci sono negozi';
+        EmptyBarGray('Presto nuove aperture');
     }
     else{
         echo '<ul id="negozio">';

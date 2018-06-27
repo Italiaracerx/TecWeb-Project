@@ -6,15 +6,17 @@ class page_public implements type_page{
 	private static $style="style.css";
 	private $menu;
 	private $name;
+	private $name_file_content;
 	private $lang;
 
-	public function __construct($name, menu $menu,$lg =NULL){
+	public function __construct($name, menu $menu,$nc,$lg =NULL){
 		$this->name =$name;
 		$this->menu =$menu;
 		$this->lang =NULL;
 		if($lg != NULL){
 			$this->lang ='xml:lang="'.$lg.'"';
 		}
+		$this->name_file_content=$nc;
 	}
 	public function intestazione(){
 		$file = file_get_contents('../../class/HTMLstored/public/preambolo.html', FILE_USE_INCLUDE_PATH);
@@ -37,30 +39,20 @@ class page_public implements type_page{
     	echo '	<div id="breadcrumb">
         			<h2 '.$this->lang.'>'.$this->name.'</h2>
     			</div>';
-    }
-    public function footer(){
-		echo '
-		<div id="footer">
-		<div id="footerMenu">
-			 <div id="contentMenuFooter">
-			'.$this->menu->print().'
-		 </div>
-	   </div>
-	   <h3>Centro Commerciale Archimede</h3>
-	   <img id="logoFooter" alt="Logo del centro commerciale" src="images/default/logo.jpg"/>
-	   <div id="infoFooter">
-	   <p>Via Trieste, 63  | 35121 Padova (<span xml:lang="en">Italy</span>)| Telefono: +39 049 827 1200 | <span xml:lang="en">e-mail</span>:info@centro.archimede.it</p>
-	   </div>
-</div>
+	}
+	public function content(){
+		require_once __DIR__.'/../HTMLstored/public/'.$this->name_file_content.'.php';	
+	}
 
-</body>
-</html>
-		';
+    public function footer(){
+		require_once __DIR__.'/../HTMLstored/public/footer.php';	
     }
     public function body(){
 		$this->header();
 		$this->menu();
-    	$this->breadcrumb();
+		$this->breadcrumb();
+		$this->content();
+		$this->footer();
     }
 	public function head(){
 		$this->intestazione();

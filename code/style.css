@@ -425,6 +425,7 @@ html, body{
 
 #prodotto{
 	display: inline-block;
+	width: 100%;
 }
 #prodotto li{
 	margin:1.5% 1% 0% 1%;
@@ -452,6 +453,7 @@ html, body{
 
 #promozione{
 	display: inline-block;
+	width: 100%;
 }
 
 /*.comingsoon{ 
