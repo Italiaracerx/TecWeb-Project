@@ -76,8 +76,8 @@
                    <label for="evento">Tipo di evento:</label>
                    <select name="evento" id="evento">
                    <option value="Cerca nel menu:">Cerca nel menu:</option>
-                   <option value="Apertura">Apertura</option>
-                   <option value="Chiusura">Chiusura</option>
+                   <option value="APERTURA">Apertura</option>
+                   <option value="CHIUSURA">Chiusura</option>
                    </select> 
                    <label for="data">Inserire Data:</label>
                    <input type="text" name="data" id="data"  />  

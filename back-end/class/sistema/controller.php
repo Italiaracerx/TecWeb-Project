@@ -39,6 +39,13 @@ class controller{
         $this->managerS->logout();
         $this->managerS->set_flag(new exeption("correct","Logout avvenuto con successo."));
     }
+    public function comingSoon(){
+        echo '
+                <div class ="no_image">
+                    <p class="text_message">Prossimamente</p>
+                </div>
+        ';
+    }
 }
 
 ?>

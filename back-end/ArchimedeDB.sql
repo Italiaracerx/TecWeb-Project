@@ -75,14 +75,13 @@ CREATE TABLE immagini(
 	CONSTRAINT AK_source UNIQUE(source),
 	FOREIGN KEY (username) REFERENCES account(username)
 
- 
 );
 
 DROP TABLE IF EXISTS eventi;
 CREATE TABLE eventi(
 	ID int NOT NULL AUTO_INCREMENT,
 	type ENUM('APERTURA','CHIUSURA','NOVITA') NOT NULL,
-	data datetime NOT NULL,
+	data date NOT NULL,
 	descrizione varchar(64),
 	PRIMARY KEY(ID) 
 );

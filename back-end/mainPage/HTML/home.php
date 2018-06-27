@@ -18,7 +18,7 @@
 		    <h2>Benvenuti nel Centro Commerciale Archimede</h2>
 
 		    <div id="contentRight">
-		  
+    
                 <h3>ORARI</h3>
                 <?php
                     $orario =new orario('admin');
@@ -34,13 +34,19 @@
                     <ul>
                     <?php
                         $news =new news('APERTURA');
+                        $news->delete();
                         $aperture =$news->read();
                         $rows =array();
                         while($row = $aperture->fetch_array(MYSQLI_ASSOC)){
                             $rows[] = $row;
                         }
-                        foreach($rows as $row){
-                            echo '<li>Aperti in data: '.$row['data'].'</li>';
+                        if(!count($rows)){
+                            $controller->comingSoon();
+                        }
+                        else{
+                            foreach($rows as $row){
+                                echo '<li>Aperti in data: '.date("d-m-Y", strtotime($row['data'])).'</li>';
+                            }
                         }
                     ?>    
                     </ul>
@@ -54,8 +60,13 @@
                     while($row = $chiusure->fetch_array(MYSQLI_ASSOC)){
                         $rows[] = $row;
                     }
-                    foreach($rows as $row){
-                        echo '<li>Chiusi in data: '.$row['data'].'</li>';
+                    if(!count($rows)){
+                        $controller->comingSoon();
+                    }
+                    else{
+                        foreach($rows as $row){
+                           echo '<li>Chiusi in data: '.date("d-m-Y", strtotime($row['data'])).'</li>';
+                        }
                     }
                 ?>               
                 </ul>
@@ -69,8 +80,13 @@
                         while($row = $novita->fetch_array(MYSQLI_ASSOC)){
                             $rows[] = $row;
                         }
-                        foreach($rows as $row){
-                            echo '<li>'.$row['descrizione'].'. Data: '.$row['data'].'</li>';
+                        if(!count($rows)){
+                            $controller->comingSoon();
+                        }
+                        else{
+                            foreach($rows as $row){
+                                echo '<li>'.$row['descrizione'].'. Data: '.date("d-m-Y", strtotime($row['data'])).'</li>';
+                            }
                         }
                     ?>                   
                     </ul>
@@ -102,10 +118,7 @@
             $rows[] = $row;
         }
         if(!count($rows)){
-            echo '                
-            <div class ="no_image">
-                <p class="text_message">coming soon</p>
-            </div>';
+            $controller->comingSoon();
         }
         else{
             echo '<ul id="promozione">';
