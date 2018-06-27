@@ -7,6 +7,6 @@
 
 
     $controller = new controller();
-    $controller->setPage(new page_public('Dove siamo',(new menu((new staticPath())->public_menu('2')))),'content_dove_siamo');
+    $controller->setPage(new page_public('Dove siamo',(new menu((new staticPath())->public_menu('2'))),'content_dove_siamo'));
     $controller->printHTML();
 ?>

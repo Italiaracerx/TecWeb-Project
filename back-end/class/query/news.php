@@ -35,7 +35,7 @@ class news extends connection implements query{
     public function read($type=NULL){
         $this->delete();
 	    if($type != NULL){$this->type=$type;}
-        $query = "SELECT data, descrizione FROM eventi WHERE type = '$this->type' ORDER BY ID DESC LIMIT 10";
+        $query = "SELECT * FROM eventi WHERE type = '$this->type' ORDER BY ID DESC LIMIT 10";
         return parent::execute_query($query);
     }
 

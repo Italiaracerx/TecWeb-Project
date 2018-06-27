@@ -3,9 +3,11 @@
     require_once __DIR__.'/../../query/image.php';
     require_once __DIR__.'/../../utility/EmptyBarGray.php';
 
+?>
 
-    echo '<h2 id="intestazione">PROMOZIONI CORRENTI</h2>';
+    <h2 id="intestazione">PROMOZIONI CORRENTI</h2>
 
+<?php
     $promozione = new image('promozione');
     $result_promozione =$promozione->read();
             $rows =array();
@@ -22,7 +24,7 @@
                 foreach($rows as $row){
                     echo '
                     <li>
-                        <a href="promo1.html">
+                        <a href="promozione.php?name='.$row['titolo'].'">
                             <img src="images/promozione/'.$row['source'].'" alt="'.$row['alt'].'"/> 
                         '.$row['negozio'].'
                         </a>
