@@ -41,7 +41,9 @@ class page_public implements type_page{
     			</div>';
 	}
 	public function content(){
+		echo '<div id="content">';
 		require_once __DIR__.'/../HTMLstored/public/'.$this->name_file_content.'.php';	
+		echo '</div>';
 	}
 
     public function footer(){

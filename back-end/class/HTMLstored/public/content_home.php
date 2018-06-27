@@ -1,5 +1,4 @@
 
-	  <div id="content">
       <div id="corpo">
 		    <img id="imgTorre" src="images/default/torre 2.jpg" alt="immagine torre archimede" />
 		    <h2>Benvenuti nel Centro Commerciale Archimede</h2>
@@ -121,6 +120,5 @@
             echo '  </ul>';
         }
 ?>
-</div>
 </div>
 </div>

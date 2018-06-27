@@ -1,11 +1,10 @@
 <?php
     require_once __DIR__.'/../../class/sistema/controller.php';
-    require_once __DIR__.'/../../class/pagine/page_negozi.php';
+    require_once __DIR__.'/../../class/pagine/page_shop.php';
 
 
     $controller = new controller();
-    $shop = new negozi();
-    $controller->setPage($shop);
+    $controller->setPage(new page_shop());
     $controller->printHTML();
 
 ?>

@@ -1,4 +1,3 @@
-    <div id="content">
         <h2 id="intestazione">Comunicazione diretta con il Centro</h2>
         <img id="fotoContatti" src="images/default/ArchimedeEsterno.jpg" alt="Foto del Centro Archimede" />
         <div id="testoInformazioni">
@@ -9,4 +8,3 @@
     	<p><span xml:lang="en">E-Mail</span>Direzione: info@centro.archimede.it</p>
         </div>
         
-    </div>

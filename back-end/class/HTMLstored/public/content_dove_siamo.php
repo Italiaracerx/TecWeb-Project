@@ -1,4 +1,3 @@
-<div id="content">
 	      <h3 id="intestazione"> Come raggiungere il Centro Archimede</h3>
           <img id="imgMappa" src="images/default/mappaArchimede.png" alt="mappa del centro"/>
           <div id="testoInformazioni">
@@ -7,4 +6,3 @@
 			<h3>Dalla stazione degli autobus:</h3>
             <p>si esce dalla stazione, si gira a sinistra e poi immediatamente a destra al semaforo (via Trieste), si cammina lungo via Trieste per circa 300m.</p>
            </div>
-    </div>

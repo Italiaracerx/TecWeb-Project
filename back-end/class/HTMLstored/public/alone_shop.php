@@ -47,7 +47,6 @@ require_once __DIR__.'/../../utility/EmptyBarGray.php';
         }
 
 
-echo '<div id="content_negozio">';
     echo '<h3 id="intestazione">'.$result_info['negozio'].'</h3>';
 
         echo   '<div id="informazioni">';
@@ -127,7 +126,6 @@ echo           '</div>
                 </div>
             </div>
             </div>
-         </div>  
 ';
 
 ?>

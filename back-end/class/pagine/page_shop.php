@@ -6,7 +6,7 @@ require_once __DIR__.'/menu/menu.php';
 require_once __DIR__.'/menu/staticMenu.php';
 
 
-class negozi extends page_public{
+class page_shop extends page_public{
 	private $name;
     private $shop;
     private $content;
@@ -17,9 +17,8 @@ class negozi extends page_public{
         if(isset($_GET['shop'])){
             $this->content='alone_shop';
             $this->shop =': '.$_GET['shop'];
-            unset($_GET['shop']);
         }
-        page_public::__construct($this->name,new menu((new staticPath())->public_menu('1'),$this->content));
+        page_public::__construct($this->name,new menu((new staticPath())->public_menu('1')),$this->content);
         
 	}
 	
