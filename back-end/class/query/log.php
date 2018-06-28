@@ -3,6 +3,9 @@
 require_once __DIR__.'/../sistema/exeption.php';
 require_once __DIR__.'/../sistema/connection.php';
 require_once __DIR__.'/../interfacce/query.php';
+require_once __DIR__.'/../query/image.php';
+require_once __DIR__.'/../query/logo.php';
+
 
 class login extends connection implements query{
     //campi privati
@@ -46,6 +49,10 @@ class login extends connection implements query{
         if($this->username == "Cerca nel menu:"){
             throw new exeption('error', 'seleziona un utente da eliminare.');
         }
+        $image=new image();
+        $image->delete_image_of_user($this->user);
+        $logo=new logo($user);
+        $logo->delete();
         $query = "DELETE FROM type_account WHERE username = '$this->username'";
         if(parent::execute_query($query) == NULL){
             throw new exeption('error', 'utente non presente.');

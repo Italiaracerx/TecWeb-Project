@@ -175,6 +175,17 @@ class image extends connection implements query{
             return parent::execute_query($query);
         }
 
+        public function delete_image_of_user($user){
+            $query="SELECT source FROM immagini WHERE username = '$user'";
+            $result_image=parent::execute_query($query);
+            while($row = $result_image->fetch_array(MYSQLI_ASSOC)){
+                $rows[] = $row;
+            }
+            foreach($rows as $row){
+                unlink($this->directory.$row);
+            }
+        }
+
     }
     
 ?>
