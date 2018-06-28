@@ -3,7 +3,7 @@
 require_once __DIR__.'/../../query/orario.php';
 require_once __DIR__.'/../../query/logo.php';
 require_once __DIR__.'/../../query/image.php';
-require_once __DIR__.'/../../query/lang.php';
+require_once __DIR__.'/../../utility/lang.php';
 require_once __DIR__.'/../../sistema/connection.php';
 require_once __DIR__.'/../../utility/EmptyBarGray.php';
 
@@ -16,7 +16,7 @@ require_once __DIR__.'/../../utility/EmptyBarGray.php';
         $promozione = new image('promozione',$shop);
         $prodotto = new image('prodotto',$shop);
 
-        $info ="SELECT * FROM info I WHERE I.username = '$shop'";
+        $info ="SELECT * FROM info I JOIN account A ON I.username = A.username AND A.type <> 'admin' WHERE I.username = '$shop'";
 
         $result_info = $connection->execute_query($info)->fetch_array(MYSQLI_ASSOC);
         $result_logo =$logo->read()->fetch_array(MYSQLI_ASSOC);

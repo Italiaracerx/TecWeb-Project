@@ -11,15 +11,17 @@
         private $name;
         private $promo;
         private $content;
+        private $titolo;
+
         public function __construct(){
             $this->name='promozione';
             $this->content='all_promo';
-
-            if(isset($_GET['name'])){
+            
+            if(isset($_GET['promo'])){
                 $this->content='alone_promo';
-                $this->promo =': '.$_GET['name'];
+                $this->promo =': '.$_GET['promo'];
             }
-            page_public::__construct($this->name,new menu((new staticPath())->public_menu('1')),$this->content);
+            page_public::__construct($this->name,new menu((new staticPath())->public_menu('4')),$this->content);
         }
         
         public function breadcrumb(){

@@ -92,24 +92,34 @@ class image extends connection implements query{
             if(!$sent){throw new exeption('error','upload fallito, si posso caricare solo immagini.');}
         }
 
-        public function read(){
+        public function read($titolo=NULL){
             $query="SELECT * FROM immagini WHERE username = '$this->user' AND type = '$this->type'";
+            $string_query_titolo=NULL;
+            if($titolo != NULL){
+                $string_query_titolo="AND Img.titolo = '$titolo'";
+            }
             if($this->user == NULL){
-                $query="SELECT * FROM immagini WHERE type = '$this->type'";
+                    $query="SELECT Img.username, Img.type, Img.source, Img.titolo, Img.alt, Img.start, Img.finish, Img.descrizione, I.negozio
+                    FROM immagini Img JOIN info I ON (Img.username = I.username) 
+                    WHERE type = '$this->type'$string_query_titolo ORDER BY Img.data_inserimento DESC
+                ";
             }
             return parent::execute_query($query);
         }
+
         public function how_much(){
             $result =$this->read();
             if(mysqli_num_rows($result) == '3'){
                 throw new exeption('error','inserimento '.$this->type.' fallito, eliminane uno per inserirne quello nuovo.');
             }
         }
+
         public function write(){
             $this->how_much();
             $this->resize_and_store();
             $this->insert();
         }
+
         public function delete(){
             $delete =$_POST['titolo'];
             $query_to_delete="SELECT source FROM immagini WHERE username = '$this->user' AND type = '$this->type' AND titolo = '$delete'";
@@ -164,9 +174,7 @@ class image extends connection implements query{
             $query="SELECT * FROM immagini WHERE titolo = '$titolo'";
             return parent::execute_query($query);
         }
-        public function periodic_delete(){
 
-        }
     }
     
 ?>

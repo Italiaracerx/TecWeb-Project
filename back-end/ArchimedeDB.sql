@@ -95,8 +95,7 @@ BEGIN
 	DELETE FROM info WHERE username =OLD.username;
 	DELETE FROM orario WHERE username =OLD.username;
 	DELETE FROM logo WHERE username =OLD.username;
-	DELETE FROM promozioni WHERE username =OLD.username;
-	DELETE FROM prodotti WHERE username =OLD.username;
+	DELETE FROM immagini WHERE username =OLD.username;
 END
 $$ DELIMITER ;
 

@@ -46,7 +46,7 @@ class login extends connection implements query{
         if($this->username == "Cerca nel menu:"){
             throw new exeption('error', 'seleziona un utente da eliminare.');
         }
-        $query = "DELETE FROM account WHERE username = '$this->username'";
+        $query = "DELETE FROM type_account WHERE username = '$this->username'";
         if(parent::execute_query($query) == NULL){
             throw new exeption('error', 'utente non presente.');
         }

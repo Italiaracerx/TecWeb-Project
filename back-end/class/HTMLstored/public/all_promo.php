@@ -24,7 +24,7 @@
                 foreach($rows as $row){
                     echo '
                     <li>
-                        <a href="promozione.php?name='.$row['titolo'].'">
+                        <a href="promozione.php?promo='.$row['titolo'].'">
                             <img src="images/promozione/'.$row['source'].'" alt="'.$row['alt'].'"/> 
                         '.$row['negozio'].'
                         </a>

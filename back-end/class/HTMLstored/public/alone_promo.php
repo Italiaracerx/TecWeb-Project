@@ -1,20 +1,19 @@
 <?php
 
     require_once __DIR__.'/../../utility/lang.php';
-    require_once __DIR__.'/../../query/image.php';
+	require_once __DIR__.'/../../query/image.php';
+	
+	$titolo = $_GET['promo'];
+	$image = new image('promozione');
+	$result = $image->read($titolo)->fetch_array(MYSQLI_ASSOC);
 
-	if(isset($_GET['name'])){
-		$titolo =$_GET['name'];
-		$image = new image();
-		$result = $image->search($this->titolo)->fetch_array(MYSQLI_ASSOC);
-	}
-	if($this->result == NULL){
-		unset($_GET['name']);
-		header('location: promozioni.php');
+	if($result == NULL){
+		unset($_GET['promo']);
+		header('location: promozione.php');
 		die;
 	}
 	
-	$lang=getTextLanguage($this->result['descrizione'],'it');
+	$lang=getTextLanguage($result['descrizione'],'it');
 	$start=NULL;
 	$end=NULL;
 	if($lang != 'it'){
@@ -26,13 +25,13 @@
 	<div id="content">
 		<div id="content_prodpromo">
 			<h3 id="intestazione">
-			<a href="negozio.php?shop='.$this->result['username'].'">'.$this->result['username'].'</a>: '.$this->result['titolo'].'</h3>
+			<a href="negozio.php?shop='.$result['username'].'">'.$result['username'].'</a>: '.$result['titolo'].'</h3>
 			<div id="prodpromo_leftSide">
-				<img id="img_prodpromo" src="images/'.$this->result['type'].'/'.$this->result['source'].'" alt="'.$this->result['alt'].'"/>
+				<img id="img_prodpromo" src="images/'.$result['type'].'/'.$result['source'].'" alt="'.$result['alt'].'"/>
 			</div>
 			<div id="prodpromo_rightSide">
-				<p id="descrizione_prodpromo">'.$start.$this->result['descrizione'].$end.'</p>
-				<p id="date_inizio_fine">Inizio: '.$this->result['start'].' <br> Fine: '.$this->result['finish'].'</p>
+				<p id="descrizione_prodpromo">'.$start.$result['descrizione'].$end.'</p>
+				<p id="date_inizio_fine">Inizio: '.$result['start'].' <br> Fine: '.$result['finish'].'</p>
 			</div>
 		</div>
 	</div>';

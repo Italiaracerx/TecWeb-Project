@@ -10,7 +10,7 @@ class staticPath{
     private static $link_negozio='negozio.php';
     private static $get='?shop=__USER_NAME__';
     private static $link_home='home.php';
-    private static $link_promozioni='promozioni.php';
+    private static $link_promozioni='promozione.php';
     private static $link_dove_siamo='dove_siamo.php';
     private static $link_contatti='contatti.php';
 
@@ -37,7 +37,7 @@ class staticPath{
     public function public_menu($active){
         $private = array();
         $private[]=new schedaMenu("Home",staticPath::$link_home,"en");
-        $private[]=new schedaMenu("Negozio",staticPath::$link_negozio);
+        $private[]=new schedaMenu("Negozi",staticPath::$link_negozio);
         $private[]=new schedaMenu("Dove siamo",staticPath::$link_dove_siamo);
         $private[]=new schedaMenu("Contatti",staticPath::$link_contatti);
         $private[]=new schedaMenu("Promozioni",staticPath::$link_promozioni);
