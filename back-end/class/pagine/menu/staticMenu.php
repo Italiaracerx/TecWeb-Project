@@ -19,7 +19,7 @@ class staticPath{
         $admin = array();
         $admin[]=new schedaMenu("Generale",staticPath::$link_admin);
         $admin[]=new schedaMenu("Eventi",staticPath::$link_eventi);
-        if($active < '4'){
+        if($active < '2'){
             $admin[$active]->activation();
         }
         return $admin;
