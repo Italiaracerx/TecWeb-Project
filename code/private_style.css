@@ -168,6 +168,7 @@ fieldset {
 	letter-spacing: 2px;
 	font-size: 1.2em;
 	text-transform: uppercase;
+	width: 100%;
 
 }
 
@@ -189,7 +190,7 @@ fieldset {
 }
 
 .form_sopra form{
-	width:50%;
+	width:100%;
 	margin: 0 auto;
 }
 
@@ -238,10 +239,6 @@ select{
 .form_centrali form{
 	width: 100%;
 	display: inline-block;
-}
-
-#modifica_nome{
-	margin-top: 1em;
 }
 
 #modifica_nome label{
