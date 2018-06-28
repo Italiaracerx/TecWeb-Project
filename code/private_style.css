@@ -11,6 +11,8 @@ html, body{
 #titolo{
 	display: inline-block;
 	color:white;
+	text-transform: uppercase;
+
 }
 
 .accesaid{
@@ -58,20 +60,22 @@ html, body{
 #menu a:visited{
     color:white;
 }
-#exit_amm{
+#logout{
 	float: right;
 	margin-right: 1.5em;
+	text-transform: uppercase;
 }
 
-#exit_amm a{
+#logout a{
 	text-decoration: none;
 	color: white;
 	padding-top: 0.5em: 
 	padding-bottom: 0.5em;
-
+	display:inline-block;
+	background-color: #6a6a6a; 
 }
 
-#exit_amm:hover{
+#logout:hover{
 	background-color:black;
 }
 
@@ -81,12 +85,10 @@ html, body{
 	margin-top: 0.5em;
 }
 
-#profilo{
+#logout img{
 	width: 3em;
 	float: left;
 	margin-right: 0.5em;
-	
-
 }
 
 #header h2{
@@ -127,10 +129,12 @@ html, body{
     overflow: auto;
     padding-bottom: 1em;
 }
+fieldset { 
+	border: 0px;
+	}
 
 /*---------GENERALE_ADMIN-----------*/
 #content_generale{
-	overflow:auto;
 	padding: 1em;
 }
 
@@ -163,6 +167,8 @@ html, body{
 	margin-bottom:1em;
 	letter-spacing: 2px;
 	font-size: 1.2em;
+	text-transform: uppercase;
+
 }
 
 .intestazione_1{
@@ -194,13 +200,13 @@ html, body{
 	text-align: center;
 }
 .form_sotto form{
-	width: 70%;
+	width: 100%;
 	text-align: center;
 	display: inline-block;
 }
 select{
 	font-size: 0.9em;
-	width: 90%;
+	width: 70%;
 	margin-bottom:0.5em;
 	text-align: center;
 }
@@ -310,7 +316,7 @@ textarea{
 
 
 
-/*-------------PROMOZIONI - PRODOTTIPRIVATO---------*/
+/*-------------MOZIONI - PRODOTTIPRIVATO---------*/
 
 #colonna_sinistra{
 	width: 30%;	
