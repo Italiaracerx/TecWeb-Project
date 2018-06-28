@@ -17,7 +17,6 @@
                     }
                 ?>            
 				<h3>Aperture Straordinarie</h3>
-                    <ul>
                     <?php
                         $news =new news('APERTURA');
                         $news->delete();
@@ -30,18 +29,18 @@
                             EmptyBarGray('nessuna apertura');
                         }
                         else{
+                            echo '<ul>';
                             foreach($rows as $row){
                                 echo '<li>Aperti in data: '.date("d-m-Y", strtotime($row['data'])).'</li>';
                             }
+                            echo '</ul>';
                         }
                     ?>    
-                    </ul>
 			     
          
              <h3>Chiusure Straordinarie</h3>
-                <ul>
                 <?php
-                    $chiusure =$news->read('CHIUSURE');
+                    $chiusure =$news->read('CHIUSURA');
                     $rows =array();
                     while($row = $chiusure->fetch_array(MYSQLI_ASSOC)){
                         $rows[] = $row;
@@ -50,16 +49,15 @@
                         EmptyBarGray('nessuna chiusura');
                     }
                     else{
+                        echo '<ul>';
                         foreach($rows as $row){
                            echo '<li>Chiusi in data: '.date("d-m-Y", strtotime($row['data'])).'</li>';
                         }
+                        echo '</ul>';
                     }
-                ?>               
-                </ul>
-      
+                ?>                     
         
                 <h3>Novità</h3>
-                    <ul>
                     <?php
                         $novita =$news->read('NOVITA');
                         $rows =array();
@@ -70,13 +68,13 @@
                             EmptyBarGray('nessuna novit&agrave;');
                         }
                         else{
+                            echo '<ul>';
                             foreach($rows as $row){
                                 echo '<li>'.$row['descrizione'].'. Data: '.date("d-m-Y", strtotime($row['data'])).'</li>';
                             }
+                            echo '</ul>';
                         }
-                    ?>                   
-                    </ul>
-		  
+                    ?>                   		  
       
             <div id="area_amministrazione">
                 <a href="login.php">
@@ -89,9 +87,9 @@
 		    <div id="contentLeft">
 
 <ul id="casella">
- <li><a href="negozi.html">Negozi</a></li>
- <li><a href="dovesiamo.html">Dove Siamo</a></li>
- <li><a href="contatti.html">Contatti</a></li>
+    <li><a href="negozi.html">Negozi</a></li>
+    <li><a href="dovesiamo.html">Dove Siamo</a></li>
+    <li><a href="contatti.html">Contatti</a></li>
 </ul>
 <h2 >Promozioni</h2>
 
@@ -111,7 +109,7 @@
             foreach($rows as $row){
                 echo '
                 <li>
-                    <a href="promo2.html">
+                    <a href="promozione.php?promo='.$row['titolo'].'">
                         <img src="images/promozione/'.$row['source'].'" alt="'.$row['alt'].'"/>
                     '.$row['negozio'].'
                     </a> 

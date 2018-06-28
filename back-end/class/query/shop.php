@@ -21,7 +21,7 @@ class shop extends connection implements query{
   
     public function all(){
         $query = "SELECT L.username, L.logo, L.alt, I.negozio FROM logo L JOIN info I ON L.username = I.username
-        WHERE L.username = (SELECT username FROM account WHERE type <> 'admin')";
+        WHERE L.username IN (SELECT username FROM account WHERE type <> 'admin')";
         return parent::execute_query($query);
     }
     public function read(){

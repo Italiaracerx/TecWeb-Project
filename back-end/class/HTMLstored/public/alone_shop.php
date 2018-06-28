@@ -87,7 +87,7 @@ echo           '</div>
                     echo '<ul>';
                     foreach($row_p as $row){
                         echo '  <li>
-                                    <a href="visual_page.php?titolo='.$row['titolo'].'">
+                                    <a href="negozio.php?prod='.$row['titolo'].'">
                                         <img src="images/prodotto/'.$row['source'].'" alt="'.$row['alt'].'"/>'
                                     .$row['titolo'].'
                                     </a>
@@ -114,7 +114,7 @@ echo           '</div>
                         echo '<ul>';
                         foreach($rows as $row){
                             echo '  <li>
-                                        <a href="visual_page.php?titolo='.$row['titolo'].'">
+                                        <a href="promozione.php?promo='.$row['titolo'].'">
                                             <img src="images/promozione/'.$row['source'].'" alt="'.$row['alt'].'"/>'
                                         .$row['titolo'].'
                                         </a>

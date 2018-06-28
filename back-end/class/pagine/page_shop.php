@@ -19,6 +19,10 @@
                 $this->content='alone_shop';
                 $this->shop =': '.$_GET['shop'];
             }
+            if(isset($_GET['prod'])){
+                $this->content='alone_prod';
+                $this->shop =': '.$_GET['prod'];
+            }
             page_public::__construct($this->name,(new menu((new staticPath())->public_menu('1'))),$this->content);
         }
         
