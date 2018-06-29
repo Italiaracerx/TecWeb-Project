@@ -6,7 +6,7 @@
                 <h1>Area Amministrazione</h1>
             </div>
             <div id="logout">
-		    	<a href="home.html">
+		    	<a href="home.php">
                    <img id="profilo" alt="immagine exit area amministrazione" src="images/default/exit.png"/>
                    Area Pubblica
                  </a> 

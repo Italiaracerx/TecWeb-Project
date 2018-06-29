@@ -5,7 +5,7 @@
     <div id="sopra">
         <div class="form_sopra">
             <div id="verifica_sito"></div> <div id="verifica_tel"></div> <div id="verifica_mail"></div>
-                <form action="change_shop_constacts.php" method="post" onsubmit="return checkEmail(this)" >             <div>
+                <form action="../mainForm/change_shop_contacts.php" method="post" onsubmit="return checkEmail(this)" >             <div>
                 <?php
                     $contatti =new infos_changer();
                     $array_contatti =$contatti->read();
@@ -31,7 +31,7 @@
         </div>
         <div class="form_sopra">
                 <div id="verifica_passw"></div>
-                <form  action="changePassword.php" method="post" onsubmit="return validateForm(this)">
+                <form  action="../mainForm/changePassword.php" method="post" onsubmit="return validateForm(this)">
                     <div>
                         <fieldset>
                             <legend class="intestazione">Modifica Password</legend>
@@ -53,7 +53,7 @@
     <div id="parte_centrale">  
         <div class="form_centrali"> 
             <div id="logoChange"></div>
-            <form action="insertImage.php" method="post" enctype="multipart/form-data" onsubmit="return changeLogo()">
+            <form action="../mainForm/insertLogo.php" method="post" enctype="multipart/form-data" onsubmit="return changeLogo()">
                     <div>
                     <fieldset>
                         <legend class="intestazione">Modifica Logo</legend>
@@ -68,7 +68,7 @@
 
         <div class="form_centrali">
             <div id="verifica_nomenegozio"></div>
-            <form   action="change_shop_name.php" method="post" onsubmit="return negozio(this)" > 
+            <form   action="../mainForm/change_shop_name.php" method="post" onsubmit="return negozio(this)" > 
                 <div id="modifica_nome">
                     <fieldset>
                     <legend class="intestazione">Modifica nome negozio </legend>
@@ -96,7 +96,6 @@
                     <legend class="intestazione">Modifica Orario</legend>
 
                     <?php 
-
                         $orari = new orario($_SESSION['user']);
                         $ora=$orari->read()->fetch_array(MYSQLI_NUM);
                         $giorni=$orari->getGiorni();
@@ -132,10 +131,23 @@
 
                                 $testo = new shop_slogan();
                                 $array_testo =$testo->read();
+
+                                $langMotto=getTextLanguage($array_testo['motto'],'it');
+                                $startMotto=NULL;
+                                if($langMotto != 'it'){
+                                    $startMotto='xml:lang="'.$langMotto.'"';
+                                }
+
+                                $langDescr=getTextLanguage($array_testo['descrizione'],'it');
+                                $startDescr=NULL;
+                                if($langDescr != 'it'){
+                                    $startDescr='xml:lang="'.$langDescr.'"';
+                                }
+
                                 echo '
-                                <textarea name="testo_motto" id="testo_motto" rows="2" cols="50">'.$array_testo['motto'].'</textarea>  
-                                <label for="testo_descrizione">Descrizione:</label>                     
-                                <textarea name="testo_descrizione" id="testo_descrizione" rows="5" cols="50">'.$array_testo['descrizione'].'</textarea>  ';
+                                <textarea name="testo_motto" id="testo_motto" rows="2" cols="50" '.$startMotto.'>'.$array_testo['motto'].'</textarea>  
+                                <label for="testo_descrizione">Descrizione:</label>
+                                <textarea name="testo_descrizione" id="testo_descrizione" rows="5" cols="50" '.$startDescr.'>'.$array_testo['descrizione'].'</textarea>';
                             
                             ?>
                             <div class="pulsante">
