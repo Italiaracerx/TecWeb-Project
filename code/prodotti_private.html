@@ -1,18 +1,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
   <meta http-equiv="Content-Script-Type" content="application/javascript" />
-
   <meta http-equiv="Content-Type" content="application/xhtml+xml charset= UTF-8" />
 
   <title>Centro Archimede</title>
-
   <link rel="stylesheet" type="text/css" href="private_style.css" media="handheld, screen"/>
 
-   <script type="text/javascript" src="Javascript/general_admin.js"></script>
-    
+    <script type="text/javascript" src="Javascript/promozioni_private.js"></script>
 </head>
  
 <body>
@@ -35,7 +32,7 @@
         <ul>
             <li><a  href="generale_private.html">Generale</a></li>
             <li><a href="promozioni_private.html">Promozioni</a></li>
-            <li><a class="active" href="">Prodotti</a></li>
+            <li><a class="active">Prodotti</a></li>
             <li><a href="lego.html">Pagina Negozio</a></li>
         </ul> 
     </div>
@@ -50,7 +47,7 @@
                     <form action="" method="post" enctype="multipart/form-data" onsubmit="return checkProd()">
                       <div>
                       <fieldset>
-                        <legend class="intestazione">Nuovo prodoto</legend>
+                        <legend class="intestazione">Nuovo prodotto</legend>
 
                     	  <label for="nome_prodotto">Nome:</label>
                         <input type="text" name="nome_prodotto" id="nome_prodotto" value="Star-Wars 75104" />

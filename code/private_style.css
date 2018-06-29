@@ -374,6 +374,46 @@ textarea{
 #colonna_destra_sotto select{
 	width: 30%;
 }
+.no_image{
+padding: 1em 1em 1em 1em;
+}
+
+.no_image p{
+	margin-top: 2em;
+	margin-bottom: 2em;
+	padding-top:1em;
+	padding-bottom:1em;
+	height:50%;
+	background-color: #96969064;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+/*----MODIFICA-PROMOZIONE-PRODOTTO------*/
+
+#imgPromozioneProdotto{
+	width: 40%;	
+	float:left;
+	text-align: center;
+	margin-top: 2em;
+	display: block;
+	margin-right: 3em;
+
+}
+
+#imgPromozioneProdotto img{
+	width: 100%;
+}
+
+#modificheDestra{
+	margin-left: 50%;
+	display: block;
+	padding-right: 1em;
+	text-align: center;
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
 
 /*#destra_prodotti{
 	margin-left: 32%;
@@ -399,20 +439,7 @@ textarea{
 	margin-right:4.1%;
 }*/
 
-.no_image{
-padding: 1em 1em 1em 1em;
-}
 
-.no_image p{
-	margin-top: 2em;
-	margin-bottom: 2em;
-	padding-top:1em;
-	padding-bottom:1em;
-	height:50%;
-	background-color: #96969064;
-	text-align: center;
-	text-transform: uppercase;
-}
 /*--------LOGIN---------*/
 #formLogin
 {
@@ -653,19 +680,6 @@ padding: 1em 1em 1em 1em;
    // Div ProdPromoMod  //
    ///////////////////////////// */
 
-#ProdPromoMod_LeftPart{
-	width: 40%;	
-	float:left;
-	text-align: center;
-	margin-top: 2em;
-	display: block;
-	margin-right: 3em;
-
-}
-
-#ProdPromoMod_LeftPart img{
-	width: 100%;
-}
 
 .singola_promozione{
 	border:2px solid #000;
