@@ -463,30 +463,33 @@ html, body{
   margin: 1em 1em 1em 1em; 
 }*/
 
-/*PRODPROMO CSS*/
+/*---------PRODOTTO / PROMOZIONE--------- */
 
-/*uguale a negozio lego*/
 
-#prodpromo_leftSide{
+
+#imgPromozioneProdotto{
+	margin-top: 5%;
 	float: left;
-	max-width: 50%;
+	width: 50%;
 }
-#img_prodpromo{
+#imgPromozioneProdotto img{
 	float: left;
-	max-width: 100%;
+	width: 100%;
 }
-#prodpromo_rightSide{
-	float:right;
-	width: 47.5%;
+#descrizione{
+	display: block;
+	width: 40%;
+	margin-left:55%;
 }
 
-#descrizione_prodpromo{
-	padding-top: 2em;
-	padding-bottom: 1em;
+#descrizione p{
+	padding: 1em;
+
 }
 #date_inizio_fine{
+	width: 40%;
 	padding-top: 1em;
-	text-align: right;
+	float: right;
 }
 
 #loading_screen
