@@ -1,10 +1,14 @@
 <body>
-    <div id="header">	    
-        <div id="titolo">
-            <h3>CENTRO COMMERCIALE ARCHIMEDE</h3>
-            <h1>AMMINISTRAZIONE</h1>
-        </div>
-        <div id="exit_amm">
-            <a href="home.php">LINK RAPIDO <br>VERSO HOME</a>
-        </div>
-    </div>
+
+	<div id="header">	    
+		   <div id="titolo">
+                <h1>Centro Commerciale Archimede</h1>
+                <h1>Area Amministrazione</h1>
+            </div>
+            <div id="logout">
+		    	<a href="home.html">
+                   <img id="profilo" alt="immagine exit area amministrazione" src="images/default/exit.png"/>
+                   Area Pubblica
+                 </a> 
+            </div>
+	</div>

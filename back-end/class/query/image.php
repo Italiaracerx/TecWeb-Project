@@ -176,13 +176,18 @@ class image extends connection implements query{
         }
 
         public function delete_image_of_user($user){
+            $rows=array();
             $query="SELECT source FROM immagini WHERE username = '$user'";
             $result_image=parent::execute_query($query);
             while($row = $result_image->fetch_array(MYSQLI_ASSOC)){
                 $rows[] = $row;
             }
+            $promozioni ='../../mainPage/HTML/images/promozione/';
+            $prodotti ='../../mainPage/HTML/images/prodotto/';
+
             foreach($rows as $row){
-                unlink($this->directory.$row);
+                unlink($promozioni.$row['source']);
+                unlink($prodotti.$row['source']);
             }
         }
 

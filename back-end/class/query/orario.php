@@ -20,7 +20,7 @@ class orario extends connection implements query{
         $this->user =$user;
         $this->numeri = ['uno','due','tre','quattro','cinque','sei','sette'];
         $this->giorni = ['lunedi', 'martedi', 'mercoledi', 'giovedi', 'venerdi', 'sabato', 'domenica'];
-        $this->giorni_html = ['Luned&iacute;', 'Marted&iacute;', 'Mercoled&iacute;', 'Gioved&iacute;', 'Venerd&iacute;', 'Sabato', 'Domenica'];
+        $this->giorni_html = ['Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato', 'Domenica'];
 
         if(!empty($_POST)){
             $this->orari = array();

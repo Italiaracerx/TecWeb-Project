@@ -9,7 +9,6 @@
 
     class page_login extends page_private{
         private $name;
-        private $shop;
         private $content;
 
         public function __construct($cn){
@@ -20,7 +19,7 @@
         
         public function breadcrumb(){
             echo '	<div id="breadcrumb">
-                        <h2>'.$this->name.$this->shop.'</h2>
+                        <h2><span xml:lang="en">'.$this->name.'</span></h2>
                     </div>';
         }
 
