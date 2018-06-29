@@ -1,40 +1,39 @@
-<div id="content_promozioni">
-        <div id="colonna_sinistra">
-              
-              <p class="intestazione">NUOVA PROMOZIONE</p>
-              <form action="../mainForm/insertPromozione.php" method="post" enctype="multipart/form-data">
-                  <div>
+<div id="colonna_sinistra">
+  <div id="newProduct"></div>
+  <form action="../mainForm/insertProdotto.php" method="post" enctype="multipart/form-data" onsubmit="return checkProd()">
+    <div>
+      <fieldset>
+          <legend class="intestazione">Nuova promozione</legend>
 
-                      <label for="nome_prodotto">Nome:</label>
-                  <input type="text" name="nome" id="nome_prodotto"  />
+          <label for="nome_prodotto">Nome:</label>
+          <input type="text" name="nome" id="nome_prodotto" />
 
-                    <label for="campo_alt">Alternativa testuale dell'immagine della promozione:</label>
-                    <input type="text" name="alt" id="campo_alt" />
+          <label for="campo_alt">Alternativa testuale dell'immagine della promozione:</label>
+          <input type="text" name="campo_alt" id="campo_alt"/>
 
-                    <label for="data">Data Inizio :</label>
-                    <input type="text" name="start" id="data" /> 
+          <label for="data">Data Inizio :</label> 
+          <input type="text" name="start" id="data"  />
 
-                    <label for="data">Data Fine :</label>
-                    <input type="text" name="finish" id="data" /> 
-
-                    <label for="descrizione_promozione">Descrizione promozione:</label>
-                    <textarea name="description" id="descrizione_promozione" rows="10" cols="30" ></textarea>
+          <label for="data_fine">Data Fine :</label>
+          <input type="text" name="finish" id="data_fine"  /> 
 
 
-                    <label for="seleziona_promozione">Seleziona la promozione da inserire:</label>
-                    <input type="file" name="immagine" id="seleziona_promozione"/>
-
-                    <div class="invia">
-                    <input type="submit" value="Salva"/>  
-                    </div>
-                   </div>                                                      
-              </form>
-         
-      </div>
-
-            <div id="colonna_destra">
-                <p class="intestazione">PROMOZIONI CORRENTI</p>
-                  <?php 
+          <label for="descrizione_prodotto">Descrizione promozione:</label>
+          <textarea name="descrizione" id="descrizione_prodotto" rows="10" cols="30"></textarea>
+          
+          <label for="immagine">Seleziona la promozione da inserire:</label>
+          <input type="file" name="immagine" id="immagine"/>
+          <div class="invia">
+            <input  type="submit" value="Salva"/>
+          </div>
+      </fieldset>
+    </div>
+  </form>
+</div>
+            
+<div id="colonna_destra">
+    <p class="intestazione">Promozioni Correnti</p>
+    <?php 
                     $promozioni =new image('promozione',$_SESSION['user']);
                     $result_pro =$promozioni->read();
                     $rows =array();
@@ -42,30 +41,32 @@
                       $rows[] = $row;
                     }
                     if(!count($rows)){
-                      echo '                <div class ="no_image">
-                    <p class="text_message">coming soon</p>
-                </div>
-';
+                      EmptyBarGray('non sono presenti promozioni');
                     }
                     else{
                       foreach($rows as $row){
-                            echo '<div class="imgPromozione">
-                          <img class="promozione" src="images/promozione/'.$row['source'].'" alt="'.$row['alt'].'"/> 
+                            echo '<div class="contenuto_corrente">
+                            <a href="ciucia.php">
+                          <img src="images/promozione/'.$row['source'].'" alt="'.$row['alt'].'"/>
+                          '.$row['titolo'].' 
+                          </a>
                           </div>';
                       }
                     }
-                  ?>
-            </div>            
-        </div>
-        <div class="form_sopra">
-              <p class="intestazione">ELIMINA PROMOZIONI</p> 
-              <div id="controllo_eliminaNeg"></div>
-              <form  action="../mainForm/deletePromozione.php" method="post" onsubmit="return validateUser()">
+                  ?> 
+</div> 
+
+<div id="colonna_destra_sotto">
+              <div id="controllo_Prod"></div>
+              <form  action="../mainForm/deletePromozione.php" method="post" onsubmit="return validateProd()">
                 <div>
-                  <label for="elimina_negozio">Nome Negozio:</label>
-                  <select name="titolo" id="elimina_negozio">
-                  <option value="Cerca nel menu:">Cerca nel menu:</option>
-                  <?php 
+                  <fieldset>
+                  <legend class="intestazione">Elimina Promozioni</legend>
+
+                  <label for="elimina_prodotto">Nome Promozione:</label>
+                  <select name="titolo" id="elimina_prodotto">
+                     <option value="Cerca nel menu:">Cerca nel menu:</option>
+                     <?php 
                       foreach($rows as $row){
                       echo '<option value="'.$row['titolo'].'">'.$row['titolo'].'</option>';
                     }
@@ -75,6 +76,7 @@
                    <input type="reset"  name="tasto_reset"  value="Reset"/>  
                    <input type="submit" name="tasto_salva"  value="Salva"/>
                   </div>
+                  </fieldset>
                 </div>
                </form>
             </div>

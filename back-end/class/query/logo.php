@@ -22,8 +22,8 @@ class logo extends image{
             parent::__construct('logo');
             $this->user =$user;
             if(isset($_FILES['immagine'])){
-                $this->name =$_FILES["immagine"]["name"];
-                $this->tmp_name =$_FILES["immagine"]["tmp_name"];
+                $this->name =parent::escaped_string($_FILES["immagine"]["name"]);
+                $this->tmp_name =parent::escaped_string($_FILES["immagine"]["tmp_name"]);
             }
         }
         public function write(){

@@ -31,7 +31,6 @@
 			</div>
 			<div id="prodpromo_rightSide">
 				<p id="descrizione_prodpromo">'.$start.$result['descrizione'].$end.'</p>
-				<p id="date_inizio_fine">Inizio: '.$result['start'].' <br> Fine: '.$result['finish'].'</p>
 			</div>
 		</div>
 	</div>';

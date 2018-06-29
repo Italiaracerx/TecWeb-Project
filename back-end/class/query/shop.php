@@ -14,7 +14,7 @@ class shop extends connection implements query{
     public function __construct(){
         $this->name =NULL;
         if(isset($_GET['shop'])){
-            $this->name =$_GET['shop'];
+            $this->name =parent::escaped_string($_GET['shop']);
         }
     }
     public function write(){}
