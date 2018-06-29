@@ -88,12 +88,11 @@
     <div id="sotto">
 
         <div id="sinistra">
-            <p id="esempio">Il centro apre alle 08:30 </br> chiude alle 21:30  </p>
-
             <div id="verifica_orario"></div>
             <form action="../mainForm/changeOrari.php" method="post" onsubmit="return checkorario(this)">
                 <fieldset>
                     <legend class="intestazione">Modifica Orario</legend>
+                    <p id="esempio">Il centro apre alle 08:30 <br/> chiude alle 21:30  </p>
 
                     <?php 
                         $orari = new orario($_SESSION['user']);

@@ -1,6 +1,6 @@
 <div id="colonna_sinistra">
   <div id="newProduct"></div>
-  <form action="../mainForm/insertProdotto.php" method="post" enctype="multipart/form-data" onsubmit="return checkProd()">
+  <form action="../mainForm/insertPromozione.php" method="post" enctype="multipart/form-data" onsubmit="return checkProd()">
     <div>
       <fieldset>
           <legend class="intestazione">Nuova promozione</legend>
