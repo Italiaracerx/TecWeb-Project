@@ -199,11 +199,6 @@ html, body{
 	background: linear-gradient(to bottom right,brown,	#DB7093);
 }
 
-#promozione ul{
-	margin-top: 5em;
-
-}
-
 #promozione li{
 	border:2px solid #000;
 	float: left;
@@ -371,27 +366,17 @@ html, body{
 
 #informazioni{
 	width:25%;
-	float:left;
-	
-}
-
-#descrizione{
-	padding-top:1em;	
-	margin-right:5%;
-	margin-left:31%;
-	margin-top:1em;	
+	float:left;	
 }
 
 #logo_negozio{
 	width: 90%;
-	height: auto;
 	padding:1em;
 }
 
 #testo{
 	padding: 1em;
 	line-height: 1.4em;
-	color:black; 
 	font-style:italic;
 	font-size: 95%; 
 	text-align: center;
@@ -404,32 +389,33 @@ html, body{
 
 }
 
-.informazione{
-	font-weight: 400;
+#contatti h4{
+	font-weight: 600;
 	padding-top:1em;
+	text-transform: uppercase;
+	margin-bottom: 1em;
 }
 
-.dato{
-	padding-top: 3%;
-	color: black;
+#orari p{
+	margin: 2%;
 }
 
-.gioco{
-	width: 7em;
-	height: auto;
-	display:inline-block;
-	padding-top:1em;
-}
-
-.titolo_prodotti{
-	display: block;	
+#descrizione{
 	padding-top:1em;	
+	margin-right:5%;
+	margin-left:31%;
+	margin-top:1em;	
+}
+
+#descrizione h4{
+	display: block;	
+	padding-top:1em;
 	margin-left: 5%;
 	margin-right: 5%;
 	margin-bottom: 5%;
 	padding-bottom: 1em;
 	font-size:1.5em;
-	letter-spacing: 10px;
+	letter-spacing: 5px;
 	line-height: 1em;
 	border-bottom: 2px solid #A21E1E;
 	text-align: center;
@@ -437,68 +423,85 @@ html, body{
 	text-transform: uppercase;
 }
 
-#promozioni{
-	padding-bottom:2em;
+#prodotto{
+	display: inline-block;
+	width: 100%;
 }
-#promozioni div div{
-	width: 28.5%;
-	margin:2%;
-}
-.prodotto{
+#prodotto li{
 	margin:1.5% 1% 0% 1%;
 	width: 30%;
 	float:left; 
   	border:3px solid black;
+  	text-align: center;
+  	list-style-type: none;
+  	text-transform: uppercase;
 }
 
-.prodotto img{
+#prodotto a{
+	display: inline-block;
+	text-decoration: none;
+	background-color:#808080;
+	color: #FFFFFF;
+	padding-bottom: 0.2em;
+	display: block;
+}
+
+#prodotto img{
 	width: 100%;
 	height: 11em;
-	margin:0em;
-
 }
-.prodotto a{
+
+#promozione{
 	display: inline-block;
-}
- 
-#prodotti{ 
-  margin-bottom: 2em; 
-  overflow: auto;
-  text-align: center;
-	
+	width: 100%;
 }
 
-.comingsoon{ 
+/*.comingsoon{ 
   text-align: center; 
   background-color: rgb(138, 137, 137); 
   padding: 1em 1em 1em 1em; 
   margin: 1em 1em 1em 1em; 
-}
+}*/
 
-/*PRODPROMO CSS*/
+/*---------PRODOTTO / PROMOZIONE--------- */
 
-/*uguale a negozio lego*/
 
-#prodpromo_leftSide{
+
+#imgPromozioneProdotto{
+	margin-top: 5%;
 	float: left;
-	max-width: 50%;
+	width: 50%;
 }
-#img_prodpromo{
+#imgPromozioneProdotto img{
 	float: left;
-	max-width: 100%;
+	width: 100%;
 }
-#prodpromo_rightSide{
-	float:right;
-	width: 47.5%;
+#descrizioneProdottoPromozione{
+	display: block;
+	width: 40%;
+	margin-left:55%;
 }
 
-#descrizione_prodpromo{
-	padding-top: 2em;
-	padding-bottom: 1em;
+#descrizioneProdottoPromozione p{
+	padding: 1em;
+
+}
+#descrizioneProdottoPromozione h4{
+	padding-top:1em;	
+	padding-bottom: 0.5em;
+	font-size:2em;
+	letter-spacing: 3px;
+	line-height: 1em;
+	border-bottom: 2px solid #A21E1E;
+	text-align: center;
+	font-weight: 400;
+	text-transform: uppercase;
+
 }
 #date_inizio_fine{
+	width: 40%;
 	padding-top: 1em;
-	text-align: right;
+	float: right;
 }
 
 #loading_screen

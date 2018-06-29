@@ -476,14 +476,26 @@ html, body{
 	float: left;
 	width: 100%;
 }
-#descrizione{
+#descrizioneProdottoPromozione{
 	display: block;
 	width: 40%;
 	margin-left:55%;
 }
 
-#descrizione p{
+#descrizioneProdottoPromozione p{
 	padding: 1em;
+
+}
+#descrizioneProdottoPromozione h4{
+	padding-top:1em;	
+	padding-bottom: 0.5em;
+	font-size:2em;
+	letter-spacing: 3px;
+	line-height: 1em;
+	border-bottom: 2px solid #A21E1E;
+	text-align: center;
+	font-weight: 400;
+	text-transform: uppercase;
 
 }
 #date_inizio_fine{
