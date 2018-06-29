@@ -22,17 +22,14 @@
 	}
 
 	echo '
-	<div id="content">
 		<div id="content_prodpromo">
-			<h3 id="intestazione">
-			<a href="negozio.php?shop='.$result['username'].'">'.$result['username'].'</a>: '.$result['titolo'].'</h3>
-			<div id="prodpromo_leftSide">
-				<img id="img_prodpromo" src="images/'.$result['type'].'/'.$result['source'].'" alt="'.$result['alt'].'"/>
-			</div>
-			<div id="prodpromo_rightSide">
-				<p id="descrizione_prodpromo">'.$start.$result['descrizione'].$end.'</p>
-			</div>
+		<h3 id="intestazione"><a href="a href="negozio.php?shop='.$result['username'].'">'.$result['username'].'</a>: '.$result['titolo'].'</h3>
+		<div id="imgPromozioneProdotto">
+			<img src="images/'.$result['type'].'/'.$result['source'].'" alt="'.$result['alt'].'"/>
 		</div>
-	</div>';
-        
+			<div id="descrizione">
+				<h4>Descrizione</h4>
+				<p>'.$start.$result['descrizione'].$end.'</p>
+			</div>
+		</div>';
 ?>
