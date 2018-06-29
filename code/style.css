@@ -476,13 +476,13 @@ html, body{
 	float: left;
 	width: 100%;
 }
-#descrizione{
+#descrizioneProdottoPromozione{
 	display: block;
 	width: 40%;
 	margin-left:55%;
 }
 
-#descrizione p{
+#descrizioneProdottoPromozione p{
 	padding: 1em;
 
 }
