@@ -19,7 +19,7 @@
 				<h3>Aperture Straordinarie</h3>
                     <?php
                         $news =new news('APERTURA');
-                        $news->delete();
+                        $news->delete_periodic();
                         $aperture =$news->read();
                         $rows =array();
                         while($row = $aperture->fetch_array(MYSQLI_ASSOC)){

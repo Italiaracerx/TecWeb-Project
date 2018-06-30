@@ -16,6 +16,7 @@ class news extends connection implements query{
         $this->type =parent::escaped_string($tipo);
         $this->date =parent::escaped_string($date);
         $this->news =parent::escaped_string($evento);
+
     }
     public function write(){
         preg_match($this->regex, $this->date, $matches, PREG_OFFSET_CAPTURE);
@@ -40,10 +41,18 @@ class news extends connection implements query{
     }
 
     public function delete(){
+        $query="DELETE FROM eventi WHERE ID = '$this->type'";
+        if(!parent::execute_query($query)){
+            throw new exeption('error', 'evento con id '.$this->id.' non eliminato. Riprovare più tardi.');
+        }
+    }
+
+    public function delete_periodic(){
         $current_date= date ("Y-m-d");
         $query = "DELETE FROM eventi WHERE data <= '$current_date'";
         parent::execute_query($query);
     }
+
 }
 
 ?>
