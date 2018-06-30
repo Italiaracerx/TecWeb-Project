@@ -87,9 +87,9 @@
 		    <div id="contentLeft">
 
 <ul id="casella">
-    <li><a href="negozi.html">Negozi</a></li>
-    <li><a href="dovesiamo.html">Dove Siamo</a></li>
-    <li><a href="contatti.html">Contatti</a></li>
+    <li><a href="negozio.php">Negozi</a></li>
+    <li><a href="dove_siamo.php">Dove Siamo</a></li>
+    <li><a href="contatti.php">Contatti</a></li>
 </ul>
 <h2 >Promozioni</h2>
 

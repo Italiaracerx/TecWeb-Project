@@ -68,10 +68,10 @@ echo           '</div>
             </div>
         </div>
 
-            <div id="descrizione">
-                <p id="testo">               
-                    <strong>'.$startMotto.$result_info['motto'].$endMotto.'</strong><br/>'.$startDescr.$result_info['descrizione'].$startDescr.'
-                </p>
+            <div id="descrizione">  
+                <div id="testo">               
+                    <p><strong>'.$startMotto.$result_info['motto'].$endMotto.'</strong></p>
+                    <p>'.$startDescr.$result_info['descrizione'].$startDescr.'</p>
                 <div id="prodotto">
                     <h4>Prodotti</h4>';
                     
