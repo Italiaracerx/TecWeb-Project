@@ -222,12 +222,12 @@ select{
 	font-size: 1em;
 }
 
-#elimina_openclose{background-color: #fd3516;
+#elimina_openclose{background-color: #800000;
 	text-align:center;
 
 }
 
-#elimina_news{background-color: #fd3516;
+#elimina_news{background-color: #800000;
 	text-align:center;
 
 }
@@ -481,28 +481,29 @@ padding: 1em 1em 1em 1em;
    //    Div General-Admin   //
    ///////////////////////////// */
 
-#controllo_creaNeg {background-color: #fd3516;
+#controllo_creaNeg {background-color: #800000;
 	text-align:center;
 color: #FFFFFF;}
 
-#controllo_eliminaNeg {background-color: #fd3516;
+#controllo_eliminaNeg {background-color: #800000;
 	text-align:center;
 color: #FFFFFF;}
 
-#verifica_passwAdmin {background-color: #fd3516;
+#verifica_passwAdmin {background-color: #800000;
 	text-align:center;
 color: #FFFFFF;}
 
-#controllo_novita {background-color: #fd3516;
+#controllo_novita {background-color: #800000;
 	text-align:center;
+color: #FFFFFF;
 	margin-bottom: 0.4em;
-	color: #FFFFFF;
 }
 
-#controllo_openclose{background-color: #fd3516;
+#controllo_openclose{background-color: #800000;
 	text-align:center;
+color: #FFFFFF;
 	margin-bottom: 0.4em;
-	color: #FFFFFF;
+
 }
 
  
@@ -574,13 +575,15 @@ color: #FFFFFF;}
    ///////////////////////////// */
 
 #newProduct{
-	background-color: #fd3516;
+background-color: #800000;
 	text-align:center;
+color: #FFFFFF;
 }
 
 #controllo_Prod{
-	background-color: #fd3516;
+background-color: #800000;
 	text-align:center;
+color: #FFFFFF;
 }
 
 #esempio{
@@ -589,72 +592,72 @@ color: #FFFFFF;}
 }
 
 #uno{
-	background-color: #fd3516;
+background-color: #800000;
 	margin-left: 90%;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#fd3516;
+	color:#800000;
 	border-radius: 100px;
 }
 
 #due{
-	background-color: #fd3516;
+background-color: #800000;
 	margin-left: 90%;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#fd3516;
+	color:##800000;
 	border-radius: 100px;
 }
 
 #tre{
-	background-color: #fd3516;
+background-color: #800000;
 	margin-left: 90%;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#fd3516;
+	color:#800000;
 	border-radius: 100px;
 }
 
 #quattro{
-	background-color: #fd3516;
+background-color: #800000;
 	margin-left: 90%;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#fd3516;
+	color:#800000;
 	border-radius: 100px;
 }
 
 #cinque{
-	background-color: #fd3516;
+background-color: #800000;
 	margin-left: 90%;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#fd3516;
+	color:#800000;
 	border-radius: 100px;
 }
 
 #sei{
-	background-color: #fd3516;
+background-color: #800000;
 	margin-left: 90%;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#fd3516;
+	color:#800000;
 	border-radius: 100px;
 }
 
 #sette{
-	background-color: #fd3516;
+background-color: #800000;
 	margin-left: 90%;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#fd3516;
+	color:#800000;
 	border-radius: 100px;
 }
 
