@@ -58,8 +58,8 @@ html, body{
 }
 
 #menu a:hover{
-	background-color:rgb(184, 11, 11);
-}
+	background-color:#D04040;
+  }
 
 #menu a:link{
     color:white;

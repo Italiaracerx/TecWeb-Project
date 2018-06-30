@@ -44,7 +44,7 @@
                         <legend class="intestazione">Eliminazione aperture o chiusure</legend>                       
                             <label for="elimina_aperture_chiusure">Seleziore data da eliminare:</label>
 
-                                <select name="nelimina_data" id="elimina_aperture_chiusure">
+                                <select name="elimina_data" id="elimina_aperture_chiusure">
                                     <option value="nessuno">Cerca nel menu:</option>
                                     <?php
                                         $news =new news('APERTURA');
@@ -81,7 +81,7 @@
                         <legend class="intestazione">Elimina novita'</legend>
                         <label for="elimina_novita">Selezionare la novità da eliminare:</label>
 
-                            <select name="nelimina_data" id="elimina_novita">
+                            <select name="elimina_data" id="elimina_novita">
                             <option value="nessuno">Cerca nel menu:</option>
                             <?php
                             $aperture =$news->read('NOVITA');
