@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,127 +7,104 @@
 <head>
   <meta http-equiv="Content-Script-Type" content="application/javascript" />
 
-	<meta http-equiv="Content-Type" content="application/xhtml+xml charset= UTF-8" />
+  <meta http-equiv="Content-Type" content="application/xhtml+xml charset= UTF-8" />
 
-	<title>Centro Archimede</title>
+  <title>Centro Archimede</title>
 
-	<link rel="stylesheet" type="text/css" href="private_style.css" media="handheld, screen"/>
+  <link rel="stylesheet" type="text/css" href="../style/private_style.css" media="handheld, screen"/>
 
-   <script type="text/javascript" src="Javascript/general_admin.js"></script>
-    
-</head>
- 
-<body>
+    <script type="text/javascript" src="../Javascript/general_admin.js"></script>
 
-	<div id="header">	    
-		  <div id="titolo">
-                <h1>Centro Commerciale Archimede</h1>
-                <h1>Amministrazione</h1>
-			</div>
+</head><body>
 
-      <div id="logout">
-          <a xml:lang="en" href="login.html">
-            <img alt="immagine logout area amministrazione" src="images/exit.png"/>
-             Logout
-          </a> 
-      </div>
-	</div>
-
-	<div id="menu">
-        <ul>
-            <li><a class="active" href="">Generale</a></li>
-            <li><a href="eventi_private.html">Eventi</a></li>
-
-        </ul> 
-
-  </div>
-
-	<div id="breadcrumb">
-        <h2><strong>Administrator</strong> &gt; generale</h2>        
-  </div>
-  <div id="content">
-        <h3 id="titolo_generale">Generale</h3>
-
-        <div id="sotto">
-            <div class="form_sotto">
-                <div id="verifica_passwAdmin"></div>
-                <form  action="" method="post" onsubmit="return validateForm_1(this)" >
-                    <div>
-                    <fieldset>
-                       <legend class="intestazione"> Modifica Password</legend>
-
-                       <label for="nuova_password">Password:</label>
-                       <input type="password" name="password" id="nuova_password" />
-
-                       <label for="conferma_nuova_password">Conferma Password:</label>
-                       <input type="password" name="Password_1" id="conferma_nuova_password"/>  
-
-                       <div class="invia">   
-                           <input name="Tasto Reset" type="reset" value="Reset"/>  
-                           <input name="Tasto Salva" type="submit" value="Salva"/>
-                       </div> 
-                    </fieldset>
-                    </div>
-                </form>
-            </div>
-
-            <div class="form_sotto">
-              <div id="controllo_creaNeg"></div>
-              <form action="" method="post" onsubmit="return validateForm(this)">
-                <div>
-                  <fieldset>
-                     <legend class="intestazione">Creazione negozio</legend>
-
-                      <label for="nome_negozio">Nome Negozio:</label>
-                      <input type="text" id="nome_negozio" name="username"/>    
-
-                      <label for="password">Password:</label>
-                      <input type="password" id="password" name="password" />
-
-                      <label for="Password_1">Conferma Password:</label>
-                      <input type="password" id="Password_1" name="Password_1"  />  
-
-                      <div class="invia">                       
-                        <input type="reset"  name="tasto_reset"  value="Reset"/>  
-                        <input type="submit" name="tasto_salva"  value="Salva"/>
-                      </div>
-                 </fieldset>
+  <div id="header">     
+    <div id="titolo">
+                        <h1>Centro Commerciale Archimede</h1>
+                        <h1>Area Amministrazione</h1>
                 </div>
-               </form>
-             </div>
-
-            <div class="form_sotto">
-              <div id="controllo_eliminaNeg"></div>
-              <form  action="" method="post" onsubmit="return validateUser()">
-                <div>
-                  <fieldset>
-                    <legend class="intestazione">Elimina negozio</legend>
-                      
-                       <label for="elimina_negozio">Nome Negozio:</label>
-
-                       <select name="nelimina_negozio" id="elimina_negozio">
-                          <option value="Cerca nel menu:">Cerca nel menu:</option>
-                          <option value="volvo">Volvo</option>
-                          <option value="saab">Saab</option>
-                          <option value="opel">Opel</option>
-                          <option value="audi">Audi</option>
-                       </select>  
-
-                       <div class="invia">                
-                         <input type="reset"  name="tasto_reset"  value="Reset"/>  
-                         <input type="submit" name="tasto_salva"  value="Salva"/>
-                       </div>
-                  </fieldset>
+                <a xml:lang="en" href="#content" class="accesaid">Skip navigation</a>
+                <div id="logout">
+                        <a xml:lang="en" href="../mainForm/logout.php">
+                                <img alt="immagine logout area amministrazione" src="images/default/exit.png"/>
+                                Logout
+                        </a> 
                 </div>
-               </form>
-            </div>
+        </div><div id="menu"><ul><li ><a class ="active" href="general_admin.php">Generale</a></li><li ><a  href="eventi_private.php">Eventi</a></li><li ><a  href="home.php">Link Home</a></li> </ul></div>  <div id="breadcrumb"><h2>admin: Generale</h2></div><div id="content"><h3 id="titolo_generale">Generale</h3>
 
-        </div>          
+<div id="sotto">
+    <div class="form_sotto">
+        <div id="verifica_passwAdmin"></div>
+        <form  action="../mainForm/changePassword.php" method="post" onsubmit="return validateForm_1(this)" >
+            <div>
+            <fieldset>
+               <legend class="intestazione"> Modifica Password</legend>
+
+               <label for="nuova_password">Password:</label>
+               <input type="password" name="password" id="nuova_password" />
+
+               <label for="conferma_nuova_password">Conferma Password:</label>
+               <input type="password" name="Password_1" id="conferma_nuova_password"/>  
+
+               <div class="invia">   
+                   <input name="Tasto Reset" type="reset" value="Reset"/>  
+                   <input name="Tasto Salva" type="submit" value="Salva"/>
+               </div> 
+            </fieldset>
+            </div>
+        </form>
     </div>
-    
-    <div id="footer">
+
+    <div class="form_sotto">
+      <div id="controllo_creaNeg"></div>
+      <form action="../mainForm/newUser.php" method="post" onsubmit="return validateForm(this)">
+        <div>
+          <fieldset>
+             <legend class="intestazione">Creazione negozio</legend>
+
+              <label for="nome_negozio">Nome Negozio:</label>
+              <input type="text" id="nome_negozio" name="username"/>    
+
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" />
+
+              <label for="Password_1">Conferma Password:</label>
+              <input type="password" id="Password_1" name="Password_1"  />  
+
+              <div class="invia">                       
+                <input type="reset"  name="tasto_reset"  value="Reset"/>  
+                <input type="submit" name="tasto_salva"  value="Salva"/>
+              </div>
+         </fieldset>
+        </div>
+       </form>
+     </div>
+
+    <div class="form_sotto">
+      <div id="controllo_eliminaNeg"></div>
+      <form  action="../mainForm/deleteUser.php" method="post" onsubmit="return validateUser()">
+        <div>
+          <fieldset>
+            <legend class="intestazione">Elimina negozio</legend>
+              
+               <label for="elimina_negozio">Nome Negozio:</label>
+
+               <select name="nelimina_negozio" id="elimina_negozio">
+                  <option value="Cerca nel menu:">Cerca nel menu:</option>
+                  <option value="lego">lego</option>               </select>  
+
+               <div class="invia">                
+                 <input type="reset"  name="tasto_reset"  value="Reset"/>  
+                 <input type="submit" name="tasto_salva"  value="Salva"/>
+               </div>
+          </fieldset>
+        </div>
+       </form>
+    </div>
+
+</div>  
+</div><div id="footer">
        <h3>Centro Commerciale Archimede</h3>
-             <img id="logoFooter" alt="Logo del centro commerciale" src="images/logo_copia.jpg"/>
+             <img id="logoFooter" alt="Logo del centro commerciale" src="images/default/logo_copia.jpg"/>
              <div id="infoFooter">
               <p>Via Trieste, 63  | 35121 Padova (<span xml:lang="en">Italy</span>)| Telefono: +39 049 827 1200 | <span xml:lang="en">e-mail</span>:info@centro.archimede.it</p>
                </div> 

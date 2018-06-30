@@ -222,6 +222,16 @@ select{
 	font-size: 1em;
 }
 
+#elimina_openclose{background-color: #fd3516;
+	text-align:center;
+
+}
+
+#elimina_news{background-color: #fd3516;
+	text-align:center;
+
+}
+
 /*---------GENERALE PRIVATO---------*/
 
 
@@ -472,22 +482,27 @@ padding: 1em 1em 1em 1em;
    ///////////////////////////// */
 
 #controllo_creaNeg {background-color: #fd3516;
-	text-align:center;}
+	text-align:center;
+color: #FFFFFF;}
 
 #controllo_eliminaNeg {background-color: #fd3516;
-	text-align:center;}
+	text-align:center;
+color: #FFFFFF;}
 
 #verifica_passwAdmin {background-color: #fd3516;
-	text-align:center;}
+	text-align:center;
+color: #FFFFFF;}
 
 #controllo_novita {background-color: #fd3516;
 	text-align:center;
 	margin-bottom: 0.4em;
+	color: #FFFFFF;
 }
 
 #controllo_openclose{background-color: #fd3516;
 	text-align:center;
 	margin-bottom: 0.4em;
+	color: #FFFFFF;
 }
 
  
@@ -495,36 +510,36 @@ padding: 1em 1em 1em 1em;
    //    Div General-Private   //
    ///////////////////////////// */
    
-#verifica_passw {background-color: #fd3516;
-	text-align:center;}
-
-#verifica_tel {background-color: #fd3516;
-	text-align:center;}
-
-#verifica_mail {background-color: #fd3516;
+#verifica_passw {background-color: #800000;
 	text-align:center;
+color: #FFFFFF;}
+
+#verifica_contatti {background-color: #800000;
+	text-align:center;
+	color: #FFFFFF;
 }
 
-#verifica_sito {background-color: #fd3516;
+
+#verifica_descrizione {background-color: #800000;
 	text-align:center;
+	color: #FFFFFF;
 }
 
-#verifica_descrizione {background-color: #fd3516;
+#verifica_nomenegozio {background-color: #800000;
 	text-align:center;
+	color: #FFFFFF;
 }
 
-#verifica_nomenegozio {background-color: #fd3516;
-	text-align:center;
-}
-
-#verifica_orario {background-color: #fd3516;
+#verifica_orario {background-color: #800000;
 	text-align:center;
 	margin-bottom: 0.4em;
+	color: #FFFFFF;
 }
 
 #logoChange{
-	background-color: #fd3516;
+	background-color: #800000;
 	text-align:center;
+	color: #FFFFFF;
 }
 
 
@@ -533,21 +548,25 @@ padding: 1em 1em 1em 1em;
    ///////////////////////////// */
 
 
-#deletePromo{background-color: #fd3516;
+#deletePromo{background-color: #800000;
 	text-align:center;
-	margin-bottom: 0.4em;}
+	margin-bottom: 0.4em;
+color: #FFFFFF;}
 
 #deleteProm{
 	width: 40%;
 }
 
-#nuova_promozione{background-color: #fd3516;
+#nuova_promozione{background-color: #800000;
 	text-align:center;
+	color: #FFFFFF;
 }
 
-#controllo_eliminaprom{background-color: #fd3516;
+#controllo_eliminaprom{background-color: #800000;
 	text-align:center;
-	margin-bottom: 0.4em;}
+	margin-bottom: 0.4em;
+color: #FFFFFF;}
+
 
 
 /* /////////////////////////////

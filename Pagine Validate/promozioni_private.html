@@ -1,108 +1,87 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+
 <head>
   <meta http-equiv="Content-Script-Type" content="application/javascript" />
-  <meta http-equiv="Content-Type" content="application/xhtml+xml charset= UTF-8" />
+
+	<meta http-equiv="Content-Type" content="application/xhtml+xml charset= UTF-8" />
 
 	<title>Centro Archimede</title>
-	<link rel="stylesheet" type="text/css" href="private_style.css" media="handheld, screen"/>
 
-    <script type="text/javascript" src="Javascript/promozioni_private.js"></script>
-</head>
- 
-<body>
+	<link rel="stylesheet" type="text/css" href="../style/private_style.css" media="handheld, screen"/>
 
-    <div id="header">	    
+    <script type="text/javascript" src="../Javascript/promozioni_private.js"></script>
+
+</head><body>
+
+	<div id="header">	    
 		<div id="titolo">
-                <h1>Centro Commerciale Archimede</h1>
-                <h1>Amministrazione</h1>
-	    </div>
+                        <h1>Centro Commerciale Archimede</h1>
+                        <h1>Area Amministrazione</h1>
+                </div>
+                <a xml:lang="en" href="#content" class="accesaid">Skip navigation</a>
+                <div id="logout">
+                        <a xml:lang="en" href="../mainForm/logout.php">
+                                <img alt="immagine logout area amministrazione" src="images/default/exit.png"/>
+                                Logout
+                        </a> 
+                </div>
+        </div><div id="menu"><ul><li ><a  href="general_private.php">Generale</a></li><li ><a class ="active" href="promozioni_private.php">Promozioni</a></li><li ><a  href="prodotti_private.php">Prodotti</a></li><li ><a  href="negozio.php?shop=lego">Link Negozio</a></li> </ul></div>	<div id="breadcrumb"><h2>lego: Promozioni</h2></div><div id="content"><div id="colonna_sinistra">
+  <div id="nuova_promozione"></div>
+  <form  action="../mainForm/insertPromozione.php" method="post" enctype="multipart/form-data" onsubmit="return checkPromo()">
+    <div>
+      <fieldset>
+          <legend class="intestazione">Nuova promozione</legend>
 
-        <div id="logout">
-          <a xml:lang="en" href="login.html">
-            <img alt="immagine logout area amministrazione" src="images/exit.png"/>
-             Logout
-          </a> 
-        </div>
-	</div>
+          <label for="nome_prodotto">Nome:</label>
+          <input type="text" name="nome" id="nome_prodotto" />
 
-	<div id="menu">
-        <ul>
-            <li><a  href="generale_private.html">Generale</a></li>
-            <li><a class="active">Promozioni</a></li>
-            <li><a href="prodotti_private.html">Prodotti</a></li>
-            <li><a href="lego.html">Pagina Negozio</a></li>
-        </ul> 
+          <label for="campo_alt">Alternativa testuale dell'immagine della promozione:</label>
+          <input type="text" name="campo_alt" id="campo_alt"/>
+
+          <label for="data">Data Inizio :</label> 
+          <input type="text" name="start" id="data"  />
+
+          <label for="data_fine">Data Fine :</label>
+          <input type="text" name="finish" id="data_fine"  /> 
+
+
+          <label for="descrizione_prodotto">Descrizione promozione:</label>
+          <textarea name="descrizione" id="descrizione_prodotto" rows="10" cols="30"></textarea>
+          
+          <label for="immagine">Seleziona la promozione da inserire:</label>
+          <input type="file" name="immagine" id="immagine"/>
+          <div class="invia">
+            <input  type="submit" value="Salva"/>
+          </div>
+      </fieldset>
     </div>
-
-	<div id="breadcrumb">
-        <h2><strong>Nome account</strong> &gt; Promozioni</h2>
-    </div>
-    <div id="content">
-        
-            <div id="colonna_sinistra">
-
-                    <div id="nuova_promozione"></div>
-                    <form action="" method="post" enctype="multipart/form-data" onsubmit="return checkPromo()">
-                        <div>
-                        <fieldset> 
-                         <legend class="intestazione">Nuova Promozione </legend>
-
-                         <label for="nome_promozione">Nome:</label>
-                          <input type="text" name="nome_promozione" id="nome_promozione" value="Star-Wars 75104" />
-
-                          <label for="campo_alt">Alternativa testuale dell'immagine della promozione:</label>
-                          <input type="text" name="campo_alt" id="campo_alt" />
-
-                          <label for="data">Data Inizio :</label> 
-                          <input type="text" name="data" id="data"  />
-
-                          <label for="data_fine">Data Fine :</label>
-                          <input type="text" name="data" id="data_fine"  /> 
-
-                          <label for="descrizione_promozione">Descrizione promozione:</label>
-                          <textarea name="descrizione_promozione" id="descrizione_promozione" rows="10" cols="30" ></textarea>
-
-
-                          <label for="imgPromo">Seleziona la promozione da inserire:</label>
-                          <input type="file" name="immagine" id="imgPromo"/>
-
-                          <div class="invia">
-                          <input type="submit" value="Salva"/>  
-                          </div>
-                          </fieldset>
-                        </div>                                                      
-                    </form>
-               
+  </form>
+</div>
+            
+<div id="colonna_destra">
+    <p class="intestazione">Promozioni Correnti</p>
+    
+            <div class ="no_image">
+                <p class="text_message">non sono presenti promozioni</p>
             </div>
+     
+</div> 
 
-
-            <div id="colonna_destra">
-
-                <p class="intestazione">Promozioni Correnti</p>
-                     <div class ="no_image">
-                         <p xml:lang="en">Coming soon</p>
-                     </div>      
-            </div>            
-        
-
-        <div id="colonna_destra_sotto">
+<div id="colonna_destra_sotto">
               <div id="deletePromo"></div>
-              <form  action="" method="post" onsubmit="return validatePromo()">
+              <form  action="../mainForm/deletePromozione.php" method="post" onsubmit="return validatePromo()">
                 <div>
-                <fieldset>
+                  <fieldset>
                   <legend class="intestazione">Elimina Promozioni</legend>
-                  
-                  <label for="elimina_promozione" >Nome Promozione:</label>
-                  <select name="elimina_promozione" id="elimina_promozione">
-                  <option value="Cerca nel menu:">Cerca nel menu:</option>
-                  <option value="volvo">Volvo</option>
-                  <option value="saab">Saab</option>
-                  <option value="opel">Opel</option>
-                  <option value="audi">Audi</option>
-                  </select>  
+
+                  <label for="elimina_prodotto">Nome Promozione:</label>
+                  <select name="titolo" id="elimina_prodotto">
+                     <option value="Cerca nel menu:">Cerca nel menu:</option>
+                                       </select>  
                   <div class="invia">                
                    <input type="reset"  name="tasto_reset"  value="Reset"/>  
                    <input type="submit" name="tasto_salva"  value="Salva"/>
@@ -110,13 +89,9 @@
                   </fieldset>
                 </div>
                </form>
-            </div>
-
-    </div>
-
-    <div id="footer">
-      <h3>Centro Commerciale Archimede</h3>
-             <img id="logoFooter" alt="Logo del centro commerciale" src="images/logo_copia.jpg"/>
+            </div></div><div id="footer">
+       <h3>Centro Commerciale Archimede</h3>
+             <img id="logoFooter" alt="Logo del centro commerciale" src="images/default/logo_copia.jpg"/>
              <div id="infoFooter">
               <p>Via Trieste, 63  | 35121 Padova (<span xml:lang="en">Italy</span>)| Telefono: +39 049 827 1200 | <span xml:lang="en">e-mail</span>:info@centro.archimede.it</p>
                </div> 
