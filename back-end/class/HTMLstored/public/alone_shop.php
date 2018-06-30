@@ -68,12 +68,14 @@ echo           '</div>
             </div>
         </div>
 
-            <div id="descrizione">
-                <p id="testo">               
-                    <strong>'.$startMotto.$result_info['motto'].$endMotto.'</strong><br/>'.$startDescr.$result_info['descrizione'].$startDescr.'
-                </p>
-                <div id="prodotto">
-                    <h4>Prodotti</h4>';
+            <div id="descrizione">  
+                <div id="testo">               
+                    <p><strong>'.$startMotto.$result_info['motto'].$endMotto.'</strong></p>
+                    <p>'.$startDescr.$result_info['descrizione'].$startDescr.'</p>
+            </div>
+
+            <div id="prodotto">
+                <h4>Prodotti</h4>';
                     
                 $result_prodotto =$prodotto->read();
                 $row_p =array();
@@ -87,7 +89,7 @@ echo           '</div>
                     echo '<ul>';
                     foreach($row_p as $row){
                         echo '  <li>
-                                    <a href="visual_page.php?titolo='.$row['titolo'].'">
+                                    <a href="negozio.php?prod='.$row['titolo'].'">
                                         <img src="images/prodotto/'.$row['source'].'" alt="'.$row['alt'].'"/>'
                                     .$row['titolo'].'
                                     </a>
@@ -114,7 +116,7 @@ echo           '</div>
                         echo '<ul>';
                         foreach($rows as $row){
                             echo '  <li>
-                                        <a href="visual_page.php?titolo='.$row['titolo'].'">
+                                        <a href="promozione.php?promo='.$row['titolo'].'">
                                             <img src="images/promozione/'.$row['source'].'" alt="'.$row['alt'].'"/>'
                                         .$row['titolo'].'
                                         </a>
@@ -124,7 +126,6 @@ echo           '</div>
                     }
         echo '
                 </div>
-            </div>
             </div>
 ';
 

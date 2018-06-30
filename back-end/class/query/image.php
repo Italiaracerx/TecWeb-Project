@@ -38,20 +38,20 @@ class image extends connection implements query{
         public function take_data(){
             if($_POST){
                 $this->name_image =parent::escaped_string($_POST['nome']); 
-                $this->alt =$_POST['alt'];
+                $this->alt =parent::escaped_string($_POST['campo_alt']);
                 if($this->type =='promozione'){
-                    $this->start =$_POST['start'];
-                    $this->finish =$_POST['finish'];
+                    $this->start =parent::escaped_string($_POST['start']);
+                    $this->finish =parent::escaped_string($_POST['finish']);
                 }
-                $this->description =$_POST['description'];
+                $this->description =parent::escaped_string($_POST['descrizione']);
             }
             if($_FILES){
-                $this->name =$_FILES["immagine"]["name"];
-                $this->size =$_FILES["immagine"]["size"];
-                $this->error =$_FILES["immagine"]["error"];
-                $this->user =$_SESSION['user'];
-                $this->name =$_FILES["immagine"]["name"];
-                $this->tmp_name =$_FILES["immagine"]["tmp_name"];
+                $this->name =parent::escaped_string($_FILES["immagine"]["name"]);
+                $this->size =parent::escaped_string($_FILES["immagine"]["size"]);
+                $this->error =parent::escaped_string($_FILES["immagine"]["error"]);
+                $this->user =parent::escaped_string($_SESSION['user']);
+                $this->name =parent::escaped_string($_FILES["immagine"]["name"]);
+                $this->tmp_name =parent::escaped_string($_FILES["immagine"]["tmp_name"]);
             }
         }
         public function checker(){
@@ -110,7 +110,7 @@ class image extends connection implements query{
         public function how_much(){
             $result =$this->read();
             if(mysqli_num_rows($result) == '3'){
-                throw new exeption('error','inserimento '.$this->type.' fallito, eliminane uno per inserirne quello nuovo.');
+                throw new exeption('error','inserimento '.$this->type.' fallito, eliminane uno per inserirne uno nuovo.');
             }
         }
 
@@ -121,7 +121,7 @@ class image extends connection implements query{
         }
 
         public function delete(){
-            $delete =$_POST['titolo'];
+            $delete =parent::escaped_string($_POST['titolo']);
             $query_to_delete="SELECT source FROM immagini WHERE username = '$this->user' AND type = '$this->type' AND titolo = '$delete'";
             $file_to_delete=mysqli_fetch_array(parent::execute_query($query_to_delete));
             $query="DELETE FROM immagini WHERE type = '$this->type' AND titolo = '$delete'";
@@ -173,6 +173,22 @@ class image extends connection implements query{
         public function search($titolo){
             $query="SELECT * FROM immagini WHERE titolo = '$titolo'";
             return parent::execute_query($query);
+        }
+
+        public function delete_image_of_user($user){
+            $rows=array();
+            $query="SELECT source FROM immagini WHERE username = '$user'";
+            $result_image=parent::execute_query($query);
+            while($row = $result_image->fetch_array(MYSQLI_ASSOC)){
+                $rows[] = $row;
+            }
+            $promozioni ='../../mainPage/HTML/images/promozione/';
+            $prodotti ='../../mainPage/HTML/images/prodotto/';
+
+            foreach($rows as $row){
+                unlink($promozioni.$row['source']);
+                unlink($prodotti.$row['source']);
+            }
         }
 
     }

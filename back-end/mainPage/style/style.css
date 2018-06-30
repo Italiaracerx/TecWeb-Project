@@ -113,8 +113,6 @@ html, body{
 	text-align: center;
 	font-size: 1em;	
 	margin: 1%;
-	padding-left:1em;
-	border-left: 1px black solid;
 }
 
 #contentRight h3{
@@ -162,6 +160,7 @@ html, body{
 	width: 70%;
 	margin: 1%;
 	display: inline-block;
+	border-right: 1px solid #000;
 	}
 
 #contentLeft h2{
@@ -207,6 +206,7 @@ html, body{
 	margin: 3%;
 	text-align: center;
     list-style-type: none;
+    text-transform: uppercase;
 }
 
 #promozione a{
@@ -304,8 +304,9 @@ html, body{
 } #negozio img{ 
   width:100%; 
   float:left; 
-  margin-bottom:0.4em;
 }
+
+
 
 /*----------DOVE SIAMO--------*/
 
@@ -371,9 +372,7 @@ html, body{
 
 #logo_negozio{
 	width: 90%;
-	margin:1em;
-	border: 1px black solid;
-
+	padding:1em;
 }
 
 #testo{
@@ -430,19 +429,18 @@ html, body{
 	width: 100%;
 }
 #prodotto li{
-	margin:1.5% 1% 0% 1%;
-	width: 30%;
+	margin:3%;
+	width: 26%;
 	float:left; 
-  	border:3px solid black;
+  	border:2px solid #000;
   	text-align: center;
   	list-style-type: none;
   	text-transform: uppercase;
 }
 
 #prodotto a{
-	display: inline-block;
 	text-decoration: none;
-	background-color:#808080;
+	background-color:#A52A2A;
 	color: #FFFFFF;
 	padding-bottom: 0.2em;
 	display: block;
@@ -465,30 +463,45 @@ html, body{
   margin: 1em 1em 1em 1em; 
 }*/
 
-/*PRODPROMO CSS*/
+/*---------PRODOTTO / PROMOZIONE--------- */
 
-/*uguale a negozio lego*/
 
-#prodpromo_leftSide{
+
+#imgPromozioneProdotto{
+	margin-top: 5%;
 	float: left;
-	max-width: 50%;
+	width: 50%;
 }
-#img_prodpromo{
+#imgPromozioneProdotto img{
 	float: left;
-	max-width: 100%;
+	width: 100%;
 }
-#prodpromo_rightSide{
-	float:right;
-	width: 47.5%;
+#descrizioneProdottoPromozione{
+	display: block;
+	width: 40%;
+	margin-left:55%;
 }
 
-#descrizione_prodpromo{
-	padding-top: 2em;
-	padding-bottom: 1em;
+#descrizioneProdottoPromozione p{
+	padding: 1em;
+
+}
+#descrizioneProdottoPromozione h4{
+	padding-top:1em;	
+	padding-bottom: 0.5em;
+	font-size:2em;
+	letter-spacing: 3px;
+	line-height: 1em;
+	border-bottom: 2px solid #A21E1E;
+	text-align: center;
+	font-weight: 400;
+	text-transform: uppercase;
+
 }
 #date_inizio_fine{
+	width: 40%;
 	padding-top: 1em;
-	text-align: right;
+	float: right;
 }
 
 #loading_screen

@@ -108,6 +108,7 @@ END
 $$ DELIMITER ;
 
 INSERT INTO type_account VALUES ('admin', 'general_admin','1');
+INSERT INTO type_account VALUES ('admin', 'eventi_private','0');
 INSERT INTO type_account VALUES ('user', 'general_private','1');
 INSERT INTO type_account VALUES ('user', 'promozioni_private','0');
 INSERT INTO type_account VALUES ('user', 'prodotti_private','0');

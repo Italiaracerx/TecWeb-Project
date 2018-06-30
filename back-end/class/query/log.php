@@ -3,6 +3,9 @@
 require_once __DIR__.'/../sistema/exeption.php';
 require_once __DIR__.'/../sistema/connection.php';
 require_once __DIR__.'/../interfacce/query.php';
+require_once __DIR__.'/../query/image.php';
+require_once __DIR__.'/../query/logo.php';
+
 
 class login extends connection implements query{
     //campi privati
@@ -22,8 +25,8 @@ class login extends connection implements query{
         $this->length=strlen($this->password);
         $this->password =sha1($this->password);
         $this->confirm =sha1($this->confirm);
-
     }
+
     public function write(){
         if($this->length < '4'){throw new exeption('error','password troppo corta');}
         if($this->password != $this->confirm){throw new exeption('error','password discordanti');}
@@ -46,7 +49,12 @@ class login extends connection implements query{
         if($this->username == "Cerca nel menu:"){
             throw new exeption('error', 'seleziona un utente da eliminare.');
         }
-        $query = "DELETE FROM type_account WHERE username = '$this->username'";
+
+        $image=new image();
+        $image->delete_image_of_user($this->username);
+        $logo=new logo($this->username);
+        $logo->delete();
+        $query = "DELETE FROM account WHERE username = '$this->username'";
         if(parent::execute_query($query) == NULL){
             throw new exeption('error', 'utente non presente.');
         }
