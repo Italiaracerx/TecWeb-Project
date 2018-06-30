@@ -46,9 +46,8 @@ html, body{
 
 
 .active{
-	color:white;
-	background-color:rgb(184, 11, 11);
-	
+		color:white;
+		background-color:#D04040;
 }
 
 #menu li a {
@@ -59,8 +58,8 @@ html, body{
 }
 
 #menu a:hover{
-	background-color:rgb(184, 11, 11);
-}
+	background-color:#D04040;
+  }
 
 #menu a:link{
     color:white;
