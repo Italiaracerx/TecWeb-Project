@@ -86,6 +86,17 @@ CREATE TABLE eventi(
 	PRIMARY KEY(ID) 
 );
 
+
+DROP TABLE IF EXISTS onlineUser;
+CREATE TABLE onlineUser(
+	account varchar(64) NOT NULL,
+	data datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	temporaryKey varchar(64),
+	PRIMARY KEY(account),
+	FOREIGN KEY (account) REFERENCES account(username)
+);
+
+
 SET FOREIGN_KEY_CHECKS=1;
 
 
