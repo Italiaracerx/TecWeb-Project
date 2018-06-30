@@ -663,8 +663,8 @@ padding: 1em 1em 1em 1em;
 	padding-bottom:0.5em; 
 	font-weight: normal; 
 	text-align: center; 
-	color: white; 
-	background-color: #4CAF50; 
+	color: #FFFFFF; 
+	background-color: #006000; 
 	} 
 	  
 	#error{ 
@@ -674,8 +674,8 @@ padding: 1em 1em 1em 1em;
 	padding-bottom:0.5em; 
 	font-weight: normal; 
 	text-align: center; 
-	color: white; 
-	background-color: rgba(218, 0, 0, 0.693); 
+	color: #FFFFFF; 
+	background-color: #800000; 
 	} 
 /* /////////////////////////////
    // Div ProdPromoMod  //

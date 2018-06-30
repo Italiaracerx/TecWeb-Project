@@ -5,7 +5,7 @@
                         <h1>Centro Commerciale Archimede</h1>
                         <h1>Area Amministrazione</h1>
                 </div>
-                <p><a xml:lang="en" href="#content" class="accesaid">Skip navigation</a></p>
+                <a xml:lang="en" href="#content" class="accesaid">Skip navigation</a>
                 <div id="logout">
                         <a xml:lang="en" href="../mainForm/logout.php">
                                 <img alt="immagine logout area amministrazione" src="images/default/exit.png"/>

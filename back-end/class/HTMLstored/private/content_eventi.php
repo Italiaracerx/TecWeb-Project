@@ -36,3 +36,43 @@
                 </form>
             </div>
 </div>
+
+            <div class="form_sopra">                
+                <form action="" method="post" onsubmit="">
+                 <div>
+                    <fieldset>
+                        <legend class="intestazione">Eliminazione aperture o chiusure</legend>                       
+                            <label for="elimina_aperture_chiusure">Seleziore data da eliminare:</label>
+
+                                <select name="nelimina_data" id="elimina_aperture_chiusure">
+                                    <option value="Cerca nel menu:">Cerca nel menu:</option>
+                                    <option value="lego">apertura 13/11/2011</option>               
+                                </select>
+                            <input type="submit" name="tasto_cancella"  value="Cancella"/>
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form_sopra">
+                <form action="" method="post" onsubmit="">
+                    <div>
+                        <fieldset>
+                        <legend class="intestazione">Elimina novita'</legend>
+                        <label for="elimina_novita">Selezionare la novità da eliminare:</label>
+
+                            <select name="nelimina_data" id="elimina_novita">
+                            <option value="Cerca nel menu:">Cerca nel menu:</option>
+                            <option value="lego">Aperti con orario continuato 1/05/2018</option>               
+                            <option value="lego">Aperti con orario continuato 1/05/2018</option>               
+                            <option value="lego">Aperti con orario continuato 1/05/2018</option>               
+                            <option value="lego">Aperti con orario continuato 1/05/2018</option>               
+                            <option value="lego">Aperti con orario continuato 1/05/2018</option>               
+                            <option value="lego">Aperti con orario continuato 1/05/2018</option>               
+                                    
+</select>
+                        <input type="submit" name="tasto_cancella"  value="Cancella"/>
+                        </fieldset>
+                    </div>
+                </form>
+            </div>

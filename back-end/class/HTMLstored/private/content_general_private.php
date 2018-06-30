@@ -5,48 +5,46 @@
     <div id="sopra">
         <div class="form_sopra">
             <div id="verifica_sito"></div> <div id="verifica_tel"></div> <div id="verifica_mail"></div>
-                <form action="../mainForm/change_shop_contacts.php" method="post" onsubmit="return checkEmail(this)" >             <div>
-                <?php
-                    $contatti =new infos_changer();
-                    $array_contatti =$contatti->read();
-                    echo '
-                    <div>
-                        <fieldset>
-                            <legend class="intestazione">Modifica Contatti</legend>
-                            <label for="telefono">Telefono / Fax:</label>
-                            <input type="text" name="Telefono" id="telefono" value="'.$array_contatti['telefono'].'"/>
-                            <label for="Email">Email:</label>
-                            <input type="text" name="Email" id="Email" value="'.$array_contatti['mail'].'" />
-                            <label for="Sito_web">Sito web:</label>
-                            <input type="text" name="Sito_web" id="Sito_web" value="'.$array_contatti['sito'].'" />
-                            <div class="invia">   
-                                <input type="reset" value="Reset"/>  
-                                <input type="submit" value="Salva"/>    
-                            </div>  
-                        </fieldset>                         
-                    </div>      
-                    ';?>                
-                </form>
-            </div>
+            <form action="../mainForm/change_shop_contacts.php" method="post" onsubmit="return checkEmail(this)" >
+            <?php
+                $contatti =new infos_changer();
+                $array_contatti =$contatti->read();
+                echo '
+                <div>
+                    <fieldset>
+                        <legend class="intestazione">Modifica Contatti</legend>
+                        <label for="telefono">Telefono / Fax:</label>
+                        <input type="text" name="Telefono" id="telefono" value="'.$array_contatti['telefono'].'"/>
+                        <label for="Email">Email:</label>
+                        <input type="text" name="Email" id="Email" value="'.$array_contatti['mail'].'" />
+                        <label for="Sito_web">Sito web:</label>
+                        <input type="text" name="Sito_web" id="Sito_web" value="'.$array_contatti['sito'].'" />
+                        <div class="invia">   
+                            <input type="reset" value="Reset"/>  
+                            <input type="submit" value="Salva"/>    
+                        </div>  
+                    </fieldset>                         
+                </div>      
+                ';?>                
+            </form>
         </div>
         <div class="form_sopra">
-                <div id="verifica_passw"></div>
-                <form  action="../mainForm/changePassword.php" method="post" onsubmit="return validateForm(this)">
-                    <div>
-                        <fieldset>
-                            <legend class="intestazione">Modifica Password</legend>
-                            <label for="password">Password:</label>
-                            <input type="password" name="nuova_password" id="password"/>
-                            <label for="conferma_password">Conferma Password:</label>
-                            <input type="password" name="conferma_nuova_password" id="conferma_password"/> 
-                            <div class="invia">              
-                                <input type="reset"  value="Reset"/>  
-                                <input type="submit" value="Salva"/>   
-                            </div>  
-                        </fieldset>                           
-                    </div>
-                </form>
-            </div>
+            <div id="verifica_passw"></div>
+            <form  action="../mainForm/changePassword.php" method="post" onsubmit="return validateForm(this)">
+                <div>
+                    <fieldset>
+                        <legend class="intestazione">Modifica Password</legend>
+                        <label for="password">Password:</label>
+                        <input type="password" name="nuova_password" id="password"/>
+                        <label for="conferma_password">Conferma Password:</label>
+                        <input type="password" name="conferma_nuova_password" id="conferma_password"/> 
+                        <div class="invia">              
+                            <input type="reset"  value="Reset"/>  
+                            <input type="submit" value="Salva"/>   
+                        </div>  
+                    </fieldset>                           
+                </div>
+            </form>
         </div>          
     </div>
 
