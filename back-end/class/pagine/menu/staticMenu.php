@@ -4,7 +4,7 @@ require_once __DIR__.'/schedaMenu.php';
 class staticPath{
     private static $link_logout='../mainForm/logout.php';
     private static $link_admin='general_admin.php';
-    private static $link_eventi='eventi_admin.php';
+    private static $link_eventi='eventi_private.php';
     private static $link_general_private='general_private.php';
     private static $link_promozioni_private='promozioni_private.php';
     private static $link_prodotti_private='prodotti_private.php';

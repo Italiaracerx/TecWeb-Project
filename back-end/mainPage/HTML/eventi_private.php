@@ -8,7 +8,7 @@
 
 
     $controller = new controller();
-    $controller->setPage(new page_private('Eventi','content_eventi',(new menu((new staticPath())->admin('1'))), 'general_private'));
+    $controller->setPage(new page_private('Eventi','content_eventi',(new menu((new staticPath())->admin('1'))), 'general_admin'));
     $controller->check_session();
     $controller->printHTML();
     

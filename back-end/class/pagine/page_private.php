@@ -48,8 +48,7 @@ class page_private implements type_page{
 	}
 
 	public function menu(){
-		$skip ='<p><a xml:lang="en" href="#content" class="accesaid">Skip navigation</a></p>';
-		$str ='<div id="menu">'.$skip.$this->menu->print().'</div>';
+		$str ='<div id="menu">'.$this->menu->print().'</div>';
 		$str =str_replace('__USER_NAME__',$_SESSION['user'],$str);
 		echo $str;
 	}		
