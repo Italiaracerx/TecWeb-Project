@@ -1,6 +1,8 @@
 <?php
 
     require_once __DIR__.'/../query/permission.php';
+    require_once __DIR__.'/../utility/random.php';
+
 
 class session_manager{
 	//metodi
@@ -18,6 +20,8 @@ class session_manager{
             $_SESSION['user'] = NULL;//inizializzo a NULL l'utente corrente
             $_SESSION['type'] = 'unlogged';//type rapprensenta il tipo di utente se messo a NULL nessun utente loggato
             $_SESSION['link'] = NULL;
+            $_SESSION['key'] = NULL;
+
             $this->set_flag(new exeption());
         }
     }
@@ -51,11 +55,18 @@ class session_manager{
 	        $_SESSION['user']=$utente['username'];
             $_SESSION['type']=$utente['user_type'];
             $_SESSION['link']=$utente['link'];
+            $_SESSION['key']=sha1(generateRandomString());
+
+            $permission= new permission();
+            $permission->write();
+
             $this->set_flag(new exeption("correct","Login effettuato con successo. Benvenuto ".$_SESSION['user'].'.'));
             header('Location: '.'../HTML'.DIRECTORY_SEPARATOR.$_SESSION['link'].'.php');
         }
     }
     public function logout(){
+        $permission= new permission();
+        $permission->delete();
         session_unset();
         session_destroy();
         $this->session();

@@ -38,8 +38,7 @@ class login extends connection implements query{
     public function login(){
         $query ="SELECT A.username, T.user_type, T.link FROM account A INNER JOIN type_account T ON A.type = T.user_type
         WHERE A.username = '$this->username' AND A.password = '$this->password' AND T.home = '1'";
-        $utente =mysqli_fetch_array(parent::execute_query($query));
-        return $utente;
+        return (parent::execute_query($query))->fetch_array(MYSQLI_ASSOC);
     }
     public function read(){
         $query = "SELECT A.username FROM account A WHERE A.type <> 'admin'";
