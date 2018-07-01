@@ -46,9 +46,8 @@ html, body{
 
 
 .active{
-	color:white;
-	background-color:rgb(184, 11, 11);
-	
+		color:white;
+		background-color:#D04040;
 }
 
 #menu li a {
@@ -59,8 +58,8 @@ html, body{
 }
 
 #menu a:hover{
-	background-color:rgb(184, 11, 11);
-}
+	background-color:#D04040;
+  }
 
 #menu a:link{
     color:white;
@@ -206,6 +205,7 @@ html, body{
 	margin: 3%;
 	text-align: center;
     list-style-type: none;
+    text-transform: uppercase;
 }
 
 #promozione a{
@@ -428,19 +428,18 @@ html, body{
 	width: 100%;
 }
 #prodotto li{
-	margin:1.5% 1% 0% 1%;
-	width: 30%;
+	margin:3%;
+	width: 26%;
 	float:left; 
-  	border:3px solid black;
+  	border:2px solid #000;
   	text-align: center;
   	list-style-type: none;
   	text-transform: uppercase;
 }
 
 #prodotto a{
-	display: inline-block;
 	text-decoration: none;
-	background-color:#808080;
+	background-color:#A52A2A;
 	color: #FFFFFF;
 	padding-bottom: 0.2em;
 	display: block;
@@ -520,4 +519,17 @@ html, body{
   filter: alpha(opacity=50);*/
 }
 
-
+.no_image{
+	padding: 1em 1em 1em 1em;
+	}
+	.text_message{
+	
+		margin-top: 2em;
+		margin-bottom: 2em;
+		padding-top:1em;
+		padding-bottom:1em;
+		height:50%;
+		background-color: #96969064;
+		text-align: center;
+		text-transform: uppercase;
+	}
