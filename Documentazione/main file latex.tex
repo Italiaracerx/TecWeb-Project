@@ -3,31 +3,45 @@
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
 \usepackage{hyperref}
+\usepackage[]{graphicx}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
 \begin{document}
-\pagestyle{empty}	
 
 
 \title{Relazione progetto sito web Centro Commerciale Tito Levi Civita}
-\begin{minipage}[c][\textheight][c]{\textwidth}\centering
-	\textsc{Universit\`a degli studi di Padova}
-	\\ \noindent
-	\textsc{Dipartimento di Matematica Pura e Applicata}
-	\\ \noindent 
-	\textsc{Corso di laurea in Informatica}
-	\\ \noindent
-	\textsc{Anno Accademico 2017-2018}
+\begin{titlepage}
+	\pagestyle{empty}
+	\centering
 	\vfill
-	\textbf{\large Progetto del corso di Tecnologie Web}
-	\\ \hfill \\
-	\textbf{\huge Centro commerciale\\ Tullio Levi Civita\\}
-	\vfill
-	\textsc{\Large a cura di:}
-	\\ \noindent
-	\textsc{\Large Giovanni Bergo:		1126144\\ Bianca Ciuche:		1122193 \\Daniel Rossi:		1125444\\ Manfredi Smaniotto:	1123057\\}	
-\end{minipage}
-
+	{
+		\bfseries
+		\vskip2cm
+		\Large Università di Padova\\
+		\vfill
+		\Large Progetto per il corso di tecnologie web\\
+		\Huge Centro Commerciale Torre Archimede\\
+		\vfill
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.6\linewidth]{images/LogoPadova}
+		\end{figure}
+		A cura di:\\
+		\Large Giovanni Bergo:		1126144\\ Bianca Ciuche:		1122193 \\Daniel Rossi:		1125444\\ Manfredi Smaniotto:	1123057\\
+		\vfill
+		Sito web hostato all'indirizzo: \url{http://tecweb1617.studenti.math.unipd.it/darossi}\\
+		\vfill
+	}
+\end{titlepage}
 \tableofcontents
-\pagebreak
+\pagestyle{empty}
+\newpage
+\pagestyle{fancy}
+\fancyhead[RE,LO]{}
+\fancyfoot[CE,CO]{}
+\fancyfoot[LE,RO]{Pagina \thepage\ di \pageref{LastPage}}
 \section{Informazioni di accesso}
 Il sito è accessibile al seguente link:
 \begin{center}
@@ -52,52 +66,45 @@ Il proprietario del negozio ha invece la possibilità di accedere ad una sezione
 L'utente amministratore può invece gestire gestire tutti gli account presenti all'interno della piattaforma e scrivere alcune comunicazioni da dare ai clienti riguardo al centro commerciale.\\
 \subsection{Target di utenza}
 Il target del sito risulta essere l'utenza visitatrice dei centri commerciali, quindi un pubblico molto vasto ed eterogeneo che richiede la creazione di un sito adatto a tutti e senza particolari adattamenti per una particolare tipologia di pubblico.\\
-La parte privata è invece pensata appositamente per un utilizzatore con buone conoscenze informatiche e indirizzato ad un utilizzo della piattaforme prettamente da computer fisso (verrà comunque data una versione mobile di quella parte del sito).
+Unica reale attenzione per la parte pubblica è stata l'organizzazione dei contenuti fondamentali sulla home, lasciando ad una navigazione più approfondita la ricerca di prodotti e promozioni.\\
+La parte privata è invece pensata appositamente per un utilizzatore con buone conoscenze informatiche e indirizzato ad un utilizzo della piattaforme prettamente da computer fisico (fatichiamo a pensare che sia desiderato fare delle modifiche al sito da dispositivo mobile).
 \section{Organizzazione delle informazioni}
 \subsection{Introduzione}
-I contenuti informativi presenti all'interno del sito sono stati organizzati in modo tale da lasciare le informazioni di maggiore importanza come le comunicazioni di servizio, gli orari e le ultime promozioni nella home del sito, lasciando spazio nelle altre pagine ad una ricerca più dettagliata in base al desiderio di informazioni dell'utente.\\
-La parte privata cerca di raggruppare, soprattutto per quanto riguarda la parte negozi, i form e le possibilità di modifica in base al tipo di informazioni che si desidera inserire (un esempio sono le pagine apposite per le promozionio o per i prodotti).\\
+I contenuti informativi presenti all'interno del sito sono stati organizzati in modo tale da lasciare le informazioni di maggiore importanza come le comunicazioni di servizio, gli orari e le ultime promozioni nella home del sito.\\
+L'utente più curioso ha comunque modo di approfondire la propria navigazione ricercando offerte e promozioni nelle varie pagine raggiungibili tramite vari passaggi all'interno del sito (normalmente non vengono richiesti più di tre passaggi per raggiungere la singola offerta o il singolo negozio).\\
+La parte privata cerca di raggruppare, soprattutto per quanto riguarda la parte negozi, i form per l'aggiunta di contenuti al proprio sito e le possibilità di modifica delle informazioni già inserite (un esempio sono le pagine apposite per le promozioni o per i prodotti).\\
 Il sito si compone delle pagine che quì di seguito andremo a descrivere.
 \subsection{Parte pubblica}
-La parte pubblica è tutto quell'insieme di pagine liberamente accessibili all'interno del sito senza la necessità di alcun account. La composizione di tale parte è data da:
+La parte pubblica è tutto quell'insieme di pagine liberamente accessibili all'interno del sito senza la necessità di alcun account. Tale parte di compone delle seguenti pagine:
 \begin{itemize}
 	\item \textbf{home (index.php)}: contiene le informazioni di base, in particolare sulla sinistra vi sono tutte le ultime promozioni annunciate per i vari negozi, mentre sulla destra troviamo gli orari di apertura e chiusura del centro commerciale e i principali avvisi di servizio.\\
 	
-	\item \textbf{negozi (negozi.php)}: contiene la lista completa dei negozi presenti all'iterno del centro.\\
+	\item \textbf{negozi (negozi.php)}: contiene la lista completa dei negozi presenti all'interno del centro commerciale.\\
 	Cliccando su un logo di un negozio è possibile accedere alla pagina dedicata al particolare negozio.
 	\begin{itemize}
 		\item \textbf{pagina negozio ()}: pagina dedicata al negozio in cui sono riportati gli orari di apertura, i prodotti e le promozioni del dato negozio.\\
-		Tramite click su un prodotto o su una promozione è possibile accedere alle relative informazioni nella pagina dedicata.
+		Tramite click su un prodotto o su una promozione è possibile accedere alle loro informazioni nella pagina appositamente dedicata.
 		\begin{itemize}
-		\item \textbf{pagina prodotto (prodpromo.php)} pagina contenente l'immagine del prodotto associato ad una descrizione.\\
-		\item \textbf{pagina promozione (prodpromo.php)}: pagina contenente l'immagine della promozione associata ad una descrizione e alle date di inizio e fine di essa.
+		\item \textbf{pagina prodotto (prodpromo.php)} pagina contenente le principali caratteristiche del prodotto desiderato.\\
+		\item \textbf{pagina promozione (prodpromo.php)}: pagina contenente i principali dati della promozione in corso, associata ovviamente alle date di inizio e fine di essa.
 	\end{itemize}
-	\item \textbf{dove siamo (dovesiamo.php)}: pagina contenente le informazioni per raggiungere il centro commerciale
-	\item \textbf{contatti (contatti.php)}: pagina contenente le principali informazioni riguardanti i contatti utilizzabili per comunicare con il centro commerciale
+	\item \textbf{dove siamo (dovesiamo.php)}: pagina contenente le informazioni rapide per raggiungere il centro commerciale.
+	\item \textbf{contatti (contatti.php)}: pagina contenente i contatti utilizzabili per comunicare con il centro commerciale; i contatti si riferiscono solo al centro commerciale poichè ogni singolo negozio sulla propria pagina mostra i contatti con cui è possibile contattarli.
 	\item \textbf{pagina promozioni (promozioni.php)}: pagina creata per contenere tutte le promozioni dei vari negozi.
 	\end{itemize}
 \end{itemize}
 \subsection{Parte privata}
-Insieme di pagine accessibili con credenziali per admin o per addetti dei negozi per la modifica dei relativi contenuti.
+Insieme di pagine accessibili con credenziali per admin o per addetti dei negozi per la modifica dei relativi contenuti. Superata la pagina di login si viene reindirizzati verso due possibili gruppi di pagine che adesso verranno descritte.
 \subsubsection{Admin}
 \begin{itemize}
 	\item \textbf{pagina generale (generale\_admin.php)}: pagina dedicata alla gestione degli account dei negozi (creazione ed eliminazione) oltre che alla modifica della password amministratore.
-	\item \textbf{pagina eventi (eventi\_private.php)}: pagina creata per la gestione dei messaggi di servizio del centro commerciale, in particolare con essa si possono comunicare eventi come aperture/chiusure straordinarie del centro oppure delle novità; viene anche data la possibilità di cancellazione di tali messaggi nel caso venissero fatti degli errori di digitazione.
+	\item \textbf{pagina eventi (eventi\_private.php)}: pagina creata per la gestione dei messaggi di servizio del centro commerciale, in particolare con essa si possono comunicare eventi come aperture/chiusure straordinarie, oppure delle novità come ad esempio l'apertura di un nuovo negozio; viene anche data la possibilità di cancellazione di tali messaggi nel caso venissero fatti degli errori di digitazione.
 \end{itemize}
 \subsubsection{Negozi}
 \begin{itemize}
-	\item \textbf{pagina generale (generale\_private.php)}: pagina principale della sezione privata dedicata ai negozi in cui sono compresi la modifica di varie informazioni principali (contatti, logo, nome negozio, orario negozio e descrizione) e la modifica della password.
-	\item \textbf{pagina promozioni (promozioni\_private.php)}: pagina dedicata all'inserimento e rimozione delle promozioni.\\
-	Cliccando su una promozione si viene reindirizzati ad una pagina per la modifica della promozione.
-	\begin{itemize}
-		\item \textbf{pagina modifica promozione (promo\_mod.php)}: pagina dedicata alla modifica di ogni campo dato di una singola promozione 
-	\end{itemize}
-
-	\item \textbf{pagina prodotti (prodotti\_private.php)}: pagina dedicata all'inserimento e rimozione dei prodotti.\\
-	Cliccando su un prodotto si viene reindirizzati ad una pagina per la modifica del prodotto.
-	\begin{itemize}
-		\item \textbf{pagina modifica prodotto (prod\_mod.php)}: pagina dedicata alla modifica di ogni campo dato di un singolo prodotto
-	\end{itemize}
+	\item \textbf{pagina generale (generale\_private.php)}: pagina principale della sezione privata dedicata ai negozi in cui sono compresi la modifica di varie informazioni principali (contatti, logo, nome negozio, orario negozio e descrizioni da mostrare sul sito) oltre che la modifica della password.
+	\item \textbf{pagina promozioni (promozioni\_private.php)}: in questa pagina è possibile inserire un nuovo prodotto specificando tutte le informazioni necessarie alla sua corretta visualizzazione sul sito. L'immagine inserita viene verificata affinchè sia del formato giusto e viene scalata in modo tale che ne sia uniformata la visualizzazione.
+	\item \textbf{pagina prodotti (prodotti\_private.php)}: similmente alla pagina promozioni viene data la possibilità di inserire un nuovo prodotto all'iterno del sito del singolo negozio. Rispetto a tale pagina manca l'input all'interno del form per l'inserimento delle date di inizio e fine, poichè non necessarie. Per praticità d'uso dell'utente il layout della pagina per l'inserimento delle promozioni non cambia, rendendo l'uso del sito più intuitivo.
 	
 \end{itemize}
 \section{Usabilità}
@@ -105,41 +112,52 @@ Insieme di pagine accessibili con credenziali per admin o per addetti dei negozi
 Il progetto è stato creato perseguendo per quanto possibile la semplicità d'uso e l'intuitività nell'utilizzo del sito. In particolare si è cercato di utilizzare alcuni espedienti per facilitare al publico meno avvezzo alla tecnologia la fruizione di ogni sezione del sito.
 \subsection{Grafica e layout}
 \subsubsection{Layout adattivo}
-La larghezza della pagina e i relativi contenuti sono scalati mano a mano che viene ridotta l'ampiezza dello schermo. La massima larghezza testata per il sito è stata di 1920x1080px, risoluzione massima con cui la maggior parte delle persone fruiscono i siti internet in questo momento.
-\subsection{Animazioni}
+La larghezza della pagina e i relativi contenuti sono scalati mano a mano che viene ridotta l'ampiezza dello schermo. La massima risoluzione massima testata per il sito è stata di 1920x1080px, con la quale la maggior parte delle persone fruiscono i siti internet in questo momento sia da dispositivi desktop che mobile.
+\subsubsection{Dimensione immagini inserite}
+Dato il fatto che vengono riprodotte su pagine preimpostate sia le promozioni che i prodotti e i loghi dei negozi è stato reso necessario inserire una funzione che si occupasse di ridimensionare in modo corretto le immagini inserite, uniformandole e rendendole più facili da stampare sulle pagine corrispondenti al tipo di elemento da rappresentare.
+
+\subsubsection{Animazioni}
 Nel progetto sono state inserite alcune animazioni per rendere più appaganti o più chiare alcune azioni all'iterno del sito.
 \begin{itemize}
 	\item \textbf{Page loading}: Si è scelto di fare utilizzo di un'animazione di caricamento poichè, anche se l'utenza generalmente non ama questo tipo di soluzioni, ci sembrava poco sensato lasciare visibile la pagina durante il suo caricamento. Per evitare quindi di presentare agli utenti la pagina ancora in caricamento l'utilizzo di questa animazione ci è parso essere l'unico percorso davvero sensato da seguire.
 	
-	\item \textbf{Segnalazioni errori form parte privata}: l'inserimento di informazioni nei form è sempre controllato tramite php, comportando la stampa di una conferma di inserimento dei dati se questa ha successo, oppure una segnalazione errori che indichi subito all'utente le correzioni da apporre.
+	\item \textbf{Segnalazioni errori form parte privata}: l'inserimento di informazioni nei form è sempre controllato tramite php, comportando la stampa di una conferma di inserimento dei dati se questa ha successo, oppure una segnalazione errori che indichi subito all'utente le correzioni da apporre.\\
+	Tali segnalazioni errori sono state sviluppate in javascript, dando quindi un feedback più rapido senza ricaricare la pagina quando i browser supportano javascript.
 \end{itemize}
-\subsection{Gestione errore 404}
-Il gruppo intendeva personalizzare la gestione di tale pagina di errore reindirizzando l'utente su una pagina apposita ma non vi è stato modo di accedere al file .htaccess per poter compiere tale passaggio. La pagina di errore di ricerca della pagina quindi è rimasta quella di default.
-\subsection{Ottimizzazione per dispositivi mobile}
+\subsubsection{Ottimizzazione per dispositivi mobile}
 La navigazione da cellulare è una feature da non trascurare per un sito di un centro commerciale, poichè la ricerca dell'informazione all'ultimo momento come gli orari dei negozi o gli ultimi sconti possono essere informazioni vitali per alcuni utenti del sito. Si sono quindi ridotte le immagini presenti sulla versione mobile del sito e si è cercato di portare il menu del sito sul fondo della pagina in modo da poter essere acceduto tramite un pulsante in cima alla pagina, senza richiedere l'utilizzo di javascript per delle animazioni non sempre accessibili da tutti i browser.
-\subsection{Menù orizzontale}
-Anche se esso risulta essere una scelta poco rivolta ad una successiva estensione del sito si è scelto di utilizzare un menù di questo tipo rispetto ad un menù laterale poichè il numero di link presenti su di esso non risultava così elevato da richiedere più spazio in estensione orizzontale rispetto a quanto reso disponibile da uno schermo di dimensioni anche ridotte.\\
-Per migliorarne l'usabilità si è voluto sottolineare il link dove è stata acceduta la pagina, disattivandone il link sul menù nella parte alta, mentre il menù nella parte bassa comprende un'ancora sul link della pagina attuale per poter essere riportati in cima ad essa.
+\subsubsection{Menù orizzontale}
+Anche se tale scelta risulta essere un problema per una successiva estensione del sito si è scelto di utilizzare un menù di questo tipo rispetto ad un menù verticale poichè il numero di link presenti su di esso si presume non sarà mai talmente elevato da dover richiedere ulteriore spazio in orizzontale, compromettendo la visualizzazione in particolare su schermi di dimensione ridotta.\\
+Per migliorarne l'usabilità si è voluto dare un colore di sfondo diverso al link dove è stata acceduta la pagina, disattivandone il link sul menù nella parte alta, mentre il menù nella parte bassa comprende un'ancora sul link della pagina attuale per poter essere riportati in cima ad essa.
+\subsection{Gestione errore 404}
+Il gruppo intendeva personalizzare la gestione dell'errore di ricerca della pagina reindirizzando l'utente su una pagina apposita ma non vi è stato modo di accedere al file .htaccess per poter compiere tale passaggio. La pagina di errore di ricerca della pagina quindi è rimasta quella di default.
+\subsection{Minificazioni}
+Il gruppo inizialmente intendeva minificare i file con estensione .css per ridurre il tempo di download dei file e velocizzare il caricamento delle pagine; tale soluzione non è stata adottata poichè si è preferito lasciare più leggibili i file in fase di correzione.
 \section{Accessibilità}
 \subsection{Introduzione}
-Nella progettazione del sito si è voluto controllare fin da subito che ogni singolo elemento inserito non compromettesse l'accessibilità del sito. Sono state seguite le linee guida WCAG per quanto possibile e si è testata la loro applicazione tramite gli strumenti di test dell'accessibilità che verranno successivamente citati.
+Nella progettazione del sito si è voluto controllare fin da subito che ogni singolo elemento inserito non compromettesse l'accessibilità del sito. Sono state seguite le linee guida WCAG 2.0 AAA per quanto possibile e si è testata la loro applicazione tramite gli strumenti di test dell'accessibilità che verranno successivamente citati.
 \subsection{Accorgimenti adottati}
 \begin{itemize}
-	\item \textbf{JavaScript}: il sito prevede un utilizzo di JavaScript prettamente accessorio e non necessario alla fruizione del sito; ogni singolo controllo o animazione risulta essere non necessario alla navigazione o viene replicato normalmente tramite la stampa di messaggi simili con chiamate php.\\
+	\item \textbf{JavaScript}: il sito prevede un utilizzo di JavaScript prettamente accessorio e non necessario alla fruizione del sito; ogni singolo controllo o animazione risulta essere una piacevole aggiunta all'utente; in assenza di JavaScript viene comunque garantita la fruizione del sito normalmente tramite la stampa di messaggi simili con funzioni php.\\
 	In particolare JavaScript viene utilizzato per il controllo degli input nei form e per le animazioni di caricamento delle pagine.
+	
 	\item \textbf{Breadcrumb}: ogni pagina presenta una barra che informa l'utente della pagina che attualmente stà visitando e quale percorso ha seguito per arrivarci.
-	\item \textbf{Immagini e link nascosti}: oltre a inserire le alternative testuali delle immagini 
+	
+	\item \textbf{Immagini e link nascosti}: oltre a inserire le alternative testuali delle immagini esse sono state rese cliccabili per accedere ai contenuti tramite esse.\\
+	Inoltre è stato posto un link trasparente in cima alla pagina per aiutare la navigazione per esempio da screen reader, accellerando l'accesso ai contenuti della pagina.
+	
+	\item \textbf{Contrasto dei colori}: anche se l'aspetto del sito risente dell'assenza di colori molto vivaci e brillanti, si è voluto privilegiare il contrasto tra colori di parti diverse del sito, garantendo di rispettare in ogni parte del sito le direttive WCAG 2.0 AAA.
 \end{itemize}
 \section{Note sullo sviluppo}
 \subsection{Tecnologie impiegate}
 Le tecnologie utilizzate per la realizzazione del sito sono:
 \begin{itemize}
-	\item XHTML
-	\item CSS3
-	\item JavaScript
-	\item PHP v7.1
+	\item XHTML 1.0 Transitional;
+	\item CSS3;
+	\item JavaScript ECMAScript 6;
+	\item PHP v7.1.
 \end{itemize}
-\subsection{struttura parte amministrazione}
+\subsection{Struttura parte amministrazione}
 \subsection{Fogli di stile}
 Il sito utilizza quattro fogli di stile dedicati per la parte utente (dimensione normale(style.css), tablet(tablet.css), mobile(mobile.css), stampa(print.css) e tre fogli di stile per la parte amministratore (dimensione normale(private\_style.css), tablet(private\_tablet.css), mobile(private\_mobile.css)
 \subsection{Validazione dei Form}
@@ -153,11 +171,12 @@ Le immagini inserite vengono scalate appositamente affinchè non vi siano proble
 Durante lo sviluppo del sito è stato chiaro sin dal primo momento che fosse necessario supportare un'ampia gamma di browser per accedere al sito.
 \\I browser che sono stati testati e controllati per il corretto funzionamento del sito sono:
 \begin{itemize}
-	\item Chrome - Versione
-	\item Mozilla Firefox - Versione
-	\item Opera - Versione
-	\item Microsoft Edge - Versione
-	\item Internet Explorer - Versione
+	\item Chrome - Versione 67.0.3396.99 
+	\item Mozilla Firefox - Versione 61.0
+	\item Opera - Versione 54.0.2952.41
+	\item Microsoft Edge - Versione 42.17134.1.0
+	\item Internet Explorer 11- Versione 11.112.17134.0
+	\item Internet Explorer 9 (emulato tramite Microsoft Edge)
 \end{itemize}
 
 \section{Test e validazione}
@@ -165,7 +184,8 @@ Durante lo sviluppo del sito è stato chiaro sin dal primo momento che fosse nec
 Questa sezione è dedicata alla sintesi dei test effettuati e alla descrizione degli strumenti utilizzati a tale scopo.\\
 Preso atto che gli strumenti automatici non sono in senso assoluto un indicatore sufficiente per definire un sito accessibile, essi sono un requisito necessario per poter affermare che il nostro sito sia quantomeno conforme alle linee guida consigliate.\\
 Poichè il sito permette il caricamento di contenuti il risultato di alcuni test, con particolare riferimento ai colori, potrebbe non essere lo stesso se eseguito una volta popolato il sito. L'esito di questi test è quindi valido soltanto nelle parti esenti dal caricamento di immagini degli utenti.
-\subsection{Strumenti utilizzati}
+\subsection{Validazione}
+\subsubsection{Strumenti utilizzati}
 \begin{itemize}
 	\item \textbf{W3C Validator}: servizio di validazione del markup disponibile al link:\\
 	\url{https://validator.w3.org/};
@@ -179,36 +199,73 @@ Poichè il sito permette il caricamento di contenuti il risultato di alcuni test
 	\item \textbf{IE Accessibility Toolbar}: barra di strumenti per test di accessibilità compatibile solo con internet Explorer ed installabile al sito:\\
 	\url{https://developer.paciellogroup.com/resources/wat/};
 	
-	\item \textbf{Cynthia Says}: validatore di accessibilità disponibile al sito:\\
-	\url{http://www.contentquality.com};
-	
-	\item \textbf{Toptal Colorblind Web Page Filter}: simulatore di daltonismo utilizzato per visualizzare come il sito viene visto da un individuo affetto da Protanopia, Deutanopia, Tritanopia e Achromatopsia, disponibile gratuitamente al sito:\\
-	\url{https://www.toptal.com/designers/colorfilter};
+	\item \textbf{Let's get color blind}: plugin per browser utile per simulare il daltonismo; permette di visualizzare come il sito viene visto da un individuo affetto da Protanopia, Deutanopia, Tritanopia e Achromatopsia, disponibile gratuitamente al sito:\\
+	\url{https://addons.mozilla.org/en-US/firefox/addon/let-s-get-color-blind/};
 	
 	\item \textbf{WebAIM Color Contrast Checker}: validatore di contrasto del colore disponibile gratuitamente al sito:\\
 	\url{https://webaim.org/resources/contrastchecker/};
 \end{itemize}
-\subsection{Esiti}
+\subsubsection{Esiti}
 \begin{itemize}
 	\item \textbf{W3C Validator}: Tutte le pagine sono state validate e non risulta che esse abbiano errori di validazione del codice.
 	
-	\item \textbf{Total Validator}:validatore di accessibilità e correttezza del markup disponibile in versione gratuita al sito:\\
-	\url{http://www.totalvalidator.com/validator/Validator};
+	\item \textbf{Total Validator}: le reportistiche del validatore hanno portato al miglioramento e all'adeguamento di alcuni elementi che non rispondevano  ai criteri delle linee guida WCAG 2.0 AAA.\\
+	Il sito allo stato attuale non porta con se errori di validazione, garantendo almeno sulla carta il massimo livello di accessibilità possibile.
 	
-	\item \textbf{NVDA}: screen reader reperibile gratuitamente al link:\\
-	\url{https://www.nvaccess.org/};
+	\item \textbf{NVDA}: pur con la consapevolezza che la prova non sia esauriente, il sito è stato testato con lo screen reader NVDA e gli aiuti alla navigazione inseriti sono risultati
+	propriamente funzionanti.
 	
-	\item \textbf{IE Accessibility Toolbar}: barra di strumenti per test di accessibilità compatibile solo con internet Explorer ed installabile al sito:\\
-	\url{https://developer.paciellogroup.com/resources/wat/};
+	\item \textbf{IE Accessibility Toolbar}: il sito è stato testato utilizzando le seguenti funzionalità integrate all'interno di questo strumento:
+	\begin{itemize}
+		\item Color Contrast Analyser: è stato verificato che i colori del sito sono conformi ai livelli di accessibilità definiti da WCAG 2.0 AAA.
+		
+		\item Juicy Studio Analyser: questo strumento effettua un' analisi riguardo all'accessibilità basandosi sul livello di contrasto dei colori che individua.\\
+		Il sito non presenta problematiche di questo tipo, in particolar modo con un livello di contrasto mai sotto il valore di 7:1 vengono appieno soddisfatte le direttive per il livello AAA di accessibilità dal punto di vista del contrasto del colore.\\
+		Unica problematica rilevata da questo strumento è il livello di contrasto del link per accesso rapido al contenuto della pagina, volutamente reso trasparente all'utente e visibile solo durante l'utilizzo di strumenti come gli screen reader.
+	\end{itemize}
+		
+	\item \textbf{WebAIM Color Contrast Checker}: dati due colori, uno relativo al contenuto in
+	primo piano e uno relativo al conteuto in secono piano, il validatore restituisce un
+	indice di contrasto con il quale verifica l’accessibilità della combinazione di colori
+	secondo WCAG AA e WCAG AAA. I colori del sito sono stati scelti in modo tale
+	da essere conformi a WCAG AAA.
 	
-	\item \textbf{Cynthia Says}: validatore di accessibilità disponibile al sito:\\
-	\url{http://www.contentquality.com};
-	
-	\item \textbf{Toptal Colorblind Web Page Filter}: simulatore di daltonismo utilizzato per visualizzare come il sito viene visto da un individuo affetto da Protanopia, Deutanopia, Tritanopia e Achromatopsia, disponibile gratuitamente al sito:\\
-	\url{https://www.toptal.com/designers/colorfilter};
-	
-	\item \textbf{WebAIM Color Contrast Checker}: validatore di contrasto del colore disponibile gratuitamente al sito:\\
-	\url{https://webaim.org/resources/contrastchecker/};
+	\item \textbf{Toptal Colorblind Web Page Filter}: la simulazione del daltonismo dato da protanopia (non percezione del rosso) è forse la più ostica poichè il sito si basa sul colore rosso; fortunatamente non vi sono difficoltà di contrasto soprattutto nei menù, con un contrasto sempre sufficiente per il riconoscimento degli elementi.\\
+	\vskip1cm
+	\begin{center}
+		\includegraphics[width=0.7\linewidth]{images/protanopia}\\- Home del sito per persone affette da protanopia
+	\end{center}
+	\vskip1cm
+	Il daltonismo da deuteranopia (non percezione del verde), tritanopia (non percezione del blu) e achromatopsia (non percezione del grigio) non dà complicazioni particolari, anche perchè tali colori non sono presenti sul sito in modo visibile.
+	\vskip1cm
+	\includegraphics[width=0.3\linewidth]{images/deuteranopia}
+	\includegraphics[width=0.3\linewidth]{images/tritanopia}
+	\includegraphics[width=0.3\linewidth]{images/achromatopsia}\\- Home del sito per persone affette rispettivamente da deuteranopia, tritanopia e achromatopsia.
+	\end{itemize}
+\subsection{Performance}
+\subsubsection{Strumenti}
+ \begin{itemize}
+ 	\item \textbf{Google PageSpeed Insights}:suite di test per la verifica della velocita di caricamento del sito da dispositivi mobile e desktop, disponibile al sito:\\
+ 	\url{https://developers.google.com/speed/pagespeed/insights/?hl=it};
+ 	\item \textbf{GTmetrix}: analizzatore di performance per siti web, disponibile al sito:\\
+ 	\url{https://gtmetrix.com/}.
+ \end{itemize}
+\subsubsection{Esiti}
+\begin{itemize}
+	\item \textbf{Google PageSpeed Insights}:
+	\item \textbf{GTmetrix}:
+\end{itemize}
+\subsection{Usabilità}
+\subsubsection{Strumenti}
+\begin{itemize}
+	\item \textbf{Google Mobile Friendliness Test}:suite di test per la verifica dell’usabilità del	sito da dispositivi mobile, disponibile al sito:\\
+	\url{//https://search.google.com/test/mobile-friendly};
+	\item \textbf{Test umano}: test condotto da alcuni candidati senza particolari conoscenze informatiche a cui è stato richiesto di reperire determinati contenuti all’interno del sito
+\end{itemize}
+\subsubsection{Esiti}
+\begin{itemize}
+	\item \textbf{Google Mobile Friendliness Test}:
+	\item \textbf{Test umano}: 
 \end{itemize}
 
 \end{document}
