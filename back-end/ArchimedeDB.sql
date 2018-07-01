@@ -118,6 +118,21 @@ CREATE TRIGGER NuovoUtente AFTER INSERT ON account FOR EACH ROW BEGIN
 END
 $$ DELIMITER ;
 
+
+DELIMITER $$
+
+CREATE EVENT inactiveUser
+    ON SCHEDULE
+      EVERY 15 MINUTE
+    COMMENT 'Delete accounts inactive in the last 15 minutes'
+    DO
+      BEGIN
+		DELETE FROM onlineUser WHERE data < (NOW() - INTERVAL 15 MINUTE);
+      END
+
+$$ DELIMITER ;
+
+
 INSERT INTO type_account VALUES ('admin', 'general_admin','1');
 INSERT INTO type_account VALUES ('admin', 'eventi_private','0');
 INSERT INTO type_account VALUES ('user', 'general_private','1');

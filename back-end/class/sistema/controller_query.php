@@ -2,6 +2,8 @@
 require_once __DIR__.'/controller.php';
 require_once __DIR__.'/../interfacce/query.php';
 require_once __DIR__.'/../query/log.php';
+require_once __DIR__.'/../query/permission.php';
+
 
 class controller_query extends controller{
 	private $question;
@@ -22,6 +24,7 @@ class controller_query extends controller{
     }
     public function write(){
         try{
+            $this->log();
             $this->question->write();
             $this->managerS->set_flag(new exeption('correct','Operazione eseguita con successo.'));
         }
@@ -32,6 +35,7 @@ class controller_query extends controller{
     }
     public function delete(){
         try{
+            $this->log();
             $this->question->delete();
             $this->managerS->set_flag(new exeption('correct','Operazione eseguita con successo.'));
         }
@@ -42,6 +46,7 @@ class controller_query extends controller{
     }
     public function update(){
         try{
+            $this->log();
             $this->question->update();
             $this->managerS->set_flag(new exeption('correct','Operazione eseguita con successo.'));
         }
@@ -49,6 +54,10 @@ class controller_query extends controller{
             $this->managerS->set_flag($ex);
         }
         $this->managerS->GoTo();
+    }
+    public function log(){
+        $permission=new permission();
+        $permission->read_query();
     }
 }
 ?>
