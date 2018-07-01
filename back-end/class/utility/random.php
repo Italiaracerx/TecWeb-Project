@@ -9,5 +9,4 @@ function generateRandomString($length = 64) {
     return $randomString;
 }
 
-echo generateRandomString();
 ?>

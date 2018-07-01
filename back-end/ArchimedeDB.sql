@@ -86,6 +86,17 @@ CREATE TABLE eventi(
 	PRIMARY KEY(ID) 
 );
 
+
+DROP TABLE IF EXISTS onlineUser;
+CREATE TABLE onlineUser(
+	account varchar(64) NOT NULL,
+	data datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	temporaryKey varchar(64),
+	PRIMARY KEY(account),
+	FOREIGN KEY (account) REFERENCES account(username)
+);
+
+
 SET FOREIGN_KEY_CHECKS=1;
 
 
@@ -106,6 +117,21 @@ CREATE TRIGGER NuovoUtente AFTER INSERT ON account FOR EACH ROW BEGIN
 	INSERT INTO logo values (NEW.username,'working_progress.jpg','logo negozio');
 END
 $$ DELIMITER ;
+
+
+DELIMITER $$
+
+CREATE EVENT inactiveUser
+    ON SCHEDULE
+      EVERY 15 MINUTE
+    COMMENT 'Delete accounts inactive in the last 15 minutes'
+    DO
+      BEGIN
+		DELETE FROM onlineUser WHERE data < (NOW() - INTERVAL 15 MINUTE);
+      END
+
+$$ DELIMITER ;
+
 
 INSERT INTO type_account VALUES ('admin', 'general_admin','1');
 INSERT INTO type_account VALUES ('admin', 'eventi_private','0');
