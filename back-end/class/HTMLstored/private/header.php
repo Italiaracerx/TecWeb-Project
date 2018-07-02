@@ -1,12 +1,4 @@
 <body>
-<div id="loading_screen" >
-            <h1>Loading...</h1> 
-            <p>La pagina è in caricamento<br/>
-            Resta connesso e non cambiare sito!</p>
-            </div>
-    <script type="text/javascript">
-        mostra_loading_screen();
-    </script>
 
 	<div id="header">	    
 		<div id="titolo">

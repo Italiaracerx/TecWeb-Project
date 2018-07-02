@@ -222,6 +222,16 @@ select{
 	font-size: 1em;
 }
 
+#elimina_openclose{background-color: #800000;
+	text-align:center;
+
+}
+
+#elimina_news{background-color: #800000;
+	text-align:center;
+
+}
+
 /*---------GENERALE PRIVATO---------*/
 
 
@@ -471,23 +481,29 @@ padding: 1em 1em 1em 1em;
    //    Div General-Admin   //
    ///////////////////////////// */
 
-#controllo_creaNeg {background-color: #fd3516;
-	text-align:center;}
-
-#controllo_eliminaNeg {background-color: #fd3516;
-	text-align:center;}
-
-#verifica_passwAdmin {background-color: #fd3516;
-	text-align:center;}
-
-#controllo_novita {background-color: #fd3516;
+#controllo_creaNeg {background-color: #800000;
 	text-align:center;
+color: #FFFFFF;}
+
+#controllo_eliminaNeg {background-color: #800000;
+	text-align:center;
+color: #FFFFFF;}
+
+#verifica_passwAdmin {background-color: #800000;
+	text-align:center;
+color: #FFFFFF;}
+
+#controllo_novita {background-color: #800000;
+	text-align:center;
+color: #FFFFFF;
 	margin-bottom: 0.4em;
 }
 
-#controllo_openclose{background-color: #fd3516;
+#controllo_openclose{background-color: #800000;
 	text-align:center;
+color: #FFFFFF;
 	margin-bottom: 0.4em;
+
 }
 
  
@@ -495,36 +511,36 @@ padding: 1em 1em 1em 1em;
    //    Div General-Private   //
    ///////////////////////////// */
    
-#verifica_passw {background-color: #fd3516;
-	text-align:center;}
-
-#verifica_tel {background-color: #fd3516;
-	text-align:center;}
-
-#verifica_mail {background-color: #fd3516;
+#verifica_passw {background-color: #800000;
 	text-align:center;
+color: #FFFFFF;}
+
+#verifica_contatti {background-color: #800000;
+	text-align:center;
+	color: #FFFFFF;
 }
 
-#verifica_sito {background-color: #fd3516;
+
+#verifica_descrizione {background-color: #800000;
 	text-align:center;
+	color: #FFFFFF;
 }
 
-#verifica_descrizione {background-color: #fd3516;
+#verifica_nomenegozio {background-color: #800000;
 	text-align:center;
+	color: #FFFFFF;
 }
 
-#verifica_nomenegozio {background-color: #fd3516;
-	text-align:center;
-}
-
-#verifica_orario {background-color: #fd3516;
+#verifica_orario {background-color: #800000;
 	text-align:center;
 	margin-bottom: 0.4em;
+	color: #FFFFFF;
 }
 
 #logoChange{
-	background-color: #fd3516;
+	background-color: #800000;
 	text-align:center;
+	color: #FFFFFF;
 }
 
 
@@ -533,21 +549,25 @@ padding: 1em 1em 1em 1em;
    ///////////////////////////// */
 
 
-#deletePromo{background-color: #fd3516;
+#deletePromo{background-color: #800000;
 	text-align:center;
-	margin-bottom: 0.4em;}
+	margin-bottom: 0.4em;
+color: #FFFFFF;}
 
 #deleteProm{
 	width: 40%;
 }
 
-#nuova_promozione{background-color: #fd3516;
+#nuova_promozione{background-color: #800000;
 	text-align:center;
+	color: #FFFFFF;
 }
 
-#controllo_eliminaprom{background-color: #fd3516;
+#controllo_eliminaprom{background-color: #800000;
 	text-align:center;
-	margin-bottom: 0.4em;}
+	margin-bottom: 0.4em;
+color: #FFFFFF;}
+
 
 
 /* /////////////////////////////
@@ -555,13 +575,15 @@ padding: 1em 1em 1em 1em;
    ///////////////////////////// */
 
 #newProduct{
-	background-color: #fd3516;
+background-color: #800000;
 	text-align:center;
+color: #FFFFFF;
 }
 
 #controllo_Prod{
-	background-color: #fd3516;
+background-color: #800000;
 	text-align:center;
+color: #FFFFFF;
 }
 
 #esempio{
@@ -570,72 +592,72 @@ padding: 1em 1em 1em 1em;
 }
 
 #uno{
-	background-color: #fd3516;
+background-color: #800000;
 	margin-left: 90%;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#fd3516;
+	color:#800000;
 	border-radius: 100px;
 }
 
 #due{
-	background-color: #fd3516;
+background-color: #800000;
 	margin-left: 90%;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#fd3516;
+	color:##800000;
 	border-radius: 100px;
 }
 
 #tre{
-	background-color: #fd3516;
+background-color: #800000;
 	margin-left: 90%;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#fd3516;
+	color:#800000;
 	border-radius: 100px;
 }
 
 #quattro{
-	background-color: #fd3516;
+background-color: #800000;
 	margin-left: 90%;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#fd3516;
+	color:#800000;
 	border-radius: 100px;
 }
 
 #cinque{
-	background-color: #fd3516;
+background-color: #800000;
 	margin-left: 90%;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#fd3516;
+	color:#800000;
 	border-radius: 100px;
 }
 
 #sei{
-	background-color: #fd3516;
+background-color: #800000;
 	margin-left: 90%;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#fd3516;
+	color:#800000;
 	border-radius: 100px;
 }
 
 #sette{
-	background-color: #fd3516;
+background-color: #800000;
 	margin-left: 90%;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#fd3516;
+	color:#800000;
 	border-radius: 100px;
 }
 
@@ -723,4 +745,20 @@ padding: 1em 1em 1em 1em;
 }
 #infoFooter{
 	font-size:0.8em;
+}
+
+#loading_screen
+{  
+  display: none;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  color: black;  
+  text-align: center;
+  padding-top: 100px;
+  /*opacity: 0.5;
+  filter: alpha(opacity=50);*/
 }

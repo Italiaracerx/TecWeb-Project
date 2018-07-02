@@ -4,7 +4,7 @@
     
     <div id="sopra">
         <div class="form_sopra">
-            <div id="verifica_sito"></div> <div id="verifica_tel"></div> <div id="verifica_mail"></div>
+            <div id="verifica_contatti"></div>
             <form action="../mainForm/change_shop_contacts.php" method="post" onsubmit="return checkEmail(this)" >
             <?php
                 $contatti =new infos_changer();
@@ -20,7 +20,7 @@
                         <label for="Sito_web">Sito web:</label>
                         <input type="text" name="Sito_web" id="Sito_web" value="'.$array_contatti['sito'].'" />
                         <div class="invia">   
-                            <input type="reset" value="Reset"/>  
+                            <input type="reset" value="Reset"/>
                             <input type="submit" value="Salva"/>    
                         </div>  
                     </fieldset>                         
