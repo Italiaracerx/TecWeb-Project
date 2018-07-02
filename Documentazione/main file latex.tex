@@ -31,7 +31,7 @@
 		A cura di:\\
 		\Large Giovanni Bergo:		1126144\\ Bianca Ciuche:		1122193 \\Daniel Rossi:		1125444\\ Manfredi Smaniotto:	1123057\\
 		\vfill
-		Sito web hostato all'indirizzo: \url{http://tecweb1617.studenti.math.unipd.it/darossi}\\
+		Sito web hostato all'indirizzo: \url{http://tecweb1617.studenti.math.unipd.it/darossi/mainPage/HTML/home.php}\\
 		\vfill
 	}
 \end{titlepage}
@@ -54,8 +54,8 @@ Come primo account amministratore è possibile utilizzare:
 \end{itemize}
 Vi sono anche alcuni account per utenti negozio come ad esempio:
 \begin{itemize}
-	\item username:
-	\item password:
+	\item username: lego
+	\item password: lego
 \end{itemize}
 Dal pannello amministratore è possibile aggiungere account; non è concessa la connessione con due account contemporaneamente poichè le variabili di sessione vengono mantenute fino al logout successivo.
 \section{Scopo del progetto e target}
@@ -107,6 +107,7 @@ Insieme di pagine accessibili con credenziali per admin o per addetti dei negozi
 	\item \textbf{pagina prodotti (prodotti\_private.php)}: similmente alla pagina promozioni viene data la possibilità di inserire un nuovo prodotto all'iterno del sito del singolo negozio. Rispetto a tale pagina manca l'input all'interno del form per l'inserimento delle date di inizio e fine, poichè non necessarie. Per praticità d'uso dell'utente il layout della pagina per l'inserimento delle promozioni non cambia, rendendo l'uso del sito più intuitivo.
 	
 \end{itemize}
+\newpage
 \section{Usabilità}
 \subsection{Introduzione}
 Il progetto è stato creato perseguendo per quanto possibile la semplicità d'uso e l'intuitività nell'utilizzo del sito. In particolare si è cercato di utilizzare alcuni espedienti per facilitare al publico meno avvezzo alla tecnologia la fruizione di ogni sezione del sito.
@@ -120,7 +121,7 @@ Dato il fatto che vengono riprodotte su pagine preimpostate sia le promozioni ch
 Nel progetto sono state inserite alcune animazioni per rendere più appaganti o più chiare alcune azioni all'iterno del sito.
 \begin{itemize}
 	\item \textbf{Page loading}: Si è scelto di fare utilizzo di un'animazione di caricamento poichè, anche se l'utenza generalmente non ama questo tipo di soluzioni, ci sembrava poco sensato lasciare visibile la pagina durante il suo caricamento. Per evitare quindi di presentare agli utenti la pagina ancora in caricamento l'utilizzo di questa animazione ci è parso essere l'unico percorso davvero sensato da seguire.
-	
+	\newpage
 	\item \textbf{Segnalazioni errori form parte privata}: l'inserimento di informazioni nei form è sempre controllato tramite php, comportando la stampa di una conferma di inserimento dei dati se questa ha successo, oppure una segnalazione errori che indichi subito all'utente le correzioni da apporre.\\
 	Tali segnalazioni errori sono state sviluppate in javascript, dando quindi un feedback più rapido senza ricaricare la pagina quando i browser supportano javascript.
 \end{itemize}
@@ -157,9 +158,20 @@ Le tecnologie utilizzate per la realizzazione del sito sono:
 	\item JavaScript ECMAScript 6;
 	\item PHP v7.1.
 \end{itemize}
-\subsection{Struttura parte amministrazione}
+%\subsection{Struttura parte amministrazione}
 \subsection{Fogli di stile}
 Il sito utilizza quattro fogli di stile dedicati per la parte utente (dimensione normale(style.css), tablet(tablet.css), mobile(mobile.css), stampa(print.css) e tre fogli di stile per la parte amministratore (dimensione normale(private\_style.css), tablet(private\_tablet.css), mobile(private\_mobile.css)
+\newpage
+\subsection{Database}
+Il sito riceve i dati da un database realizzato con MySQL, di cui segue lo schema della sua struttura.
+
+\vskip1cm
+\begin{center}
+	\includegraphics[width=0.8\linewidth]{images/diagram}\\
+\end{center}
+\vskip1cm
+\newpage
+
 \subsection{Validazione dei Form}
 La parte di amministrazione e inserimento contenuti del sito è ricca di form, quindi si avranno avvisi sia in javascript sia in html riguardanti gli errori trovati nei campi di inserimento durante la procedura di invio dei dati; gli avvisi in php avverranno rispetto alla parte javascript nella parte alta della pagina, indicando la tipologia di errore rilevata o l'avvenuto inserimento dei dati in modo corretto.\\
 Le funzioni di validazione dei form sono create ad hoc, poichè essendo esse molto poco omogenee come richieste non danno la possibilità di raggruppare in un'unica funzione tutti i controlli da svolgere.\\
@@ -230,31 +242,41 @@ Poichè il sito permette il caricamento di contenuti il risultato di alcuni test
 	secondo WCAG AA e WCAG AAA. I colori del sito sono stati scelti in modo tale
 	da essere conformi a WCAG AAA.
 	
+\newpage	
 	\item \textbf{Toptal Colorblind Web Page Filter}: la simulazione del daltonismo dato da protanopia (non percezione del rosso) è forse la più ostica poichè il sito si basa sul colore rosso; fortunatamente non vi sono difficoltà di contrasto soprattutto nei menù, con un contrasto sempre sufficiente per il riconoscimento degli elementi.\\
 	\vskip1cm
 	\begin{center}
-		\includegraphics[width=0.7\linewidth]{images/protanopia}\\- Home del sito per persone affette da protanopia
+		\includegraphics[width=0.7\linewidth]{images/protanopia}\\
+		\vskip1cm
+		- Home del sito per persone affette da protanopia
 	\end{center}
 	\vskip1cm
 	Il daltonismo da deuteranopia (non percezione del verde), tritanopia (non percezione del blu) e achromatopsia (non percezione del grigio) non dà complicazioni particolari, anche perchè tali colori non sono presenti sul sito in modo visibile.
 	\vskip1cm
 	\includegraphics[width=0.3\linewidth]{images/deuteranopia}
 	\includegraphics[width=0.3\linewidth]{images/tritanopia}
-	\includegraphics[width=0.3\linewidth]{images/achromatopsia}\\- Home del sito per persone affette rispettivamente da deuteranopia, tritanopia e achromatopsia.
+	\includegraphics[width=0.3\linewidth]{images/achromatopsia}\\
+	\vskip1cm
+	- Home del sito per persone affette rispettivamente da deuteranopia, tritanopia e achromatopsia.
+	
 	\end{itemize}
+\newpage
 \subsection{Performance}
 \subsubsection{Strumenti}
  \begin{itemize}
- 	\item \textbf{Google PageSpeed Insights}:suite di test per la verifica della velocita di caricamento del sito da dispositivi mobile e desktop, disponibile al sito:\\
+ 	\item \textbf{Performance test Opera Browser}: strumento integrato nel browser Opera per la verifica in background della velocità di caricamento e rendering delle pagine web;
+ 	\item \textbf{Google PageSpeed Insights}: suite di test per la verifica della velocita di caricamento del sito da dispositivi mobile e desktop, disponibile al sito:\\
  	\url{https://developers.google.com/speed/pagespeed/insights/?hl=it};
  	\item \textbf{GTmetrix}: analizzatore di performance per siti web, disponibile al sito:\\
  	\url{https://gtmetrix.com/}.
  \end{itemize}
 \subsubsection{Esiti}
 \begin{itemize}
-	\item \textbf{Google PageSpeed Insights}:
-	\item \textbf{GTmetrix}:
+	\item \textbf{Performance test Opera Browser}: il performance test ha dato come esito una velocità di caricamento di 9.9 ms nel caricamento della pagina home e una velocità di rendering di 13.6 ms per un totale di 23.5 ms per il caricamento completo della pagina web, un tempo tale da non consentire neanche di vedere l'animazione di caricamento della pagina (che si attiva soltanto in presenza di particolari connessioni molto lente).
+	\item \textbf{Google PageSpeed Insights}: il test ha avuto esito positivo riportando come risultato una "buona" velocità per dispositivi desktop e mobile.
+	\item \textbf{GTmetrix}: il test ha avuto un buon esito, risultando nella velocità delle pagine di livello "A"
 \end{itemize}
+\newpage
 \subsection{Usabilità}
 \subsubsection{Strumenti}
 \begin{itemize}
@@ -264,8 +286,17 @@ Poichè il sito permette il caricamento di contenuti il risultato di alcuni test
 \end{itemize}
 \subsubsection{Esiti}
 \begin{itemize}
-	\item \textbf{Google Mobile Friendliness Test}:
-	\item \textbf{Test umano}: 
+	\item \textbf{Google Mobile Friendliness Test}: l'esito di tale test è stato positivo, poichè tale strumento ha valutato il sito "mobile friendly". L'esito del test può comunque variare leggermente nei risultati di punteggio in base al numero di tentativi ravvicinati che possono essere richiesti per la verifica del sito.
+	\item \textbf{Test umano}: sia da piattaforma mobile che da piattaforma desktop è stato selezionato un campione di 5 persone di diverse età con conoscenze informatiche per quanto possibile basilari. Il test, consistente nella ricerca di vari contenuti all'interno del sito, si è concluso in modo positivo poichè nessuna persona si è persa all'interno del sito e ha raggiunto rapidamente i contenuti ricercati.
+\end{itemize}
+\newpage
+\section{Suddivisione dei lavori}
+Tenendo conto del fatto che ogni elemento del gruppo ha contribuito allo sviluppo e verificato i lavori degli altri componenti del gruppo, il lavoro è stato distribuito a grandi linee nel modo seguente:
+\begin{itemize}
+	\item Giovanni Bergo: sviluppo della parte privata, con particolare riferimento agli script Javascript per i controlli e alle pagine della parte admin.
+	\item Bianca Ciuche: sviluppo della parte pubblica, realizzazione dello stile per l'utilizzo di dispositivi mobile e validazione delle pagine.
+	\item Manfredi Smaniotto: realizzazione dei controlli delle form PHP del sito, realizzazione della parte privata con particolare riferimento alla parte negozi, scrittura della relazione e realizzazione dei test di accessibilità del sito.
+	\item Daniel Rossi: realizzazione del database e realizzazione delle transazioni con esso nella parte di backend, creazione delle funzioni per la formattazione corretta dei contenuti e organizzazione del caricamento dinamico del sito.
 \end{itemize}
 
 \end{document}
