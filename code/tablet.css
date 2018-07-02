@@ -1,22 +1,70 @@
 
 
-/*---HOME---*/
-.promozioneHome{
-	width: 50%;
-	padding-left: 25%;
+/*-----------HOME----------*/
+
+#content{
+	width: 100%;
 }
 
-#tabellaLaterale{
+#content h2{
+	font-size: 1.5em;
+
+}
+#contentRight{
+	width: 32%;
 	font-size: 0.9em;
-	padding: 0em;
-	margin: 0em;
+
 }
-#tabellaOrari{
-	margin: 0.5em;
+#contentLeft{
+	width: 60%;
 }
+
+#contentLeft h2{
+	width: 90%;
+	font-size: 1.5em;
+}
+
+
+#casella a{
+	height: 2em;
+	font-size: 0.9em;
+	padding: 2em 0em 2em 0em;
+}
+
+#promozione li{
+	width: 40%;
+	font-size: 0.8em;
+}
+#intestazione{
+	font-size: 1.5em;
+	width: 96%;
+	margin: 2%;
+
+}
+#area_amministrazione{
+	width: 90%;
+	font-size: 0.9em;
+}
+#footerMenu ul {
+    max-width: 90%;
+    margin: 0% 5% 0% 5%;
+}
+
+#contentMenuFooter a{
+	font-size: 0.9em;
+
+}
+
+
 /*-------NEGOZI-------*/
 
+#negozio li{
 
+	width: 28%;
+	margin: 2%;
+
+
+}
 /*--------NEGOZIO-LEGO---------*/
 
 #informazioni{
@@ -30,8 +78,10 @@
 	width: 55%;
 	margin-left:40%;
 }
-.prodotto{
-	width: 40%;
+#prodotto  li{
+	width: 50%;
+	margin: 2% 25% 2% 25%;
+
 }
 #promozioni{
 	display: inline-block;
@@ -43,43 +93,39 @@
 
 /*----DOVE-SIAMO----*/
 
+
 #testoInformazioni{  
 	width:95%;
-	margin-left: 2%;
+	margin: 2%;
+	margin-bottom: 1em;
 
 }
-#testoInformazioni h3{
-    padding-top: 2em;
-}
+
 #imgMappa{
  	float: none;
- 	margin-left: 20%;
+ 	width: 80%;
+ 	margin: 2% 10% 2% 10%;
+ 	padding: 0em;
 }
 
 /*----CONTATTI----*/
 
 #fotoContatti{
-	float: none;
-	margin-left: 20%;
+float: none;
+width: 70%;
+padding: 0em;
+margin-left: 15%;
+margin-right: 15%;
 }
 
 
 /*---PROMOZIONI-PUBLIC----*/
 
-#PromozioniAttive{
-font-size: 0.8em;
-}
+#PromozioniAttive li{	
+	margin:1% 1% 1% 1%;
+	width: 30%;
 
-.imgPromozione{
-	width: 40%;
-	margin-left: 20%;
-	margin-right: 20%;
-	text-align: center;
 	
-}
-
-.promozione{
-	width: 100%;
 }
 
 
