@@ -2,111 +2,78 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+
 <head>
   <meta http-equiv="Content-Script-Type" content="application/javascript" />
-  <meta http-equiv="Content-Type" content="application/xhtml+xml charset= UTF-8" />
 
-  <title>Centro Archimede</title>
-  <link rel="stylesheet" type="text/css" href="private_style.css" media="handheld, screen"/>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml charset= UTF-8" />
 
-    <script type="text/javascript" src="Javascript/promozioni_private.js"></script>
-</head>
- 
-<body>
+	<title>Centro Archimede</title>
 
-  <div id="header">     
-      <div id="titolo">
-                <h1>Centro Commerciale Archimede</h1>
-                <h1>Amministrazione</h1>
-      </div>
+	<link rel="stylesheet" type="text/css" href="../style/private_style.css" media="handheld, screen"/>
 
-      <div id="logout">
-          <a xml:lang="en" href="login.html">
-            <img alt="immagine logout area amministrazione" src="images/exit.png"/>
-             Logout
-          </a> 
-      </div>
-  </div>
+    <script type="text/javascript" src="../Javascript/prodotti_private.js"></script>
 
-	<div id="menu">
-        <ul>
-            <li><a  href="generale_private.html">Generale</a></li>
-            <li><a href="promozioni_private.html">Promozioni</a></li>
-            <li><a class="active">Prodotti</a></li>
-            <li><a href="lego.html">Pagina Negozio</a></li>
-        </ul> 
+</head><body>
+
+	<div id="header">	    
+		<div id="titolo">
+                        <h1>Centro Commerciale Archimede</h1>
+                        <h1>Area Amministrazione</h1>
+                </div>
+                <a xml:lang="en" href="#content" class="accesaid">Skip navigation</a>
+                <div id="logout">
+                        <a xml:lang="en" href="../mainForm/logout.php">
+                                <img alt="immagine logout area amministrazione" src="images/default/exit.png"/>
+                                Logout
+                        </a> 
+                </div>
+        </div><div id="menu"><ul><li ><a  href="general_private.php">Generale</a></li><li ><a  href="promozioni_private.php">Promozioni</a></li><li ><a class ="active" href="prodotti_private.php">Prodotti</a></li><li ><a  href="negozio.php?shop=lego">Link Negozio</a></li> </ul></div>	<div id="breadcrumb"><h2>lego: Prodotti</h2></div><div id="content"><div id="colonna_sinistra">
+  <div id="newProduct"></div>
+  <form action="../mainForm/insertProdotto.php" method="post" enctype="multipart/form-data" onsubmit="return checkProd()">
+    <div>
+      <fieldset>
+          <legend class="intestazione">Nuovo prodotto</legend>
+
+          <label for="nome_prodotto">Nome:</label>
+          <input type="text" name="nome" id="nome_prodotto" />
+
+          <label for="campo_alt">Alternativa testuale dell'immagine del prodotto:</label>
+          <input type="text" name="campo_alt" id="campo_alt"/>
+
+          <label for="descrizione_prodotto">Descrizione prodotto:</label>
+          <textarea name="descrizione" id="descrizione_prodotto" rows="10" cols="30"></textarea>
+          
+          <label for="immagine">Seleziona il prodotto da inserire:</label>
+          <input type="file" name="immagine" id="immagine"/>
+          <div class="invia">
+            <input  type="submit" value="Salva"/>
+          </div>
+      </fieldset>
     </div>
-
-	<div id="breadcrumb">
-        <h2><strong>Nome Account</strong> &gt; Prodotti</h2>
-    </div>
-    <div id="content">
-  
-            <div id="colonna_sinistra">
-                    <div id="newProduct"></div>
-                    <form action="" method="post" enctype="multipart/form-data" onsubmit="return checkProd()">
-                      <div>
-                      <fieldset>
-                        <legend class="intestazione">Nuovo prodotto</legend>
-
-                    	  <label for="nome_prodotto">Nome:</label>
-                        <input type="text" name="nome_prodotto" id="nome_prodotto" value="Star-Wars 75104" />
-
-                        <label for="campo_alt">Alternativa testuale dell'immagine del prodotto:</label>
-                        <input type="text" name="campo_alt" id="campo_alt"/>
-
-                        <label for="descrizione_prodotto">Descrizione prodotto:</label>
-                        <textarea name="descrizione_prodotto" id="descrizione_prodotto" rows="10" cols="30"></textarea>
-                        
-                        <label for="immagine">Seleziona il prodotto da inserire:</label>
-                        <input type="file" name="immagine" id="immagine"/>
-                        <div class="invia">
-                        <input  type="submit" value="Salva"/>   
-                        </div>
-                        </fieldset>
-
-                       </div>                                                     
-                    </form>
-            </div>
+  </form>
+</div>
             
-            <div id="colonna_destra">
-                <p class="intestazione">Prodotti Correnti</p>
-                <div class="contenuto_corrente">
-                  <a href="prod1">
-                    <img  src="images/lego1.jpg" alt="prodotto corrente"/> 
-                    Gioco_1
-                  </a>
-                </div>
-                <div class="contenuto_corrente">
-                  <a href="prod2">
-                    <img src="images/lego2.jpg" alt="prodotto corrente"/> 
-                    Gioco_2
-                     </a>
-                </div>
-                <div class="contenuto_corrente">
-                  <a href="prod3">
-                    <img src="images/lego3.jpg" alt="prodotto corrente"/> 
-                    Gioco_3
-                     </a>
-                </div>
-            </div>           
-        
+<div id="colonna_destra">
+    <p class="intestazione">Prodotti Correnti</p>
+    
+            <div class ="no_image">
+                <p class="text_message">non sono presenti prodotti</p>
+            </div>
+     
+</div> 
 
         <div id="colonna_destra_sotto">
               <div id="controllo_Prod"></div>
-              <form  action="" method="post" onsubmit="return validateProd()">
+              <form  action="../mainForm/deleteProdotto.php" method="post" onsubmit="return validateProd()">
                 <div>
                   <fieldset>
                   <legend class="intestazione">Elimina Prodotti</legend>
 
                   <label for="elimina_prodotto">Nome Prodotto:</label>
-                  <select name="elimina_prodotto" id="elimina_prodotto">
+                  <select name="titolo" id="elimina_prodotto">
                      <option value="Cerca nel menu:">Cerca nel menu:</option>
-                     <option value="volvo">Volvo</option>
-                     <option value="saab">Saab</option>
-                     <option value="opel">Opel</option>
-                     <option value="audi">Audi</option>
-                  </select>  
+                                       </select>  
                   <div class="invia">                
                    <input type="reset"  name="tasto_reset"  value="Reset"/>  
                    <input type="submit" name="tasto_salva"  value="Salva"/>
@@ -114,13 +81,9 @@
                   </fieldset>
                 </div>
                </form>
-            </div>
-            
-
-    </div>
-    <div id="footer">
-      <h3>Centro Commerciale Archimede</h3>
-             <img id="logoFooter" alt="Logo del centro commerciale" src="images/logo_copia.jpg"/>
+            </div></div><div id="footer">
+       <h3>Centro Commerciale Archimede</h3>
+             <img id="logoFooter" alt="Logo del centro commerciale" src="images/default/logo_copia.jpg"/>
              <div id="infoFooter">
               <p>Via Trieste, 63  | 35121 Padova (<span xml:lang="en">Italy</span>)| Telefono: +39 049 827 1200 | <span xml:lang="en">e-mail</span>:info@centro.archimede.it</p>
                </div> 
