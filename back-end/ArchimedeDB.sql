@@ -107,7 +107,7 @@ BEGIN
 	DELETE FROM orario WHERE username =OLD.username;
 	DELETE FROM logo WHERE username =OLD.username;
 	DELETE FROM immagini WHERE username =OLD.username;
-	DELETE FROM immagini WHERE account =OLD.username;
+	DELETE FROM onlineUser WHERE account =OLD.username;
 
 END
 $$ DELIMITER ;
