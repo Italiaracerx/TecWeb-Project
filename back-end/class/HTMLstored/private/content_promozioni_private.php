@@ -46,7 +46,7 @@
                     else{
                       foreach($rows as $row){
                             echo '<div class="contenuto_corrente">
-                            <a href="ciucia.php">
+                            <a href="promozione.php?promo='.$row['titolo'].'">
                           <img src="images/promozione/'.$row['source'].'" alt="'.$row['alt'].'"/>
                           '.$row['titolo'].' 
                           </a>

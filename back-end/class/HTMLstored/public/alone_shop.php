@@ -70,7 +70,7 @@ echo           '</div>
 
             <div id="descrizione">  
                 <div id="testo">               
-                    <p><strong>'.$startMotto.$result_info['motto'].$endMotto.'</strong></p>
+                    <h4>'.$startMotto.$result_info['motto'].$endMotto.'</h4>
                     <p>'.$startDescr.$result_info['descrizione'].$startDescr.'</p>
             </div>
 
