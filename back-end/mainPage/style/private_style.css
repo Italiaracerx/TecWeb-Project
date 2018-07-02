@@ -746,19 +746,3 @@ background-color: #800000;
 #infoFooter{
 	font-size:0.8em;
 }
-
-#loading_screen
-{  
-  display: none;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  height: 100%;
-  width: 100%;
-  background-color: white;
-  color: black;  
-  text-align: center;
-  padding-top: 100px;
-  /*opacity: 0.5;
-  filter: alpha(opacity=50);*/
-}
