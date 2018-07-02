@@ -1,41 +1,35 @@
 
-
 #header{
 	width: 100%;
 
 }
 #contenutoHeader{
-	font-size: 65%;
-	width: 90%;
+	font-size: 75%;
+	width: 95%;
+	text-align: center;
+	margin-left: 5%;
 }
 #menu{
 	width: 100%;
-	font-size: 1em;
+	font-size: 100%;
 }
 #menu li {
 	width: 100%;
-		
-	
 }
 #menu li a{
-	padding: 7px 0em 7px 0em;
+	padding: 10px 0em 10px 0em;
 }
 
-#breadcrumb{
-    font-size: 0.5em;   
-}
 
 #content{
 	width: 100%;
-
+	margin: 0em;
 }
 
 #content h2{
 	font-size: 1.25em;
 	margin-bottom: 2%;
 }
-
-
 
 #contentRight{
 	float: none;
@@ -63,11 +57,11 @@
 	width: 45%;
 	font-size: 0.8em;
 	margin: 1.5%;
-
 }
 
 #area_amministrazione{
 	width: 70%;
+	margin: 0% 15% 0% 15%;
 }
 
 
@@ -86,7 +80,7 @@
 }
 
 #footerMenu li  a{
-	padding: 7px 0px 7px 0px;
+	padding: 10px 0px 10px 0px;
 }
 #footer h3{
 	font-size: 0.9em;
@@ -120,7 +114,9 @@ display: none;
 	
 }
 #logo_negozio{
-	width: 50%;
+	width: 60%;
+	margin:0 20% 0 20%;
+	padding: 0em;
 }
 #contatti{
 	margin:0em;
@@ -187,10 +183,34 @@ display: none;
 
 
 
+/*-----PRODTTO-PROMOZIONE-------*/
 
+#imgPromozioneProdotto{
+	float: none;
+	width: 80%;
+	margin: 0% 10% 0% 10%;
+	display: inline-block;
+}
+#descrizioneProdottoPromozione h4{
+	display: inline-block;
+	width: 100%;
+}
+#descrizioneProdottoPromozione{
+	display: block;
+	text-align: center;
+	float:none;
+	margin:0em;
+	width: 80%;
+	margin: 0% 10% 0% 10%;
 
+}
+#date_inizio_fine{
+	text-align: center;
+	float: none;
+	width: 80%;
+	margin: 0% 10% 0% 10%;
 
-
+}
 
 
 
