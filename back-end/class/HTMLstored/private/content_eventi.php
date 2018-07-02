@@ -21,7 +21,7 @@
 
             <div class="form_sopra">
                 <div id="controllo_novita"></div>
-                <form  action="../mainForm/insert_novita.php" method="post" onsubmit="return novita()">
+                <form  action="../mainForm/insert_novita.php" method="post" onsubmit="return novita1()">
                     <div>
                     <fieldset> 
                     <legend class="intestazione">Novità</legend>
@@ -37,8 +37,9 @@
             </div>
 </div>
 
-            <div class="form_sopra">                
-                <form action="../mainForm/delete_event.php" method="post" onsubmit="">
+            <div class="form_sopra">     
+                <div id="elimina_openclose"></div>                        
+                <form action="../mainForm/delete_event.php" method="post" onsubmit="return delete_openclose()">
                  <div>
                     <fieldset>
                         <legend class="intestazione">Eliminazione aperture o chiusure</legend>                       
@@ -75,7 +76,8 @@
             </div>
 
             <div class="form_sopra">
-                <form action="../mainForm/delete_event.php" method="post" onsubmit="">
+            <div id="elimina_news"></div>   
+                <form action="../mainForm/delete_event.php" method="post" onsubmit="return delete_news()">
                     <div>
                         <fieldset>
                         <legend class="intestazione">Elimina novita'</legend>

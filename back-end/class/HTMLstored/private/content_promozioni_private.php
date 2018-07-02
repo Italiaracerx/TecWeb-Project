@@ -1,6 +1,6 @@
 <div id="colonna_sinistra">
-  <div id="newProduct"></div>
-  <form action="../mainForm/insertPromozione.php" method="post" enctype="multipart/form-data" onsubmit="return checkProd()">
+<div id="nuova_promozione"></div> 
+  <form action="../mainForm/insertPromozione.php" method="post" enctype="multipart/form-data" onsubmit="return checkPromo()">
     <div>
       <fieldset>
           <legend class="intestazione">Nuova promozione</legend>
@@ -57,8 +57,8 @@
 </div> 
 
 <div id="colonna_destra_sotto">
-              <div id="controllo_Prod"></div>
-              <form  action="../mainForm/deletePromozione.php" method="post" onsubmit="return validateProd()">
+<div id="deletePromo"></div> 
+              <form  action="../mainForm/deletePromozione.php" method="post" onsubmit="return validatePromo()">
                 <div>
                   <fieldset>
                   <legend class="intestazione">Elimina Promozioni</legend>

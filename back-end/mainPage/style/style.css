@@ -14,8 +14,7 @@ html, body{
 	margin: auto;
 	max-width:1024px;
 	padding-top:2em;
-	padding-bottom:2em;	
-	
+	padding-bottom:2em;		
 }
 
 #imgLogo{
@@ -110,9 +109,7 @@ html, body{
 	width: 23%;
 	float: right;
 	text-align: center;
-	font-size: 1em;	
-	margin: 1%;
-}
+	margin-right: 3%;}
 
 #contentRight h3{
 	font-weight: bold;	
@@ -120,6 +117,7 @@ html, body{
 	text-transform: uppercase;
 	font-size: 1em;
 	margin-top: 1.5em;
+
 }
 
 #contentRight ul{
@@ -133,16 +131,20 @@ html, body{
 	margin:2% 0% 2% 0%;
 }
 #area_amministrazione{
+	display: inline-block;
 	margin-top: 1.5em;
     background-color: #6a6a6a;
+    margin-bottom: 2em;
+
 }
 
 #area_amministrazione a{
-  display: block;
   text-decoration: none;
   color:white;
   padding: 0.3em;
-  overflow: auto;}
+  display:inline-block;
+}
+
 
 
 #area_amministrazione  a:hover{
@@ -153,6 +155,7 @@ html, body{
 	width: 3.8em;
 	float: left;
 	padding: 0.1em;
+	display: inline-block;
 }
 
 #contentLeft{
@@ -163,7 +166,7 @@ html, body{
 	}
 
 #contentLeft h2{
-    padding-top:0.5em;	
+    padding-top:1em;	
 	padding-bottom: 0.5em;
 	font-size:2em;
 	letter-spacing: 3px;
@@ -172,8 +175,8 @@ html, body{
 	text-align: center;
 	font-weight: 400;
 	text-transform: uppercase;
-	display: inline-block;
-	width: 95%;
+	display:inline-block;
+	width: 90%;
 }
 
 
@@ -312,13 +315,13 @@ html, body{
 #imgMappa{
     width: 60%;
     float: right;
-    padding: 1em;
+    margin: 2%;
 }
 #testoInformazioni{ 
    text-align: center; 
    width: 30%; 
    display: inline-block;
-   padding-left: 0.5em;
+   margin:2%;
 }
 
 #testoInformazioni h3{
@@ -327,8 +330,7 @@ html, body{
 
 /*------------CONTATTI-----------*/
 #fotoContatti{
-    padding-top: 1em;
-    padding-right: 5%;
+	margin:2%;
     width: 60%;
     float: right;
 }
@@ -342,10 +344,10 @@ html, body{
 	margin:0% 5% 0% 5%;
 }
 #PromozioniAttive li{
-	width: 22%;
+	width: 25%;
 	float: left;
 	text-align: center;
-	margin:1%;
+	
 }
 
 
