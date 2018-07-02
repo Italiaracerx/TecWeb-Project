@@ -90,15 +90,15 @@ function validateUser(){
 	if(indice_selezionato==0)
 		{var a="Nome negozio non valido";
     document.getElementById("controllo_eliminaNeg").innerHTML = a ;
-    return false;}
+    return false;}else return true;
 }
 
-function novita(){
-  var descr= document.getElementById("novità").value ;
+function novita1(){
+  var descr= document.getElementById('novita').value ;
 
   
 
-  	var dats= document.getElementById('data_1').value;
+  	var dats= document.getElementById('data_novita').value;
 
       var stacco=dats.split("-");
       var gg=stacco[0];
@@ -110,6 +110,7 @@ function novita(){
     document.getElementById("controllo_novita").innerHTML = a ;
     return false;
       }
+
       var controllo=gg.length;
       var controllo_1=mm.length;
       var controllo_2=nn.length;
@@ -126,7 +127,7 @@ function novita(){
       var anno=parseInt(stacco[2]);
   
 
-      if(giorno<00 || giorno>31 || mm<01 || mm>12 || anno<=2017)
+      if(giorno<0 || giorno>31 || mm<1 || mm>12 || anno<=2017)
       {
         var a="Data non valida";
     document.getElementById("controllo_novita").innerHTML = a ;
@@ -140,7 +141,22 @@ function novita(){
     return false;
   }
 
-      return true
+      return true;
 	
+  }
 
+  function delete_openclose(){
+    var indice_selezionato = document.getElementById('elimina_aperture_chiusure').selectedIndex;
+  if(indice_selezionato==0)
+    {var a="Data non valida";
+    document.getElementById("elimina_openclose").innerHTML = a ;
+    return false;}else return true;
+  }
+
+  function delete_news(){
+     var indice_selezionato = document.getElementById('elimina_novita').selectedIndex;
+  if(indice_selezionato==0)
+    {var a="Novita' non valida";
+    document.getElementById("elimina_news").innerHTML = a ;
+    return false;}else return true;
   }
