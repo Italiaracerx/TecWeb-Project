@@ -3,6 +3,8 @@
 require_once __DIR__.'/../sistema/exeption.php';
 require_once __DIR__.'/../sistema/connection.php';
 require_once __DIR__.'/../interfacce/query.php';
+require_once __DIR__.'/../utility/regex.php';
+
 
 class orario extends connection implements query{
     //campi privati
@@ -12,7 +14,7 @@ class orario extends connection implements query{
     private $orari;
     private $apertura =510;
     private $chiusura =1350;
-    private $regex ='/^(?:2[0-3]|[01][0-9]):[0-5][0-9]-(?:2[0-3]|[01][0-9]):[0-5][0-9]$/';
+    private $regex;
     private $user;
 
     //metodi
@@ -21,7 +23,7 @@ class orario extends connection implements query{
         $this->numeri = ['uno','due','tre','quattro','cinque','sei','sette'];
         $this->giorni = ['lunedi', 'martedi', 'mercoledi', 'giovedi', 'venerdi', 'sabato', 'domenica'];
         $this->giorni_html = ['Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato', 'Domenica'];
-
+        $this->regex=regex::hour();
         if(!empty($_POST)){
             $this->orari = array();
             for($i=0; $i<7; $i++){
@@ -48,6 +50,7 @@ class orario extends connection implements query{
                 }
             }
         }
+        
         $query = 'UPDATE orario SET'; 
         for($i=0; $i<7; $i++){
             if($i != 0){

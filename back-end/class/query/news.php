@@ -3,12 +3,13 @@
 require_once __DIR__.'/../sistema/exeption.php';
 require_once __DIR__.'/../sistema/connection.php';
 require_once __DIR__.'/../interfacce/query.php';
+require_once __DIR__.'/../utility/regex.php';
 
 class news extends connection implements query{
     private $type;
     private $date;
     private $news;
-    private $regex ="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/";
+    private $regex;
 
 
     //metodi
@@ -17,6 +18,7 @@ class news extends connection implements query{
         $this->date =parent::escaped_string($date);
         $this->news =parent::escaped_string($evento);
 
+        $this->regex=regex::date();
     }
     public function write(){
         preg_match($this->regex, $this->date, $matches, PREG_OFFSET_CAPTURE);

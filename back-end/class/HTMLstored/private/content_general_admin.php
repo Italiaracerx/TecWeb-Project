@@ -9,10 +9,10 @@
                <legend class="intestazione"> Modifica Password</legend>
 
                <label for="nuova_password">Password:</label>
-               <input type="password" name="password" id="nuova_password" />
+               <input type="password" name="nuova_password" id="nuova_password" />
 
                <label for="conferma_nuova_password">Conferma Password:</label>
-               <input type="password" name="Password_1" id="conferma_nuova_password"/>  
+               <input type="password" name="conferma_nuova_password" id="conferma_nuova_password"/>  
 
                <div class="invia">   
                    <input name="Tasto Reset" type="reset" value="Reset"/>  
@@ -57,7 +57,7 @@
               
                <label for="elimina_negozio">Nome Negozio:</label>
 
-               <select name="nelimina_negozio" id="elimina_negozio">
+               <select name="elimina_negozio" id="elimina_negozio">
                   <option value="Cerca nel menu:">Cerca nel menu:</option>
                   <?php 
                 $log = new login();

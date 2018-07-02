@@ -62,7 +62,7 @@ class permission extends connection implements query{
     }
 
     public function update(){
-        $query="UPDATE onlineUser SET date = NOW() WHERE account = '$this->user'";
+        $query="UPDATE onlineUser SET data =now() WHERE account = '$this->user'";
         parent::execute_query($query);
     }
 }

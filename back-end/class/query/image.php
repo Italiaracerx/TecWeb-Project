@@ -4,6 +4,8 @@ require_once __DIR__.'/../sistema/exeption.php';
 require_once __DIR__.'/../sistema/connection.php';
 require_once __DIR__.'/../interfacce/query.php';
 require_once __DIR__.'/ImageManipulator.php';
+require_once __DIR__.'/../utility/regex.php';
+
 
 class image extends connection implements query{
         private $user;
@@ -24,8 +26,8 @@ class image extends connection implements query{
         private $extention;
         private $directory;
         private $type;
-        private $regex= '/^(?:(((([012][0-9]|(3[01]))\-(((0[13578]))|(1[02])))|(([012][0-9]|(3[0]))\-(((0[469]))|(1[1])))|((([01][0-9])|2[0-7])\-02))\-2((01[89])|(0[2-9]\d)|(1\d{2}))))/'; 
-
+        private $regex; 
+        private $phpFileUploadErrors;
         //costruttore della classe inputPicture
 
         public function __construct($type=NULL, $user = NULL){
@@ -34,6 +36,17 @@ class image extends connection implements query{
             $this->type =$type;
             $this->directory ='../../mainPage/HTML/images/'.$this->type.'/';
             $this->extention= ['jpg','jpeg','gif'];
+            $this->regex=regex::date();
+            $this->phpFileUploadErrors = array(
+                0 => 'Nessun errore',
+                1 => 'dimensione maggiore della massima dimensione consentita',
+                2 => 'dimensione maggiore della massima dimensione consentita',
+                3 => 'immagine solo parzialmente caricata',
+                4 => 'immagine non caricata',
+                6 => 'Missing a temporary folder',
+                7 => 'Failed to write file to disk.',
+                8 => 'A PHP extension stopped the file upload.',
+            );
         }
         public function take_data(){
             if($_POST){
@@ -71,7 +84,7 @@ class image extends connection implements query{
                     } 
                 } 
             } 
-            if($this->error != '0'){throw new exeption('error','upload fallito, errore '.$this->error.'.');}
+            if($this->error != '0'){throw new exeption('error',$this->phpFileUploadErrors[$this->error]);}
             //controllo se l'immagine non ha dimensione 0                
             if($this->size == false || $this->name == NULL){throw new exeption('error','size nulla.');}
             /*controllo che l'immagine inserita non sia troppo
