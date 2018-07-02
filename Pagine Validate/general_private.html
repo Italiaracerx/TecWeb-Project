@@ -1,0 +1,193 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+
+<head>
+  <meta http-equiv="Content-Script-Type" content="application/javascript" />
+
+	<meta http-equiv="Content-Type" content="application/xhtml+xml charset= UTF-8" />
+
+	<title>Centro Archimede</title>
+
+	<link rel="stylesheet" type="text/css" href="../style/private_style.css" media="handheld, screen"/>
+
+    <script type="text/javascript" src="../Javascript/general_private.js"></script>
+
+</head><body>
+
+	<div id="header">	    
+		<div id="titolo">
+                        <h1>Centro Commerciale Archimede</h1>
+                        <h1>Area Amministrazione</h1>
+                </div>
+                <a xml:lang="en" href="#content" class="accesaid">Skip navigation</a>
+                <div id="logout">
+                        <a xml:lang="en" href="../mainForm/logout.php">
+                                <img alt="immagine logout area amministrazione" src="images/default/exit.png"/>
+                                Logout
+                        </a> 
+                </div>
+        </div><div id="menu"><ul><li ><a class ="active" href="general_private.php">Generale</a></li><li ><a  href="promozioni_private.php">Promozioni</a></li><li ><a  href="prodotti_private.php">Prodotti</a></li><li ><a  href="negozio.php?shop=lego">Link Negozio</a></li> </ul></div>	<div id="breadcrumb"><h2>lego: Generale</h2></div><div id="content">
+<div id="content_generale">
+    <h3 id="titolo_generale">Generale</h3>
+    
+    <div id="sopra">
+        <div class="form_sopra">
+            <div id="verifica_contatti"></div>
+            <form action="../mainForm/change_shop_contacts.php" method="post" onsubmit="return checkEmail(this)" >
+            
+                <div>
+                    <fieldset>
+                        <legend class="intestazione">Modifica Contatti</legend>
+                        <label for="telefono">Telefono / Fax:</label>
+                        <input type="text" name="Telefono" id="telefono" value="45"/>
+                        <label for="Email">Email:</label>
+                        <input type="text" name="Email" id="Email" value="giovannibergo1@gmail.com" />
+                        <label for="Sito_web">Sito web:</label>
+                        <input type="text" name="Sito_web" id="Sito_web" value="5" />
+                        <div class="invia">   
+                            <input type="reset" value="Reset"/>  
+                            <input type="submit" value="Salva"/>    
+                        </div>  
+                    </fieldset>                         
+                </div>      
+                                
+            </form>
+        </div>
+        <div class="form_sopra">
+            <div id="verifica_passw"></div>
+            <form  action="../mainForm/changePassword.php" method="post" onsubmit="return validateForm(this)">
+                <div>
+                    <fieldset>
+                        <legend class="intestazione">Modifica Password</legend>
+                        <label for="password">Password:</label>
+                        <input type="password" name="nuova_password" id="password"/>
+                        <label for="conferma_password">Conferma Password:</label>
+                        <input type="password" name="conferma_nuova_password" id="conferma_password"/> 
+                        <div class="invia">              
+                            <input type="reset"  value="Reset"/>  
+                            <input type="submit" value="Salva"/>   
+                        </div>  
+                    </fieldset>                           
+                </div>
+            </form>
+        </div>          
+    </div>
+
+    <div id="parte_centrale">  
+        <div class="form_centrali"> 
+            <div id="logoChange"></div>
+            <form action="../mainForm/insertLogo.php" method="post" enctype="multipart/form-data" onsubmit="return changeLogo()">
+                    <div>
+                    <fieldset>
+                        <legend class="intestazione">Modifica Logo</legend>
+
+                        <label for="immagine">Selezionare un file:</label>
+                        <input type="file" name="immagine" id="immagine"/>
+                        <input type="submit" value="Salva"/>
+                    </fieldset>
+                </div>
+            </form>
+        </div>
+
+        <div class="form_centrali">
+            <div id="verifica_nomenegozio"></div>
+            <form   action="../mainForm/change_shop_name.php" method="post" onsubmit="return negozio(this)" > 
+                <div id="modifica_nome">
+                    <fieldset>
+                    <legend class="intestazione">Modifica nome negozio </legend>
+                    <label for="nome_negozio">Nome:</label>
+                    <input type="text" name="nome_negozio" id="nome_negozio" value="Lego" />  
+                    <input type="submit" value="Salva"/>
+                </fieldset>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="sotto">
+
+        <div id="sinistra">
+            <div id="verifica_orario"></div>
+            <form action="../mainForm/changeOrari.php" method="post" onsubmit="return checkorario(this)">
+                <fieldset>
+                    <legend class="intestazione">Modifica Orario</legend>
+                    <p id="esempio">Il centro apre alle 08:30 <br/> chiude alle 21:30  </p>
+
+                                 
+                            <div class="orario">
+                                <label for="lunedi"> Lunedì :</label>
+                                <input type="text" name="lunedi" id="lunedi" value="08:30-21:30" maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                                <div id="uno"></div>
+                            </div>             
+                            <div class="orario">
+                                <label for="martedi"> Martedì :</label>
+                                <input type="text" name="martedi" id="martedi" value="08:30-21:30" maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                                <div id="due"></div>
+                            </div>             
+                            <div class="orario">
+                                <label for="mercoledi"> Mercoledì :</label>
+                                <input type="text" name="mercoledi" id="mercoledi" value="08:30-21:30" maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                                <div id="tre"></div>
+                            </div>             
+                            <div class="orario">
+                                <label for="giovedi"> Giovedì :</label>
+                                <input type="text" name="giovedi" id="giovedi" value="08:30-21:30" maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                                <div id="quattro"></div>
+                            </div>             
+                            <div class="orario">
+                                <label for="venerdi"> Venerdì :</label>
+                                <input type="text" name="venerdi" id="venerdi" value="08:30-21:30" maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                                <div id="cinque"></div>
+                            </div>             
+                            <div class="orario">
+                                <label for="sabato"> Sabato :</label>
+                                <input type="text" name="sabato" id="sabato" value="08:30-21:30" maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                                <div id="sei"></div>
+                            </div>             
+                            <div class="orario">
+                                <label for="domenica"> Domenica :</label>
+                                <input type="text" name="domenica" id="domenica" value="08:30-21:30" maxlength="11" onkeypress="return onlyNumeric(event);"/>
+                                <div id="sette"></div>
+                            </div>                    <div class="pulsante">
+                        <input  type="submit" value="Salva"/>                                
+                        <input  type="reset" value="Reset"/>  
+                    </div> 
+                </fieldset>
+            </form>
+        </div>
+
+        <div id="destra">
+            <div id="descrizione">
+                <div id="verifica_descrizione"></div>
+                <form action="../mainForm/change_shop_slogan.php" method="post" onsubmit="return descrizione(this)">
+                    <div>
+                        <fieldset>
+                            <legend class="intestazione">Modifica Descrizione</legend>
+
+                            <label for="testo_motto">Motto:</label>                                          
+                            
+                                <textarea name="testo_motto" id="testo_motto" rows="2" cols="50" >Per i costruttori del futuro!</textarea>  
+                                <label for="testo_descrizione">Descrizione:</label>
+                                <textarea name="testo_descrizione" id="testo_descrizione" rows="5" cols="50" >LEGO Group &egrave; un&rsquo;azienda privata a conduzione familiare con sede a Billund, in Danimarca, e uffici a Enfield, negli USA, a Londra, nel Regno Unito, a Shanghai, in Cina, e a Singapore. Fondata nel 1932 da Ole Kirk Kristiansen, l'azienda &egrave; uno dei maggiori produttori al mondo di giochi basati sul famoso mattoncino LEGO&reg;. </textarea>                            <div class="pulsante">
+                                <input  type="submit" value="Salva"/>                                
+                                <input  type="reset" value="Reset"/>   
+                            </div>  
+                        </fieldset>          
+                    </div> 
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div></div><div id="footer">
+       <h3>Centro Commerciale Archimede</h3>
+             <img id="logoFooter" alt="Logo del centro commerciale" src="images/default/logo_copia.jpg"/>
+             <div id="infoFooter">
+              <p>Via Trieste, 63  | 35121 Padova (<span xml:lang="en">Italy</span>)| Telefono: +39 049 827 1200 | <span xml:lang="en">e-mail</span>:info@centro.archimede.it</p>
+               </div> 
+    </div>
+</body>
+</html> 

@@ -53,7 +53,7 @@
     return false;
       }
 
-      var data_1=document.getElementById('data_1').value;
+      var data_1=document.getElementById('data_fine').value;
 
       var stacco_1=data_1.split("-");
       var gg_1=stacco_1[0];
@@ -89,7 +89,7 @@
     return false;
       }
 
-      var descrizione_promozione=document.getElementById('descrizione_promozione').value;
+      var descrizione_promozione=document.getElementById('descrizione_prodotto').value;
 
       if(descrizione_promozione=="" || descrizione_promozione==" ")
       {
@@ -99,11 +99,11 @@
       }
 
 
-     var img=document.getElementById('imgPromo').value;     
+     var img=document.getElementById('immagine').value;     
       
 
    if(img!="") { 
-     var fup = document.getElementById('imgPromo'); 
+     var fup = document.getElementById('immagine'); 
      var fileName = fup.value; 
      var ext = fileName.substring(fileName.lastIndexOf('.') + 1); 
      if(ext != "JPEG" && ext != "jpeg" && ext != "jpg" && ext != "JPG" && ext != "PNG" && ext != "png"  
@@ -123,9 +123,9 @@ return true;
 
 
   function validatePromo(){
-  var indice_selezionato = document.getElementById('elimina_promozione').selectedIndex;
+  var indice_selezionato = document.getElementById('elimina_prodotto').selectedIndex;
   if(indice_selezionato==0)
     {var a="Nome negozio non valido";
     document.getElementById("deletePromo").innerHTML = a ;
-    return false;}
+    return false;}else return true;
 }

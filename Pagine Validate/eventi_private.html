@@ -1,56 +1,46 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+
 <head>
-    <meta http-equiv="Content-Script-Type" content="application/javascript" />
-	
+  <meta http-equiv="Content-Script-Type" content="application/javascript" />
+
 	<meta http-equiv="Content-Type" content="application/xhtml+xml charset= UTF-8" />
 
 	<title>Centro Archimede</title>
-	<link rel="stylesheet" type="text/css" href="private_style.css" media="handheld, screen"/>
-<script type="text/javascript" src="Javascript/general_admin.js"></script>
-    
-</head>
- 
-<body>
-    <div id="header">       
-          <div id="titolo">
-                <h1>Centro Commerciale Archimede</h1>
-                <h1>Amministrazione</h1>
-            </div>
 
-      <div id="logout">
-          <a xml:lang="en" href="login.html">
-            <img alt="immagine logout area amministrazione" src="images/exit.png"/>
-             Logout
-          </a> 
-      </div>
-    </div>
+	<link rel="stylesheet" type="text/css" href="../style/private_style.css" media="handheld, screen"/>
 
-    <div id="menu">
-        <ul>
-            <li><a href="generale_admin.html">Generale</a></li>
-            <li><a class="active" href="">Eventi</a></li>
-        </ul> 
-    </div>
+    <script type="text/javascript" src="../Javascript/general_admin.js"></script>
 
-    <div id="breadcrumb">
-        <h2><strong xml:lang="en">Administrator</strong> &gt; Generale</h2>        
-    </div>
-    <div id="content">
-        <div class="sopra">
+</head><body>
+
+	<div id="header">	    
+		<div id="titolo">
+                        <h1>Centro Commerciale Archimede</h1>
+                        <h1>Area Amministrazione</h1>
+                </div>
+                <a xml:lang="en" href="#content" class="accesaid">Skip navigation</a>
+                <div id="logout">
+                        <a xml:lang="en" href="../mainForm/logout.php">
+                                <img alt="immagine logout area amministrazione" src="images/default/exit.png"/>
+                                Logout
+                        </a> 
+                </div>
+        </div><div id="menu"><ul><li ><a  href="general_admin.php">Generale</a></li><li ><a class ="active" href="eventi_private.php">Eventi</a></li><li ><a  href="home.php">Link Home</a></li> </ul></div>	<div id="breadcrumb"><h2>admin: Eventi</h2></div><div id="content"><div class="sopra">
             <div class="form_sopra">
                 <div id="controllo_openclose"></div>
-                <form  action="" method="post" onsubmit="return descrizione()" >
+                <form  action="../mainForm/insert_open_close.php" method="post" onsubmit="return descrizione()" >
                     <div >
                     <fieldset>
                     <legend class="intestazione">Apertura/Chiusura</legend>
                     <label for="evento">Tipo di evento:</label>
                     <select name="evento" id="evento">
                     <option value="Cerca nel menu:">Cerca nel menu:</option>
-                    <option value="Apertura">Apertura</option>
-                    <option value="Chiusura">Chiusura</option>
+                    <option value="APERTURA">Apertura</option>
+                    <option value="CHIUSURA">Chiusura</option>
                     </select> 
                     <label for="data">Inserire Data:</label>
                     <input type="text" name="data" id="data"/>  
@@ -62,12 +52,12 @@
 
             <div class="form_sopra">
                 <div id="controllo_novita"></div>
-                <form  action="" method="post" onsubmit="return novita()">
+                <form  action="../mainForm/insert_novita.php" method="post" onsubmit="return novita1()">
                     <div>
                     <fieldset> 
-                    <legend class="intestazione">Novita'</legend>
+                    <legend class="intestazione">Novità</legend>
                     <label for="data_novita">Inserire Data:</label>
-                    <input type="text" name="data_novita" id="data_novita"/>  
+                    <input type="text" name="data" id="data_novita"/>
                     <label for="novita">Descrizione:</label>
                     <textarea id="novita" name="testo" rows="4" cols="36" >Inserisci la nuova novità</textarea>
                     <input type="reset" name="tasto_reset"  value="Reset"/>  
@@ -76,61 +66,47 @@
                     </div>
                 </form>
             </div>
-        </div>
+</div>
 
-            <div class="form_sopra">                
-                <form action="" method="post" onsubmit="">
+            <div class="form_sopra">
+            <div id="elimina_openclose"></div>                
+                <form action="../mainForm/delete_event.php" method="post" onsubmit="return delete_openclose()">
                  <div>
                     <fieldset>
-                     <legend class="intestazione">Eliminazione aperture o chiusure</legend>
-                      <p>Seleziore data da eliminare:</p>
-                       
-                        <label for="cancella_data">
-                        <input type="radio" name="data" id="cancella_data" value="apertura 13/11/2011"/> apertura 13/11/2011
-                        </label>
-                        
-                    
-                        <label for="cancella_data2">
-                        <input type="radio" name="data" id="cancella_data2" value="chiusura 12/11/2011"/> chiusura 12/11/2011
-                        </label>
-                    
-                    
-                        <label for="cancella_data3">
-                        <input type="radio" name="date1" id="cancella_data3" value="apertura 11/11/2011"/> apertura 11/11/2011
-                        </label>
-                    
-                        <input type="submit" name="tasto_cancella"  value="Cancella"/>
+                        <legend class="intestazione">Eliminazione aperture o chiusure</legend>                       
+                            <label for="elimina_aperture_chiusure">Seleziore data da eliminare:</label>
+
+                                <select name="elimina_data" id="elimina_aperture_chiusure">
+                                    <option value="nessuno">Cerca nel menu:</option>
+                                                                    </select>
+                            <input type="submit" name="tasto_cancella"  value="Cancella"/>
                         </fieldset>
                     </div>
                 </form>
             </div>
 
             <div class="form_sopra">
-                <form action="" method="post" onsubmit="">
+                <div id="elimina_news"></div>  
+                <form action="../mainForm/delete_event.php" method="post" onsubmit="return delete_news()">
                     <div>
                         <fieldset>
                         <legend class="intestazione">Elimina novita'</legend>
-                        <p>Selezionare la novità da eliminare:</p>
-                        <label for="cancella_novita">
-                        <input type="radio" name="novita" id="cancella_novita" value="Aperti con orario continuato 1/05/2018" />Aperti con orario continuato 1/05/2018
-                        </label>
+                        <label for="elimina_novita">Selezionare la novità da eliminare:</label>
 
-                        <label for="cancella_novita2">
-                        <input type="radio" name="novita" id="cancella_novita2" value="Aperti con orario continuato 2/05/2018"/>Aperti con orario continuato 1/05/2018</label>
+                            <select name="elimina_data" id="elimina_novita">
+                            <option value="nessuno">Cerca nel menu:</option>
+                            <option value="11">Inserisci la nuova novità, data: 30-11--0001</option>    
+                            </select>
                         <input type="submit" name="tasto_cancella"  value="Cancella"/>
                         </fieldset>
                     </div>
                 </form>
-            </div>
-
-   
-    </div>
-   <div id="footer">
-      <h3>Centro Commerciale Archimede</h3>
-             <img id="logoFooter" alt="Logo del centro commerciale" src="images/logo_copia.jpg"/>
+            </div></div><div id="footer">
+       <h3>Centro Commerciale Archimede</h3>
+             <img id="logoFooter" alt="Logo del centro commerciale" src="images/default/logo_copia.jpg"/>
              <div id="infoFooter">
               <p>Via Trieste, 63  | 35121 Padova (<span xml:lang="en">Italy</span>)| Telefono: +39 049 827 1200 | <span xml:lang="en">e-mail</span>:info@centro.archimede.it</p>
-               </div>
+               </div> 
     </div>
 </body>
 </html> 

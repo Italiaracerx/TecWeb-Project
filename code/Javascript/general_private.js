@@ -3,7 +3,7 @@ function validateForm(form) {
    if (form.conferma_password.value != form.password.value || form.password.value=="" || form.password.value==" ") {
     form.password.focus()
     form.password.select()
-    var o="Password non valida !";
+    var o="Password non valida ";
     document.getElementById("verifica_passw").innerHTML = o ;
 
     return false
@@ -26,7 +26,7 @@ function checkEmail(form){
   
     if(isNaN(telefono) || telefono=="" || telefono==" ")
      { var o="ERRORE N.TELEFONO !!!";
-    document.getElementById("verifica_tel").innerHTML = o ;
+    document.getElementById("verifica_contatti").innerHTML = o ;
     return false;}
     else{
     
@@ -37,13 +37,13 @@ function checkEmail(form){
     else{
     
          var o="SITO WEB NON VALIDO !!!";
-    document.getElementById("verifica_sito").innerHTML = o ;
+    document.getElementById("verifica_contatti").innerHTML = o ;
     return false;}
   } 
        
     else{
       var o="ERRORE EMAIL !!!";
-    document.getElementById("verifica_mail").innerHTML = o ;
+    document.getElementById("verifica_contatti").innerHTML = o ;
 
 return false;
   
@@ -373,28 +373,28 @@ var lu , mi,me,gi,ve,sa,dm=true;
     }
 
     if (lu==false || mi==false || me==false ){
-        var o="Orario non valido !";
+        var o="Orario non valido ";
     document.getElementById("verifica_orario").innerHTML = o ;
     return false;}
 
     if(ve==false)
 {
-        var o="Orario non valido !";
+        var o="Orario non valido ";
     document.getElementById("verifica_orario").innerHTML = o ;
     return false;}
 
     if(gi==false)
         {
-        var o="Orario non valido !";
+        var o="Orario non valido ";
     document.getElementById("verifica_orario").innerHTML = o ;
     return false;}
 
     if(sa==false){
-        var o="Orario non valido !";
+        var o="Orario non valido ";
     document.getElementById("verifica_orario").innerHTML = o ;
     return false;}
     if(dm==false){
-        var o="Orario non valido !";
+        var o="Orario non valido ";
     document.getElementById("verifica_orario").innerHTML = o ;
     return false;}
 
