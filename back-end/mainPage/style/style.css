@@ -15,8 +15,8 @@ html, body{
 	background-color: #a02222;
 }
 #contenutoHeader{
-	margin: 0% 10% 0% 10%;
-	width:1024px;
+	margin: 0 auto;
+	max-width:1024px;
 	padding-top:2em;
 	padding-bottom:2em;		
 }
@@ -77,11 +77,11 @@ html, body{
 	font-weight: normal;
 }
 
-#content{
-	max-width:1024px; 
-	margin: 0% 10% 0% 10%;
-	display: inline-block;
-}
+	#content{
+		max-width:1024px; 
+		margin: 0 auto;
+		overflow: auto; 
+	}
 
 
 #imgTorre{ 
@@ -161,7 +161,6 @@ html, body{
 
 #contentLeft{
 	width: 70%;
-	margin: 1%;
 	display: inline-block;
 	}
 
