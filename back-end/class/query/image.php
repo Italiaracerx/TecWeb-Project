@@ -33,7 +33,7 @@ class image extends connection implements query{
 
             $this->type =$type;
             $this->directory ='../../mainPage/HTML/images/'.$this->type.'/';
-            $this->extention= ['jpg', 'png','jpeg','gif'];
+            $this->extention= ['jpg','jpeg','gif'];
         }
         public function take_data(){
             if($_POST){
