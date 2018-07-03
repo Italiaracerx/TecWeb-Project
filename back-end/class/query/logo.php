@@ -1,7 +1,7 @@
 <?php 
 
-require_once __DIR__.'/../sistema/exeption.php';
 require_once __DIR__.'/../sistema/connection.php';
+require_once __DIR__.'/../sistema/exeption.php';
 require_once __DIR__.'/../interfacce/query.php';
 require_once __DIR__.'/image.php';
 
@@ -37,7 +37,7 @@ class logo extends image{
         }
         public function delete(){
             $query="SELECT logo FROM logo WHERE username = '$this->user'";
-            $file_to_delete=mysqli_fetch_array(parent::execute_query($query));
+            $file_to_delete=(parent::execute_query($query))->fetch_array(MYSQLI_ASSOC);
             if($file_to_delete['logo']!='working_progress.jpg'){
                 unlink($this->directory.$file_to_delete['logo']);
             }
