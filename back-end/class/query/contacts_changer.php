@@ -28,20 +28,26 @@ class infos_changer extends connection implements query{
 
     }
     public function validate(){
-        $match=NULL;
-        preg_match($this->telephoneRegex,$this->phoneNumber,$match);
-        /*if(empty($match)){
+        if(!preg_match($this->telephoneRegex,$this->phoneNumber)){
             throw new exeption('error','il numero di telefono inserito non è valido');
-        }*/
-        preg_match($this->emailRegex,$this->emailAddress,$match);
-        if(empty($match)){
-            throw new exeption('error','la mail inserita non è valida');
-        }
-        preg_match($this->websiteRegex,$this->webLink,$match);
-        if(empty($match)){
-            throw new exeption('error','il sito inserito non è valido');
         }
 
+        if(!preg_match($this->emailRegex,$this->emailAddress)){
+            throw new exeption('error','la mail inserita non è valida');
+        }
+        if(!preg_match($this->websiteRegex,$this->webLink)){
+            throw new exeption('error','il sito inserito non è valido');
+        }
+        if(strlen($this->phoneNumber) > 13){
+            throw new exeption('error','il numero di telefono inserito deve essere di lunghezza minore di 13 caratteri');
+        }
+        if(strlen($this->emailAddress) > 64){
+            throw new exeption('error','la mail inserita deve essere di lunghezza minore di 64 caratteri');
+
+        }
+        if(strlen($this->webLink) > 96){
+            throw new exeption('error','il link inserito deve essere di lunghezza minore di 96 caratteri');
+        }
     }
 
 

@@ -10,7 +10,7 @@ class staticPath{
     private static $link_prodotti_private='prodotti_private.php';
     private static $link_negozio='negozio.php';
     private static $get='?shop=__USER_NAME__';
-    private static $link_home='home.php';
+    private static $link_home='index.php';
     private static $link_promozioni='promozione.php';
     private static $link_dove_siamo='dove_siamo.php';
     private static $link_contatti='contatti.php';

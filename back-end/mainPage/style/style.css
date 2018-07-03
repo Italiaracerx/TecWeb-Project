@@ -77,11 +77,12 @@ html, body{
 	font-weight: normal;
 }
 
-	#content{
-		max-width:1024px; 
-		margin: 0 auto;
-		overflow: auto; 
-	}
+#content{
+	max-width:1024px; 
+	margin: 0 auto;
+	overflow: auto; 
+	margin-bottom: 1em;
+}
 
 
 #imgTorre{ 

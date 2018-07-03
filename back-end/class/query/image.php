@@ -26,7 +26,10 @@ class image extends connection implements query{
         private $extention;
         private $directory;
         private $type;
+
         private $regex; 
+        private $emptyString; 
+        
         private $phpFileUploadErrors;
         //costruttore della classe inputPicture
 
@@ -35,14 +38,15 @@ class image extends connection implements query{
 
             $this->type =$type;
             $this->directory ='../../mainPage/HTML/images/'.$this->type.'/';
-            $this->extention= ['jpg','jpeg','gif'];
+            $this->extention= ['jpg','jpeg','gif','png'];
             $this->regex=regex::date();
+            $this->emptyString=regex::emptyString();
             $this->phpFileUploadErrors = array(
                 0 => 'Nessun errore',
                 1 => 'dimensione maggiore della massima dimensione consentita',
                 2 => 'dimensione maggiore della massima dimensione consentita',
                 3 => 'immagine solo parzialmente caricata',
-                4 => 'immagine non caricata',
+                4 => 'non è presente alcuna immagine da caricare',
                 6 => 'Missing a temporary folder',
                 7 => 'Failed to write file to disk.',
                 8 => 'A PHP extension stopped the file upload.',
@@ -68,6 +72,28 @@ class image extends connection implements query{
             }
         }
         public function checker(){
+            if(preg_match($this->emptyString,$this->name_image)){
+                throw new exeption('error', 'non si può inserire un/una '.$this->type.' senza nome.');
+            }
+            if(preg_match($this->emptyString,$this->alt)){
+                throw new exeption('error', 'non si può inserire un/una '.$this->type.' senza alternativa testuale.');
+            }
+            if(preg_match($this->emptyString,$this->description)){
+                throw new exeption('error', 'non si può inserire un/una '.$this->type.' senza descrizione.');
+            }
+            if(preg_match($this->emptyString,$this->name_image)){
+                throw new exeption('error', 'non si può inserire un/una '.$this->type.' senza nome.');
+            }
+            if(strlen($this->name_image) > 64){
+                throw new exeption('error','il nome inserito deve essere di lunghezza minore di 64 caratteri');
+            }
+            if(strlen($this->alt) > 64){
+                throw new exeption('error','alt inserito deve essere di lunghezza minore di 64 caratteri');
+            }
+            if(strlen($this->description) > 256){
+                throw new exeption('error','la descrizione inserito deve essere di lunghezza minore di 256 caratteri');
+
+            }
             if($this->type=='promozione'){
                 preg_match($this->regex, $this->start, $okstart, PREG_OFFSET_CAPTURE); 
                 if(empty($okstart)){throw new exeption('error','data non in formato GG-MM-AAAA o non calendarizzato');} 

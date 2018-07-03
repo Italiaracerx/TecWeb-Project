@@ -35,19 +35,18 @@ class orario extends connection implements query{
 
     public function update(){
         for($i=0; $i<7; $i++){
-            preg_match($this->regex, $this->orari[$i], $matches, PREG_OFFSET_CAPTURE);
-            if(empty($matches)){new exeption('error','Orario non in formato HH:MM-HH:MM.');}
-            else{
-                $arr1 = str_split($this->orari[$i]);
-                $new_apertura=($arr1[0]*10+$arr1[1])*60+$arr1[3]*10+$arr1[4];
-                $new_orachiusura=($arr1[6]*10+$arr1[7])*60+$arr1[9]*10+$arr1[10]; 
+            if(!preg_match($this->regex, $this->orari[$i])){
+                throw new exeption('error','Orario non in formato HH:MM-HH:MM.');
+            }
+            $arr1 = str_split($this->orari[$i]);
+            $new_apertura=($arr1[0]*10+$arr1[1])*60+$arr1[3]*10+$arr1[4];
+            $new_orachiusura=($arr1[6]*10+$arr1[7])*60+$arr1[9]*10+$arr1[10]; 
 
-                if($new_apertura > $new_orachiusura){
-                    throw new exeption("error","L'orario di apertura è maggiore dell'orario di chiusura.");
-                }
-                if($new_apertura < $this->apertura || $new_orachiusura > $this->chiusura){
-                    throw new exeption("error","L'apertura e la chiusura non possono precedere o succedere quelle del centro commerciale.");
-                }
+            if($new_apertura > $new_orachiusura){
+                throw new exeption("error","L'orario di apertura è maggiore dell'orario di chiusura.");
+            }
+            if($new_apertura < $this->apertura || $new_orachiusura > $this->chiusura){
+                throw new exeption("error","L'apertura e la chiusura non possono precedere o succedere quelle del centro commerciale.");
             }
         }
         

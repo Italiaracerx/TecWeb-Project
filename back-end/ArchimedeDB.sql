@@ -49,9 +49,9 @@ DROP TABLE IF EXISTS info;
 CREATE TABLE info(
 	username varchar(64) PRIMARY KEY,
 	negozio varchar(64) NOT NULL,
-	telefono varchar(64) NOT NULL,
+	telefono varchar(13) NOT NULL,
 	mail varchar(64),
-	sito varchar(64),
+	sito varchar(96),
 	motto varchar(64),
 	descrizione varchar(256),
 	FOREIGN KEY (username) REFERENCES account(username)
@@ -67,7 +67,7 @@ CREATE TABLE immagini(
 	alt varchar(64) NOT NULL,
 	start varchar(64) NOT NULL,
 	finish varchar(64) NOT NULL,
-	descrizione varchar(64) NOT NULL,
+	descrizione varchar(256) NOT NULL,
 	data_inserimento date NOT NULL,
     PRIMARY KEY (ID),
 	FOREIGN KEY (username) REFERENCES account(username),
@@ -114,7 +114,8 @@ $$ DELIMITER ;
 
 DELIMITER $$
 CREATE TRIGGER NuovoUtente AFTER INSERT ON account FOR EACH ROW BEGIN
-	INSERT INTO info values (NEW.username,NEW.username,'WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS','WORK IN PROGRESS');
+	INSERT INTO info values (NEW.username,NEW.username,'+390498271200','info@centro.archimede.it','tecweb1617.studenti.math.unipd.it/
+darossi/mainPage/HTML/home.php','Abbiamo appena aperto!',"Presto l'apertura del nuovo negozio, che aspetti corri a trovarci il più presto possibile");
 	INSERT INTO orario values (NEW.username,'08:30-21:30','08:30-21:30','08:30-21:30','08:30-21:30','08:30-21:30','08:30-21:30','08:30-21:30');
 	INSERT INTO logo values (NEW.username,'working_progress.jpg','logo negozio');
 END
