@@ -85,12 +85,13 @@ class image extends connection implements query{
                 throw new exeption('error', 'non si può inserire un/una '.$this->type.' senza nome.');
             }
             if(strlen($this->name_image) > 64){
-
+                throw new exeption('error','il nome inserito deve essere di lunghezza minore di 10');
             }
             if(strlen($this->alt) > 64){
-
+                throw new exeption('error','alt inserito deve essere di lunghezza minore di 10');
             }
             if(strlen($this->description) > 256){
+                throw new exeption('error','descrizione inserito deve essere di lunghezza minore di 10');
 
             }
             if($this->type=='promozione'){

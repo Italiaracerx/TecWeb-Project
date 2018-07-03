@@ -39,12 +39,14 @@ class infos_changer extends connection implements query{
             throw new exeption('error','il sito inserito non è valido');
         }
         if(strlen($this->phoneNumber) > 64){
-
+            throw new exeption('error','il numero di telefono inserito deve essere di lunghezza minore di 10');
         }
         if(strlen($this->emailAddress) > 64){
+            throw new exeption('error','la mail inserita deve essere di lunghezza minore di 64');
 
         }
         if(strlen($this->webLink) > 64){
+            throw new exeption('error','il link inserito deve essere di lunghezza minore di 64');
 
         }
     }

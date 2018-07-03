@@ -30,10 +30,10 @@ class shop_slogan extends connection implements query{
             throw new exeption('error', 'non si può inserire una slogan vuoto.');
         }
         if(strlen($this->newSlogan) > 64){
-
+            throw new exeption('error','il motto inserito deve essere di lunghezza minore di 64');
         }
         if(strlen($this->newDescription) > 256){
-
+            throw new exeption('error','la descrizione inserita deve essere di lunghezza minore di 256');
         }
     }
 

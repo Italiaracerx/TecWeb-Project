@@ -30,10 +30,10 @@ class login extends connection implements query{
     public function write(){
         if($this->length < '4'){throw new exeption('error','password troppo corta');}
         if(strlen($this->password) > 64){
-
+            throw new exeption('error','la password inserita deve essere di lunghezza minore di 64');
         }
         if(strlen($this->username) > 64){
-
+            throw new exeption('error','lo username inserito deve essere di lunghezza minore di 64');
         }
         if($this->password != $this->confirm){throw new exeption('error','password discordanti');}
         $query = "INSERT INTO account VALUES ('$this->username','user','$this->password')";

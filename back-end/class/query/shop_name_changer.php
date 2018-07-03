@@ -20,7 +20,7 @@ class name_change extends connection implements query{
             throw new exeption('error', 'non si può inserire una nome vuoto.');
         }
         if(strlen($this->newName) > 64){
-
+            throw new exeption('error','il nome inserito deve essere di lunghezza minore di 64');
         }
     }
 
