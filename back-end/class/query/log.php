@@ -29,6 +29,12 @@ class login extends connection implements query{
 
     public function write(){
         if($this->length < '4'){throw new exeption('error','password troppo corta');}
+        if(strlen($this->password) > 64){
+
+        }
+        if(strlen($this->username) > 64){
+
+        }
         if($this->password != $this->confirm){throw new exeption('error','password discordanti');}
         $query = "INSERT INTO account VALUES ('$this->username','user','$this->password')";
         if(parent::execute_query($query) == NULL){
@@ -60,6 +66,9 @@ class login extends connection implements query{
     }
     public function update(){
         if($this->length < '4'){throw new exeption('error','password troppo corta');}
+        if(strlen($this->password) > 64){
+
+        }
         if($this->password != $this->confirm){throw new exeption('error','password discordanti');}
         $query = "UPDATE `account` SET `password`='$this->password' WHERE username = '$this->username' AND type = '$this->type_account'";
         if(parent::execute_query($query) == NULL){

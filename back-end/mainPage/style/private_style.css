@@ -26,7 +26,7 @@ html, body{
 	list-style-type: none;
 	margin: 0;
 	overflow: hidden;
-	background-color: #0006;
+	background-color: #A9A9A9;
 }
 
 #menu li {
@@ -75,7 +75,7 @@ html, body{
 	background-color: #6a6a6a; 
 }
 
-#logout:hover{
+#logout a:hover{
 	background-color:black;
 }
 
@@ -597,7 +597,6 @@ background-color: #800000;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#800000;
 	border-radius: 100px;
 }
 
@@ -607,7 +606,6 @@ background-color: #800000;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:##800000;
 	border-radius: 100px;
 }
 
@@ -617,7 +615,6 @@ background-color: #800000;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#800000;
 	border-radius: 100px;
 }
 
@@ -627,7 +624,6 @@ background-color: #800000;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#800000;
 	border-radius: 100px;
 }
 
@@ -637,7 +633,6 @@ background-color: #800000;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#800000;
 	border-radius: 100px;
 }
 
@@ -647,7 +642,6 @@ background-color: #800000;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#800000;
 	border-radius: 100px;
 }
 
@@ -657,7 +651,6 @@ background-color: #800000;
 	margin-right: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-	color:#800000;
 	border-radius: 100px;
 }
 

@@ -23,7 +23,9 @@ class news extends connection implements query{
     public function write(){
         preg_match($this->regex, $this->date, $matches, PREG_OFFSET_CAPTURE);
         if(empty($matches)){new exeption('error','Orario non in formato GG-MM-AAAA.');}
+        if(strlen($this->news) > 64){
 
+        }
         $date_array = explode("-",$this->date); // split the array
         $var_day = $date_array[0]; //day seqment
         $var_month = $date_array[1]; //month segment
