@@ -45,8 +45,8 @@ class infos_changer extends connection implements query{
             throw new exeption('error','la mail inserita deve essere di lunghezza minore di 64 caratteri');
 
         }
-        if(strlen($this->webLink) > 64){
-            throw new exeption('error','il link inserito deve essere di lunghezza minore di 64 caratteri');
+        if(strlen($this->webLink) > 96){
+            throw new exeption('error','il link inserito deve essere di lunghezza minore di 96 caratteri');
         }
     }
 
