@@ -49,7 +49,7 @@ DROP TABLE IF EXISTS info;
 CREATE TABLE info(
 	username varchar(64) PRIMARY KEY,
 	negozio varchar(64) NOT NULL,
-	telefono varchar(64) NOT NULL,
+	telefono varchar(13) NOT NULL,
 	mail varchar(64),
 	sito varchar(64),
 	motto varchar(64),

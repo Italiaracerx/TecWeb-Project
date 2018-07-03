@@ -38,16 +38,15 @@ class infos_changer extends connection implements query{
         if(!preg_match($this->websiteRegex,$this->webLink)){
             throw new exeption('error','il sito inserito non è valido');
         }
-        if(strlen($this->phoneNumber) > 64){
-            throw new exeption('error','il numero di telefono inserito deve essere di lunghezza minore di 10');
+        if(strlen($this->phoneNumber) > 13){
+            throw new exeption('error','il numero di telefono inserito deve essere di lunghezza minore di 13 caratteri');
         }
         if(strlen($this->emailAddress) > 64){
-            throw new exeption('error','la mail inserita deve essere di lunghezza minore di 64');
+            throw new exeption('error','la mail inserita deve essere di lunghezza minore di 64 caratteri');
 
         }
         if(strlen($this->webLink) > 64){
-            throw new exeption('error','il link inserito deve essere di lunghezza minore di 64');
-
+            throw new exeption('error','il link inserito deve essere di lunghezza minore di 64 caratteri');
         }
     }
 

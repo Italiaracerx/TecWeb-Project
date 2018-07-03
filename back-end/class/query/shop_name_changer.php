@@ -17,10 +17,10 @@ class name_change extends connection implements query{
 
     public function validator(){
         if(preg_match($this->regex,$this->newName)){
-            throw new exeption('error', 'non si può inserire una nome vuoto.');
+            throw new exeption('error', 'non si può inserire un negozio con nome vuoto.');
         }
         if(strlen($this->newName) > 64){
-            throw new exeption('error','il nome inserito deve essere di lunghezza minore di 64');
+            throw new exeption('error','il nome inserito deve essere di lunghezza minore di 64 caratteri');
         }
     }
 
