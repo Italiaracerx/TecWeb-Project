@@ -19,6 +19,7 @@
 		\bfseries
 		\vskip2cm
 		\Large Università di Padova\\
+		\Large Corso di laurea in informatica
 		\vfill
 		\Large Progetto per il corso di tecnologie web\\
 		\Huge Centro Commerciale Torre Archimede\\
@@ -31,7 +32,7 @@
 		A cura di:\\
 		\Large Giovanni Bergo:		1126144\\ Bianca Ciuche:		1122193 \\Daniel Rossi:		1125444\\ Manfredi Smaniotto:	1123057\\
 		\vfill
-		Sito web hostato all'indirizzo: \url{http://tecweb1617.studenti.math.unipd.it/darossi/mainPage/HTML/home.php}\\
+		Sito web hostato all'indirizzo: \url{http://tecweb1617.studenti.math.unipd.it/darossi/mainPage/HTML/index.php}\\
 		\vfill
 	}
 \end{titlepage}
@@ -57,7 +58,7 @@ Vi sono anche alcuni account per utenti negozio come ad esempio:
 	\item username: lego
 	\item password: lego
 \end{itemize}
-Dal pannello amministratore è possibile aggiungere account; non è concessa la connessione con due account contemporaneamente poichè le variabili di sessione vengono mantenute fino al logout successivo.
+Dal pannello amministratore è possibile aggiungere account; non è concessa la connessione con due account contemporaneamente poichè le variabili di sessione vengono mantenute fino al logout successivo (non è stato possibile implementare un servizio automatico di refresh dell'orario di login all'interno della tabella account per poter verificare ad ogni cambio pagina l'effettiva attività dell'utente; nel database è comunque possibile trovare il codice di implementazione affinchè sia possibile l'inserimento di tale servizio una volta acquisiti i permessi di root).
 \section{Scopo del progetto e target}
 \subsection{Scopo del progetto}
 Il progetto si pone l'obbiettivo di creare un sito internet di un centro commerciale, dove devono essere disponibili le principali informazioni riguardanti orari di apertura, offerte, prodotti dei negozi, comunicazioni di servizio e le indicazioni per raggiungere il centro commerciale. \\
@@ -136,7 +137,7 @@ Il gruppo intendeva personalizzare la gestione dell'errore di ricerca della pagi
 Il gruppo inizialmente intendeva minificare i file con estensione .css per ridurre il tempo di download dei file e velocizzare il caricamento delle pagine; tale soluzione non è stata adottata poichè si è preferito lasciare più leggibili i file in fase di correzione.
 \section{Accessibilità}
 \subsection{Introduzione}
-Nella progettazione del sito si è voluto controllare fin da subito che ogni singolo elemento inserito non compromettesse l'accessibilità del sito. Sono state seguite le linee guida WCAG 2.0 AAA per quanto possibile e si è testata la loro applicazione tramite gli strumenti di test dell'accessibilità che verranno successivamente citati.
+Nella progettazione del sito si è voluto controllare fin da subito che ogni singolo elemento inserito non compromettesse l'accessibilità del sito. Sono state seguite le linee guida WCAG per quanto possibile e si è testata la loro applicazione tramite gli strumenti di test dell'accessibilità che verranno successivamente citati.
 \subsection{Accorgimenti adottati}
 \begin{itemize}
 	\item \textbf{JavaScript}: il sito prevede un utilizzo di JavaScript prettamente accessorio e non necessario alla fruizione del sito; ogni singolo controllo o animazione risulta essere una piacevole aggiunta all'utente; in assenza di JavaScript viene comunque garantita la fruizione del sito normalmente tramite la stampa di messaggi simili con funzioni php.\\
@@ -158,7 +159,7 @@ Le tecnologie utilizzate per la realizzazione del sito sono:
 	\item JavaScript ECMAScript 6;
 	\item PHP v7.1.
 \end{itemize}
-%\subsection{Struttura parte amministrazione}
+%\subsection{Struttura caricamento pagine}
 \subsection{Fogli di stile}
 Il sito utilizza quattro fogli di stile dedicati per la parte utente (dimensione normale(style.css), tablet(tablet.css), mobile(mobile.css), stampa(print.css) e tre fogli di stile per la parte amministratore (dimensione normale(private\_style.css), tablet(private\_tablet.css), mobile(private\_mobile.css)
 \newpage
@@ -291,12 +292,12 @@ Poichè il sito permette il caricamento di contenuti il risultato di alcuni test
 \end{itemize}
 \newpage
 \section{Suddivisione dei lavori}
-Tenendo conto del fatto che ogni elemento del gruppo ha contribuito allo sviluppo e verificato i lavori degli altri componenti del gruppo, il lavoro è stato distribuito a grandi linee nel modo seguente:
+Tenendo conto del fatto che ogni elemento del gruppo ha contribuito allo sviluppo e alla verifica del materiale prodotto dai propri colleghi, i lavori sono stati distribuiti nel modo seguente:
 \begin{itemize}
-	\item Giovanni Bergo: sviluppo della parte privata, con particolare riferimento agli script Javascript per i controlli e alle pagine della parte admin.
-	\item Bianca Ciuche: sviluppo della parte pubblica, realizzazione dello stile per l'utilizzo di dispositivi mobile e validazione delle pagine.
-	\item Manfredi Smaniotto: realizzazione dei controlli delle form PHP del sito, realizzazione della parte privata con particolare riferimento alla parte negozi, scrittura della relazione e realizzazione dei test di accessibilità del sito.
-	\item Daniel Rossi: realizzazione del database e realizzazione delle transazioni con esso nella parte di backend, creazione delle funzioni per la formattazione corretta dei contenuti e organizzazione del caricamento dinamico del sito.
+	\item Giovanni Bergo: sviluppo dell'interfaccia della parte privata, con particolare riferimento agli script Javascript per i controlli delle form e all'interfaccia della parte admin; realizzazione del css per la stampa (print.css).
+	\item Bianca Ciuche: sviluppo dell'interfaccia della parte pubblica, realizzazione dello stile per l'utilizzo di dispositivi mobile e tablet, validazione delle pagine e adattamento del sito ai criteri di accessibilità.
+	\item Manfredi Smaniotto: sviluppo dell'interfaccia della parte privata con particolare riferimento alla parte negozi, scrittura della relazione e realizzazione dei test di accessibilità del sito.
+	\item Daniel Rossi: realizzazione del database e gestione delle transazioni con esso nella parte di back-end, realizzazione dei controlli e degli adattamenti dei contenuti delle form in PHP e realizzazione del caricamento dinamico del sito.
 \end{itemize}
 
 \end{document}
