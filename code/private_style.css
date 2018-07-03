@@ -12,7 +12,6 @@ html, body{
 	display: inline-block;
 	color:white;
 	text-transform: uppercase;
-
 }
 
 .accesaid{
@@ -22,19 +21,16 @@ html, body{
 }
 
 #menu ul {
-
 	list-style-type: none;
 	margin: 0;
 	overflow: hidden;
-	background-color: #0006;
+	background-color:#A9A9A9;
 }
 
 #menu li {
 	float: left;
 	width: 25%;
-	background-color:#6a6a6a;
-
-	
+	background-color:#6a6a6a;	
 }
 
 #menu a:hover{
@@ -43,7 +39,6 @@ html, body{
 .active{
 	color:white;
 	background-color:rgb(60, 57, 57);
-	
 }
 
 #menu li a {
@@ -51,7 +46,6 @@ html, body{
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
-
 }
 
 #menu a:link{
@@ -69,7 +63,7 @@ html, body{
 #logout a{
 	text-decoration: none;
 	color: white;
-	padding-top: 0.5em: 
+	padding-top: 0.5em;
 	padding-bottom: 0.5em;
 	display:inline-block;
 	background-color: #6a6a6a; 
@@ -93,7 +87,8 @@ html, body{
 
 #header h2{
 	font-size: 1.5em;
-	display: inline;}
+	display: inline;
+}
 
 #breadcrumb{
     background-color: #ececec;
@@ -107,12 +102,10 @@ html, body{
 	padding-top:0.5em;
 	padding-bottom:0.5em;
 	font-weight: normal;
-
 }
 
 #header{
 	background-color: #585753;
-    height: 100%;
     padding-top:2em;
     padding-bottom:2em;	
     padding-left:2em;
@@ -162,24 +155,23 @@ fieldset {
 
 .intestazione{
 	padding-bottom:0.5em;
-	border-bottom: 2px #585753	 solid;
+	border-bottom: 2px #585753 solid;
 	text-align: center;
 	margin-bottom:1em;
 	letter-spacing: 2px;
 	font-size: 1.2em;
 	text-transform: uppercase;
 	width: 100%;
-
 }
 
-.intestazione_1{
+/*.intestazione_1{
 	padding-bottom:0.5em;
 	border-bottom: 2px #585753	 solid;
 	text-align: center;
 	margin-bottom:1em;
 	letter-spacing: 2px;
 	font-size: 1.2em;
-}
+}*/
 
 .form_sopra{
 	text-align: center;
@@ -293,7 +285,6 @@ input[type=text],input[type=password]{
 	text-align: center;	
 }
 
-
 label{
 	display: block;
 	margin-top:0.3em;
@@ -390,57 +381,6 @@ padding: 1em 1em 1em 1em;
 	text-transform: uppercase;
 }
 
-/*----MODIFICA-PROMOZIONE-PRODOTTO------*/
-
-#imgPromozioneProdotto{
-	width: 40%;	
-	float:left;
-	text-align: center;
-	margin-top: 2em;
-	display: block;
-	margin-right: 3em;
-
-}
-
-#imgPromozioneProdotto img{
-	width: 100%;
-}
-
-#modificheDestra{
-	margin-left: 50%;
-	display: block;
-	padding-right: 1em;
-	text-align: center;
-	margin-top: 2em;
-	margin-bottom: 2em;
-}
-
-
-/*#destra_prodotti{
-	margin-left: 32%;
-	padding-right: 1em;
-	text-align: center;
-	margin-top: 2em;
-}
-
-#deleteProd{
-	width: 40%;
-}
-
-.promozione{
-	width: 100%;
-}
-
-.imgPromozione{
-	margin-top:1em;
-	float:left;
-	display:block;
-	width: 25%;
-	margin-left:4.1%;
-	margin-right:4.1%;
-}*/
-
-
 /*--------LOGIN---------*/
 #formLogin
 {
@@ -468,7 +408,7 @@ padding: 1em 1em 1em 1em;
 }
 
    /* /////////////////////////////
-   //    Div General-Admin   //
+     //    Div General-Admin   //
    ///////////////////////////// */
 
 #controllo_creaNeg {background-color: #fd3516;
