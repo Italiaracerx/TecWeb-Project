@@ -72,16 +72,16 @@ class image extends connection implements query{
             }
         }
         public function checker(){
-            if(preg_match($this->emptyString,$this->name_image)){
+            if($this->type != 'logo' && preg_match($this->emptyString,$this->name_image)){
                 throw new exeption('error', 'non si può inserire un/una '.$this->type.' senza nome.');
             }
-            if(preg_match($this->emptyString,$this->alt)){
+            if($this->type != 'logo' && preg_match($this->emptyString,$this->alt)){
                 throw new exeption('error', 'non si può inserire un/una '.$this->type.' senza alternativa testuale.');
             }
-            if(preg_match($this->emptyString,$this->description)){
+            if($this->type != 'logo' && preg_match($this->emptyString,$this->description)){
                 throw new exeption('error', 'non si può inserire un/una '.$this->type.' senza descrizione.');
             }
-            if(preg_match($this->emptyString,$this->name_image)){
+            if($this->type != 'logo' && preg_match($this->emptyString,$this->name_image)){
                 throw new exeption('error', 'non si può inserire un/una '.$this->type.' senza nome.');
             }
             if(strlen($this->name_image) > 64){
