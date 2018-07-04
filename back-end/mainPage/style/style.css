@@ -219,6 +219,7 @@ html, body{
 
 #promozione img{
 	width: 100%;
+	float:left;
 }
 
 #intestazione{
@@ -283,8 +284,8 @@ html, body{
 #negozio li{
 	border:2px solid #000;
 	float: left;
-	width: 20%;
-	margin: 2%;
+	width: 24%;
+	margin: 4%;
 	text-align: center;
     list-style-type: none;
     text-transform: uppercase;
@@ -299,7 +300,7 @@ html, body{
 } 
 #negozio img{ 
   width:100%; 
-  float:left; 
+  float:left;
 }
 
 

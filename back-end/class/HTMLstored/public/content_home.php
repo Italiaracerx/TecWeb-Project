@@ -98,9 +98,14 @@
         $result_promozione =$promozione->read();
     
         $rows =array();
+        $index=0;
         while($row = $result_promozione->fetch_array(MYSQLI_ASSOC)){
-            $rows[] = $row;
+            if($index<6){
+                $rows[] = $row;
+                $index=$index+1;
+            }
         }
+
         if(!count($rows)){
             EmptyBarGray('prossimamente');
         }
