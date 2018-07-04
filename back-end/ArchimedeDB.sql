@@ -115,7 +115,7 @@ $$ DELIMITER ;
 DELIMITER $$
 CREATE TRIGGER NuovoUtente AFTER INSERT ON account FOR EACH ROW BEGIN
 	INSERT INTO info values (NEW.username,NEW.username,'+390498271200','info@centro.archimede.it','tecweb1617.studenti.math.unipd.it/
-darossi/mainPage/HTML/home.php','Abbiamo appena aperto!',"Presto l'apertura del nuovo negozio, che aspetti corri a trovarci il più presto possibile");
+darossi/mainPage/HTML/index.php','Abbiamo appena aperto!',"Presto l'apertura del nuovo negozio, che aspetti corri a trovarci il prima possibile");
 	INSERT INTO orario values (NEW.username,'08:30-21:30','08:30-21:30','08:30-21:30','08:30-21:30','08:30-21:30','08:30-21:30','08:30-21:30');
 	INSERT INTO logo values (NEW.username,'working_progress.jpg','logo negozio');
 END
