@@ -159,7 +159,34 @@ Le tecnologie utilizzate per la realizzazione del sito sono:
 	\item JavaScript ECMAScript 6;
 	\item PHP v7.1.
 \end{itemize}
-%\subsection{Struttura caricamento pagine}
+\subsection{Struttura caricamento pagine}
+Il processo che porta al caricamento di una pagina dinamica può essere sintetizzato come segue:
+
+\subsubsection{Cartella HTML}
+Per prima cosa viene caricata una delle pagine contenute nella cartella \textit{HTML}, questa inizializzerà un oggetto controller e uno degli oggetti disponibili disponibili nella cartella \textit{page} che definiremo come oggetto di tipo \textit{type_page}.
+Viene quindi costruito un oggetto di tipo page invocando il suo costruttore passando come parametri rispettivamente:
+	\begin{itemize}
+		\item \textbf{Nome pagine}: una stringa rappresentante il nome della pagina;
+		\item \textbf{Menu}: un oggetto di tipo menu, questo verrà impostato utilizzando degli oppportuni metodi e classi statiche che permetteranno di ottenere un menu tra i seguenti:
+		\begin{enumerate}
+			\item \textbf{admin}: menu per le pagine private degli utenti di tipo \textit{admin};
+			\item \textbf{user}: menu per le pagine private degli utenti di tipo \textit{user};
+			\item \textbf{pulbic}: menu per le pagine pubbliche;
+		\end{enumerate}
+		\item \textbf{Content}: una stringa che rappresenta il nome del file contente il contenuto della pagina che si va costruendo;
+		\item \textbf{Lang}: una stringa che indica la lingua da impostare se il nome della pagina non è in italiano.
+	\end{itemize}
+la pagina viene inserita nel controller attraverso il metodo \textit{setPage} immagazzina l'oggetto pagina, grazie poi alla chiamata del metodo \textit{printHTML} si procede a stampare la pagina precedentemente inserita.
+\subsubsection{Cartella page}
+Nella cartella page sono presenti degli oggetti che rappresentano le pagine disponibili, ognuna di queste dispone di metodi che vanno a caricare le seguenti parti di pagina:
+\begin{itemize}
+	\item Preambolo;
+	\item Header;
+	\item Breadcrumb;
+	\item Contenuto;
+	\item Footer;
+\end{itemize}
+Tutto questo avviene richiamando file specifici definiti nel corpo delle classi stesse. Queste stamperanno parti delle pagine ed in fine nei file marcati \textit{content} presenti nelle cartelle \textit{HTMLstored} conterranno le chiamate per la riproduzione e caricamento dinamico delle informazioni.
 \subsection{Fogli di stile}
 Il sito utilizza quattro fogli di stile dedicati per la parte utente (dimensione normale(style.css), tablet(tablet.css), mobile(mobile.css), stampa(print.css) e tre fogli di stile per la parte amministratore (dimensione normale(private\_style.css), tablet(private\_tablet.css), mobile(private\_mobile.css)
 \newpage

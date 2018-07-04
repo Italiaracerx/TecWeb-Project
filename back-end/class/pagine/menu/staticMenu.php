@@ -13,7 +13,7 @@ class staticPath{
     private static $link_home='index.php';
     private static $link_promozioni='promozione.php';
     private static $link_dove_siamo='dove_siamo.php';
-    private static $link_contatti='contatti.php';
+    private static $link_contatti='contatti.php';   
 
     public function admin($active){
         $admin = array();
